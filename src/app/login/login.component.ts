@@ -18,9 +18,9 @@ export class LoginComponent {
       password : e.target.elements[1].value,
     };
     this._loginService.postLoginData(loginParam).subscribe(response => {
-      console.log('Login Response Data');
-      console.log(response);
       this.loginDataResponse  =  response;
+      console.log('Access Token')
+      console.log(this.loginDataResponse.access_token);
     });
     // if ( 1 === 1 ) {
     //   this.router.navigate(['user-dashboard']);

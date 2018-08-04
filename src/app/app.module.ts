@@ -16,7 +16,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { FormsModule } from '@angular/forms';
 import { TosterService } from './toster.service';
 import { UserUpdateComponent } from './user-update/user-update.component';
-import { UserUpdateService } from './user-update.service';
 
 const appRoutes: Routes  = [
   {
@@ -60,7 +59,7 @@ const appRoutes: Routes  = [
     BrowserModule,
     FormsModule
   ],
-  providers: [UserListService, LoginService, TosterService, UserUpdateService],
+  providers: [UserListService, LoginService, TosterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
