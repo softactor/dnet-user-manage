@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TosterService } from '../toster.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-user-update',
@@ -15,7 +16,7 @@ export class UserUpdateComponent {
   country           = 'Bangladesh';
   assigned_country  = 'Dhaka';
   address           = 'Dhaka';
-  constructor(private _toasterService: TosterService) {
+  constructor(private _toasterService: TosterService, private _authentication: AuthenticationService) {
   }
 
   updateUser(form: NgForm, e) {

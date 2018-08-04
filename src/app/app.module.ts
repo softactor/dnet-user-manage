@@ -31,14 +31,17 @@ const appRoutes: Routes  = [
   },
   {
     path: 'user-list',
+    canActivate: [AuthGuard],
     component: UserListComponent
   },
   {
     path: 'user-create',
+    canActivate: [AuthGuard],
     component: UserCreateComponent
   },
   {
     path: 'user-update',
+    canActivate: [AuthGuard],
     component: UserUpdateComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TosterService } from '../toster.service';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-user-create',
@@ -8,7 +9,7 @@ import { TosterService } from '../toster.service';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent {
-  constructor(private _toasterService: TosterService) {
+  constructor(private _toasterService: TosterService, private _authentication: AuthenticationService) {
   }
   createUser(form: NgForm, e) {
     e.preventDefault();
