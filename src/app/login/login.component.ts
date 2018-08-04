@@ -7,24 +7,23 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent {
+  loginDataResponse;
   constructor(private router: Router, private _loginService: LoginService) {
-  }
-
-  ngOnInit() {
   }
   loginUser(e) {
     e.preventDefault();
-    var loginParam  = {
+    const loginParam  = {
       username : e.target.elements[0].value,
       password : e.target.elements[1].value,
     };
-    // this._loginService.postLoginData().subscribe( response => {
-    //   console.log(response);
-    // });
-    if ( 1 === 1 ) {
-      this.router.navigate(['user-dashboard']);
-    }
+    this._loginService.postLoginData(loginParam).subscribe(response => {
+      console.log('Login Response Data');
+      console.log(response);
+      this.loginDataResponse  =  response;
+    });
+    // if ( 1 === 1 ) {
+    //   this.router.navigate(['user-dashboard']);
+    // }
   }
 }

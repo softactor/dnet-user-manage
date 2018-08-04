@@ -9,10 +9,16 @@ import { UserListService } from './user-list.service';
 export class UserListComponent implements OnInit {
 
   userListData;
+  feedbackData;
   constructor(private _service: UserListService) {
     _service.getData().subscribe( response => {
       this.userListData = response;
-    });
+      this.feedbackData = this.userListData.results;
+    },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   ngOnInit() {

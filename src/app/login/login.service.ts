@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class LoginService {
 
-  constructor(private _http: HttpClient) { }
-  postLoginData() {
-    var loginParam  = {
-      username : 'mamunur.rashid@dnet.org.bd',
-      password : 'a'
-    };
-    return this._http.post('http://labourattache.com.bd/api/user/login/', loginParam);
+  constructor(private _http: HttpClient) {
   }
 
+  postLoginData(loginParam) {
+    const _headers    =  new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    const postString  =  'username=' + loginParam.username + '&password=' + loginParam.password;
+    return this._http.post('http://192.168.3.70:8000/api/user/login', postString, {headers: _headers});
+  }
 }

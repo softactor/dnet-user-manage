@@ -11,6 +11,12 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserListService } from './user-list/user-list.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login/login.service';
+import { UserCreateComponent } from './user-create/user-create.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { FormsModule } from '@angular/forms';
+import { TosterService } from './toster.service';
+import { UserUpdateComponent } from './user-update/user-update.component';
+import { UserUpdateService } from './user-update.service';
 
 const appRoutes: Routes  = [
   {
@@ -25,6 +31,14 @@ const appRoutes: Routes  = [
     path: 'user-list',
     component: UserListComponent
   },
+  {
+    path: 'user-create',
+    component: UserCreateComponent
+  },
+  {
+    path: 'user-update',
+    component: UserUpdateComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
@@ -36,14 +50,18 @@ const appRoutes: Routes  = [
     LeftMenuComponent,
     FooterComponent,
     UserDashboardComponent,
-    UserListComponent
+    UserListComponent,
+    UserCreateComponent,
+    UserUpdateComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [UserListService, LoginService],
+  providers: [UserListService, LoginService, TosterService, UserUpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule)

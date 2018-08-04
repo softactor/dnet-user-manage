@@ -1,0 +1,82 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        User Update
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">User Update</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form #userUpdateForm = "ngForm" (ngSubmit)="updateUser(userUpdateForm, $event)"  role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">First Name</label>
+                  <input [(ngModel)]="first_name" required type="text" class="form-control"  name="first_name" id="first_name" placeholder="First Name">
+                  <div class="alert alert-danger" *ngIf="first_name.touched && !first_name.valid">First name is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Last Name</label>
+                  <input required type="text" class="form-control" [(ngModel)]="last_name" name="last_name" id="last_name" placeholder="Last Name">
+                  <div class="alert alert-danger" *ngIf="last_name.touched && !last_name.valid">Last name is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Country</label>
+                  <input required type="text" class="form-control" [(ngModel)]="country" name="country" id="country" placeholder="Enter Country">
+                  <div class="alert alert-danger" *ngIf="country.touched && !country.valid">Country is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Assigned Country</label>
+                  <input required type="text" class="form-control" [(ngModel)]="assigned_country" name="assigned_country" id="assigned_country" placeholder="Assigned Country">
+                  <div class="alert alert-danger" *ngIf="assigned_country.touched && !assigned_country.valid">Assigned country is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input required type="email" class="form-control" [(ngModel)]="email" name="email" id="email" placeholder="Enter email">
+                  <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Mobile</label>
+                  <input required type="text" class="form-control" [(ngModel)]="mobile" name="mobile" id="mobile" placeholder="Enter Mobile">
+                  <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">Mobile is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Address</label>
+                  <textarea required class="form-control" [(ngModel)]="address" name="address" id="address" placeholder="Enter address"></textarea>
+                  <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Address is required</div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->
