@@ -18,6 +18,7 @@ import { TosterService } from './toster.service';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuard } from './auth.guard';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 const appRoutes: Routes  = [
   {
@@ -63,7 +64,8 @@ const appRoutes: Routes  = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]

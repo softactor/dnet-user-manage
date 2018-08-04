@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fcfd0cc-912a-4930-ba5a-709f097e2267" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/user-create/user-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user-create/user-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user-list/user-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/user-update/user-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user-update/user-update.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user-list/user-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user-list/user-list.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -33,7 +34,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="5" />
-          <entry key="html" value="28" />
+          <entry key="html" value="29" />
           <entry key="json" value="5" />
           <entry key="ts" value="52" />
         </counts>
@@ -41,7 +42,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="28" />
+          <entry key="HTML" value="29" />
           <entry key="JSON" value="5" />
           <entry key="TypeScript" value="52" />
         </counts>
@@ -54,29 +55,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="854" />
+          <entry key="html" value="861" />
           <entry key="json" value="2" />
-          <entry key="ts" value="2603" />
+          <entry key="ts" value="2623" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="854" />
+          <entry key="HTML" value="861" />
           <entry key="JSON" value="2" />
-          <entry key="TypeScript" value="2603" />
+          <entry key="TypeScript" value="2623" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+            <state relative-caret-position="271">
+              <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#1262#1732#0" />
               </folding>
             </state>
           </provider>
@@ -98,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/user-list/user-list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -110,9 +112,23 @@
         <entry file="file://$PROJECT_DIR$/src/app/user-dashboard/user-dashboard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/user-list/user-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="66" column="165" selection-start-line="66" selection-start-column="165" selection-end-line="66" selection-end-column="165" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#2094#2100#1" expanded="true" />
+                <element signature="e#2634#2640#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,7 +167,6 @@
         <option value="$PROJECT_DIR$/src/app/user-create/user-create.component.html" />
         <option value="$PROJECT_DIR$/src/app/layout/header/header.component.html" />
         <option value="$PROJECT_DIR$/src/app/user-update/user-update.component.html" />
-        <option value="$PROJECT_DIR$/src/app/user-list/user-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/login/login.service.ts" />
         <option value="$PROJECT_DIR$/src/app/authentication.service.ts" />
         <option value="$PROJECT_DIR$/src/app/login/login.component.ts" />
@@ -161,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/app/user-update/user-update.component.ts" />
         <option value="$PROJECT_DIR$/src/app/user-list/user-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/user-list/user-list.component.html" />
       </list>
     </option>
   </component>
@@ -227,7 +243,7 @@
               <item name="dum" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="user-dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="user-list" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,12 +308,12 @@
       <workItem from="1533113752115" duration="14380000" />
       <workItem from="1533155760178" duration="14431000" />
       <workItem from="1533180486790" duration="26989000" />
-      <workItem from="1533352815446" duration="8197000" />
+      <workItem from="1533352815446" duration="8426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73631000" />
+    <option name="totallyTimeSpent" value="73860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -469,18 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-list/user-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="120" selection-start-line="66" selection-start-column="120" selection-end-line="66" selection-end-column="120" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#2094#2100#1" expanded="true" />
-            <element signature="e#2634#2640#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/user-create/user-create.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
@@ -558,7 +562,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/user-dashboard/user-dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -568,7 +572,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/user-list/user-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -577,10 +581,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        <state relative-caret-position="271">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#1262#1732#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-list/user-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="66" column="165" selection-start-line="66" selection-start-column="165" selection-end-line="66" selection-end-column="165" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2094#2100#1" expanded="true" />
+            <element signature="e#2634#2640#1" expanded="true" />
           </folding>
         </state>
       </provider>
