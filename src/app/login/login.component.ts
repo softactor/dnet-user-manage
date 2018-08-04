@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
   loginDataResponse;
-  constructor(private router: Router, private _loginService: LoginService) {
+  constructor(private router: Router, private _loginService: LoginService, private _authentication: AuthenticationService) {
   }
   loginUser(e) {
     e.preventDefault();
@@ -19,11 +20,11 @@ export class LoginComponent {
     };
     this._loginService.postLoginData(loginParam).subscribe(response => {
       this.loginDataResponse  =  response;
-      console.log('Access Token')
-      console.log(this.loginDataResponse.access_token);
+      if (this.loginDataResponse.access_token) {
+        this._authentication.setUserLoggedIn();
+        this.router.navigate(['user-dashboard']);
+      }
     });
-    // if ( 1 === 1 ) {
-    //   this.router.navigate(['user-dashboard']);
-    // }
+
   }
 }

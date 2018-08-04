@@ -16,6 +16,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { FormsModule } from '@angular/forms';
 import { TosterService } from './toster.service';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { AuthenticationService } from './authentication.service';
+import { AuthGuard } from './auth.guard';
 
 const appRoutes: Routes  = [
   {
@@ -24,6 +26,7 @@ const appRoutes: Routes  = [
   },
   {
     path: 'user-dashboard',
+    canActivate: [AuthGuard],
     component: UserDashboardComponent
   },
   {
@@ -59,7 +62,7 @@ const appRoutes: Routes  = [
     BrowserModule,
     FormsModule
   ],
-  providers: [UserListService, LoginService, TosterService],
+  providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
