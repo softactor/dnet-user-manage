@@ -50,21 +50,8 @@
                   <td>{{ user.address }}</td>
                   <td>{{ user.country }}</td>
                   <td>
-                    <button type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></button>&nbsp;<button type="button" class="btn bg-red"><i class="fa fa-minus"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <a routerLink="/user-update" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;<button [swal]="['Oops!', 'This is not implemented yet :/', 'warning']" type="button" class="btn bg-red"><i class="fa fa-minus"></i></button>
+                    <a routerLink="/user-update/{{user.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <button type="button" class="btn bg-red"><i class="fa fa-minus"></i></button>
                   </td>
                 </tr>
               </table>

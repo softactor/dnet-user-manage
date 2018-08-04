@@ -1,7 +1,10 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TosterService } from '../toster.service';
+import { UserCreateService } from './user-create.service';
 import {AuthenticationService} from '../authentication.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-user-create',
@@ -9,7 +12,12 @@ import {AuthenticationService} from '../authentication.service';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent {
-  constructor(private _toasterService: TosterService, private _authentication: AuthenticationService) {
+  userDataReponse;
+  constructor(private _userCreateService: UserCreateService,
+              private router: Router,
+              private _toasterService: TosterService,
+              private _authentication: AuthenticationService,
+              private _http: HttpClient) {
   }
   createUser(form: NgForm, e) {
     e.preventDefault();
@@ -21,9 +29,14 @@ export class UserCreateComponent {
         email             : form.value.email,
         first_name        : form.value.first_name,
         last_name         : form.value.last_name,
-        mobile            : form.value.mobile
+        mobile            : form.value.mobile,
+        password          : 'dead',
+        is_superuser      : '',
       };
-      this._toasterService.success('User has been created successfully.');
+      this._userCreateService.creteUserData(userCreateParam).subscribe(response => {
+        this._toasterService.success('User has been successfully created.');
+        this.router.navigate(['user-list']);
+      });
     }else {
       this._toasterService.error('All fields are required');
     }

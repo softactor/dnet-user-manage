@@ -18,7 +18,8 @@ import { TosterService } from './toster.service';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthGuard } from './auth.guard';
-import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { UserCreateService } from './user-create/user-create.service';
+import { UserUpdateService } from './user-update/user-update.service';
 
 const appRoutes: Routes  = [
   {
@@ -41,7 +42,7 @@ const appRoutes: Routes  = [
     component: UserCreateComponent
   },
   {
-    path: 'user-update',
+    path: 'user-update/:user_id',
     canActivate: [AuthGuard],
     component: UserUpdateComponent
   },
@@ -64,10 +65,9 @@ const appRoutes: Routes  = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
-    FormsModule,
-    SweetAlert2Module.forRoot()
+    FormsModule
   ],
-  providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard],
+  providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard, UserCreateService, UserUpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
   private isUserLoggedIn;
   private userToken;
+  public token_type;
+  public access_token;
   constructor() {
     this.isUserLoggedIn = false;
   }
