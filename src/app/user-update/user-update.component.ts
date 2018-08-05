@@ -30,9 +30,8 @@ export class UserUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this._activateRoute.paramMap
+      this._activateRoute.paramMap
       .subscribe( params => {
-        console.log(params)
         let userId  = params.get('user_id')
         this.editUserId = userId;
         this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;

@@ -20,11 +20,17 @@ import { AuthenticationService } from './authentication.service';
 import { AuthGuard } from './auth.guard';
 import { UserCreateService } from './user-create/user-create.service';
 import { UserUpdateService } from './user-update/user-update.service';
+import { LogoutComponent } from './logout/logout.component';
+import { LogoutService } from './logout/logout.service';
 
 const appRoutes: Routes  = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'user-dashboard',
@@ -59,7 +65,8 @@ const appRoutes: Routes  = [
     UserDashboardComponent,
     UserListComponent,
     UserCreateComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    LogoutComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -67,7 +74,7 @@ const appRoutes: Routes  = [
     BrowserModule,
     FormsModule
   ],
-  providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard, UserCreateService, UserUpdateService],
+  providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard, UserCreateService, UserUpdateService, LogoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
