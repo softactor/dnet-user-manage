@@ -22,6 +22,7 @@ import { UserCreateService } from './user-create/user-create.service';
 import { UserUpdateService } from './user-update/user-update.service';
 import { LogoutComponent } from './logout/logout.component';
 import { LogoutService } from './logout/logout.service';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 const appRoutes: Routes  = [
   {
@@ -69,12 +70,22 @@ const appRoutes: Routes  = [
     LogoutComponent
   ],
   imports: [
+    SweetAlert2Module.forRoot(),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
     FormsModule
   ],
-  providers: [UserListService, LoginService, TosterService, AuthenticationService, AuthGuard, UserCreateService, UserUpdateService, LogoutService],
+  providers: [
+    UserListService,
+    LoginService,
+    TosterService,
+    AuthenticationService,
+    AuthGuard,
+    UserCreateService,
+    UserUpdateService,
+    LogoutService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

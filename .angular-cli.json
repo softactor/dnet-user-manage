@@ -24,14 +24,15 @@
         "assets/bower_components/Ionicons/css/ionicons.min.css",
         "assets/bower_components/jvectormap/jquery-jvectormap.css",
         "assets/dist/css/AdminLTE.min.css",
-        "assets/dist/css/skins/_all-skins.min.css",
+        "assets/dist/css/skins/_all-skins.min.css"
         "styles.css"
       ],
       "scripts": [
         "assets/bower_components/jquery/dist/jquery.min.js",
         "assets/bower_components/bootstrap/dist/js/bootstrap.min.js",
         "assets/dist/js/adminlte.min.js",
-        "assets/dist/js/toastr.min.js"
+        "assets/dist/js/toastr.min.js",
+        "assets/bower_components/datatables.net/js/jquery.dataTables.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

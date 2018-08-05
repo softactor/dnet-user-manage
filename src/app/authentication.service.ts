@@ -6,6 +6,7 @@ export class AuthenticationService {
   private userToken;
   public token_type;
   public access_token;
+  public user_name;
   constructor() {
     this.isUserLoggedIn = false;
   }
