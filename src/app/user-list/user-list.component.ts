@@ -22,9 +22,9 @@ export class UserListComponent implements OnInit {
       });
     }, 1000)
     _service.getData().subscribe( response => {
-      this.userListData = response;
-      this.feedbackData = this.userListData.results;
-    },
+        this.userListData = response;
+        this.feedbackData = this.userListData.results;
+      },
       error => {
         console.log(error);
       }
