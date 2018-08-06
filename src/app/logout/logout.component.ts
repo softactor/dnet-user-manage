@@ -27,7 +27,7 @@ export class LogoutComponent implements OnInit {
     };
     this._userLogoutService.userLogout(userLogoutParam).subscribe( response => {
       this.responseMessage  = response;
-      this._toasterService.success(this.responseMessage.success_message);
+      this._toasterService.success(this.responseMessage.message);
       this.router.navigate(['login']);
     });
   }

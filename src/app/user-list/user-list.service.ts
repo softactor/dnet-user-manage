@@ -6,7 +6,7 @@ export class UserListService {
 
   constructor(private _http: HttpClient) { }
   getData() {
-    return this._http.get('http://labourattache.com.bd/api/user/list/');
+    return this._http.get('http://192.168.3.70:8000/api/user/list/');
   }
 
   deleteUserData(userDeleteParam) {
