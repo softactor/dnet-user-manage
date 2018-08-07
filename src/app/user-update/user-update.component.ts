@@ -5,6 +5,7 @@ import { TosterService } from '../toster.service';
 import { AuthenticationService } from '../authentication.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserUpdateService} from './user-update.service';
+import {getResponseURL} from '@angular/http/src/http_utils';
 
 @Component({
   selector: 'app-user-update',
@@ -14,6 +15,8 @@ import { UserUpdateService} from './user-update.service';
 export class UserUpdateComponent implements OnInit {
   editUserId;
   authorizationKey;
+  userAccessLevel;
+  userAccessLevelResponse;
   userDetailsDataContainer;
   first_name        = '';
   last_name         = '';
@@ -22,6 +25,7 @@ export class UserUpdateComponent implements OnInit {
   country           = '';
   assigned_country  = '';
   address           = '';
+  access           = '';
   constructor(private _toasterService: TosterService,
               private _authentication: AuthenticationService,
               private _activateRoute: ActivatedRoute,
@@ -48,8 +52,14 @@ export class UserUpdateComponent implements OnInit {
           this.assigned_country = this.userDetailsDataContainer.assigned_country;
           this.address = this.userDetailsDataContainer.address;
           this.mobile = this.userDetailsDataContainer.mobile;
+          this.access = this.userDetailsDataContainer.access.id;
         });
       });
+      // get user access level;
+    this._userUpdateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {
+      this.userAccessLevelResponse = response;
+      this.userAccessLevel = this.userAccessLevelResponse.results;
+    });
   }
   updateUser(form: NgForm, e) {
     e.preventDefault();
@@ -60,7 +70,8 @@ export class UserUpdateComponent implements OnInit {
         country           : form.value.country,
         first_name        : form.value.first_name,
         last_name         : form.value.last_name,
-        mobile         : form.value.mobile,
+        mobile            : form.value.mobile,
+        access            : form.value.access,
         is_superuser      : false,
         editUserId        : this.editUserId,
         authorization     : this.authorizationKey

@@ -23,6 +23,9 @@ import { UserUpdateService } from './user-update/user-update.service';
 import { LogoutComponent } from './logout/logout.component';
 import { LogoutService } from './logout/logout.service';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { SignupFormService } from './signup-form/signup-form.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes  = [
   {
@@ -53,6 +56,10 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: UserUpdateComponent
   },
+  {
+    path: 'user-signup',
+    component: SignupFormComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
@@ -67,13 +74,15 @@ const appRoutes: Routes  = [
     UserListComponent,
     UserCreateComponent,
     UserUpdateComponent,
-    LogoutComponent
+    LogoutComponent,
+    SignupFormComponent
   ],
   imports: [
     SweetAlert2Module.forRoot(),
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [
@@ -84,7 +93,8 @@ const appRoutes: Routes  = [
     AuthGuard,
     UserCreateService,
     UserUpdateService,
-    LogoutService
+    LogoutService,
+    SignupFormService
   ],
   bootstrap: [AppComponent]
 })

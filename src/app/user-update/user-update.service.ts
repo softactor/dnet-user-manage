@@ -20,12 +20,18 @@ export class UserUpdateService {
       + '&is_superuser=' + false
       + '&mobile=' + userUpdateParam.mobile
       + '&address=' + userUpdateParam.address
+      + '&access=' + userUpdateParam.access
       + '&authorization=' + userUpdateParam.authorization;
     return this._http.put(environment.baseApi + 'user/edit/' + userUpdateParam.editUserId, postString, {headers: _headers});
   }
   getUserDetailsById(detailsParam) {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
     return this._http.get(environment.baseApi + 'user/details/' + detailsParam.editUserId, {headers: _headers});
+  }
+
+  getUserAccessLevel(authorizationKey) {
+    const _headers = new HttpHeaders().set('authorization', authorizationKey);
+    return this._http.get(environment.baseApi + 'user/accesslevel/list', {headers: _headers});
   }
 
 }
