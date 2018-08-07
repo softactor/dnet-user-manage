@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class UserUpdateService {
@@ -20,11 +21,11 @@ export class UserUpdateService {
       + '&mobile=' + userUpdateParam.mobile
       + '&address=' + userUpdateParam.address
       + '&authorization=' + userUpdateParam.authorization;
-    return this._http.put('http://192.168.3.70:8000/api/user/edit/' + userUpdateParam.editUserId, postString, {headers: _headers});
+    return this._http.put(environment.baseApi + 'user/edit/' + userUpdateParam.editUserId, postString, {headers: _headers});
   }
   getUserDetailsById(detailsParam) {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
-    return this._http.get('http://192.168.3.70:8000/api/user/details/' + detailsParam.editUserId, {headers: _headers});
+    return this._http.get(environment.baseApi + 'user/details/' + detailsParam.editUserId, {headers: _headers});
   }
 
 }

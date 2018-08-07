@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class LogoutService {
@@ -7,6 +8,6 @@ export class LogoutService {
   }
   userLogout(userLogoutParam){
     const _headers = new HttpHeaders().set('authorization', userLogoutParam.authorizationKey);
-    return this._http.get('http://192.168.3.70:8000/api/user/logout', {headers: _headers});
+    return this._http.get(environment.baseApi + 'user/logout', {headers: _headers});
   }
 }

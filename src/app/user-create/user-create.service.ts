@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class UserCreateService {
@@ -16,6 +17,6 @@ export class UserCreateService {
       + '&is_superuser=' + false
       + '&password=' + userCreateParam.password
       + '&address=' + userCreateParam.address;
-    return this._http.post('http://192.168.3.70:8000/api/user/create', postString, {headers: _headers});
+    return this._http.post(environment.baseApi + 'user/create', postString, {headers: _headers});
   }
 }
