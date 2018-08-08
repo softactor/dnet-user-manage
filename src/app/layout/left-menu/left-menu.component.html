@@ -15,8 +15,8 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li class="active treeview menu-open">
-        <a routerLink="/user-list">
+      <li class="treeview">
+        <a href="#">
           <i class="fa fa-user"></i> <span>User</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -25,6 +25,17 @@
         <ul class="treeview-menu">
           <li><a routerLink="/user-signup"><i class="fa fa-circle-o"></i> Signup</a></li>
           <li><a routerLink="/user-list"><i class="fa fa-circle-o"></i> List</a></li>
+        </ul>
+      </li>
+      <li class="active treeview">
+        <a href="#">
+          <i class="fa fa-user"></i> <span>Visit</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/company-list"><i class="fa fa-circle-o"></i> Company-list</a></li>
         </ul>
       </li>
     </ul>

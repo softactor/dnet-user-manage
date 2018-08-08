@@ -66,6 +66,10 @@ const appRoutes: Routes  = [
     path: 'user-signup',
     component: SignupFormComponent
   },
+  {
+    path: 'company-list',
+    component: CompanyListComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
