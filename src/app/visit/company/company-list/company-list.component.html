@@ -22,7 +22,7 @@
           <div class="box">
             <div class="box-header pull-right">
               <h3 class="box-title">Create company</h3>
-              <a routerLink="/user-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <a routerLink="/company-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -37,13 +37,26 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let user of feedbackData; index as sln">
+                <tr *ngFor="let company of companyFeedbackData; index as sln" id="row_id_{{ company.id }}">
                   <td>{{ sln+1 }}</td>
-                  <td>name</td>
-                  <td>address</td>
-                  <td>outcome</td>
+                  <td>{{ company.name }}</td>
+                  <td>{{ company.address }}</td>
+                  <td>{{ company.outcome }}</td>
                   <td>
-
+                    <a routerLink="/company-update/{{company.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <button [swal]="deleteSwal"
+                            type="button" class="btn bg-red">
+                      <i class="fa fa-minus"></i></button>
+                    <swal
+                      #deleteSwal
+                      title="Confirm Delete?"
+                      text="This cannot be undone"
+                      type="question"
+                      [showCancelButton]="true"
+                      [focusCancel]="true"
+                      (confirm)="deleteUser(company.id)"
+                    >
+                    </swal>
                   </td>
                 </tr>
                 </tbody>

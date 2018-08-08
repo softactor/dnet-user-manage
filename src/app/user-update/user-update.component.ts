@@ -5,7 +5,6 @@ import { TosterService } from '../toster.service';
 import { AuthenticationService } from '../authentication.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserUpdateService} from './user-update.service';
-import {getResponseURL} from '@angular/http/src/http_utils';
 
 @Component({
   selector: 'app-user-update',
@@ -26,7 +25,8 @@ export class UserUpdateComponent implements OnInit {
   assigned_country  = '';
   address           = '';
   access           = '';
-  constructor(private _toasterService: TosterService,
+  constructor(
+              private _toasterService: TosterService,
               private _authentication: AuthenticationService,
               private _activateRoute: ActivatedRoute,
               private router: Router,

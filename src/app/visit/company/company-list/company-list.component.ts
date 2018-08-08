@@ -15,7 +15,7 @@ export class CompanyListComponent implements OnInit {
   editCompanyId;
   authorizationKey;
   companyListData;
-  feedbackData;
+  companyFeedbackData: any;
   constructor(
     private _companyService: CompanyService,
     private _toasterService: TosterService,
@@ -33,7 +33,7 @@ export class CompanyListComponent implements OnInit {
     this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
     this._companyService.getCompanyListData(this.authorizationKey).subscribe( response => {
         this.companyListData = response;
-        this.feedbackData = this.companyListData.results;
+        this.companyFeedbackData = this.companyListData.results;
       },
       error => {
         console.log(error);

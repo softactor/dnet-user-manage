@@ -67,8 +67,16 @@ const appRoutes: Routes  = [
     component: SignupFormComponent
   },
   {
+    path: 'company-create',
+    component: CompanyCreateComponent
+  },
+  {
     path: 'company-list',
     component: CompanyListComponent
+  },
+  {
+    path: 'company-update/:company_id',
+    component: CompanyEditComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }

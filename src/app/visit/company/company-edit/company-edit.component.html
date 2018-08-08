@@ -1,3 +1,62 @@
-<p>
-  company-edit works!
-</p>
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        User Update
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">User Update</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form #companyUpdateForm = "ngForm" (ngSubmit)="updateCompany(companyUpdateForm, $event)"  role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input [(ngModel)]="name" required type="text" class="form-control"  name="name" id="name" placeholder="Name">
+                  <div class="alert alert-danger" *ngIf="name.touched && !name.valid">Name is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input required type="text" class="form-control" [(ngModel)]="address" name="address" id="address" placeholder="Address">
+                  <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Address is required</div>
+                </div>
+                <div class="form-group">
+                  <label for="outcome">Outcome</label>
+                  <input required type="text" class="form-control" [(ngModel)]="outcome" name="outcome" id="outcome" placeholder="Outcome">
+                  <div class="alert alert-danger" *ngIf="outcome.touched && !outcome.valid">Outcome is required</div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->
