@@ -58,7 +58,7 @@
                   <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Address is required</div>
                 </div>
                 <div class="form-group">
-                  <label for="select">Gender</label>
+                  <label for="select">Access</label>
                   <select id="select" class="form-control" name="access" id="access" [(ngModel)]="access">
                     <option value="">Select</option>
                     <option *ngFor="let access of userAccessLevel" [value]="access.id">{{access.description}}</option>

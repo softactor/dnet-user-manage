@@ -11,13 +11,23 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   templateUrl: './user-create.component.html',
   styleUrls: ['./user-create.component.css']
 })
-export class UserCreateComponent {
-  userDataReponse;
+export class UserCreateComponent implements OnInit {
+  authorizationKey;
+  userAccessLevelResponse;
+  userAccessLevel;
   constructor(private _userCreateService: UserCreateService,
               private router: Router,
               private _toasterService: TosterService,
               private _authentication: AuthenticationService,
               private _http: HttpClient) {
+  }
+  ngOnInit() {
+    // get user access level;
+    this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
+    this._userCreateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {
+      this.userAccessLevelResponse = response;
+      this.userAccessLevel = this.userAccessLevelResponse.results;
+    });
   }
   createUser(form: NgForm, e) {
     e.preventDefault();
@@ -32,6 +42,7 @@ export class UserCreateComponent {
         mobile            : form.value.mobile,
         password          : 'dead',
         is_superuser      : '',
+        access            : form.value.access
       };
       this._userCreateService.creteUserData(userCreateParam).subscribe(response => {
         this._toasterService.success('User has been successfully created.');

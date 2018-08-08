@@ -16,7 +16,12 @@ export class UserCreateService {
       + '&assigned_country=' + userCreateParam.assigned_country
       + '&is_superuser=' + false
       + '&password=' + userCreateParam.password
+      + '&access=' + userCreateParam.access
       + '&address=' + userCreateParam.address;
     return this._http.post(environment.baseApi + 'user/create', postString, {headers: _headers});
+  }
+  getUserAccessLevel(authorizationKey) {
+    const _headers = new HttpHeaders().set('authorization', authorizationKey);
+    return this._http.get(environment.baseApi + 'user/accesslevel/list', {headers: _headers});
   }
 }
