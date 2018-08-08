@@ -26,6 +26,12 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SignupFormService } from './signup-form/signup-form.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CompanyCreateComponent } from './visit/company/company-create/company-create.component';
+import { CompanyListComponent } from './visit/company/company-list/company-list.component';
+import { CompanyEditComponent } from './visit/company/company-edit/company-edit.component';
+import { CompanyUpdateComponent } from './visit/company/company-update/company-update.component';
+import { CompanyDeleteComponent } from './visit/company/company-delete/company-delete.component';
+import { CompanyService } from './visit/company/company.service';
 
 const appRoutes: Routes  = [
   {
@@ -75,7 +81,12 @@ const appRoutes: Routes  = [
     UserCreateComponent,
     UserUpdateComponent,
     LogoutComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    CompanyCreateComponent,
+    CompanyListComponent,
+    CompanyEditComponent,
+    CompanyUpdateComponent,
+    CompanyDeleteComponent
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -94,7 +105,8 @@ const appRoutes: Routes  = [
     UserCreateService,
     UserUpdateService,
     LogoutService,
-    SignupFormService
+    SignupFormService,
+    CompanyService
   ],
   bootstrap: [AppComponent]
 })
