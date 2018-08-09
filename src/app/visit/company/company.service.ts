@@ -5,7 +5,8 @@ import { environment } from '../../../environments/environment';
 @Injectable()
 export class CompanyService {
 
-  constructor(private _http: HttpClient) { }
+  constructor(
+    private _http: HttpClient) { }
   // get company list
   getCompanyListData(authorizationKey) {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
@@ -41,5 +42,10 @@ export class CompanyService {
         headers: _headers
         }
       );
+  }
+
+  deleteCompany(companyDeleteParam) {
+    const _headers = new HttpHeaders().set('authorization', companyDeleteParam.authorizationKey);
+    return this._http.delete(environment.baseApi + 'visit/company/delete/' + companyDeleteParam.companyId, {headers: _headers});
   }
 }

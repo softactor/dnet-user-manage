@@ -68,14 +68,17 @@ const appRoutes: Routes  = [
   },
   {
     path: 'company-create',
+    canActivate: [AuthGuard],
     component: CompanyCreateComponent
   },
   {
     path: 'company-list',
+    canActivate: [AuthGuard],
     component: CompanyListComponent
   },
   {
     path: 'company-update/:company_id',
+    canActivate: [AuthGuard],
     component: CompanyEditComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
