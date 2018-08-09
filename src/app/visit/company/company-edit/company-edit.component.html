@@ -25,7 +25,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form #companyUpdateForm = "ngForm" (ngSubmit)="updateCompany(companyUpdateForm, $event)"  role="form">
+            <form #companyUpdateForm = "ngForm" (ngSubmit)="updateCompany(companyUpdateForm, $event)" class="form-inline">
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -42,12 +42,9 @@
                   <input required type="text" class="form-control" [(ngModel)]="outcome" name="outcome" id="outcome" placeholder="Outcome">
                   <div class="alert alert-danger" *ngIf="outcome.touched && !outcome.valid">Outcome is required</div>
                 </div>
+              <button type="submit" class="btn btn-primary">Update</button>
               </div>
               <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Update</button>
-              </div>
             </form>
           </div>
           <!-- /.box -->
