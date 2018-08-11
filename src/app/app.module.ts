@@ -32,6 +32,27 @@ import { CompanyEditComponent } from './visit/company/company-edit/company-edit.
 import { CompanyUpdateComponent } from './visit/company/company-update/company-update.component';
 import { CompanyDeleteComponent } from './visit/company/company-delete/company-delete.component';
 import { CompanyService } from './visit/company/company.service';
+import { ResidenceCreateComponent } from './visit/residence/residence-create/residence-create.component';
+import { ResidenceEditComponent } from './visit/residence/residence-edit/residence-edit.component';
+import { ResidenceListComponent } from './visit/residence/residence-list/residence-list.component';
+import { ResidenceDeleteComponent } from './visit/residence/residence-delete/residence-delete.component';
+import { ResidenceService } from './visit/residence/residence.service';
+import { DeportationCenterCreateComponent } from './visit/deportation-center/deportation-center-create/deportation-center-create.component';
+import { DeportationCenterListComponent } from './visit/deportation-center/deportation-center-list/deportation-center-list.component';
+import { DeportationCenterEditComponent } from './visit/deportation-center/deportation-center-edit/deportation-center-edit.component';
+import { DeportationCenterService } from './visit/deportation-center/deportation-center.service';
+import { JailCreateComponent } from './visit/jail/jail-create/jail-create.component';
+import { JailListComponent } from './visit/jail/jail-list/jail-list.component';
+import { JailEditComponent } from './visit/jail/jail-edit/jail-edit.component';
+import { JailService } from './visit/jail/jail.service';
+import { HospitalCreateComponent } from './visit/hospital/hospital-create/hospital-create.component';
+import { HospitalListComponent } from './visit/hospital/hospital-list/hospital-list.component';
+import { HospitalEditComponent } from './visit/hospital/hospital-edit/hospital-edit.component';
+import { HospitalService } from './visit/hospital/hospital.service';
+import { MigrantShelterCreateComponent } from './visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component';
+import { MigrantShelterListComponent } from './visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component';
+import { MigrantShelterEditComponent } from './visit/migrant-shelter/migrant-shelter-edit/migrant-shelter-edit.component';
+import { MigrantShelterService } from './visit/migrant-shelter/migrant-shelter.service';
 
 const appRoutes: Routes  = [
   {
@@ -81,6 +102,81 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: CompanyEditComponent
   },
+  {
+    path: 'residence-list',
+    canActivate: [AuthGuard],
+    component: ResidenceListComponent
+  },
+  {
+    path: 'residence-create',
+    canActivate: [AuthGuard],
+    component: ResidenceCreateComponent
+  },
+  {
+    path: 'residence-update/:company_id',
+    canActivate: [AuthGuard],
+    component: ResidenceEditComponent
+  },
+  {
+    path: 'deportation-center-create',
+    canActivate: [AuthGuard],
+    component: DeportationCenterCreateComponent
+  },
+  {
+    path: 'deportation-center-list',
+    canActivate: [AuthGuard],
+    component: DeportationCenterListComponent
+  },
+  {
+    path: 'deportation-center-update/:deportation-center-id',
+    canActivate: [AuthGuard],
+    component: DeportationCenterEditComponent
+  },
+  {
+    path: 'hospital-create',
+    canActivate: [AuthGuard],
+    component: HospitalCreateComponent
+  },
+  {
+    path: 'hospital-list',
+    canActivate: [AuthGuard],
+    component: HospitalListComponent
+  },
+  {
+    path: 'hospital-update/:hospital-id',
+    canActivate: [AuthGuard],
+    component: HospitalEditComponent
+  },
+  {
+    path: 'jail-create',
+    canActivate: [AuthGuard],
+    component: JailCreateComponent
+  },
+  {
+    path: 'jail-list',
+    canActivate: [AuthGuard],
+    component: JailListComponent
+  },
+  {
+    path: 'jail-update/:jail_id',
+    canActivate: [AuthGuard],
+    component: JailEditComponent
+  },
+  {
+    path: 'migrant-shelter-create',
+    canActivate: [AuthGuard],
+    component: MigrantShelterCreateComponent
+  },
+  {
+    path: 'migrant-shelter-list',
+    canActivate: [AuthGuard],
+    component: MigrantShelterListComponent
+  },
+  {
+    path: 'migrant-shelter-update/:migrant_shelter_id',
+    canActivate: [AuthGuard],
+    component: MigrantShelterEditComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
@@ -101,7 +197,23 @@ const appRoutes: Routes  = [
     CompanyListComponent,
     CompanyEditComponent,
     CompanyUpdateComponent,
-    CompanyDeleteComponent
+    CompanyDeleteComponent,
+    ResidenceCreateComponent,
+    ResidenceEditComponent,
+    ResidenceListComponent,
+    ResidenceDeleteComponent,
+    DeportationCenterCreateComponent,
+    DeportationCenterListComponent,
+    DeportationCenterEditComponent,
+    JailCreateComponent,
+    JailListComponent,
+    JailEditComponent,
+    HospitalCreateComponent,
+    HospitalListComponent,
+    HospitalEditComponent,
+    MigrantShelterCreateComponent,
+    MigrantShelterListComponent,
+    MigrantShelterEditComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -121,7 +233,12 @@ const appRoutes: Routes  = [
     UserUpdateService,
     LogoutService,
     SignupFormService,
-    CompanyService
+    CompanyService,
+    ResidenceService,
+    DeportationCenterService,
+    JailService,
+    HospitalService,
+    MigrantShelterService
   ],
   bootstrap: [AppComponent]
 })

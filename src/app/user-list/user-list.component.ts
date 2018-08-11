@@ -23,10 +23,12 @@ export class UserListComponent implements OnInit {
   ) {
 
     setTimeout(function(){
-      $(function(){
+      $(function() {
+        if(!$.fn.DataTable.isDataTable('#example')) {
         $('#example').DataTable({
           'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
         });
+      }
       });
     }, 1000)
     this._service.getData().subscribe( response => {

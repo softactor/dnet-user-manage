@@ -21,13 +21,15 @@ export class LogoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');;
     const userLogoutParam  = {
           authorizationKey  : this.authorizationKey.toString()
     };
     this._userLogoutService.userLogout(userLogoutParam).subscribe( response => {
       this.responseMessage  = response;
       this._toasterService.success(this.responseMessage.message);
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('token_type')
       this.router.navigate(['login']);
     });
   }

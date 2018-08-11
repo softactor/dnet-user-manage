@@ -24,13 +24,15 @@ export class CompanyListComponent implements OnInit {
     private router: Router,
   ) {
     setTimeout(function(){
-      $(function(){
+      $(function() {
+        if(!$.fn.DataTable.isDataTable('#company_list')){
         $('#company_list').DataTable({
           'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
         });
-      });
+      }
+    });
     }, 1000)
-    this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._companyService.getCompanyListData(this.authorizationKey).subscribe( response => {
         this.companyListData = response;
         this.companyFeedbackData = this.companyListData.results;
