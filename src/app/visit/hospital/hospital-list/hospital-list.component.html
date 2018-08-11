@@ -37,7 +37,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let Hospital of HospitalFeedbackData; index as sln" id="row_id_{{ Hospital.id }}">
+                <tr *ngFor="let Hospital of tableFeedbackData; index as sln" id="row_id_{{ Hospital.id }}">
                   <td>{{ sln+1 }}</td>
                   <td>{{ Hospital.name }}</td>
                   <td>{{ Hospital.address }}</td>

@@ -11,5 +11,13 @@ export class JailService {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
     return this._http.get(environment.baseApi + 'visit/jail/list/', {headers: _headers});
   }
-
+  create(createParam, authorizationKey) {
+    const _headers    =  new HttpHeaders()
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('authorization', authorizationKey);
+    const postString  =  'name=' + createParam.name
+      + '&address=' + createParam.address
+      + '&outcome=' + createParam.outcome
+    return this._http.post(environment.baseApi + 'visit/jail/create', postString, {headers: _headers});
+  }
 }

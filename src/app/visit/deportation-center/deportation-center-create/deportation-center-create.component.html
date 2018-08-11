@@ -7,11 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Company Create
+        Deportation Center Create
       </h1>
       <ol class="breadcrumb">
         <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Company Create</li>
+        <li class="active">Deportation Center Create</li>
       </ol>
     </section>
 
@@ -25,7 +25,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="companyFormData" (ngSubmit)="onCompanyFormSubmit()" class="form-inline">
+            <form [formGroup]="formData" (ngSubmit)="onFormSubmit()">
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -53,6 +53,24 @@
                          id="inputOutcome"
                          class="form-control"
                          placeholder="Outcome">
+                </div>
+                <div class="form-group">
+                  <label for="no_of_bangladeshis">Number Of Bangladeshis</label>
+                  <input type="text"
+                         name="no_of_bangladeshis"
+                         formControlName = "no_of_bangladeshis"
+                         id="input_no_of_bangladeshis"
+                         class="form-control"
+                         placeholder="No of bangladeshis">
+                </div>
+                <div class="form-group">
+                  <label for="type">Type</label>
+                  <input type="text"
+                         name="type"
+                         formControlName = "type"
+                         id="inputtype"
+                         class="form-control"
+                         placeholder="Type">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>

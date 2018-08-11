@@ -4,7 +4,7 @@ import { TosterService } from '../../../toster.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../authentication.service';
-import {CompanyService} from '../../company/company.service';
+import { ResidenceService } from '../residence.service';
 
 @Component({
   selector: 'app-residence-create',
@@ -13,14 +13,37 @@ import {CompanyService} from '../../company/company.service';
 })
 export class ResidenceCreateComponent implements OnInit {
 
-  constructor(private fb: FormBuilder,
-              private router: Router,
-              private _toasterService: TosterService,
-              private _authentication: AuthenticationService,
-              private _http: HttpClient) {
+  inputFields;
+  formData;
+  authorizationKey;
+  feedbackData;
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private _toasterService: TosterService,
+    private _authentication: AuthenticationService,
+    private _service: ResidenceService,
+    private _http: HttpClient) {
   }
 
   ngOnInit() {
-  }
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this.inputFields = {
+      name    : '',
+      address : '',
+      outcome : ''
+    };
 
+    this.formData = this.fb.group({
+      name         : ['', Validators.required],
+      address      : ['', Validators.required],
+      outcome      : ['', Validators.requiredTrue]
+    });
+  }
+  public onFormSubmit() {
+    this._service.create(this.formData.value, this.authorizationKey).subscribe( response => {
+      this._toasterService.success('Data has been successfully created.');
+      this.router.navigate(['residence-list']);
+    });
+  }
 }

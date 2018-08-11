@@ -37,13 +37,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let Migrant-shelter of Migrant-shelterFeedbackData; index as sln" id="row_id_{{ Migrant-shelter.id }}">
+                <tr *ngFor="let migrant of tableFeedbackData; index as sln" id="row_id_{{ migrant.id }}">
                   <td>{{ sln+1 }}</td>
-                  <td>{{ Migrant-shelter.name }}</td>
-                  <td>{{ Migrant-shelter.address }}</td>
-                  <td>{{ Migrant-shelter.outcome }}</td>
+                  <td>{{ migrant.name }}</td>
+                  <td>{{ migrant.address }}</td>
+                  <td>{{ migrant.outcome }}</td>
                   <td>
-                    <a routerLink="/Migrant-shelter-update/{{Migrant-shelter.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <a routerLink="/Migrant-shelter-update/{{migrant.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                     <button [swal]="deleteSwal"
                             type="button" class="btn bg-red">
                       <i class="fa fa-minus"></i></button>
@@ -54,7 +54,7 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="deleteMigrant-shelter(Migrant-shelter.id)"
+                      (confirm)="deleteMigrant-shelter(migrant.id)"
                     >
                     </swal>
                   </td>
