@@ -43,7 +43,7 @@
                   <td>{{ Hospital.address }}</td>
                   <td>{{ Hospital.outcome }}</td>
                   <td>
-                    <a routerLink="/Hospital-update/{{Hospital.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <a routerLink="/hospital-update/{{Hospital.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                     <button [swal]="deleteSwal"
                             type="button" class="btn bg-red">
                       <i class="fa fa-minus"></i></button>
@@ -54,7 +54,7 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="deleteHospital(Hospital.id)"
+                      (confirm)="delete(Hospital.id)"
                     >
                     </swal>
                   </td>

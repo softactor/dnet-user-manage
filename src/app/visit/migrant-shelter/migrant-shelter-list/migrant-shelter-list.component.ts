@@ -16,6 +16,7 @@ export class MigrantShelterListComponent implements OnInit {
   tableListData;
   tableDeleteData;
   tableFeedbackData: any;
+  responseError;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -44,5 +45,23 @@ export class MigrantShelterListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  delete(deleteId) {
+    const deleteParam  = {
+      id                : deleteId,
+      authorizationKey  : this.authorizationKey.toString()
+    };
+    this._service.delete(deleteParam).subscribe( response => {
+      this.tableDeleteData = response;
+      this._toasterService.success('Data have been successfully deleted.');
+      this._service.getListData(this.authorizationKey.toString()).subscribe( listResponse => {
+          this.tableListData = listResponse;
+          this.tableFeedbackData = this.tableListData.results;
+        },
+        error => {
+          const error_response  = error;
+          this.responseError  = error_response.error;
+        }
+      );
+    });
+  }
 }

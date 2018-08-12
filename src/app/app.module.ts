@@ -113,7 +113,7 @@ const appRoutes: Routes  = [
     component: ResidenceCreateComponent
   },
   {
-    path: 'residence-update/:company_id',
+    path: 'residence-update/:residence_id',
     canActivate: [AuthGuard],
     component: ResidenceEditComponent
   },
@@ -128,7 +128,7 @@ const appRoutes: Routes  = [
     component: DeportationCenterListComponent
   },
   {
-    path: 'deportation-center-update/:deportation-center-id',
+    path: 'deportation-center-update/:deportation_center_id',
     canActivate: [AuthGuard],
     component: DeportationCenterEditComponent
   },
@@ -143,7 +143,7 @@ const appRoutes: Routes  = [
     component: HospitalListComponent
   },
   {
-    path: 'hospital-update/:hospital-id',
+    path: 'hospital-update/:hospital_id',
     canActivate: [AuthGuard],
     component: HospitalEditComponent
   },

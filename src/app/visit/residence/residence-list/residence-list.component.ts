@@ -17,7 +17,7 @@ export class ResidenceListComponent implements OnInit {
   authorizationKey;
   tableListData;
   tableDeleteData;
-  tableFeedbackData: any;
+  feedbackData: any;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -36,7 +36,7 @@ export class ResidenceListComponent implements OnInit {
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._service.getListData(this.authorizationKey).subscribe( response => {
         this.tableListData = response;
-        this.tableFeedbackData = this.tableListData.results;
+        this.feedbackData = this.tableListData.results;
       },
       error => {
         console.log(error);
@@ -46,5 +46,22 @@ export class ResidenceListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  delete(deleteId) {
+    const deleteParam  = {
+      id        : deleteId,
+      authorizationKey  : this.authorizationKey.toString()
+    };
+    this._service.delete(deleteParam).subscribe( response => {
+      this.tableDeleteData = response;
+      this._toasterService.success('Data has been successfully deleted.');
+      this._service.getListData(this.authorizationKey.toString()).subscribe( listResponse => {
+          this.tableListData = listResponse;
+          this.feedbackData = this.tableListData.results;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    });
+  }
 }

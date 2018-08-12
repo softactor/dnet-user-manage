@@ -22,21 +22,21 @@ export class CompanyService {
       + '&outcome=' + createParam.outcome
     return this._http.post(environment.baseApi + 'visit/company/create', postString, {headers: _headers});
   }
-  getCompanyDetailsById(detailsParam) {
+  getDetailsById(detailsParam) {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
-    return this._http.get(environment.baseApi + 'visit/company/details/' + detailsParam.editCompanyId, {headers: _headers});
+    return this._http.get(environment.baseApi + 'visit/company/details/' + detailsParam.editId, {headers: _headers});
   }
-  updateCompanyData(companyUpdateParam) {
+  update(updateParam) {
     const _headers = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('authorization', companyUpdateParam.authorization)
+      .set('authorization', updateParam.authorization)
     ;
-    const postString = 'name=' + companyUpdateParam.name
-      + '&address=' + companyUpdateParam.address
-      + '&outcome=' + companyUpdateParam.outcome
-      + '&authorization=' + companyUpdateParam.authorization;
+    const postString = 'name=' + updateParam.name
+      + '&address=' + updateParam.address
+      + '&outcome=' + updateParam.outcome
+      + '&authorization=' + updateParam.authorization;
     return this._http.put(
-      environment.baseApi + 'visit/company/update/' + companyUpdateParam.editCompanyId,
+      environment.baseApi + 'visit/company/update/' + updateParam.editId,
       postString,
       {
         headers: _headers
@@ -44,8 +44,8 @@ export class CompanyService {
       );
   }
 
-  deleteCompany(companyDeleteParam) {
-    const _headers = new HttpHeaders().set('authorization', companyDeleteParam.authorizationKey);
-    return this._http.delete(environment.baseApi + 'visit/company/delete/' + companyDeleteParam.companyId, {headers: _headers});
+  delete(deleteParam) {
+    const _headers = new HttpHeaders().set('authorization', deleteParam.authorizationKey);
+    return this._http.delete(environment.baseApi + 'visit/company/delete/' + deleteParam.id, {headers: _headers});
   }
 }

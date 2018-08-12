@@ -7,11 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Update
+        Company Update
       </h1>
       <ol class="breadcrumb">
         <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">User Update</li>
+        <li class="active">Company Update</li>
       </ol>
     </section>
 
@@ -25,22 +25,28 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form #companyUpdateForm = "ngForm" (ngSubmit)="updateCompany(companyUpdateForm, $event)" class="form-inline">
+            <form #companyUpdateForm = "ngForm" (ngSubmit)="update(companyUpdateForm, $event)" class="form-inline">
               <div class="box-body">
-                <div class="form-group">
+                <div
+                  class="form-group custom-col-md-4"
+                  [class.has-warning]="responseError?.name ? true: false" [class.has-feedback]="responseError?.name ? true: false">
                   <label for="name">Name</label>
                   <input [(ngModel)]="name" required type="text" class="form-control"  name="name" id="name" placeholder="Name">
-                  <div class="alert alert-danger" *ngIf="name.touched && !name.valid">Name is required</div>
+                  <span *ngIf="responseError?.name" class="glyphicon glyphicon-warning-sign error-sign"></span>
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group custom-col-md-4"
+                  [class.has-warning]="responseError?.address ? true: false" [class.has-feedback]="responseError?.address ? true: false">
                   <label for="address">Address</label>
                   <input required type="text" class="form-control" [(ngModel)]="address" name="address" id="address" placeholder="Address">
-                  <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Address is required</div>
+                  <span *ngIf="responseError?.address" class="glyphicon glyphicon-warning-sign error-sign"></span>
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group custom-col-md-4"
+                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
                   <label for="outcome">Outcome</label>
                   <input required type="text" class="form-control" [(ngModel)]="outcome" name="outcome" id="outcome" placeholder="Outcome">
-                  <div class="alert alert-danger" *ngIf="outcome.touched && !outcome.valid">Outcome is required</div>
+                  <span *ngIf="responseError?.outcome" class="glyphicon glyphicon-warning-sign error-sign"></span>
                 </div>
               <button type="submit" class="btn btn-primary">Update</button>
               </div>

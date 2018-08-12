@@ -41,7 +41,6 @@ export class MigrantShelterCreateComponent implements OnInit {
     this.formData = this.fb.group({
       name         : ['', Validators.required],
       address      : ['', Validators.required],
-      outcome      : ['', Validators.requiredTrue],
       no_of_bangladeshis      : ['', Validators.requiredTrue],
       type      : ['', Validators.requiredTrue],
       remark      : ['', Validators.requiredTrue],

@@ -37,7 +37,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let company of companyFeedbackData; index as sln" id="row_id_{{ company.id }}">
+                <tr *ngFor="let company of feedbackData; index as sln" id="row_id_{{ company.id }}">
                   <td>{{ sln+1 }}</td>
                   <td>{{ company.name }}</td>
                   <td>{{ company.address }}</td>
@@ -54,7 +54,7 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="deleteCompany(company.id)"
+                      (confirm)="delete(company.id)"
                     >
                     </swal>
                   </td>

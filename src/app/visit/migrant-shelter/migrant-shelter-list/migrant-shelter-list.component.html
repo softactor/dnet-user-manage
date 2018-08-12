@@ -43,7 +43,7 @@
                   <td>{{ migrant.address }}</td>
                   <td>{{ migrant.outcome }}</td>
                   <td>
-                    <a routerLink="/Migrant-shelter-update/{{migrant.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <a routerLink="/migrant-shelter-update/{{migrant.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                     <button [swal]="deleteSwal"
                             type="button" class="btn bg-red">
                       <i class="fa fa-minus"></i></button>
@@ -54,7 +54,7 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="deleteMigrant-shelter(migrant.id)"
+                      (confirm)="delete(migrant.id)"
                     >
                     </swal>
                   </td>

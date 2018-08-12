@@ -43,7 +43,7 @@
                   <td>{{ Jail.address }}</td>
                   <td>{{ Jail.outcome }}</td>
                   <td>
-                    <a routerLink="/Jail-update/{{Jail.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <a routerLink="/jail-update/{{Jail.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                     <button [swal]="deleteSwal"
                             type="button" class="btn bg-red">
                       <i class="fa fa-minus"></i></button>
@@ -54,7 +54,7 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="deleteJail(Jail.id)"
+                      (confirm)="delete(Jail.id)"
                     >
                     </swal>
                   </td>

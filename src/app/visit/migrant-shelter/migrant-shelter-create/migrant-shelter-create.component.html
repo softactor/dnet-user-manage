@@ -53,18 +53,6 @@
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
-                  <label for="outcome">Outcome</label>
-                  <input type="text"
-                         name="outcome"
-                         formControlName = "outcome"
-                         id="inputOutcome"
-                         class="form-control"
-                         placeholder="Outcome">
-                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
-                </div>
-                <div
-                  class="form-group"
                   [class.has-warning]="responseError?.remark ? true: false" [class.has-feedback]="responseError?.remark ? true: false">
                   <label for="remark">Remark</label>
                   <input type="text"

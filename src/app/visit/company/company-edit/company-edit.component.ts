@@ -12,59 +12,60 @@ import {FormBuilder, NgForm} from '@angular/forms';
   styleUrls: ['./company-edit.component.css']
 })
 export class CompanyEditComponent implements OnInit {
-  editCompanyId;
+  editId;
   authorizationKey;
-  companyEditData;
+  editData;
   name  = '';
   address = '';
   outcome = '';
-  companyUpdateResponse;
+  updateResponse;
+  responseError;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _activateRoute: ActivatedRoute,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
-    private _companyService: CompanyService,
+    private _service: CompanyService,
     private _http: HttpClient) {
   }
 
   ngOnInit() {
     this._activateRoute.paramMap
       .subscribe( params => {
-        let companyId  = params.get('company_id')
-        this.editCompanyId = companyId;
-        this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
-        const getCompanyDetailsParam  = {
-          editCompanyId        : companyId,
+        this.editId = params.get('company_id')
+        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        const getDetailsParam  = {
+          editId        : this.editId,
           authorizationKey  : this.authorizationKey.toString()
         };
 
-        this._companyService.getCompanyDetailsById(getCompanyDetailsParam).subscribe( companyDetails => {
-          this.companyEditData = companyDetails;
-          this.name = this.companyEditData.name;
-          this.address = this.companyEditData.address;
-          this.outcome = this.companyEditData.outcome;
+        this._service.getDetailsById(getDetailsParam).subscribe( Details => {
+          this.editData = Details;
+          this.name = this.editData.name;
+          this.address = this.editData.address;
+          this.outcome = this.editData.outcome;
         });
       });
   }
-  public updateCompany(form: NgForm, e) {
+  public update(form: NgForm, e) {
     e.preventDefault();
-    if (form.valid) {
-      const companyUpdateParam = {
+      const updateParam = {
         name           : form.value.name,
         address        : form.value.address,
         outcome        : form.value.outcome,
-        editCompanyId     : this.editCompanyId,
+        editId         : this.editId,
         authorization  : this.authorizationKey
       };
-      this._companyService.updateCompanyData(companyUpdateParam).subscribe( response => {
+      this._service.update(updateParam).subscribe( response => {
         this._toasterService.success('Company has been successfully updated.');
-        this.router.navigate(['company-list']);
-      });
-    }else {
-      this._toasterService.error('All fields are required');
-    }
+        this.router.navigate(['residence-list']);
+      },
+        error => {
+          const error_response  = error;
+          this.responseError  = error_response.error;
+        }
+      );
   }
 
 }

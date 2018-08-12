@@ -11,11 +11,11 @@ declare var $: any;
   styleUrls: ['./company-list.component.css']
 })
 export class CompanyListComponent implements OnInit {
-  editCompanyId;
+  editId;
   authorizationKey;
-  companyListData;
-  companyDeleteData;
-  companyFeedbackData: any;
+  tableListData;
+  tableDeleteData;
+  feedbackData: any;
   constructor(
     private _companyService: CompanyService,
     private _toasterService: TosterService,
@@ -33,9 +33,9 @@ export class CompanyListComponent implements OnInit {
     });
     }, 1000)
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._companyService.getCompanyListData(this.authorizationKey).subscribe( response => {
-        this.companyListData = response;
-        this.companyFeedbackData = this.companyListData.results;
+    this._service.getCompanyListData(this.authorizationKey).subscribe( response => {
+        this.tableListData = response;
+        this.feedbackData = this.tableListData.results;
       },
       error => {
         console.log(error);
@@ -46,17 +46,17 @@ export class CompanyListComponent implements OnInit {
   ngOnInit() {
 
   }
-  deleteCompany(deleteCompanyId) {
-    const companyDeleteParam  = {
-      companyId        : deleteCompanyId,
+  delete(deleteId) {
+    const deleteParam  = {
+      id                : deleteId,
       authorizationKey  : this.authorizationKey.toString()
     };
-    this._service.deleteCompany(companyDeleteParam).subscribe( response => {
-      this.companyDeleteData = response;
-      this._toasterService.success(this.companyDeleteData.message);
-      this._service.getCompanyListData(this.authorizationKey.toString()).subscribe( response => {
-          this.companyListData = response;
-          this.companyFeedbackData = this.companyListData.results;
+    this._service.delete(deleteParam).subscribe( response => {
+      this.tableDeleteData = response;
+      this._toasterService.success(this.tableDeleteData.message);
+      this._service.getCompanyListData(this.authorizationKey.toString()).subscribe( listResponse => {
+          this.tableListData = listResponse;
+          this.feedbackData = this.tableListData.results;
         },
         error => {
           console.log(error);
