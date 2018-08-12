@@ -12,38 +12,44 @@ import { CompanyService } from '../company.service';
   styleUrls: ['./company-create.component.css']
 })
 export class CompanyCreateComponent implements OnInit {
-  companyFields;
-  companyFormData;
+  inputFields;
+  formData;
   authorizationKey;
   feedbackData;
+  responseError;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
-    private _companyService: CompanyService,
+    private _service: CompanyService,
     private _http: HttpClient) {
   }
   ngOnInit() {
-    this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
-    this.companyFields = {
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this.inputFields = {
       name    : '',
       address : '',
       outcome : ''
     };
 
-    this.companyFormData = this.fb.group({
+    this.formData = this.fb.group({
       name         : ['', Validators.required],
       address      : ['', Validators.required],
       outcome      : ['', Validators.requiredTrue]
     });
   }
 
-  public onCompanyFormSubmit() {
-    this._companyService.createComapany(this.companyFormData.value, this.authorizationKey).subscribe( response => {
+  public onFormSubmit() {
+    this._service.create(this.formData.value, this.authorizationKey).subscribe( response => {
       this._toasterService.success('Company has been successfully created.');
       this.router.navigate(['company-list']);
-    });
+    },
+      error => {
+        const error_response  = error;
+        this.responseError  = error_response.error;
+      }
+    );
   }
 
 }

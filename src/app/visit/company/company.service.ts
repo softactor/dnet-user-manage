@@ -13,7 +13,7 @@ export class CompanyService {
     return this._http.get(environment.baseApi + 'visit/company/list/', {headers: _headers});
   }
 
-  createComapany(createParam, authorizationKey) {
+  create(createParam, authorizationKey) {
     const _headers    =  new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('authorization', authorizationKey);

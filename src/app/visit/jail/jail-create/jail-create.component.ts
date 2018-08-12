@@ -17,6 +17,7 @@ export class JailCreateComponent implements OnInit {
   formData;
   authorizationKey;
   feedbackData;
+  responseError;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -48,7 +49,12 @@ export class JailCreateComponent implements OnInit {
     this._service.create(this.formData.value, this.authorizationKey).subscribe( response => {
       this._toasterService.success('Data has been successfully created.');
       this.router.navigate(['jail-list']);
-    });
+    },
+      error => {
+        const error_response  = error;
+        this.responseError  = error_response.error;
+      }
+    );
   }
 
 }
