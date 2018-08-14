@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { AuthenticationService } from '../authentication.service';
+import { TosterService } from '../toster.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,13 @@ import { AuthenticationService } from '../authentication.service';
 })
 export class LoginComponent {
   loginDataResponse;
-  constructor(private router: Router, private _loginService: LoginService, private _authentication: AuthenticationService) {
+  errorResponse;
+  constructor(
+    private router: Router,
+    private _loginService: LoginService,
+    private _toasterService: TosterService,
+    private _authentication: AuthenticationService
+  ) {
   }
   loginUser(e) {
     e.preventDefault();
@@ -28,7 +35,13 @@ export class LoginComponent {
         localStorage.setItem('token_type', this.loginDataResponse.token_type);
         this.router.navigate(['user-dashboard']);
       }
-    });
+    },
+      error => {
+        console.log(error);
+        this.errorResponse  = error;
+        this._toasterService.error(this.errorResponse.error.message);
+      }
+    );
 
   }
 }

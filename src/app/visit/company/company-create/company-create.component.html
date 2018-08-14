@@ -36,6 +36,7 @@
                          formControlName = "name"
                          id="inputName"
                          class="form-control"
+                         (keyup)="serachSuggession()"
                          placeholder="Name">
                     <span *ngIf="responseError?.name" class="glyphicon glyphicon-warning-sign error-sign"></span>
                 </div>
