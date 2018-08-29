@@ -5,7 +5,7 @@ import { TosterService } from '../toster.service';
 import { AuthenticationService } from '../authentication.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserUpdateService} from './user-update.service';
-
+declare var $: any;
 @Component({
   selector: 'app-user-update',
   templateUrl: './user-update.component.html',
@@ -34,6 +34,11 @@ export class UserUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
       this._activateRoute.paramMap
       .subscribe( params => {
         let userId  = params.get('user_id')

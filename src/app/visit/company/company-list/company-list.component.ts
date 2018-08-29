@@ -31,7 +31,7 @@ export class CompanyListComponent implements OnInit {
         });
       }
     });
-    }, 1000)
+    }, 1000);
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._service.getCompanyListData(this.authorizationKey).subscribe( response => {
         this.tableListData = response;
@@ -44,7 +44,11 @@ export class CompanyListComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
   }
   delete(deleteId) {
     const deleteParam  = {

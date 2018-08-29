@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { JailService } from '../jail.service';
-
+declare var $: any;
 @Component({
   selector: 'app-jail-edit',
   templateUrl: './jail-edit.component.html',
@@ -34,6 +34,11 @@ export class JailEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this.formData = this.fb.group({
       name                    : ['', Validators.required],
       address                 : ['', Validators.required],

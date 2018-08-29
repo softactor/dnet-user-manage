@@ -5,7 +5,7 @@ import { AuthenticationService } from '../../../authentication.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CompanyService } from '../company.service';
-
+declare var $: any;
 @Component({
   selector: 'app-company-create',
   templateUrl: './company-create.component.html',
@@ -26,6 +26,11 @@ export class CompanyCreateComponent implements OnInit {
     private _http: HttpClient) {
   }
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
       name    : '',

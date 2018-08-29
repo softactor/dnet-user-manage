@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { AuthenticationService } from '../authentication.service';
 import { TosterService } from '../toster.service';
+import { UserUpdateService } from '../user-update/user-update.service';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,13 @@ import { TosterService } from '../toster.service';
 export class LoginComponent {
   loginDataResponse;
   errorResponse;
+  userDetailsDataContainer;
   constructor(
     private router: Router,
     private _loginService: LoginService,
     private _toasterService: TosterService,
-    private _authentication: AuthenticationService
+    private _authentication: AuthenticationService,
+    private _userUpdateService: UserUpdateService,
   ) {
   }
   loginUser(e) {
@@ -33,6 +36,19 @@ export class LoginComponent {
         this._authentication.setUserLoggedIn();
         localStorage.setItem('access_token', this.loginDataResponse.access_token);
         localStorage.setItem('token_type', this.loginDataResponse.token_type);
+        localStorage.setItem('logged_in_id', this.loginDataResponse.user_id);
+        const authorizationKey  = this.loginDataResponse.token_type + ' ' + this.loginDataResponse.access_token;
+        const getUserDetailsParam  = {
+          editUserId        : this.loginDataResponse.user_id,
+          authorizationKey  : authorizationKey.toString()
+        };
+
+        this._userUpdateService.getUserDetailsById(getUserDetailsParam).subscribe( getUserDetails => {
+          this.userDetailsDataContainer = getUserDetails;
+          localStorage.setItem(
+            'logged_user_name', this.userDetailsDataContainer.first_name
+            + ' ' + this.userDetailsDataContainer.last_name);
+        });
         this.router.navigate(['user-dashboard']);
       }
     },
@@ -42,6 +58,5 @@ export class LoginComponent {
         this._toasterService.error(this.errorResponse.error.message);
       }
     );
-
   }
 }

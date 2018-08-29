@@ -45,6 +45,11 @@ export class JailListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
   }
   delete(deleteId) {
     const deleteParam  = {

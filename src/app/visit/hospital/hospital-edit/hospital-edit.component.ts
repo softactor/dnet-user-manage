@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { HospitalService } from '../hospital.service';
-
+declare var $: any;
 @Component({
   selector: 'app-hospital-edit',
   templateUrl: './hospital-edit.component.html',
@@ -35,6 +35,11 @@ export class HospitalEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this.formData = this.fb.group({
       name                    : ['', Validators.required],
       address                 : ['', Validators.required],

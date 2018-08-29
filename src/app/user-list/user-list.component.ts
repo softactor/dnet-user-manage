@@ -42,7 +42,11 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
   }
 
   deleteUser(deleteUserId) {

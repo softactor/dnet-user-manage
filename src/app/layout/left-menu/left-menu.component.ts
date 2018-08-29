@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-menu.component.css']
 })
 export class LeftMenuComponent implements OnInit {
-
-  constructor() { }
+  loggedInUserName;
+  constructor() {
+    this.loggedInUserName = localStorage.getItem('logged_user_name');
+  }
 
   ngOnInit() {
   }

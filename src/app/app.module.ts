@@ -53,6 +53,9 @@ import { MigrantShelterCreateComponent } from './visit/migrant-shelter/migrant-s
 import { MigrantShelterListComponent } from './visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component';
 import { MigrantShelterEditComponent } from './visit/migrant-shelter/migrant-shelter-edit/migrant-shelter-edit.component';
 import { MigrantShelterService } from './visit/migrant-shelter/migrant-shelter.service';
+import { MarketAssessmentCreateComponent } from './activities/market-assessment/market-assessment-create.component';
+import { MarketAssessmentService } from './activities/market-assessment/market-assessment.service';
+import { MarketAssessmentListComponent } from './activities/market-assessment/market-assessment-list.component';
 
 const appRoutes: Routes  = [
   {
@@ -177,6 +180,16 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: MigrantShelterEditComponent
   },
+  {
+    path: 'market-assessment-create',
+    canActivate: [AuthGuard],
+    component: MarketAssessmentCreateComponent
+  },
+  {
+    path: 'market-assessment-list',
+    canActivate: [AuthGuard],
+    component: MarketAssessmentListComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
@@ -214,6 +227,8 @@ const appRoutes: Routes  = [
     MigrantShelterCreateComponent,
     MigrantShelterListComponent,
     MigrantShelterEditComponent,
+    MarketAssessmentCreateComponent,
+    MarketAssessmentListComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -238,7 +253,8 @@ const appRoutes: Routes  = [
     DeportationCenterService,
     JailService,
     HospitalService,
-    MigrantShelterService
+    MigrantShelterService,
+    MarketAssessmentService,
   ],
   bootstrap: [AppComponent]
 })

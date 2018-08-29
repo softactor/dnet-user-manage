@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../authentication.service';
 import { HospitalService } from '../hospital.service';
-
+declare var $: any;
 @Component({
   selector: 'app-hospital-create',
   templateUrl: './hospital-create.component.html',
@@ -28,6 +28,11 @@ export class HospitalCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
       name    : '',
@@ -42,7 +47,7 @@ export class HospitalCreateComponent implements OnInit {
       address      : ['', Validators.required],
       outcome      : ['', Validators.requiredTrue],
       no_of_bangladeshis      : ['', Validators.requiredTrue],
-      type      : ['', Validators.requiredTrue],
+      type         : ['', Validators.requiredTrue],
     });
   }
   public onFormSubmit() {

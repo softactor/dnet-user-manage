@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../../authentication.service';
 import { DeportationCenterService } from '../deportation-center.service';
-
+declare var $: any;
 @Component({
   selector: 'app-deportation-center-create',
   templateUrl: './deportation-center-create.component.html',
@@ -28,6 +28,11 @@ export class DeportationCenterCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
       name    : '',

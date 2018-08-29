@@ -5,7 +5,7 @@ import { TosterService } from '../toster.service';
 import { UserCreateService } from './user-create.service';
 import {AuthenticationService} from '../authentication.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-
+declare var $: any;
 @Component({
   selector: 'app-user-create',
   templateUrl: './user-create.component.html',
@@ -22,6 +22,11 @@ export class UserCreateComponent implements OnInit {
               private _http: HttpClient) {
   }
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     // get user access level;
     this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
     this._userCreateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {

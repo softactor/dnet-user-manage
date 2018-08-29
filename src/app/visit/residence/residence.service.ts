@@ -46,4 +46,14 @@ export class ResidenceService {
     const _headers = new HttpHeaders().set('authorization', deleteParam.authorizationKey);
     return this._http.delete(environment.baseApi + 'visit/residence/delete/' + deleteParam.id, {headers: _headers});
   }
+
+  getfieldValueSuggession(suggessionParam) {
+    const _headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('authorization', suggessionParam.authorizationKey)
+    ;
+    return this._http.get(
+      'http://192.168.2.178:8000/api/elasticsearch/search?column_name=' + suggessionParam.column_name + '&data=' + suggessionParam.keywords,
+      { headers: _headers });
+  }
 }

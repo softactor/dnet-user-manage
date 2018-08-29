@@ -13,6 +13,29 @@ declare var $: any;
   styleUrls: ['./residence-create.component.css']
 })
 export class ResidenceCreateComponent implements OnInit {
+  protected searchStr: string;
+  protected captain: string;
+  // protected dataService: CompleterData;
+  protected searchData = [
+    { color: 'red', value: '#f00' },
+    { color: 'green', value: '#0f0' },
+    { color: 'blue', value: '#00f' },
+    { color: 'cyan', value: '#0ff' },
+    { color: 'magenta', value: '#f0f' },
+    { color: 'yellow', value: '#ff0' },
+    { color: 'black', value: '#000' }
+  ];
+  protected captains = [
+    'James T. Kirk',
+    'Benjamin Sisko',
+    'Jean-Luc Picard',
+    'Spock',
+    'Jonathan Archer',
+    'Hikaru Sulu',
+    'Christopher Pike',
+    'Rachel Garrett'
+  ];
+
   residences: ResidenceModel[] = [];
   similarTypes;
   inputFields;
@@ -23,23 +46,16 @@ export class ResidenceCreateComponent implements OnInit {
   tableListData;
   form_type;
   form_type_value;
-
+  availableTags;
+  showDropDown;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: ResidenceService,
+    // private completerService: CompleterService,
     private _http: HttpClient) {
-    setTimeout(function(){
-      $(function() {
-        if(!$.fn.DataTable.isDataTable('#residence_list')){
-          $('#residence_list').DataTable({
-            'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
-          });
-        }
-      });
-    }, 1000)
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._service.getListData(this.authorizationKey).subscribe( response => {
         this.tableListData = response;
@@ -49,9 +65,15 @@ export class ResidenceCreateComponent implements OnInit {
         console.log(error);
       }
     );
+    this.showDropDown = false;
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this.similarTypes = [];
     this.form_type = 'Residdence';
     this.similarTypes.push(this.form_type);
@@ -105,6 +127,20 @@ export class ResidenceCreateComponent implements OnInit {
       }
     } else {
       this._toasterService.warning('Please type a similar form name');
+    }
+  }
+  getSuggession(column_name) {
+    const valueLength = this.form_type.length;
+    if (valueLength >= 3) {
+      const suggessionParam = {
+        authorizationKey  : this.authorizationKey,
+        keywords          : this.form_type,
+        column_name       : column_name
+      };
+
+      this._service.getfieldValueSuggession(suggessionParam).subscribe( response => {
+        console.log(response);
+      });
     }
   }
 }

@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import { CompanyService } from '../company.service';
 import {FormBuilder, NgForm} from '@angular/forms';
-
+declare var $: any;
 @Component({
   selector: 'app-company-edit',
   templateUrl: './company-edit.component.html',
@@ -31,6 +31,11 @@ export class CompanyEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this._activateRoute.paramMap
       .subscribe( params => {
         this.editId = params.get('company_id')

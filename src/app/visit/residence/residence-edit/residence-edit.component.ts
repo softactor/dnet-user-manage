@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, NgForm} from '@angular/forms';
 import { ResidenceService } from '../residence.service';
-
+declare var $: any;
 @Component({
   selector: 'app-residence-edit',
   templateUrl: './residence-edit.component.html',
@@ -32,6 +32,11 @@ export class ResidenceEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    // to solve the left menu hide problem;
+    $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+    });
     this._activateRoute.paramMap
       .subscribe( params => {
         this.editId = params.get('residence_id')
