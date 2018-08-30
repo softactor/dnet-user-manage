@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { MarketAssessmentService } from './market-assessment.service';
+import { EmployeeEnhancementService } from './employee-enhancement.service';
 import { AuthenticationService } from '../../authentication.service';
 import { TosterService } from '../../toster.service';
 import {Router} from '@angular/router';
 declare var $: any;
 
 @Component({
-  selector: 'app-market-assessment-list',
-  templateUrl: './market-assessment-list.component.html'
+  selector: 'app-employee-enhancement-list',
+  templateUrl: './employee-enhancement-list.component.html'
 })
-export class MarketAssessmentListComponent implements OnInit {
+export class EmployeeEnhancementListComponent implements OnInit {
   editId;
   authorizationKey;
   tableListData;
@@ -20,7 +20,7 @@ export class MarketAssessmentListComponent implements OnInit {
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
-    private _service: MarketAssessmentService,
+    private _service: EmployeeEnhancementService,
     private router: Router,
   ) {
     setTimeout(function(){
@@ -33,7 +33,7 @@ export class MarketAssessmentListComponent implements OnInit {
     });
     }, 1000);
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey, 'activity/marketassesment/list/').subscribe( response => {
+    this._service.getListData(this.authorizationKey, 'activity/employeeenhancement/list/').subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },
@@ -55,10 +55,10 @@ export class MarketAssessmentListComponent implements OnInit {
       id                : deleteId,
       authorizationKey  : this.authorizationKey.toString()
     };
-    this._service.delete(deleteParam, 'activity/marketassesment/delete/').subscribe( response => {
+    this._service.delete(deleteParam, 'activity/employeeenhancement/delete/').subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success('Data have been successfully deleted.');
-      this._service.getListData(this.authorizationKey, 'activity/marketassesment/list/').subscribe( listResponse => {
+      this._service.getListData(this.authorizationKey, 'activity/employeeenhancement/list/').subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
         },

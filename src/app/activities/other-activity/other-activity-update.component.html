@@ -53,19 +53,6 @@
                          placeholder="Remarks">
                   <div class="error-message" *ngIf="responseError?.remarks">{{responseError?.remarks}}</div>
                 </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
-                  <label for="outcome">Outcome</label>
-                  <input type="text"
-                         name="outcome"
-                         formControlName = "outcome"
-                         id="inputOutcome"
-                         class="form-control"
-                         [(ngModel)]="outcome"
-                         placeholder="Outcome">
-                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
-                </div>
                 <div class="form-group">
                   <label for="type">Type</label>
                   <input type="text"

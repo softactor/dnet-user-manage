@@ -56,6 +56,31 @@ import { MigrantShelterService } from './visit/migrant-shelter/migrant-shelter.s
 import { MarketAssessmentCreateComponent } from './activities/market-assessment/market-assessment-create.component';
 import { MarketAssessmentService } from './activities/market-assessment/market-assessment.service';
 import { MarketAssessmentListComponent } from './activities/market-assessment/market-assessment-list.component';
+import { MarketAssessmentUpdateComponent } from './activities/market-assessment/market-assessment-update.component';
+import { EmployeeEnhancementListComponent } from './activities/employee-enhancement/employee-enhancement-list.component';
+import { EmployeeEnhancementService } from './activities/employee-enhancement/employee-enhancement.service';
+import { EmployeeEnhancementCreateComponent} from './activities/employee-enhancement/employee-enhancement-create.component';
+import { EmployeeEnhancementUpdateComponent } from './activities/employee-enhancement/employee-enhancement-update.component';
+import { OtherActivityCreateComponent } from './activities/other-activity/other-activity-create.component';
+import { OtherActivityService } from './activities/other-activity/other-activity.service';
+import { OtherActivityListComponent } from './activities/other-activity/other-activity-list.component';
+import { OtherActivityUpdateComponent } from './activities/other-activity/other-activity-update.component';
+import { WorkPlanCreateComponent } from './activities/work-plan/work-plan-create.component';
+import { WorkPlanService } from './activities/work-plan/work-plan.service';
+import { WorkPlanListComponent  } from './activities/work-plan/work-plan-list.component';
+import { WorkPlanUpdateComponent } from './activities/work-plan/work-plan-update.component';
+import { AttestationListComponent } from './activities/attestation/attestation-list.component';
+import { AttestationCreateComponent } from './activities/attestation/attestation-create.component';
+import { AttestationUpdateComponent } from './activities/attestation/attestation-update.component';
+import { AttestationService } from './activities/attestation/attestation.service';
+import { GuestEntertainmentCreateComponent } from './activities/guest-entertainment/guest-entertainment-create.component';
+import { GuestEntertainmentService } from './activities/guest-entertainment/guest-entertainment.service';
+import { GuestEntertainmentListComponent } from './activities/guest-entertainment/guest-entertainment-list.component';
+import { GuestEntertainmentUpdateComponent } from './activities/guest-entertainment/guest-entertainment-update.component';
+import { LiaisonWithExpatriatesCreateComponent } from './activities/liaison-with-expatriates/liaison-with-expatriates-create.component';
+import { LiaisonWithExpatriatesService } from './activities/liaison-with-expatriates/liaison-with-expatriates.service';
+import { LiaisonWithExpatriatesListComponent } from './activities/liaison-with-expatriates/liaison-with-expatriates-list.component';
+import { LiaisonWithExpatriatesUpdateComponent } from './activities/liaison-with-expatriates/liaison-with-expatriates-update.component';
 
 const appRoutes: Routes  = [
   {
@@ -190,6 +215,101 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: MarketAssessmentListComponent
   },
+  {
+    path: 'market-assessment-update/:market_assessment_id',
+    canActivate: [AuthGuard],
+    component: MarketAssessmentUpdateComponent
+  },
+  {
+    path: 'employee-enhancement-list',
+    canActivate: [AuthGuard],
+    component: EmployeeEnhancementListComponent
+  },
+  {
+    path: 'employee-enhancement-create',
+    canActivate: [AuthGuard],
+    component: EmployeeEnhancementCreateComponent
+  },
+  {
+    path: 'employee-enhancement-update/:employee_enhancement_id',
+    canActivate: [AuthGuard],
+    component: EmployeeEnhancementUpdateComponent
+  },
+  {
+    path: 'other-activity-list',
+    canActivate: [AuthGuard],
+    component: OtherActivityListComponent
+  },
+  {
+    path: 'other-activity-create',
+    canActivate: [AuthGuard],
+    component: OtherActivityCreateComponent
+  },
+  {
+    path: 'other-activity-update/:other_activity_id',
+    canActivate: [AuthGuard],
+    component: OtherActivityUpdateComponent
+  },
+  {
+    path: 'work-plan-list',
+    canActivate: [AuthGuard],
+    component: WorkPlanListComponent
+  },
+  {
+    path: 'work-plan-create',
+    canActivate: [AuthGuard],
+    component: WorkPlanCreateComponent
+  },
+  {
+    path: 'work-plan-update/:work_plan_id',
+    canActivate: [AuthGuard],
+    component: WorkPlanUpdateComponent
+  },
+  {
+    path: 'attestation-list',
+    canActivate: [AuthGuard],
+    component: AttestationListComponent
+  },
+  {
+    path: 'attestation-create',
+    canActivate: [AuthGuard],
+    component: AttestationCreateComponent
+  },
+  {
+    path: 'attestation-update/:attestation_id',
+    canActivate: [AuthGuard],
+    component: AttestationUpdateComponent
+  },
+  {
+    path: 'guest-entertainment-list',
+    canActivate: [AuthGuard],
+    component: AttestationListComponent
+  },
+  {
+    path: 'guest-entertainment-create',
+    canActivate: [AuthGuard],
+    component: AttestationCreateComponent
+  },
+  {
+    path: 'guest-entertainment-update/:guest_entertainment_id',
+    canActivate: [AuthGuard],
+    component: AttestationUpdateComponent
+  },
+  {
+    path: 'liaison-with-expatriates-list',
+    canActivate: [AuthGuard],
+    component: AttestationListComponent
+  },
+  {
+    path: 'liaison-with-expatriates-create',
+    canActivate: [AuthGuard],
+    component: AttestationCreateComponent
+  },
+  {
+    path: 'liaison-with-expatriates-update/:guest_entertainment_id',
+    canActivate: [AuthGuard],
+    component: AttestationUpdateComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
@@ -229,6 +349,25 @@ const appRoutes: Routes  = [
     MigrantShelterEditComponent,
     MarketAssessmentCreateComponent,
     MarketAssessmentListComponent,
+    MarketAssessmentUpdateComponent,
+    EmployeeEnhancementListComponent,
+    EmployeeEnhancementCreateComponent,
+    EmployeeEnhancementUpdateComponent,
+    OtherActivityCreateComponent,
+    OtherActivityListComponent,
+    OtherActivityUpdateComponent,
+    WorkPlanCreateComponent,
+    WorkPlanListComponent,
+    WorkPlanUpdateComponent,
+    AttestationListComponent,
+    AttestationCreateComponent,
+    AttestationUpdateComponent,
+    GuestEntertainmentCreateComponent,
+    GuestEntertainmentListComponent,
+    GuestEntertainmentUpdateComponent,
+    LiaisonWithExpatriatesCreateComponent,
+    LiaisonWithExpatriatesListComponent,
+    LiaisonWithExpatriatesUpdateComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -255,6 +394,12 @@ const appRoutes: Routes  = [
     HospitalService,
     MigrantShelterService,
     MarketAssessmentService,
+    EmployeeEnhancementService,
+    OtherActivityService,
+    WorkPlanService,
+    AttestationService,
+    GuestEntertainmentService,
+    LiaisonWithExpatriatesService,
   ],
   bootstrap: [AppComponent]
 })

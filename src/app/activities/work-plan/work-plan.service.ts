@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class MarketAssessmentService {
+export class WorkPlanService {
   constructor(
     private _http: HttpClient) { }
 

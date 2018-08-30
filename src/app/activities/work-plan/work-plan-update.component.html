@@ -29,42 +29,42 @@
               <div class="box-body">
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.activity ? true: false" [class.has-feedback]="responseError?.activity ? true: false">
-                  <label for="activity">Activity</label>
+                  [class.has-warning]="responseError?.name_of_activity ? true: false" [class.has-feedback]="responseError?.name_of_activity ? true: false">
+                  <label for="name_of_activity">Name of activity</label>
                   <input type="text"
-                         name="name"
-                         formControlName = "activity"
-                         id="inputActivity"
-                         [(ngModel)]="activity"
+                         name="name_of_activity"
+                         formControlName = "name_of_activity"
+                         id="inputNameOfActivity"
+                         [(ngModel)]="name_of_activity"
                          class="form-control"
-                         placeholder="Activity">
-                  <div class="error-message" *ngIf="responseError?.activity">{{responseError?.activity}}</div>
+                         placeholder="Name of activity">
+                  <div class="error-message" *ngIf="responseError?.name_of_activity">{{responseError?.name_of_activity}}</div>
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.remarks ? true: false" [class.has-feedback]="responseError?.remarks ? true: false">
-                  <label for="remarks">Remarks</label>
+                  [class.has-warning]="responseError?.path ? true: false" [class.has-feedback]="responseError?.path ? true: false">
+                  <label for="path">Path</label>
                   <input type="text"
-                         name="remarks"
-                         formControlName = "remarks"
-                         id="inputRemarks"
-                         [(ngModel)]="remarks"
+                         name="path"
+                         formControlName = "path"
+                         id="inputPath"
+                         [(ngModel)]="path"
                          class="form-control"
-                         placeholder="Remarks">
-                  <div class="error-message" *ngIf="responseError?.remarks">{{responseError?.remarks}}</div>
+                         placeholder="Path">
+                  <div class="error-message" *ngIf="responseError?.path">{{responseError?.path}}</div>
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
-                  <label for="outcome">Outcome</label>
+                  [class.has-warning]="responseError?.description ? true: false" [class.has-feedback]="responseError?.description ? true: false">
+                  <label for="description">Description</label>
                   <input type="text"
-                         name="outcome"
-                         formControlName = "outcome"
-                         id="inputOutcome"
+                         name="description"
+                         formControlName = "description"
+                         id="inputDescription"
                          class="form-control"
-                         [(ngModel)]="outcome"
-                         placeholder="Outcome">
-                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
+                         [(ngModel)]="description"
+                         placeholder="Description">
+                  <div class="error-message" *ngIf="responseError?.description">{{responseError?.description}}</div>
                 </div>
                 <div class="form-group">
                   <label for="type">Type</label>
