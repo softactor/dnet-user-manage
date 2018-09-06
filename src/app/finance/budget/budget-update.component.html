@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Data Update
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Data Update</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+              <div class="box-body">
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.budget_type ? true: false" [class.has-feedback]="responseError?.budget_type ? true: false">
+                  <label for="budget_type">Budget type</label>
+                  <input type="text"
+                         name="budget_type"
+                         formControlName = "budget_type"
+                         id="inputbudget_type"
+                         [(ngModel)]="budget_type"
+                         class="form-control"
+                         placeholder="budget_type">
+                  <div class="error-message" *ngIf="responseError?.budget_type">{{responseError?.budget_type}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.opening_balance ? true: false" [class.has-feedback]="responseError?.opening_balance ? true: false">
+                  <label for="opening_balance">Opening balance</label>
+                  <input type="text"
+                         name="opening_balance"
+                         formControlName = "opening_balance"
+                         id="opening_balance"
+                         [(ngModel)]="opening_balance"
+                         class="form-control"
+                         placeholder="opening_balance">
+                  <div class="error-message" *ngIf="responseError?.opening_balance">{{responseError?.opening_balance}}</div>
+                </div>
+                <div class="form-group">
+                  <label for="closing_balance">Closing balance</label>
+                  <input type="text"
+                         name="closing_balance"
+                         formControlName = "closing_balance"
+                         id="closing_balance"
+                         [(ngModel)]="closing_balance"
+                         class="form-control"
+                         placeholder="closing_balance">
+                </div>
+                <div class="form-group">
+                  <label for="total_expenditure">Total expenditure</label>
+                  <input type="text"
+                         name="total_expenditure"
+                         formControlName = "total_expenditure"
+                         id="total_expenditure"
+                         [(ngModel)]="total_expenditure"
+                         class="form-control"
+                         placeholder="total_expenditure">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->

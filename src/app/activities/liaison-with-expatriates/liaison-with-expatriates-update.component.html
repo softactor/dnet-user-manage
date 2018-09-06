@@ -29,29 +29,16 @@
               <div class="box-body">
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.activity ? true: false" [class.has-feedback]="responseError?.activity ? true: false">
-                  <label for="activity">Activity</label>
+                  [class.has-warning]="responseError?.number_of_meeting_held ? true: false" [class.has-feedback]="responseError?.number_of_meeting_held ? true: false">
+                  <label for="number_of_meeting_held">Number of meeting held</label>
                   <input type="text"
-                         name="name"
-                         formControlName = "activity"
-                         id="inputActivity"
-                         [(ngModel)]="activity"
+                         name="number_of_meeting_held"
+                         formControlName = "number_of_meeting_held"
+                         id="inputNumberOfMeetingHeld"
+                         [(ngModel)]="number_of_meeting_held"
                          class="form-control"
-                         placeholder="Activity">
-                  <div class="error-message" *ngIf="responseError?.activity">{{responseError?.activity}}</div>
-                </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.remarks ? true: false" [class.has-feedback]="responseError?.remarks ? true: false">
-                  <label for="remarks">Remarks</label>
-                  <input type="text"
-                         name="remarks"
-                         formControlName = "remarks"
-                         id="inputRemarks"
-                         [(ngModel)]="remarks"
-                         class="form-control"
-                         placeholder="Remarks">
-                  <div class="error-message" *ngIf="responseError?.remarks">{{responseError?.remarks}}</div>
+                         placeholder="number_of_meeting_held">
+                  <div class="error-message" *ngIf="responseError?.number_of_meeting_held">{{responseError?.number_of_meeting_held}}</div>
                 </div>
                 <div
                   class="form-group"

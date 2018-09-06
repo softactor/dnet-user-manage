@@ -34,28 +34,27 @@ export class GuestEntertainmentCreateComponent implements OnInit {
     });
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
-      enhancement_type    : '',
-      outcome             : '',
-      remarks             : '',
+      total_number    : '',
+      purpose             : '',
       type                : '',
     };
 
     this.formData = this.fb.group({
-      enhancement_type     : ['', Validators.required],
-      outcome      : ['', Validators.required],
-      remarks      : ['', Validators.requiredTrue],
+      total_number     : ['', Validators.required],
+      purpose      : ['', Validators.required],
       type         : ['', Validators.requiredTrue],
     });
   }
   public onFormSubmit() {
     const createFormData = this.formData.value;
-    const postString  =  'enhancement_type=' + createFormData.enhancement_type
-      + '&outcome=' + createFormData.outcome
-      + '&remarks=' + createFormData.remarks
+    const postString  =  'total_number='
+      + createFormData.total_number
+      + '&purpose=' + createFormData.purpose
       + '&type=' + createFormData.type
-    this._service.create(postString, this.authorizationKey, 'activity/gestentertainment/create').subscribe( response => {
+    this._service.create(postString, this.authorizationKey,
+      'activity/gestentertainment/create').subscribe( response => {
         this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['wrok-plane-list']);
+        this.router.navigate(['guest-entertainment-list']);
       },
       error => {
         const error_response  = error;

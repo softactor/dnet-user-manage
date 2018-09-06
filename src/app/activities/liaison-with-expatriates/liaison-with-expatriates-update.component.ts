@@ -19,8 +19,7 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
-  activity  = '';
-  remarks = '';
+  number_of_meeting_held  = '';
   outcome = '';
   type = '';
   constructor(
@@ -39,24 +38,22 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
       trees.tree();
     });
     this.formData = this.fb.group({
-      activity                : ['', Validators.required],
-      remarks                 : ['', Validators.required],
+      number_of_meeting_held                : ['', Validators.required],
       outcome                 : ['', Validators.required],
       type                    : ['', Validators.required]
     });
     this._activateRoute.paramMap
       .subscribe( params => {
-        this.editId = params.get('other_activity_id')
+        this.editId = params.get('liaison_with_expatriates_id')
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
           authorizationKey  : this.authorizationKey.toString()
         };
 
-        this._service.getDetailsById(getDetailsParam, 'activity/gestentertainment/details/').subscribe( Details => {
+        this._service.getDetailsById(getDetailsParam, 'activity/liaisonwithexpatriates/details/').subscribe( Details => {
           this.editData = Details;
-          this.activity           = this.editData.activity;
-          this.remarks            = this.editData.remarks;
+          this.number_of_meeting_held           = this.editData.number_of_meeting_held;
           this.outcome            = this.editData.outcome;
           this.type               = this.editData.type;
         });
@@ -64,14 +61,15 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'activity=' + form.value.activity
-      + '&remarks=' + form.value.remarks
+    const updateParam = 'number_of_meeting_held='
+      + form.value.number_of_meeting_held
       + '&outcome=' + form.value.outcome
       + '&type=' + form.value.type
       + '&authorization=' + this.authorizationKey;
-    this._service.update(updateParam, this.authorizationKey, 'activity/gestentertainment/update/', this.editId).subscribe( response => {
+    this._service.update(updateParam, this.authorizationKey,
+      'activity/liaisonwithexpatriates/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['gestentertainment-list']);
+        this.router.navigate(['liaison-with-expatriates-list']);
       },
       error => {
         const error_response  = error;

@@ -34,14 +34,14 @@ export class LiaisonWithExpatriatesCreateComponent implements OnInit {
     });
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
-      enhancement_type    : '',
+      number_of_meeting_held    : '',
       outcome             : '',
       remarks             : '',
       type                : '',
     };
 
     this.formData = this.fb.group({
-      enhancement_type     : ['', Validators.required],
+      number_of_meeting_held     : ['', Validators.required],
       outcome      : ['', Validators.required],
       remarks      : ['', Validators.requiredTrue],
       type         : ['', Validators.requiredTrue],
@@ -49,13 +49,13 @@ export class LiaisonWithExpatriatesCreateComponent implements OnInit {
   }
   public onFormSubmit() {
     const createFormData = this.formData.value;
-    const postString  =  'enhancement_type=' + createFormData.enhancement_type
+    const postString  =  'number_of_meeting_held='
+      + createFormData.number_of_meeting_held
       + '&outcome=' + createFormData.outcome
-      + '&remarks=' + createFormData.remarks
       + '&type=' + createFormData.type
-    this._service.create(postString, this.authorizationKey, 'activity/gestentertainment/create').subscribe( response => {
+    this._service.create(postString, this.authorizationKey, 'activity/liaisonwithexpatriates/create').subscribe( response => {
         this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['wrok-plane-list']);
+        this.router.navigate(['liaison-with-expatriates-list']);
       },
       error => {
         const error_response  = error;

@@ -1,0 +1,83 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Data Update
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Data Update</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+              <div class="box-body">
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.remit_type ? true: false" [class.has-feedback]="responseError?.remit_type ? true: false">
+                  <label for="remit_type">Remit type</label>
+                  <input type="text"
+                         name="remit_type"
+                         formControlName = "remit_type"
+                         id="inputRemitType"
+                         [(ngModel)]="remit_type"
+                         class="form-control"
+                         placeholder="Remit type">
+                  <div class="error-message" *ngIf="responseError?.remit_type">{{responseError?.remit_type}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.no ? true: false" [class.has-feedback]="responseError?.no ? true: false">
+                  <label for="no">No</label>
+                  <input type="text"
+                         name="no"
+                         formControlName = "no"
+                         id="inputNo"
+                         [(ngModel)]="no"
+                         class="form-control"
+                         placeholder="No">
+                  <div class="error-message" *ngIf="responseError?.no">{{responseError?.no}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
+                  <label for="outcome">Outcome</label>
+                  <input type="text"
+                         name="outcome"
+                         formControlName = "outcome"
+                         id="inputOutcome"
+                         class="form-control"
+                         [(ngModel)]="outcome"
+                         placeholder="Outcome">
+                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->

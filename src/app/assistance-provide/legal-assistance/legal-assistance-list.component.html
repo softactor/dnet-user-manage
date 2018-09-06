@@ -1,0 +1,91 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Data List
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Data List</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header pull-right">
+              <h3 class="box-title">Create Data</h3>
+              <a routerLink="/legal-assistance-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table id="data_list" class="table table-striped display" style="width:100%">
+                <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Issue</th>
+                  <th>Assistance provided</th>
+                  <th>Type</th>
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
+                  <td>{{ sln+1 }}</td>
+                  <td>{{ list.name }}</td>
+                  <td>{{ list.address }}</td>
+                  <td>{{ list.issue }}</td>
+                  <td>{{ list.assistance_provided }}</td>
+                  <td>{{ list.type }}</td>
+                  <td>
+                    <a routerLink="/legal-assistance-update/{{list.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <button [swal]="deleteSwal"
+                            type="button" class="btn bg-red">
+                      <i class="fa fa-minus"></i></button>
+                    <swal
+                      #deleteSwal
+                      title="Confirm Delete?"
+                      text="This cannot be undone"
+                      type="question"
+                      [showCancelButton]="true"
+                      [focusCancel]="true"
+                      (confirm)="delete(list.id)"
+                    >
+                    </swal>
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Issue</th>
+                  <th>Assistance provided</th>
+                  <th>Type</th>
+                  <th>Action</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->

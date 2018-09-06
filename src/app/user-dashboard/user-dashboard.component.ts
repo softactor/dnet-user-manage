@@ -7,8 +7,10 @@ declare var $: any;
   styleUrls: ['./user-dashboard.component.css']
 })
 export class UserDashboardComponent implements OnInit {
-
-  constructor(private _authentication: AuthenticationService) { }
+  activeComponent: any;
+  constructor(private _authentication: AuthenticationService) {
+    this.activeComponent = 'dashboard';
+  }
 
   ngOnInit() {
     // to solve the left menu hide problem;

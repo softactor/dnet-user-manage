@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
-  selector: 'app-guest-entertainment-list',
+  selector: 'app-liaison-with-expatriates-list',
   templateUrl: './liaison-with-expatriates-list.component.html'
 })
 export class LiaisonWithExpatriatesListComponent implements OnInit {
@@ -33,7 +33,7 @@ export class LiaisonWithExpatriatesListComponent implements OnInit {
     });
     }, 1000);
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey, 'activity/gestentertainment/list/').subscribe( response => {
+    this._service.getListData(this.authorizationKey, 'activity/liaisonwithexpatriates/list/').subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },
@@ -55,10 +55,10 @@ export class LiaisonWithExpatriatesListComponent implements OnInit {
       id                : deleteId,
       authorizationKey  : this.authorizationKey.toString()
     };
-    this._service.delete(deleteParam, 'activity/gestentertainment/delete/').subscribe( response => {
+    this._service.delete(deleteParam, 'activity/liaisonwithexpatriates/delete/').subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success('Data have been successfully deleted.');
-      this._service.getListData(this.authorizationKey, 'activity/gestentertainment/list/').subscribe( listResponse => {
+      this._service.getListData(this.authorizationKey, 'activity/liaisonwithexpatriates/list/').subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
         },

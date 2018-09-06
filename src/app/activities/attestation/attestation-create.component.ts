@@ -34,28 +34,27 @@ export class AttestationCreateComponent implements OnInit {
     });
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
-      enhancement_type    : '',
-      outcome             : '',
+      name_of_activity    : '',
+      description             : '',
       remarks             : '',
       type                : '',
     };
 
     this.formData = this.fb.group({
-      enhancement_type     : ['', Validators.required],
-      outcome      : ['', Validators.required],
-      remarks      : ['', Validators.requiredTrue],
+      name_of_activity     : ['', Validators.required],
+      description      : ['', Validators.required],
       type         : ['', Validators.requiredTrue],
     });
   }
   public onFormSubmit() {
     const createFormData = this.formData.value;
-    const postString  =  'enhancement_type=' + createFormData.enhancement_type
-      + '&outcome=' + createFormData.outcome
-      + '&remarks=' + createFormData.remarks
+    const postString  =  'name_of_activity=' + createFormData.name_of_activity
+      + '&description=' + createFormData.description
       + '&type=' + createFormData.type
-    this._service.create(postString, this.authorizationKey, 'activity/attestation/create').subscribe( response => {
+    this._service.create(postString, this.authorizationKey,
+      'activity/attestation/create').subscribe( response => {
         this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['wrok-plane-list']);
+        this.router.navigate(['attestation-list']);
       },
       error => {
         const error_response  = error;

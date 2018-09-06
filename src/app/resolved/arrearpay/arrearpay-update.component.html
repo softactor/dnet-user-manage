@@ -1,0 +1,83 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Data Update
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Data Update</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+              <div class="box-body">
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.person_concern_type ? true: false" [class.has-feedback]="responseError?.person_concern_type ? true: false">
+                  <label for="person_concern_type">Person concern type</label>
+                  <input type="text"
+                         name="person_concern_type"
+                         formControlName = "person_concern_type"
+                         id="inputpersonConcernType"
+                         [(ngModel)]="person_concern_type"
+                         class="form-control"
+                         placeholder="Person concern type">
+                  <div class="error-message" *ngIf="responseError?.person_concern_type">{{responseError?.person_concern_type}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.total_number ? true: false" [class.has-feedback]="responseError?.total_number ? true: false">
+                  <label for="total_number">Total number</label>
+                  <input type="text"
+                         name="total_number"
+                         formControlName = "total_number"
+                         id="inputTotalNumber"
+                         [(ngModel)]="total_number"
+                         class="form-control"
+                         placeholder="Total number">
+                  <div class="error-message" *ngIf="responseError?.total_number">{{responseError?.total_number}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.number_of_case_resolved ? true: false" [class.has-feedback]="responseError?.number_of_case_resolved ? true: false">
+                  <label for="number_of_case_resolved">Number of case resolved</label>
+                  <input type="text"
+                         name="number_of_case_resolved"
+                         formControlName = "number_of_case_resolved"
+                         id="inputnumberOfCaseResolved"
+                         class="form-control"
+                         [(ngModel)]="number_of_case_resolved"
+                         placeholder="Number of case resolved">
+                  <div class="error-message" *ngIf="responseError?.number_of_case_resolved">{{responseError?.number_of_case_resolved}}</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->

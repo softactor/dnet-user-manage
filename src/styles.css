@@ -46,3 +46,6 @@
 .content-wrapper{
   min-height: 590px !important;
 }
+.dataTables_wrapper{
+  padding: 2% 3%;
+}

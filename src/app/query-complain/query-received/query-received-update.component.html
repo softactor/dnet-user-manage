@@ -1,0 +1,83 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Data Update
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Data Update</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+              <div class="box-body">
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.details_of_person ? true: false" [class.has-feedback]="responseError?.details_of_person ? true: false">
+                  <label for="details_of_person">Details of person</label>
+                  <input type="text"
+                         name="details_of_person"
+                         formControlName = "details_of_person"
+                         id="inputDetailsOfPerson"
+                         [(ngModel)]="details_of_person"
+                         class="form-control"
+                         placeholder="Details of person">
+                  <div class="error-message" *ngIf="responseError?.details_of_person">{{responseError?.details_of_person}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.nature_of_query ? true: false" [class.has-feedback]="responseError?.nature_of_query ? true: false">
+                  <label for="nature_of_query">Nature of query</label>
+                  <input type="text"
+                         name="nature_of_query"
+                         formControlName = "nature_of_query"
+                         id="inputNatureOfQuery"
+                         [(ngModel)]="nature_of_query"
+                         class="form-control"
+                         placeholder="Nature of query">
+                  <div class="error-message" *ngIf="responseError?.nature_of_query">{{responseError?.nature_of_query}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.action_taken ? true: false" [class.has-feedback]="responseError?.action_taken ? true: false">
+                  <label for="action_taken">Action taken</label>
+                  <input type="text"
+                         name="action_taken"
+                         formControlName = "action_taken"
+                         id="inputActionTaken"
+                         class="form-control"
+                         [(ngModel)]="action_taken"
+                         placeholder="Action taken">
+                  <div class="error-message" *ngIf="responseError?.action_taken">{{responseError?.action_taken}}</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->

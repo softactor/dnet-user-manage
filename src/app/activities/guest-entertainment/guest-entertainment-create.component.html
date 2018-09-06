@@ -29,41 +29,28 @@
               <div class="box-body">
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.enhancement_type ? true: false" [class.has-feedback]="responseError?.enhancement_type ? true: false">
-                  <label for="enhancement_type">Enhancement type</label>
+                  [class.has-warning]="responseError?.total_number ? true: false" [class.has-feedback]="responseError?.total_number ? true: false">
+                  <label for="total_number">Total number</label>
                   <input type="text"
-                         name="enhancement_type"
-                         formControlName = "enhancement_type"
-                         id="inputEnhancementType"
+                         name="total_number"
+                         formControlName = "total_number"
+                         id="inputTotalNumber"
                          class="form-control"
-                         placeholder="Enhancement type">
-                  <div class="error-message" *ngIf="responseError?.enhancement_type">{{responseError?.enhancement_type}}</div>
+                         placeholder="Total number">
+                  <div class="error-message" *ngIf="responseError?.total_number">{{responseError?.total_number}}</div>
 
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
-                  <label for="outcome">Outcome</label>
+                  [class.has-warning]="responseError?.purpose ? true: false" [class.has-feedback]="responseError?.purpose ? true: false">
+                  <label for="purpose">Purpose</label>
                   <input type="text"
-                         name="outcome"
-                         formControlName = "outcome"
-                         id="inputOutcome"
+                         name="purpose"
+                         formControlName = "purpose"
+                         id="inputPurpose"
                          class="form-control"
-                         placeholder="Outcome">
-                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
-
-                </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.remarks ? true: false" [class.has-feedback]="responseError?.remarks ? true: false">
-                  <label for="remarks">Remarks</label>
-                  <input type="text"
-                         name="remarks"
-                         formControlName = "remarks"
-                         id="remarks"
-                         class="form-control"
-                         placeholder="Remarks">
-                  <div class="error-message" *ngIf="responseError?.remarks">{{responseError?.remarks}}</div>
+                         placeholder="Purpose">
+                  <div class="error-message" *ngIf="responseError?.purpose">{{responseError?.purpose}}</div>
 
                 </div>
                 <div class="form-group">

@@ -11,6 +11,7 @@ declare var $: any;
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  activeComponent: any;
   authorizationKey;
   userListData;
   userDeleteData;
@@ -21,7 +22,7 @@ export class UserListComponent implements OnInit {
     private _service: UserListService,
     private router: Router,
   ) {
-
+    this.activeComponent = 'users';
     setTimeout(function(){
       $(function() {
         if(!$.fn.DataTable.isDataTable('#example')) {

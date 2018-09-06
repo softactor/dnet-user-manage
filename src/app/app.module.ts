@@ -81,6 +81,76 @@ import { LiaisonWithExpatriatesCreateComponent } from './activities/liaison-with
 import { LiaisonWithExpatriatesService } from './activities/liaison-with-expatriates/liaison-with-expatriates.service';
 import { LiaisonWithExpatriatesListComponent } from './activities/liaison-with-expatriates/liaison-with-expatriates-list.component';
 import { LiaisonWithExpatriatesUpdateComponent } from './activities/liaison-with-expatriates/liaison-with-expatriates-update.component';
+import { GeneralAssistanceService } from './assistance-provide/general-assistance/general-assistance.service';
+import { GeneralAssistanceCreateComponent } from './assistance-provide/general-assistance/general-assistance-create.component';
+import { GeneralAssistanceListComponent } from './assistance-provide/general-assistance/general-assistance-list.component';
+import { GeneralAssistanceUpdateComponent  } from './assistance-provide/general-assistance/general-assistance-update.component';
+import { LegalAssistanceService } from './assistance-provide/legal-assistance/legal-assistance.service';
+import { LegalAssistanceCreateComponent } from './assistance-provide/legal-assistance/legal-assistance-create.component';
+import { LegalAssistanceListComponent } from './assistance-provide/legal-assistance/legal-assistance-list.component';
+import { LegalAssistanceUpdateComponent } from './assistance-provide/legal-assistance/legal-assistance-update.component';
+import { QueryReceivedService } from './query-complain/query-received/query-received.service';
+import { QueryReceivedListComponent } from './query-complain/query-received/query-received-list.component';
+import { QueryReceivedCreateComponent } from './query-complain/query-received/query-received-create.component';
+import { QueryReceivedUpdateComponent } from './query-complain/query-received/query-received-update.component';
+import { ComplaintService } from './query-complain/complaint/complaint.service';
+import { ComplaintCreateComponent } from './query-complain/complaint/complaint-create.component';
+import { ComplaintListComponent } from './query-complain/complaint/complaint-list.component';
+import { ComplaintUpdateComponent } from './query-complain/complaint/complaint-update.component';
+import { TradeQueryService } from './query-complain/trade-query/trade-query.service';
+import { TradeQueryCreateComponent } from './query-complain/trade-query/trade-query-create.component';
+import { TradeQueryListComponent } from './query-complain/trade-query/trade-query-list.component';
+import { TradeQueryUpdateComponent } from './query-complain/trade-query/trade-query-update.component';
+import {MeetingService} from './issues/meeting/meeting.service';
+import {MeetingCreateComponent} from './issues/meeting/meeting-create.component';
+import {MeetingListComponent} from './issues/meeting/meeting-list.component';
+import {MeetingUpdateComponent} from './issues/meeting/meeting-update.component';
+import {ConferenceService} from './issues/conference/conference.service';
+import {ConferenceCreateComponent} from './issues/conference/conference-create.component';
+import {ConferenceListComponent} from './issues/conference/conference-list.component';
+import {ConferenceUpdateComponent} from './issues/conference/conference-update.component';
+import {ArbitrationDisputesService} from './resolved/arbitration-disputes/arbitration-disputes.service';
+import {ArbitrationDisputesCreateComponent} from './resolved/arbitration-disputes/arbitration-disputes-create.component';
+import {ArbitrationDisputesListComponent} from './resolved/arbitration-disputes/arbitration-disputes-list.component';
+import {ArbitrationDisputesUpdateComponent} from './resolved/arbitration-disputes/arbitration-disputes-update.component';
+import {ArrearpayService} from './resolved/arrearpay/arrearpay.service';
+import {ArrearpayCreateComponent} from './resolved/arrearpay/arrearpay-create.component';
+import {ArrearpayListComponent} from './resolved/arrearpay/arrearpay-list.component';
+import {ArrearpayUpdateComponent} from './resolved/arrearpay/arrearpay-update.component';
+import {CompensationService} from './resolved/compensation/compensation.service';
+import {CompensationCreateComponent} from './resolved/compensation/compensation-create.component';
+import {CompensationListComponent} from './resolved/compensation/compensation-list.component';
+import {CompensationUpdateComponent} from './resolved/compensation/compensation-update.component';
+import {DeadbodyRepatriationService} from './resolved/deadbody-repatriation/deadbody-repatriation.service';
+import {DeadbodyRepatriationCreateComponent} from './resolved/deadbody-repatriation/deadbody-repatriation-create.component';
+import {DeadbodyRepatriationListComponent} from './resolved/deadbody-repatriation/deadbody-repatriation-list.component';
+import {DeadbodyRepatriationUpdateComponent} from './resolved/deadbody-repatriation/deadbody-repatriation-update.component';
+import {DeathDisabilityService} from './resolved/death-disability/death-disability.service';
+import {DeathDisabilityCreateComponent} from './resolved/death-disability/death-disability-create.component';
+import {DeathDisabilityListComponent} from './resolved/death-disability/death-disability-list.component';
+import {DeathDisabilityUpdateComponent} from './resolved/death-disability/death-disability-update.component';
+import {MonthlyProblemResolvedService} from './resolved/monthly-problem-resolved/monthly-problem-resolved.service';
+import {MonthlyProblemResolvedCreateComponent} from './resolved/monthly-problem-resolved/monthly-problem-resolved-create.component';
+import {MonthlyProblemResolvedListComponent} from './resolved/monthly-problem-resolved/monthly-problem-resolved-list.component';
+import {MonthlyProblemResolvedUpdateComponent} from './resolved/monthly-problem-resolved/monthly-problem-resolved-update.component';
+import {RemitFcService} from './resolved/remit-fc/remit-fc.service';
+import {RemitFcCreateComponent} from './resolved/remit-fc/remit-fc-create.component';
+import {RemitFcListComponent} from './resolved/remit-fc/remit-fc-list.component';
+import {RemitFcUpdateComponent} from './resolved/remit-fc/remit-fc-update.component';
+import {TermsConditionServiceService} from './resolved/terms-condition-service/terms-condition-service.service';
+import {TermsConditionServiceCreateComponent} from './resolved/terms-condition-service/terms-condition-service-create.component';
+import {TermsConditionServiceListComponent} from './resolved/terms-condition-service/terms-condition-service-list.component';
+import {TermsConditionServiceUpdateComponent} from './resolved/terms-condition-service/terms-condition-service-update.component';
+import {BudgetService} from './finance/budget/budget.service';
+import {BudgetCreateComponent} from './finance/budget/budget-create.component';
+import {BudgetListComponent} from './finance/budget/budget-list.component';
+import {BudgetUpdateComponent} from './finance/budget/budget-update.component';
+import {RemittanceWelfareFundService} from './finance/remittance-welfare-fund/remittance-welfare-fund.service';
+import {RemittanceWelfareFundCreateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-create.component';
+import {RemittanceWelfareFundListComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-list.component';
+import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-update.component';
+import  { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
+import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
 
 const appRoutes: Routes  = [
   {
@@ -283,36 +353,297 @@ const appRoutes: Routes  = [
   {
     path: 'guest-entertainment-list',
     canActivate: [AuthGuard],
-    component: AttestationListComponent
+    component: GuestEntertainmentListComponent
   },
   {
     path: 'guest-entertainment-create',
     canActivate: [AuthGuard],
-    component: AttestationCreateComponent
+    component: GuestEntertainmentCreateComponent
   },
   {
     path: 'guest-entertainment-update/:guest_entertainment_id',
     canActivate: [AuthGuard],
-    component: AttestationUpdateComponent
+    component: GuestEntertainmentUpdateComponent
   },
   {
     path: 'liaison-with-expatriates-list',
     canActivate: [AuthGuard],
-    component: AttestationListComponent
+    component: LiaisonWithExpatriatesListComponent
   },
   {
     path: 'liaison-with-expatriates-create',
     canActivate: [AuthGuard],
-    component: AttestationCreateComponent
+    component: LiaisonWithExpatriatesCreateComponent
   },
   {
-    path: 'liaison-with-expatriates-update/:guest_entertainment_id',
+    path: 'liaison-with-expatriates-update/:liaison_with_expatriates_id',
     canActivate: [AuthGuard],
-    component: AttestationUpdateComponent
+    component: LiaisonWithExpatriatesUpdateComponent
+  },
+  {
+    path: 'general-assistance-list',
+    canActivate: [AuthGuard],
+    component: GeneralAssistanceListComponent
+  },
+  {
+    path: 'general-assistance-create',
+    canActivate: [AuthGuard],
+    component: GeneralAssistanceCreateComponent
+  },
+  {
+    path: 'general-assistance-update/:general_assistance_id',
+    canActivate: [AuthGuard],
+    component: GeneralAssistanceUpdateComponent
+  },
+  {
+    path: 'legal-assistance-list',
+    canActivate: [AuthGuard],
+    component: LegalAssistanceListComponent
+  },
+  {
+    path: 'legal-assistance-create',
+    canActivate: [AuthGuard],
+    component: LegalAssistanceCreateComponent
+  },
+  {
+    path: 'legal-assistance-update/:legal_assistance_id',
+    canActivate: [AuthGuard],
+    component: LegalAssistanceUpdateComponent
+  },
+  {
+    path: 'query-received-list',
+    canActivate: [AuthGuard],
+    component: QueryReceivedListComponent
+  },
+  {
+    path: 'query-received-create',
+    canActivate: [AuthGuard],
+    component: QueryReceivedCreateComponent
+  },
+  {
+    path: 'query-received-update/:query_received_id',
+    canActivate: [AuthGuard],
+    component: QueryReceivedUpdateComponent
+  },
+  {
+    path: 'complaint-list',
+    canActivate: [AuthGuard],
+    component: ComplaintListComponent
+  },
+  {
+    path: 'complaint-create',
+    canActivate: [AuthGuard],
+    component: ComplaintCreateComponent
+  },
+  {
+    path: 'complaint-update/:complaint_id',
+    canActivate: [AuthGuard],
+    component: ComplaintUpdateComponent
+  },
+  {
+    path: 'trade-query-list',
+    canActivate: [AuthGuard],
+    component: TradeQueryListComponent
+  },
+  {
+    path: 'trade-query-create',
+    canActivate: [AuthGuard],
+    component: TradeQueryCreateComponent
+  },
+  {
+    path: 'trade-query-update/:trade_query_id',
+    canActivate: [AuthGuard],
+    component: TradeQueryUpdateComponent
+  },
+  {
+    path: 'meeting-list',
+    canActivate: [AuthGuard],
+    component: MeetingListComponent
+  },
+  {
+    path: 'meeting-create',
+    canActivate: [AuthGuard],
+    component: MeetingCreateComponent
+  },
+  {
+    path: 'meeting-update/:meeting_id',
+    canActivate: [AuthGuard],
+    component: MeetingUpdateComponent
+  },
+  {
+    path: 'conference-list',
+    canActivate: [AuthGuard],
+    component: ConferenceListComponent
+  },
+  {
+    path: 'conference-create',
+    canActivate: [AuthGuard],
+    component: ConferenceCreateComponent
+  },
+  {
+    path: 'conference-update/:conference_id',
+    canActivate: [AuthGuard],
+    component: ConferenceUpdateComponent
+  },
+  {
+    path: 'arbitration-disputes-list',
+    canActivate: [AuthGuard],
+    component: ArbitrationDisputesListComponent
+  },
+  {
+    path: 'arbitration-disputes-create',
+    canActivate: [AuthGuard],
+    component: ArbitrationDisputesCreateComponent
+  },
+  {
+    path: 'arbitration-disputes-update/:arbitration_disputes_id',
+    canActivate: [AuthGuard],
+    component: ArbitrationDisputesUpdateComponent
+  },
+  {
+    path: 'arrearpay-list',
+    canActivate: [AuthGuard],
+    component: ArrearpayListComponent
+  },
+  {
+    path: 'arrearpay-create',
+    canActivate: [AuthGuard],
+    component: ArrearpayCreateComponent
+  },
+  {
+    path: 'arrearpay-update/:arrearpay_id',
+    canActivate: [AuthGuard],
+    component: ArrearpayUpdateComponent
+  },
+  {
+    path: 'compensation-list',
+    canActivate: [AuthGuard],
+    component: CompensationListComponent
+  },
+  {
+    path: 'compensation-create',
+    canActivate: [AuthGuard],
+    component: CompensationCreateComponent
+  },
+  {
+    path: 'compensation-update/:compensation_id',
+    canActivate: [AuthGuard],
+    component: CompensationUpdateComponent
+  },
+  {
+    path: 'deadbody-repatriation-list',
+    canActivate: [AuthGuard],
+    component: DeadbodyRepatriationListComponent
+  },
+  {
+    path: 'deadbody-repatriation-create',
+    canActivate: [AuthGuard],
+    component: DeadbodyRepatriationCreateComponent
+  },
+  {
+    path: 'deadbody-repatriation-update/:deadbody_repatriation_id',
+    canActivate: [AuthGuard],
+    component: DeadbodyRepatriationUpdateComponent
+  },
+  {
+    path: 'death-disability-list',
+    canActivate: [AuthGuard],
+    component: DeathDisabilityListComponent
+  },
+  {
+    path: 'death-disability-create',
+    canActivate: [AuthGuard],
+    component: DeathDisabilityCreateComponent
+  },
+  {
+    path: 'death-disability-update/:death_disability_id',
+    canActivate: [AuthGuard],
+    component: DeathDisabilityUpdateComponent
+  },
+  {
+    path: 'monthly-problem-resolved-list',
+    canActivate: [AuthGuard],
+    component: MonthlyProblemResolvedListComponent
+  },
+  {
+    path: 'monthly-problem-resolved-create',
+    canActivate: [AuthGuard],
+    component: MonthlyProblemResolvedCreateComponent
+  },
+  {
+    path: 'monthly-problem-resolved-update/:monthly_problem_resolved_id',
+    canActivate: [AuthGuard],
+    component: MonthlyProblemResolvedUpdateComponent
+  },
+  {
+    path: 'remit-fc-list',
+    canActivate: [AuthGuard],
+    component: RemitFcListComponent
+  },
+  {
+    path: 'remit-fc-create',
+    canActivate: [AuthGuard],
+    component: RemitFcCreateComponent
+  },
+  {
+    path: 'remit-fc-update/:remit_fc_id',
+    canActivate: [AuthGuard],
+    component: RemitFcUpdateComponent
+  },
+  {
+    path: 'terms-condition-list',
+    canActivate: [AuthGuard],
+    component: TermsConditionServiceListComponent
+  },
+  {
+    path: 'terms-condition-create',
+    canActivate: [AuthGuard],
+    component: TermsConditionServiceCreateComponent
+  },
+  {
+    path: 'terms-condition-update/:terms_condition_id',
+    canActivate: [AuthGuard],
+    component: TermsConditionServiceUpdateComponent
+  },
+  {
+    path: 'budget-list',
+    canActivate: [AuthGuard],
+    component: BudgetListComponent
+  },
+  {
+    path: 'budget-create',
+    canActivate: [AuthGuard],
+    component: BudgetCreateComponent
+  },
+  {
+    path: 'budget-update/:budget_id',
+    canActivate: [AuthGuard],
+    component: BudgetUpdateComponent
+  },
+  {
+    path: 'remittance-welfare-fund-list',
+    canActivate: [AuthGuard],
+    component: RemittanceWelfareFundListComponent
+  },
+  {
+    path: 'remittance-welfare-fund-create',
+    canActivate: [AuthGuard],
+    component: RemittanceWelfareFundCreateComponent
+  },
+  {
+    path: 'remittance-welfare-fund-update/:remittance_welfare_fund_id',
+    canActivate: [AuthGuard],
+    component: RemittanceWelfareFundUpdateComponent
+  },
+  {
+    path: 'month-wise-view',
+    canActivate: [AuthGuard],
+    component: MonthWiseViewComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
+// arbitration-disputes
 @NgModule({
   declarations: [
     AppComponent,
@@ -368,6 +699,58 @@ const appRoutes: Routes  = [
     LiaisonWithExpatriatesCreateComponent,
     LiaisonWithExpatriatesListComponent,
     LiaisonWithExpatriatesUpdateComponent,
+    GeneralAssistanceCreateComponent,
+    GeneralAssistanceListComponent,
+    GeneralAssistanceUpdateComponent,
+    LegalAssistanceCreateComponent,
+    LegalAssistanceListComponent,
+    LegalAssistanceUpdateComponent,
+    QueryReceivedListComponent,
+    QueryReceivedCreateComponent,
+    QueryReceivedUpdateComponent,
+    ComplaintCreateComponent,
+    ComplaintListComponent,
+    ComplaintUpdateComponent,
+    TradeQueryCreateComponent,
+    TradeQueryListComponent,
+    TradeQueryUpdateComponent,
+    MeetingCreateComponent,
+    MeetingListComponent,
+    MeetingUpdateComponent,
+    ConferenceCreateComponent,
+    ConferenceListComponent,
+    ConferenceUpdateComponent,
+    ArbitrationDisputesCreateComponent,
+    ArbitrationDisputesListComponent,
+    ArbitrationDisputesUpdateComponent,
+    ArrearpayCreateComponent,
+    ArrearpayListComponent,
+    ArrearpayUpdateComponent,
+    CompensationCreateComponent,
+    CompensationListComponent,
+    CompensationUpdateComponent,
+    DeadbodyRepatriationCreateComponent,
+    DeadbodyRepatriationListComponent,
+    DeadbodyRepatriationUpdateComponent,
+    DeathDisabilityCreateComponent,
+    DeathDisabilityListComponent,
+    DeathDisabilityUpdateComponent,
+    MonthlyProblemResolvedCreateComponent,
+    MonthlyProblemResolvedListComponent,
+    MonthlyProblemResolvedUpdateComponent,
+    RemitFcCreateComponent,
+    RemitFcListComponent,
+    RemitFcUpdateComponent,
+    TermsConditionServiceCreateComponent,
+    TermsConditionServiceListComponent,
+    TermsConditionServiceUpdateComponent,
+    BudgetCreateComponent,
+    BudgetListComponent,
+    BudgetUpdateComponent,
+    RemittanceWelfareFundCreateComponent,
+    RemittanceWelfareFundListComponent,
+    RemittanceWelfareFundUpdateComponent,
+    MonthWiseViewComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -400,6 +783,24 @@ const appRoutes: Routes  = [
     AttestationService,
     GuestEntertainmentService,
     LiaisonWithExpatriatesService,
+    GeneralAssistanceService,
+    LegalAssistanceService,
+    QueryReceivedService,
+    ComplaintService,
+    TradeQueryService,
+    MeetingService,
+    ConferenceService,
+    ArbitrationDisputesService,
+    ArrearpayService,
+    CompensationService,
+    DeadbodyRepatriationService,
+    DeathDisabilityService,
+    MonthlyProblemResolvedService,
+    RemitFcService,
+    TermsConditionServiceService,
+    BudgetService,
+    RemittanceWelfareFundService,
+    MonthWiseViewService,
   ],
   bootstrap: [AppComponent]
 })

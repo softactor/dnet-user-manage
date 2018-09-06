@@ -1,21 +1,10 @@
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
-    <!-- Sidebar user panel -->
-    <div class="user-panel">
-      <div class="pull-left image">
-        <img src="/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p>{{loggedInUserName}}</p>
-        <a routerLink="/user-dashboard"><i class="fa fa-circle text-success"></i> Online</a>
-      </div>
-    </div>
-    <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">MAIN NAVIGATION</li>
-      <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li class="active treeview">
+      <!--<li class="header">MAIN NAVIGATION</li>-->
+      <!--<li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>-->
+      <li class="treeview" [ngClass]="{'active': activeComponent=='users'}">
         <a href="javascript:void(0);">
           <i class="fa fa-user"></i> <span>User</span>
           <span class="pull-right-container">
@@ -29,7 +18,7 @@
       </li>
       <li class="treeview">
         <a href="javascript:void(0);">
-          <i class="fa fa-user"></i> <span>Visit</span>
+          <i class="fa fa-tag"></i> <span>Visit</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -45,7 +34,7 @@
       </li>
       <li class="treeview">
         <a href="javascript:void(0);">
-          <i class="fa fa-user"></i> <span>Activity</span>
+          <i class="fa fa-pencil-square-o"></i> <span>Activity</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -60,6 +49,74 @@
           <li><a routerLink="/liaison-with-expatriates-list"><i class="fa fa-circle-o"></i> Liaison with expatriates</a></li>
         </ul>
       </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-life-buoy"></i> <span>Assistance provide</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/general-assistance-list"><i class="fa fa-circle-o"></i> General Assistance</a></li>
+          <li><a routerLink="/legal-assistance-list"><i class="fa fa-circle-o"></i> Legal Assistance</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-bullseye"></i> <span>Query Complain</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/query-received-list"><i class="fa fa-circle-o"></i> Query received</a></li>
+          <li><a routerLink="/complaint-list"><i class="fa fa-circle-o"></i> Complaints</a></li>
+          <li><a routerLink="/trade-query-list"><i class="fa fa-circle-o"></i> Trade query</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-wrench"></i> <span>Issues</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/conference-list"><i class="fa fa-circle-o"></i> Conference</a></li>
+          <li><a routerLink="/meeting-list"><i class="fa fa-circle-o"></i> Meeting</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-star-o"></i> <span>Resolved</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/arbitration-disputes-list"><i class="fa fa-circle-o"></i> Arbitration Disputes</a></li>
+          <li><a routerLink="/arrearpay-list"><i class="fa fa-circle-o"></i> Arrear pay</a></li>
+          <li><a routerLink="/compensation-list"><i class="fa fa-circle-o"></i> Compensation</a></li>
+          <li><a routerLink="/deadbody-repatriation-list"><i class="fa fa-circle-o"></i> Deadbody repatriation</a></li>
+          <li><a routerLink="/death-disability-list"><i class="fa fa-circle-o"></i> Death disability</a></li>
+          <li><a routerLink="/monthly-problem-resolved-list"><i class="fa fa-circle-o"></i> Monthly problem resolved</a></li>
+          <li><a routerLink="/remit-fc-list"><i class="fa fa-circle-o"></i> Remit FC</a></li>
+          <li><a routerLink="/terms-condition-list"><i class="fa fa-circle-o"></i> Terms & Condition Service</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-money"></i> <span>Finance</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/remittance-welfare-fund-list"><i class="fa fa-circle-o"></i> Remittance & welfarefund</a></li>
+          <li><a routerLink="/budget-list"><i class="fa fa-circle-o"></i> Budget</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/month-wise-view"><i class="fa fa-circle-o text-aqua"></i> <span>Monthwise View</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
