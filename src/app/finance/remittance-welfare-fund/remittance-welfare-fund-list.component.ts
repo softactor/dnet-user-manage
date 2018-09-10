@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
-  selector: 'app-conference-list',
+  selector: 'app-remittance-welfare-fund-list',
   templateUrl: './remittance-welfare-fund-list.component.html'
 })
 export class RemittanceWelfareFundListComponent implements OnInit {

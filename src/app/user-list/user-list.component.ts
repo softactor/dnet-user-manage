@@ -31,8 +31,9 @@ export class UserListComponent implements OnInit {
         });
       }
       });
-    }, 1000)
-    this._service.getData().subscribe( response => {
+    }, 1000);
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this._service.getData(this.authorizationKey).subscribe( response => {
         this.userListData = response;
         this.feedbackData = this.userListData.results;
       },
@@ -61,7 +62,7 @@ export class UserListComponent implements OnInit {
       $('row_id_' + deleteUserId).hide();
       this._toasterService.success(this.userDeleteData.message);
       // this.router.navigate(['user-list']);
-      this._service.getData().subscribe( response => {
+      this._service.getData(this.authorizationKey).subscribe( response => {
           this.userListData = response;
           this.feedbackData = this.userListData.results;
         },

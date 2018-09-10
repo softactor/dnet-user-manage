@@ -9,7 +9,7 @@ export class HospitalService {
   // get list
   getListData(authorizationKey) {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
-    return this._http.get(environment.baseApi + 'visit/hosptal/list/', {headers: _headers});
+    return this._http.get(environment.baseApi + 'visit/hospital/list/', {headers: _headers});
   }
   create(createParam, authorizationKey) {
     const _headers    =  new HttpHeaders()
@@ -20,15 +20,15 @@ export class HospitalService {
       + '&outcome=' + createParam.outcome
       + '&no_of_bangladeshis=' + createParam.no_of_bangladeshis
       + '&type=' + createParam.type
-    return this._http.post(environment.baseApi + 'visit/hosptal/create', postString, {headers: _headers});
+    return this._http.post(environment.baseApi + 'visit/hospital/create', postString, {headers: _headers});
   }
   delete(deleteParam) {
     const _headers = new HttpHeaders().set('authorization', deleteParam.authorizationKey);
-    return this._http.delete(environment.baseApi + 'visit/hosptal/delete/' + deleteParam.id, {headers: _headers});
+    return this._http.delete(environment.baseApi + 'visit/hospital/delete/' + deleteParam.id, {headers: _headers});
   }
   getDetailsById(detailsParam) {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
-    return this._http.get(environment.baseApi + 'visit/hosptal/details/' + detailsParam.editId, {headers: _headers});
+    return this._http.get(environment.baseApi + 'visit/hospital/details/' + detailsParam.editId, {headers: _headers});
   }
   update(updateParam) {
     const _headers = new HttpHeaders()
@@ -42,7 +42,7 @@ export class HospitalService {
       + '&type=' + updateParam.type
       + '&authorization=' + updateParam.authorization;
     return this._http.put(
-      environment.baseApi + 'visit/hosptal/update/' + updateParam.editId,
+      environment.baseApi + 'visit/hospital/update/' + updateParam.editId,
       postString,
       {
         headers: _headers

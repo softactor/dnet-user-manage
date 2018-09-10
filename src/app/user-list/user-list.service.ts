@@ -6,8 +6,9 @@ import { environment } from '../../environments/environment';
 export class UserListService {
 
   constructor(private _http: HttpClient) { }
-  getData() {
-    return this._http.get(environment.baseApi + 'user/list/');
+  getData(authorizationKey) {
+    const _headers = new HttpHeaders().set('authorization', authorizationKey);
+    return this._http.get(environment.baseApi + 'user/list/', {headers: _headers});
   }
 
   deleteUserData(userDeleteParam) {
