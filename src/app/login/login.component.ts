@@ -48,6 +48,7 @@ export class LoginComponent {
           localStorage.setItem(
             'logged_user_name', this.userDetailsDataContainer.first_name
             + ' ' + this.userDetailsDataContainer.last_name);
+          localStorage.setItem('assign_to', this.userDetailsDataContainer.assigned_country);
         });
         this.router.navigate(['user-dashboard']);
       }

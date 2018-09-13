@@ -16,6 +16,8 @@ export class CompanyListComponent implements OnInit {
   tableListData;
   tableDeleteData;
   feedbackData: any;
+  defaultDate;
+  assignTo;
   constructor(
     private _companyService: CompanyService,
     private _toasterService: TosterService,
@@ -25,15 +27,22 @@ export class CompanyListComponent implements OnInit {
   ) {
     setTimeout(function(){
       $(function() {
-        if(!$.fn.DataTable.isDataTable('#company_list')){
+        if (!$.fn.DataTable.isDataTable('#company_list')) {
         $('#company_list').DataTable({
           'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
         });
       }
+        $('#defaultDate').datepicker({
+          dateFormat: 'yy-mm'
+        });
+        $('#defaultDate').datepicker('setDate', new Date());
     });
     }, 1000);
+    this.assignTo = localStorage.getItem('assign_to');
+    // this.defaultDate  = $('#defaultDate').val();
+    this.defaultDate  =  new Date();
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getCompanyListData(this.authorizationKey).subscribe( response => {
+    this._service.getCompanyListData(this.authorizationKey, this.defaultDate.toString('yyyy-MM'), this.assignTo).subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },
@@ -58,7 +67,7 @@ export class CompanyListComponent implements OnInit {
     this._service.delete(deleteParam).subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success(this.tableDeleteData.message);
-      this._service.getCompanyListData(this.authorizationKey.toString()).subscribe( listResponse => {
+      this._service.getCompanyListData(this.authorizationKey.toString(), this.defaultDate, this.assignTo).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
         },
@@ -69,4 +78,18 @@ export class CompanyListComponent implements OnInit {
     });
   }
 
+  dateWiseListData(e) {
+     console.log('Check');
+     this.defaultDate  =  new Date();
+     console.log(this.defaultDate.toString('yyyy-MM-dd'));
+     this.defaultDate  = $('#defaultDate').val();
+     this._service.getCompanyListData(this.authorizationKey, this.defaultDate, this.assignTo).subscribe( response => {
+        this.tableListData = response;
+        this.feedbackData = this.tableListData.results;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }

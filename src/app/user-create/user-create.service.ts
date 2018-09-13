@@ -7,7 +7,9 @@ export class UserCreateService {
 
   constructor(private _http: HttpClient) {}
   creteUserData(userCreateParam) {
-    const _headers    =  new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    const _headers    =  new HttpHeaders().set('content-type', 'application/x-www-form-urlencoded');
+    _headers.set('content-type', 'application/x-www-form-urlencoded');
+    _headers.set('Access-Control-Allow-Origin', '*');
     const postString  =  'first_name=' + userCreateParam.first_name
       + '&last_name=' + userCreateParam.last_name
       + '&mobile=' + userCreateParam.mobile
@@ -23,5 +25,10 @@ export class UserCreateService {
   getUserAccessLevel(authorizationKey) {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
     return this._http.get(environment.baseApi + 'user/accesslevel/list', {headers: _headers});
+  }
+
+  getListData(authorizationKey, apiUrl) {
+    const _headers = new HttpHeaders().set('authorization', authorizationKey);
+    return this._http.get(environment.baseApi + apiUrl, {headers: _headers});
   }
 }
