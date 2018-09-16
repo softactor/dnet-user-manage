@@ -1,0 +1,125 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <!-- Left side column. contains the logo and sidebar -->
+
+  <app-left-menu></app-left-menu>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Reports Visualizations
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Report</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+               <div class="row">
+                <div class="col-md-3">
+                    <div><span>From Date:</span><br/><input name="from_date"></div>
+                </div>
+                 <div class="col-md-3">
+                    <div><span> To Date:</span><br/><input name="to_date"></div>
+                </div>
+                 <div class="col-md-3">
+                    <div><span>Country:</span><br/><input name="from_date"></div>
+                </div>
+                 <div class="col-md-3">
+                    <div><span>Labour Attache:</span><br/><input name="from_date"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item active">
+              <a class="nav-link active" href="#visit" role="tab" data-toggle="tab">Visit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#activity" role="tab" data-toggle="tab">Activity</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="visit">
+             <div class="row">
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="company_visit" [chartData]="company_VisitData" [chartOptions] = "company_VisitOptions" chartType="BarChart" GoogleChart></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="jail_visit" [chartData]="jail_VisitData" [chartOptions] = "jail_VisitOptions" chartType="PieChart" GoogleChart></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="hostpital_visit" [chartData]="hostpital_VisitData" [chartOptions] = "hostpital_VisitOptions" chartType="BarChart" GoogleChart></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="migrationshelter_visit" [chartData]="migrationshelter_VisitData" [chartOptions] = "migrationshelter_VisitOptions" chartType="PieChart" GoogleChart></div>
+                  </div>
+                </div>
+              </div>
+             </div>
+            <div role="tabpanel" class="tab-pane fade" id="finance">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="remittance" [chartData]="remittance_FincaneData" [chartOptions] = "remittance_FincaneOptions" chartType="BarChart" GoogleChart></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="budget" [chartData]="budget_FincaneData" [chartOptions] = "budget_FincaneOptions" chartType="PieChart" GoogleChart></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="activity">
+                <div class="row">
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="marketassessment" [chartData]="marketassessment_ActivityData" [chartOptions] = "marketassessment_ActivityOptions" chartType="BarChart" GoogleChart></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box-header with-border">
+                      <div id="employeeenhancement" [chartData]="employeeenhancement_ActivityData" [chartOptions] = "employeeenhancement_ActivityOptions" chartType="PieChart" GoogleChart></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <app-footer></app-footer>
+</div>
+<!-- ./wrapper -->
+

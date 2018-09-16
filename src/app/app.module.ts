@@ -151,6 +151,8 @@ import {RemittanceWelfareFundListComponent} from './finance/remittance-welfare-f
 import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-update.component';
 import  { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
+import { CompanyReportComponent } from './reports/visit/company/company-report.component';
+import { GoogleChartComponent } from './google-chart/google-chart.component'
 
 const appRoutes: Routes  = [
   {
@@ -640,6 +642,11 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: MonthWiseViewComponent
   },
+  {
+    path: 'reports',
+    canActivate: [AuthGuard],
+    component: CompanyReportComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
@@ -751,6 +758,8 @@ const appRoutes: Routes  = [
     RemittanceWelfareFundListComponent,
     RemittanceWelfareFundUpdateComponent,
     MonthWiseViewComponent,
+    CompanyReportComponent,
+    GoogleChartComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
