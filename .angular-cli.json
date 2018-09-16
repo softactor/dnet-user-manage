@@ -25,6 +25,7 @@
         "assets/bower_components/jvectormap/jquery-jvectormap.css",
         "assets/dist/css/AdminLTE.min.css",
         "assets/dist/css/skins/_all-skins.min.css",
+        "assets/dist/css/jquery-ui.css",
         "styles.css"
       ],
       "scripts": [
@@ -33,7 +34,8 @@
         "assets/bower_components/bootstrap/dist/js/bootstrap.min.js",
         "assets/dist/js/adminlte.min.js",
         "assets/dist/js/toastr.min.js",
-        "assets/bower_components/datatables.net/js/jquery.dataTables.js"
+        "assets/bower_components/datatables.net/js/jquery.dataTables.js",
+        "assets/dist/js/date.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

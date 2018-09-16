@@ -39,13 +39,19 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Country</label>
-                  <input required type="text" class="form-control" ngModel #country="ngModel" name="country" id="country" placeholder="Enter Country">
                   <div class="alert alert-danger" *ngIf="country.touched && !country.valid">Country is required</div>
+                  <select class="form-control" ngModel #country="ngModel" name="country" id="country">
+                    <option value="" selected>Select</option>
+                    <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Assigned Country</label>
-                  <input required type="text" class="form-control" ngModel #assigned_country="ngModel" name="assigned_country" id="assigned_country" placeholder="Assigned Country">
                   <div class="alert alert-danger" *ngIf="assigned_country.touched && !assigned_country.valid">Assigned country is required</div>
+                  <select class="form-control" ngModel #assigned_country="ngModel" name="assigned_country" id="assigned_country">
+                    <option value="" selected>Select</option>
+                    <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
@@ -64,7 +70,7 @@
                 </div>
                 <div class="form-group">
                   <label for="select">Access</label>
-                  <select id="select" class="form-control" name="access" id="access" [(ngModel)]="access">
+                  <select class="form-control" name="access" id="access" [(ngModel)]="access">
                     <option value="" selected>Select</option>
                     <option *ngFor="let access of userAccessLevel" [value]="access.id">{{access.description}}</option>
                   </select>

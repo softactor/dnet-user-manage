@@ -9,8 +9,8 @@ export class AuthenticationService {
   public user_name;
   public loggedInUserId;
   constructor() {
-    let accessToken = localStorage.getItem("access_token");
-    if(accessToken) {
+    const accessToken = localStorage.getItem('access_token');
+    if (accessToken) {
       this.isUserLoggedIn = true;
     }else{
       this.isUserLoggedIn = false;

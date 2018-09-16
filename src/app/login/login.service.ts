@@ -9,7 +9,7 @@ export class LoginService {
   }
 
   postLoginData(loginParam) {
-    const _headers    =  new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    const _headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     const postString  =  'username=' + loginParam.username + '&password=' + loginParam.password;
     return this._http.post(environment.baseApi + 'user/login', postString, {headers: _headers});
   }

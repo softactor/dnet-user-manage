@@ -8,18 +8,23 @@ export class CompanyService {
   constructor(
     private _http: HttpClient) { }
   // get company list
-  getCompanyListData(authorizationKey) {
+  getCompanyListData(authorizationKey, defaultDate, assignTo) {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
-    return this._http.get(environment.baseApi + 'visit/company/list/', {headers: _headers});
+    return this._http.get(environment.baseApi + 'visit/company/list?date='
+      + defaultDate
+      + '&la=' + assignTo,
+      {headers: _headers});
   }
 
-  create(createParam, authorizationKey) {
+  create(createParam, authorizationKey, defaultDate, assignTo) {
     const _headers    =  new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('authorization', authorizationKey);
     const postString  =  'name=' + createParam.name
       + '&address=' + createParam.address
       + '&outcome=' + createParam.outcome
+      + '&date=' + defaultDate
+      + '&assign_to=' + assignTo
     return this._http.post(environment.baseApi + 'visit/company/create', postString, {headers: _headers});
   }
   getDetailsById(detailsParam) {

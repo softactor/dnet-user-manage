@@ -17,6 +17,8 @@ export class CompanyCreateComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
+  defaultDate;
+  assignTo;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -30,7 +32,12 @@ export class CompanyCreateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#defaultDate').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
+      $('#defaultDate').datepicker('setDate', new Date());
     });
+    this.assignTo = localStorage.getItem('assign_to');
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
       name    : '',
@@ -46,7 +53,8 @@ export class CompanyCreateComponent implements OnInit {
   }
 
   public onFormSubmit() {
-    this._service.create(this.formData.value, this.authorizationKey).subscribe( response => {
+    this.defaultDate  = $('#defaultDate').val();
+    this._service.create(this.formData.value, this.authorizationKey, this.defaultDate, this.assignTo).subscribe( response => {
       this._toasterService.success('Company has been successfully created.');
       this.router.navigate(['company-list']);
     },

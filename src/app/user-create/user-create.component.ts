@@ -15,6 +15,8 @@ export class UserCreateComponent implements OnInit {
   authorizationKey;
   userAccessLevelResponse;
   userAccessLevel;
+  countryList;
+  countryListResponse;
   constructor(private _userCreateService: UserCreateService,
               private router: Router,
               private _toasterService: TosterService,
@@ -32,6 +34,11 @@ export class UserCreateComponent implements OnInit {
     this._userCreateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {
       this.userAccessLevelResponse = response;
       this.userAccessLevel = this.userAccessLevelResponse.results;
+    });
+
+    // get country list;
+    this._userCreateService.getListData(this.authorizationKey, 'locations/countries/list').subscribe( response => {
+      this.countryListResponse = response;
     });
   }
   createUser(form: NgForm, e) {
