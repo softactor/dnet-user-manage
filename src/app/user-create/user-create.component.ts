@@ -17,6 +17,7 @@ export class UserCreateComponent implements OnInit {
   userAccessLevel;
   countryList;
   countryListResponse;
+
   constructor(private _userCreateService: UserCreateService,
               private router: Router,
               private _toasterService: TosterService,
@@ -30,7 +31,8 @@ export class UserCreateComponent implements OnInit {
       trees.tree();
     });
     // get user access level;
-    this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
+    //this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._userCreateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {
       this.userAccessLevelResponse = response;
       this.userAccessLevel = this.userAccessLevelResponse.results;

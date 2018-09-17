@@ -1,11 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import {GoogleChartComponent} from '../../../google-chart/google-chart.component';
+import { ApiProcessService } from '../../../api-process.service';
+import {AuthenticationService} from '../../../authentication.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+declare var $: any;
 
 @Component({
   selector: 'app-company-report',
   templateUrl: './company-report.component.html',
 })
 export class CompanyReportComponent implements OnInit {
+  authorizationKey;
+  countryListResponse;
+  labourattacheListResponse;
+
+  constructor(private _apiProcessService: ApiProcessService,
+              private _authentication: AuthenticationService,
+              private _http: HttpClient) { }
+
+
   /* Module Visit */
       /*
       * Company Visit
@@ -120,10 +133,24 @@ export class CompanyReportComponent implements OnInit {
         title: 'Employee Enhancement',
       };
 
-
-  constructor() { }
-
   ngOnInit() {
-    }
+      // to solve the left menu hide problem;
+      $(document).ready(() => {
+      const trees: any = $('[data-widget="tree"]');
+      trees.tree();
+      });
 
+      this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+      // get country list;
+      this._apiProcessService.getListData(this.authorizationKey, 'locations/countries/list').subscribe( response => {
+      this.countryListResponse = response;
+       });
+
+      // get labourattache list;
+      this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
+      console.log(response)
+      this.labourattacheListResponse = response;
+      });
+
+   }
 }

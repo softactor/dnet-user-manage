@@ -29,10 +29,20 @@
                     <div><span> To Date:</span><br/><input name="to_date"></div>
                 </div>
                  <div class="col-md-3">
-                    <div><span>Country:</span><br/><input name="from_date"></div>
+                    <div><span>Country:</span><br/>
+                      <select class="form-control" ngModel #country="ngModel" name="country" id="country">
+                        <option value="" selected>Select Country</option>
+                        <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
+                      </select>
+                    </div>
                 </div>
                  <div class="col-md-3">
-                    <div><span>Labour Attache:</span><br/><input name="from_date"></div>
+                    <div><span>Labour Attache:</span><br/>
+                        <select class="form-control" ngModel #country="ngModel" name="country" id="labourattache">
+                        <option value="" selected>Select Labourattache</option>
+                        <!--<option *ngFor="let labourattacheList of labourattacheListResponse" [value]="labourattacheList.id">{{labourattacheList.first_name}}</option>-->
+                      </select>
+                    </div>
                 </div>
               </div>
           </div>
