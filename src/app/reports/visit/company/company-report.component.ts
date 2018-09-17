@@ -12,7 +12,7 @@ declare var $: any;
 export class CompanyReportComponent implements OnInit {
   authorizationKey;
   countryListResponse;
-  labourattacheListResponse;
+  labourattacheListResponse: any;
 
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
@@ -148,7 +148,6 @@ export class CompanyReportComponent implements OnInit {
 
       // get labourattache list;
       this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
-      console.log(response)
       this.labourattacheListResponse = response;
       });
 
