@@ -17,6 +17,7 @@ export class UserCreateComponent implements OnInit {
   userAccessLevel;
   countryList;
   countryListResponse;
+
   constructor(private _userCreateService: UserCreateService,
               private router: Router,
               private _toasterService: TosterService,

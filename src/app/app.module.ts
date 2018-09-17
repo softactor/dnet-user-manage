@@ -153,6 +153,7 @@ import  { MonthWiseViewService } from './month-wise-view/month-wise-view.service
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
 import { CompanyReportComponent } from './reports/visit/company/company-report.component';
 import { GoogleChartComponent } from './google-chart/google-chart.component'
+import { ApiProcessService } from './api-process.service'
 
 const appRoutes: Routes  = [
   {
@@ -810,6 +811,7 @@ const appRoutes: Routes  = [
     BudgetService,
     RemittanceWelfareFundService,
     MonthWiseViewService,
+    ApiProcessService,
   ],
   bootstrap: [AppComponent]
 })
