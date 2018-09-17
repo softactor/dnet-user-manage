@@ -40,9 +40,10 @@ export class CompanyListComponent implements OnInit {
     }, 1000);
     this.assignTo = localStorage.getItem('assign_to');
     // this.defaultDate  = $('#defaultDate').val();
-    this.defaultDate  =  new Date();
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getCompanyListData(this.authorizationKey, this.defaultDate.toString('yyyy-MM'), this.assignTo).subscribe( response => {
+    this.defaultDate        =   new Date();
+    this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this._service.getCompanyListData(this.authorizationKey, this.defaultDate.toString('yyyy-MM'), this.assignTo)
+      .subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },

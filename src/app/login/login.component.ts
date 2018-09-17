@@ -31,8 +31,8 @@ export class LoginComponent {
     this._loginService.postLoginData(loginParam).subscribe(response => {
       this.loginDataResponse  =  response;
       if (this.loginDataResponse.access_token) {
-        this._authentication.access_token = this.loginDataResponse.access_token;
-        this._authentication.token_type = this.loginDataResponse.token_type;
+        this._authentication.access_token = localStorage.getItem('token_type');
+        this._authentication.token_type   = this.loginDataResponse.token_type;
         this._authentication.setUserLoggedIn();
         localStorage.setItem('access_token', this.loginDataResponse.access_token);
         localStorage.setItem('token_type', this.loginDataResponse.token_type);

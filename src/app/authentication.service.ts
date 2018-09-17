@@ -12,7 +12,7 @@ export class AuthenticationService {
     const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
       this.isUserLoggedIn = true;
-    }else{
+    }else {
       this.isUserLoggedIn = false;
     }
   }
