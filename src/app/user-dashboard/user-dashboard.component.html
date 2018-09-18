@@ -18,6 +18,9 @@
 
     <!-- Main content -->
     <section class="content">
+      <p><strong>{{idleState}}</strong></p>
+      <p *ngIf="lastPing"><small>Last keepalive ping <strong>{{lastPing | amTimeAgo}}</strong></small></p>
+      <button (click)="reset()" *ngIf="timedOut">Restart</button>
     </section>
     <!-- /.content -->
   </div>
