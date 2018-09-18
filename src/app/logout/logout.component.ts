@@ -21,7 +21,7 @@ export class LogoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');;
+    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     const userLogoutParam  = {
           authorizationKey  : this.authorizationKey.toString()
     };
