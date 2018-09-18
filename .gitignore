@@ -1,5 +1,6 @@
 .gitignore
 de_modules
+node_modules
 .idea
 typings
 server/**/.js
