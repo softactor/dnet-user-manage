@@ -23,7 +23,7 @@ export class AppComponent {
     let expiresIn;
     const timeoutPeriod = 10;
     this.activeComponent = 'dashboard';
-    this.expires_in = 1200; // localStorage.getItem('expires_in');
+    this.expires_in = localStorage.getItem('expires_in');
     expiresIn = Number(this.expires_in / 60) - timeoutPeriod;
     // checkInactivity() {
     // sets an idle timeout of 5 seconds, for testing purposes.
