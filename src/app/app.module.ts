@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdMenuModule, MdSidenavModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule;
+import { MomentModule } from 'angular2-moment'; // optional, provides moment-style pipes for date formatting
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LeftMenuComponent } from './layout/left-menu/left-menu.component';
@@ -151,9 +153,10 @@ import {RemittanceWelfareFundService} from './finance/remittance-welfare-fund/re
 import {RemittanceWelfareFundCreateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-create.component';
 import {RemittanceWelfareFundListComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-list.component';
 import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-update.component';
-import  { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
+import { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
 import { CompanyReportComponent } from './reports/visit/company/company-report.component';
+<<<<<<< HEAD
 import { GoogleChartComponent } from './google-chart/google-chart.component';
 import { ApiProcessService } from './api-process.service';
 import { MdCardModule, MdDatepickerModule, MdInputModule, MdNativeDateModule } from '@angular/material';
@@ -193,6 +196,8 @@ import {
 import { CompatibilityModule } from '@angular/material';
 import {NoConflictStyleCompatibilityMode} from '@angular/material';
 import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
+import { GoogleChartComponent } from './google-chart/google-chart.component'
+import { ApiProcessService } from './api-process.service';
 
 const appRoutes: Routes  = [
   {
@@ -830,39 +835,41 @@ const MY_DATE_FORMATS = {
     MdInputModule,
     MdNativeDateModule,
     MdCardModule,
-      MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule,
-  CompatibilityModule,
-  NoConflictStyleCompatibilityMode,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+    CompatibilityModule,
+    NoConflictStyleCompatibilityMode,
+    MomentModule,
+    NgIdleKeepaliveModule.forRoot(),
   ],
   providers: [
     UserListService,

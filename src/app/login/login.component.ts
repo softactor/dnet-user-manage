@@ -37,6 +37,7 @@ export class LoginComponent {
         localStorage.setItem('access_token', this.loginDataResponse.access_token);
         localStorage.setItem('token_type', this.loginDataResponse.token_type);
         localStorage.setItem('logged_in_id', this.loginDataResponse.user_id);
+        localStorage.setItem('expires_in', this.loginDataResponse.expires_in);
         const authorizationKey  = this.loginDataResponse.token_type + ' ' + this.loginDataResponse.access_token;
         const getUserDetailsParam  = {
           editUserId        : this.loginDataResponse.user_id,

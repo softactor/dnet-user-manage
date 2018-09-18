@@ -75,7 +75,7 @@ export class CompanyReportComponent implements OnInit {
         ['Commute',  2],
         ['Watch TV', 2],
         ['Sleep',    7] ];
-        
+
       this.company_VisitOptions  = {
         title: 'Company Visit ',
       };
