@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdMenuModule, MdSidenavModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -152,8 +154,45 @@ import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare
 import  { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
 import { CompanyReportComponent } from './reports/visit/company/company-report.component';
-import { GoogleChartComponent } from './google-chart/google-chart.component'
-import { ApiProcessService } from './api-process.service'
+import { GoogleChartComponent } from './google-chart/google-chart.component';
+import { ApiProcessService } from './api-process.service';
+import { MdCardModule, MdDatepickerModule, MdInputModule, MdNativeDateModule } from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+import { CompatibilityModule } from '@angular/material';
+import {NoConflictStyleCompatibilityMode} from '@angular/material';
+import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
 
 const appRoutes: Routes  = [
   {
@@ -651,6 +690,20 @@ const appRoutes: Routes  = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
 ];
+
+const MY_DATE_FORMATS = {
+    parse: {
+        dateInput: { day: 'numeric', month: 'numeric', year: 'numeric' }
+    },
+    display: {
+        dateInput: 'input',
+        monthYearLabel: { year: 'numeric', month: 'short' },
+        dateA11yLabel: { year: 'numeric', month: 'long', day: 'numeric' },
+        monthYearA11yLabel: { year: 'numeric', month: 'long' },
+    }
+ };
+
+
 // arbitration-disputes
 @NgModule({
   declarations: [
@@ -768,7 +821,48 @@ const appRoutes: Routes  = [
     HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdMenuModule,
+    MdSidenavModule,
+    MdDatepickerModule,
+    MdInputModule,
+    MdNativeDateModule,
+    MdCardModule,
+      MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+  CompatibilityModule,
+  NoConflictStyleCompatibilityMode,
   ],
   providers: [
     UserListService,
@@ -812,6 +906,7 @@ const appRoutes: Routes  = [
     RemittanceWelfareFundService,
     MonthWiseViewService,
     ApiProcessService,
+
   ],
   bootstrap: [AppComponent]
 })
