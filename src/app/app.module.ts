@@ -156,7 +156,6 @@ import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare
 import { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
 import { CompanyReportComponent } from './reports/visit/company/company-report.component';
-<<<<<<< HEAD
 import { GoogleChartComponent } from './google-chart/google-chart.component';
 import { ApiProcessService } from './api-process.service';
 import { MdCardModule, MdDatepickerModule, MdInputModule, MdNativeDateModule } from '@angular/material';

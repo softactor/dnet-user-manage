@@ -5,13 +5,7 @@
 
 export const environment = {
   production: false,
-<<<<<<< HEAD
-  //baseApi  : 'http://192.168.3.70:8000/api/'
- // baseApi  : 'http://labourattache.com.bd/api/'
-  baseApi  : 'http://192.168.2.178:8000/api/'
-=======
   // baseApi  : 'http://192.168.3.70:8000/api/'
-     baseApi  : 'http://labourattache.com.bd/api/'
-  // baseApi  : 'http://192.168.2.178:8000/api/'
->>>>>>> f6b0e1732ac9ff1015a112a8e4d1df57d2f83147
+   //  baseApi  : 'http://labourattache.com.bd/api/'
+  baseApi  : 'http://192.168.2.178:8000/api/'
 };
