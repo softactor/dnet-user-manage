@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule} from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdMenuModule, MdSidenavModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
@@ -195,8 +196,6 @@ import {
 import { CompatibilityModule } from '@angular/material';
 import {NoConflictStyleCompatibilityMode} from '@angular/material';
 import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
-import { GoogleChartComponent } from './google-chart/google-chart.component'
-import { ApiProcessService } from './api-process.service';
 
 const appRoutes: Routes  = [
   {
@@ -824,6 +823,7 @@ const MY_DATE_FORMATS = {
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserModule,
+    HttpModule,
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
