@@ -16,16 +16,11 @@ export class CompanyService {
       {headers: _headers});
   }
 
-  create(createParam, authorizationKey, defaultDate, assignTo) {
+  create(postString, api, authorizationKey) {
     const _headers    =  new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('authorization', authorizationKey);
-    const postString  =  'name=' + createParam.name
-      + '&address=' + createParam.address
-      + '&outcome=' + createParam.outcome
-      + '&date=' + defaultDate
-      + '&assign_to=' + assignTo
-    return this._http.post(environment.baseApi + 'visit/company/create', postString, {headers: _headers});
+    return this._http.post(environment.baseApi + api, postString, {headers: _headers});
   }
   getDetailsById(detailsParam) {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
