@@ -13,29 +13,6 @@ declare var $: any;
   styleUrls: ['./residence-create.component.css']
 })
 export class ResidenceCreateComponent implements OnInit {
-  protected searchStr: string;
-  protected captain: string;
-  // protected dataService: CompleterData;
-  protected searchData = [
-    { color: 'red', value: '#f00' },
-    { color: 'green', value: '#0f0' },
-    { color: 'blue', value: '#00f' },
-    { color: 'cyan', value: '#0ff' },
-    { color: 'magenta', value: '#f0f' },
-    { color: 'yellow', value: '#ff0' },
-    { color: 'black', value: '#000' }
-  ];
-  protected captains = [
-    'James T. Kirk',
-    'Benjamin Sisko',
-    'Jean-Luc Picard',
-    'Spock',
-    'Jonathan Archer',
-    'Hikaru Sulu',
-    'Christopher Pike',
-    'Rachel Garrett'
-  ];
-
   residences: ResidenceModel[] = [];
   similarTypes;
   inputFields;
@@ -45,8 +22,9 @@ export class ResidenceCreateComponent implements OnInit {
   responseError;
   tableListData;
   form_type;
-  form_type_value;
-  availableTags;
+  listApi;
+  defaultDate;
+  assignTo;
   showDropDown;
   constructor(
     private fb: FormBuilder,
@@ -56,8 +34,10 @@ export class ResidenceCreateComponent implements OnInit {
     private _service: ResidenceService,
     // private completerService: CompleterService,
     private _http: HttpClient) {
+    this.listApi  = 'visit/residence/list?type=Residence';
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey).subscribe( response => {
+    this.assignTo = localStorage.getItem('assign_to');
+    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },
@@ -73,9 +53,14 @@ export class ResidenceCreateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#defaultDate').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
+      $('#defaultDate').datepicker('setDate', new Date());
+      this.defaultDate = $('#defaultDate').val();
     });
     this.similarTypes = [];
-    this.form_type = 'Residdence';
+    this.form_type    = 'Residence';
     this.similarTypes.push(this.form_type);
     const residenceObj = new ResidenceModel();
     // @ts-ignore
@@ -89,17 +74,24 @@ export class ResidenceCreateComponent implements OnInit {
     };
 
     this.formData = this.fb.group({
-      name: ['', Validators.required],
-      address: ['', Validators.required],
-      form_type: ['', ''],
-      outcome: ['', Validators.requiredTrue]
+      name:       ['', Validators.required],
+      address:    ['', Validators.required],
+      form_type:  ['', ''],
+      outcome:    ['', Validators.requiredTrue]
     });
   }
 
   public onFormSubmit(fields, type) {
-    this._service.create(fields, this.authorizationKey, type).subscribe( response => {
+      this.defaultDate = $('#defaultDate').val();
+    const postString  =  'name=' + fields.name
+      + '&address='     + fields.address
+      + '&outcome='     + fields.outcome
+      + '&date='        + this.defaultDate
+      + '&assign_to='   + this.assignTo
+      + '&type='        + type
+      this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe( response => {
         this._toasterService.success('Data has been successfully created.');
-        this._service.getListData(this.authorizationKey.toString()).subscribe( listResponse => {
+        this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
             this.tableListData = listResponse;
             this.feedbackData = this.tableListData.results;
           },
@@ -117,7 +109,7 @@ export class ResidenceCreateComponent implements OnInit {
 
   public copyForm(e) {
     if (this.form_type) {
-      if(this.similarTypes.indexOf(this.form_type) === -1) {
+      if (this.similarTypes.indexOf(this.form_type) === -1) {
         this.similarTypes.push(this.form_type);
         const residenceObj = new ResidenceModel();
         // @ts-ignore

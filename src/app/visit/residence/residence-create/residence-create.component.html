@@ -21,16 +21,17 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <!--<ng2-completer-->
-                <!--[inputClass]="'form-control custome_search_width'"-->
-                <!--[(ngModel)]="searchStr"-->
-                <!--[datasource]="dataService"-->
-                <!--[placeholder] = "'Form type'"-->
-                <!--(keyup) = "getSuggession('name')"-->
-                <!--[minSearchLength]="3"></ng2-completer>-->
-              <input type="text" id="form_type" class="form-control" style="width: 20%; float: left; margin-right: 1%;" placeholder="Similar type" name="form_type" [(ngModel)]="form_type">
-              <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i></button>
-
+              <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                  <label for="email">Date</label>
+                  <input type="text" id="defaultDate" class="form-control" [(ngModel)]="defaultDate">
+                </div>
+                <div class="form-group">
+                  <label for="Similar_Type">Similar Type</label>
+                  <input type="text" id="form_type" class="form-control" placeholder="Similar type" name="form_type" [(ngModel)]="form_type">
+                  <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i></button>
+                </div>
+              </form>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -88,7 +89,8 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th>Outcome</th>
-                <th>Action</th>
+                <th>Type</th>
+                <th class="pull-right">Action</th>
               </tr>
               </thead>
               <tbody>
@@ -97,7 +99,8 @@
                 <td>{{ Residence.name }}</td>
                 <td>{{ Residence.address }}</td>
                 <td>{{ Residence.outcome }}</td>
-                <td>
+                <td>{{ Residence.type }}</td>
+                <td class="pull-right">
                   <a routerLink="/residence-update/{{Residence.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                   <button [swal]="deleteSwal"
                           type="button" class="btn bg-red">
@@ -121,7 +124,8 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th>Outcome</th>
-                <th>Action</th>
+                <th>Type</th>
+                <th class="pull-right">Action</th>
               </tr>
               </tfoot>
             </table>

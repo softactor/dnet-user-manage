@@ -6,20 +6,10 @@ import { environment } from '../../environments/environment';
 export class UserCreateService {
 
   constructor(private _http: HttpClient) {}
-  creteUserData(userCreateParam) {
-    const _headers    =  new HttpHeaders().set('content-type', 'application/x-www-form-urlencoded');
-    _headers.set('content-type', 'application/x-www-form-urlencoded');
-    _headers.set('Access-Control-Allow-Origin', '*');
-    const postString  =  'first_name=' + userCreateParam.first_name
-      + '&last_name=' + userCreateParam.last_name
-      + '&mobile=' + userCreateParam.mobile
-      + '&email=' + userCreateParam.email
-      + '&country=' + userCreateParam.country
-      + '&assigned_country=' + userCreateParam.assigned_country
-      + '&is_superuser=' + false
-      + '&password=' + userCreateParam.password
-      + '&access=' + userCreateParam.access
-      + '&address=' + userCreateParam.address;
+  creteUserData(postString, authorizationKey) {
+    const _headers    =  new HttpHeaders()
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('authorization', authorizationKey);
     return this._http.post(environment.baseApi + 'user/create', postString, {headers: _headers});
   }
   getUserAccessLevel(authorizationKey) {

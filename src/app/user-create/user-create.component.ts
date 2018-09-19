@@ -45,19 +45,17 @@ export class UserCreateComponent implements OnInit {
   createUser(form: NgForm, e) {
     e.preventDefault();
     if (form.valid) {
-      const userCreateParam = {
-        address           : form.value.address,
-        assigned_country  : form.value.assigned_country,
-        country           : form.value.country,
-        email             : form.value.email,
-        first_name        : form.value.first_name,
-        last_name         : form.value.last_name,
-        mobile            : form.value.mobile,
-        password          : 'dead',
-        is_superuser      : '',
-        access            : form.value.access
-      };
-      this._userCreateService.creteUserData(userCreateParam).subscribe(response => {
+      const postString  =  'first_name=' + form.value.first_name
+        + '&last_name='         + form.value.last_name
+        + '&mobile='            + form.value.mobile
+        + '&email='             + form.value.email
+        + '&country='           + form.value.country
+        + '&assigned_country='  + form.value.assigned_country
+        + '&is_superuser='      + true
+        + '&password='          + '123456'
+        + '&access='            + form.value.access
+        + '&address='           + form.value.address;
+      this._userCreateService.creteUserData(postString, this.authorizationKey).subscribe(response => {
         this._toasterService.success('User has been successfully created.');
         this.router.navigate(['user-list']);
       });
