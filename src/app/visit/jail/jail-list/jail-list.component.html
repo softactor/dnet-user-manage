@@ -24,9 +24,12 @@
               <h3 class="box-title">New Jail Visit Entry</h3>
               <a routerLink="/jail-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
             </div>
-            <!-- /.box-header -->
+            <div *ngIf="!tableFeedbackData?.length > 0">
+              <strong>No Data Found !!</strong>
+            </div>
             <div class="box-body no-padding">
-              <table id="jail_list" class="table table-striped display" style="width:100%">
+
+              <table id="jail_list" class="table table-striped display" style="width:100%" *ngIf="tableFeedbackData?.length > 0">
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
