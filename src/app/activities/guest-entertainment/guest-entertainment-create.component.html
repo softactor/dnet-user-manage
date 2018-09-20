@@ -21,51 +21,59 @@
             <div class="row">
               <div class="col-md-6 col-md-offset-3 border border-primary">
             <div class="box-header with-border">
-
+              <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                  <label for="email">Date</label>
+                  <input type="text" id="defaultDate" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="Similar_Type">Similar Type</label>
+                  <input type="text" id="form_type" class="form-control" placeholder="Similar type" name="form_type"
+                         [(ngModel)]="form_type">
+                  <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </form>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="onFormSubmit()">
-              <div class="box-body">
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.total_number ? true: false" [class.has-feedback]="responseError?.total_number ? true: false">
-                  <label for="total_number">Total number</label>
-                  <input type="text"
-                         name="total_number"
-                         formControlName = "total_number"
-                         id="inputTotalNumber"
-                         class="form-control"
-                         placeholder="Total number">
-                  <div class="error-message" *ngIf="responseError?.total_number">{{responseError?.total_number}}</div>
+                <div class="box-body" *ngFor="let fields of guestEntertainment; let i = index">
+                  <form>
+                    <div
+                      class="form-group"
+                      [class.has-warning]="responseError?.total_number ? true: false"
+                      [class.has-feedback]="responseError?.total_number ? true: false">
+                      <label for="total_number">Total number</label>
+                      <input type="text"
+                             name="total_number"
+                             [(ngModel)]="fields.total_number"
+                             id="inputTotalNumber"
+                             class="form-control"
+                             placeholder="Total number">
+                      <div class="error-message" *ngIf="responseError?.total_number">{{responseError?.total_number}}
+                      </div>
 
-                </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.purpose ? true: false" [class.has-feedback]="responseError?.purpose ? true: false">
-                  <label for="purpose">Purpose</label>
-                  <input type="text"
-                         name="purpose"
-                         formControlName = "purpose"
-                         id="inputPurpose"
-                         class="form-control"
-                         placeholder="Purpose">
-                  <div class="error-message" *ngIf="responseError?.purpose">{{responseError?.purpose}}</div>
+                    </div>
+                    <div
+                      class="form-group"
+                      [class.has-warning]="responseError?.purpose ? true: false"
+                      [class.has-feedback]="responseError?.purpose ? true: false">
+                      <label for="purpose">Purpose</label>
+                      <input type="text"
+                             name="purpose"
+                             [(ngModel)]="fields.purpose"
+                             id="inputPurpose"
+                             class="form-control"
+                             placeholder="Purpose">
+                      <div class="error-message" *ngIf="responseError?.purpose">{{responseError?.purpose}}</div>
 
+                    </div>
+                    <button type="button" class="btn btn-primary form_submit"
+                            (click)="onFormSubmit(fields, similarTypes[i])">Submit
+                    </button>
+                  </form>
                 </div>
-                <div class="form-group">
-                  <label for="type">Type</label>
-                  <input type="text"
-                         name="type"
-                         formControlName = "type"
-                         id="inputtype"
-                         class="form-control"
-                         placeholder="Type">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
               <!-- /.box-body -->
-            </form>
           </div>
           </div>
           </div>

@@ -22,7 +22,7 @@ export class CompanyCreateComponent implements OnInit {
   responseError;
   defaultDate;
   assignTo;
-  form_type
+  form_type;
   constructor(
     private fb: FormBuilder,
     private router: Router,
