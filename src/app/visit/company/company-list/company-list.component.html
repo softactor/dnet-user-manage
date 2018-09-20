@@ -20,9 +20,12 @@
               <p class="pull-left">Date: <input type="text" id="defaultDate" [(ngModel)]="defaultDate"></p>
               <h3 class="box-title">New Company Visit Entry</h3>
               <a routerLink="/company-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+                <div *ngIf="!feedbackData?.length > 0">
+                  <strong>No Data Found !!</strong>
+                </div>
             </div>
             <div class="box-body no-padding">
-              <table id="company_list" class="table table-striped display" style="width:100%">
+              <table id="company_list" class="table table-striped display" style="width:100%" *ngIf="feedbackData?.length > 0">
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
