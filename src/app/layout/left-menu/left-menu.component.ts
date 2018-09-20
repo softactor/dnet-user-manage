@@ -12,8 +12,12 @@ export class LeftMenuComponent implements OnInit {
     this.checkVisitTitle = 'Ulalala';
     this.loggedInUserName = localStorage.getItem('logged_user_name');
   }
+  selectIndex: number;
 
   ngOnInit() {
+  }
+  addActiveClass(index) {
+    this.selectIndex  = index;
   }
 
 }

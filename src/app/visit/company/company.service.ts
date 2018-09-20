@@ -8,11 +8,9 @@ export class CompanyService {
   constructor(
     private _http: HttpClient) { }
   // get company list
-  getCompanyListData(authorizationKey, defaultDate, assignTo) {
+  getCompanyListData(authorizationKey, api) {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
-    return this._http.get(environment.baseApi + 'visit/company/list?date='
-      + defaultDate
-      + '&la=' + assignTo,
+    return this._http.get(environment.baseApi + api,
       {headers: _headers});
   }
 

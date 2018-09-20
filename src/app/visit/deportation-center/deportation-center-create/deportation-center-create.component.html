@@ -1,7 +1,3 @@
-<div class="wrapper">
-  <app-header></app-header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <app-left-menu></app-left-menu>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -25,70 +21,76 @@
               <div class="col-md-6 col-md-offset-3 border border-primary">
 
             <div class="box-header with-border">
-
+              <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                  <label for="email">Date</label>
+                  <input type="text" id="defaultDate" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="Similar_Type">Similar Type</label>
+                  <input type="text" id="form_type" class="form-control" placeholder="Similar type" name="form_type" [(ngModel)]="form_type">
+                  <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i></button>
+                </div>
+              </form>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="onFormSubmit()">
-              <div class="box-body">
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.name ? true: false" [class.has-feedback]="responseError?.name ? true: false">
-                  <label for="name">Name</label>
-                  <input type="text"
-                         name="name"
-                         formControlName = "name"
-                         id="inputName"
-                         class="form-control"
-                         placeholder="Name">
-                  <div class="error-message" *ngIf="responseError?.name">{{responseError?.name}}</div>
+                <div class="box-body" *ngFor="let fields of deportation; let i = index">
+                  <form>
+                    <div
+                      class="form-group"
+                      [class.has-warning]="responseError?.name ? true: false"
+                      [class.has-feedback]="responseError?.name ? true: false">
+                      <label for="name">Name</label>
+                      <input type="text"
+                             name="name"
+                             [(ngModel)]="fields.name"
+                             id="inputName"
+                             class="form-control"
+                             placeholder="Name">
+                      <div class="error-message" *ngIf="responseError?.name">{{responseError?.name}}</div>
+                    </div>
+                    <div
+                      class="form-group"
+                      [class.has-warning]="responseError?.address ? true: false"
+                      [class.has-feedback]="responseError?.address ? true: false">
+                      <label for="address">Address</label>
+                      <input type="text"
+                             name="address"
+                             [(ngModel)]="fields.address"
+                             id="inputAddress"
+                             class="form-control"
+                             placeholder="Address">
+                      <div class="error-message" *ngIf="responseError?.address">{{responseError?.address}}</div>
+                    </div>
+                    <div
+                      class="form-group"
+                      [class.has-warning]="responseError?.outcome ? true: false"
+                      [class.has-feedback]="responseError?.outcome ? true: false">
+                      <label for="outcome">Outcome</label>
+                      <input type="text"
+                             name="outcome"
+                             [(ngModel)]="fields.outcome"
+                             id="inputOutcome"
+                             class="form-control"
+                             placeholder="Outcome">
+                      <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
+                    </div>
+                    <div class="form-group">
+                      <label for="no_of_bangladeshis">Number Of Bangladeshis</label>
+                      <input type="text"
+                             name="no_of_bangladeshis"
+                             [(ngModel)]="fields.no_of_bangladeshis"
+                             id="input_no_of_bangladeshis"
+                             class="form-control"
+                             placeholder="No of bangladeshis">
+                    </div>
+                    <button type="button" class="btn btn-primary form_submit"
+                            (click)="onFormSubmit(fields, similarTypes[i])">Submit
+                    </button>
+                    <!-- /.box-body -->
+                  </form>
                 </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.address ? true: false" [class.has-feedback]="responseError?.address ? true: false">
-                  <label for="address">Address</label>
-                  <input type="text"
-                         name="address"
-                         formControlName = "address"
-                         id="inputAddress"
-                         class="form-control"
-                         placeholder="Address">
-                  <div class="error-message" *ngIf="responseError?.address">{{responseError?.address}}</div>
-                </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
-                  <label for="outcome">Outcome</label>
-                  <input type="text"
-                         name="outcome"
-                         formControlName = "outcome"
-                         id="inputOutcome"
-                         class="form-control"
-                         placeholder="Outcome">
-                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
-                </div>
-                <div class="form-group">
-                  <label for="no_of_bangladeshis">Number Of Bangladeshis</label>
-                  <input type="text"
-                         name="no_of_bangladeshis"
-                         formControlName = "no_of_bangladeshis"
-                         id="input_no_of_bangladeshis"
-                         class="form-control"
-                         placeholder="No of bangladeshis">
-                </div>
-                <div class="form-group">
-                  <label for="type">Type</label>
-                  <input type="text"
-                         name="type"
-                         formControlName = "type"
-                         id="inputtype"
-                         class="form-control"
-                         placeholder="Type">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-              <!-- /.box-body -->
-            </form>
               </div>
               </div>
           </div>
@@ -99,6 +101,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <app-footer></app-footer>
-</div>
-<!-- ./wrapper -->

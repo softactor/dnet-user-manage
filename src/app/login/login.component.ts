@@ -11,6 +11,7 @@ import { UserUpdateService } from '../user-update/user-update.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loginPage;
   loginDataResponse;
   errorResponse;
   userDetailsDataContainer;
@@ -21,6 +22,7 @@ export class LoginComponent {
     private _authentication: AuthenticationService,
     private _userUpdateService: UserUpdateService,
   ) {
+    this.loginPage  = true;
   }
   loginUser(e) {
     e.preventDefault();
