@@ -18,51 +18,70 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-
+              <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                  <label for="email">Date</label>
+                  <input type="text" id="defaultDate" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="Similar_Type">Similar Type</label>
+                  <input type="text" id="form_type" class="form-control" placeholder="Similar type" name="form_type"
+                         [(ngModel)]="form_type">
+                  <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </form>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="onFormSubmit()">
-              <div class="box-body">
+            <div class="box-body" *ngFor="let fields of queryReceived; let i = index">
+              <form>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.details_of_person ? true: false" [class.has-feedback]="responseError?.details_of_person ? true: false">
+                  [class.has-warning]="responseError?.details_of_person ? true: false"
+                  [class.has-feedback]="responseError?.details_of_person ? true: false">
                   <label for="details_of_person">Details of person</label>
                   <input type="text"
                          name="details_of_person"
-                         formControlName = "details_of_person"
+                         [(ngModel)]="fields.details_of_person"
                          id="inputDetailsOfPerson"
                          class="form-control"
                          placeholder="Details of person">
-                  <div class="error-message" *ngIf="responseError?.details_of_person">{{responseError?.details_of_person}}</div>
+                  <div class="error-message" *ngIf="responseError?.details_of_person">
+                    {{responseError?.details_of_person}}
+                  </div>
 
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.nature_of_query ? true: false" [class.has-feedback]="responseError?.nature_of_query ? true: false">
+                  [class.has-warning]="responseError?.nature_of_query ? true: false"
+                  [class.has-feedback]="responseError?.nature_of_query ? true: false">
                   <label for="nature_of_query">Nature of query</label>
                   <input type="text"
                          name="nature_of_query"
-                         formControlName = "nature_of_query"
+                         [(ngModel)]="fields.nature_of_query"
                          id="inputNatureOfQuery"
                          class="form-control"
                          placeholder="nature_of_query">
-                  <div class="error-message" *ngIf="responseError?.nature_of_query">{{responseError?.nature_of_query}}</div>
+                  <div class="error-message" *ngIf="responseError?.nature_of_query">{{responseError?.nature_of_query}}
+                  </div>
 
                 </div>
                 <div class="form-group">
                   <label for="action_taken">Action Taken</label>
                   <input type="text"
                          name="action_taken"
-                         formControlName = "action_taken"
+                         [(ngModel)]="fields.action_taken"
                          id="inputActionTaken"
                          class="form-control"
                          placeholder="Action taken">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+                <button type="button" class="btn btn-primary form_submit"
+                        (click)="onFormSubmit(fields, similarTypes[i])">Submit
+                </button>
+              </form>
+            </div>
               <!-- /.box-body -->
-            </form>
           </div>
           <!-- /.box -->
         </div>
