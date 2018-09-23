@@ -18,6 +18,7 @@ export class CompanyListComponent implements OnInit {
   feedbackData: any;
   defaultDate;
   assignTo;
+  listApi;
   constructor(
     private _companyService: CompanyService,
     private _toasterService: TosterService,
@@ -42,7 +43,8 @@ export class CompanyListComponent implements OnInit {
     // this.defaultDate  = $('#defaultDate').val();
     this.defaultDate        =   new Date();
     this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getCompanyListData(this.authorizationKey, this.defaultDate.toString('yyyy-MM'), this.assignTo)
+    this.listApi  = 'visit/company/list?type=company';
+    this._service.getCompanyListData(this.authorizationKey, this.listApi)
       .subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
@@ -68,7 +70,7 @@ export class CompanyListComponent implements OnInit {
     this._service.delete(deleteParam).subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success(this.tableDeleteData.message);
-      this._service.getCompanyListData(this.authorizationKey.toString(), this.defaultDate, this.assignTo).subscribe( listResponse => {
+      this._service.getCompanyListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
         },
@@ -84,7 +86,7 @@ export class CompanyListComponent implements OnInit {
      this.defaultDate  =  new Date();
      console.log(this.defaultDate.toString('yyyy-MM-dd'));
      this.defaultDate  = $('#defaultDate').val();
-     this._service.getCompanyListData(this.authorizationKey, this.defaultDate, this.assignTo).subscribe( response => {
+     this._service.getCompanyListData(this.authorizationKey, this.listApi).subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },

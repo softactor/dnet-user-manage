@@ -1,8 +1,4 @@
-<div class="wrapper">
-  <app-header></app-header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <app-left-menu></app-left-menu>
-  <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -26,7 +22,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-              <table id="deportation_center_list" class="table table-striped display" style="width:100%" *ngIf="tableFeedbackData.length > 0">
+              <table id="deportation_center_list" class="table table-striped display" style="width:100%" *ngIf="tableFeedbackData?.length > 0">
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
@@ -80,6 +76,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <app-footer></app-footer>
-</div>
-<!-- ./wrapper -->

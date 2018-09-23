@@ -18,6 +18,9 @@ export class JailListComponent implements OnInit {
   tableDeleteData;
   tableFeedbackData: any;
   responseError;
+  defaultDate;
+  assignTo;
+  listApi;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -33,8 +36,12 @@ export class JailListComponent implements OnInit {
         }
       });
     }, 1000)
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey).subscribe( response => {
+    this.assignTo = localStorage.getItem('assign_to');
+    // this.defaultDate  = $('#defaultDate').val();
+    this.defaultDate        =   new Date();
+    this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this.listApi  = 'visit/jail/list?type=Jail';
+    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
         this.tableListData = response;
         this.tableFeedbackData = this.tableListData.results;
       },
@@ -59,7 +66,7 @@ export class JailListComponent implements OnInit {
     this._service.delete(deleteParam).subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success('Data have been successfully deleted.');
-      this._service.getListData(this.authorizationKey.toString()).subscribe( listResponse => {
+      this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.tableFeedbackData = this.tableListData.results;
         },

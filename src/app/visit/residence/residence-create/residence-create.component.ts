@@ -82,16 +82,16 @@ export class ResidenceCreateComponent implements OnInit {
   }
 
   public onFormSubmit(fields, type) {
-      this.defaultDate = $('#defaultDate').val();
-    const postString  =  'name=' + fields.name
-      + '&address='     + fields.address
-      + '&outcome='     + fields.outcome
-      + '&date='        + this.defaultDate
-      + '&assign_to='   + this.assignTo
-      + '&type='        + type
-      this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe( response => {
+    this.defaultDate = $('#defaultDate').val();
+    const postString = 'name=' + fields.name
+      + '&address=' + fields.address
+      + '&outcome=' + fields.outcome
+      + '&date=' + this.defaultDate
+      + '&assign_to=' + this.assignTo
+      + '&type=' + type
+    this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe(response => {
         this._toasterService.success('Data has been successfully created.');
-        this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
+        this._service.getListData(this.authorizationKey, this.listApi).subscribe(listResponse => {
             this.tableListData = listResponse;
             this.feedbackData = this.tableListData.results;
           },
@@ -101,8 +101,8 @@ export class ResidenceCreateComponent implements OnInit {
         );
       },
       error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+        const error_response = error;
+        this.responseError = error_response.error;
       }
     );
   }

@@ -17,6 +17,9 @@ export class OtherActivityListComponent implements OnInit {
   feedbackData: any;
   tableFeedbackData;
   responseError;
+  defaultDate;
+  assignTo;
+  listApi;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -32,8 +35,12 @@ export class OtherActivityListComponent implements OnInit {
       }
     });
     }, 1000);
+    this.assignTo = localStorage.getItem('assign_to');
+    // this.defaultDate  = $('#defaultDate').val();
+    this.defaultDate        =   new Date();
+    this.listApi  = 'activity/otheractivity/list?type=Other activity';
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey, 'activity/otheractivity/list/').subscribe( response => {
+    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },
@@ -58,7 +65,7 @@ export class OtherActivityListComponent implements OnInit {
     this._service.delete(deleteParam, 'activity/otheractivity/delete/').subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success('Data have been successfully deleted.');
-      this._service.getListData(this.authorizationKey, 'activity/otheractivity/list/').subscribe( listResponse => {
+      this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
         },

@@ -7,18 +7,15 @@ export class JailService {
   constructor(
     private _http: HttpClient) { }
   // get list
-  getListData(authorizationKey) {
+  getListData(authorizationKey, api) {
     const _headers = new HttpHeaders().set('authorization', authorizationKey);
-    return this._http.get(environment.baseApi + 'visit/jail/list/', {headers: _headers});
+    return this._http.get(environment.baseApi + api, {headers: _headers});
   }
-  create(createParam, authorizationKey) {
+  create(postString, api, authorizationKey) {
     const _headers    =  new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('authorization', authorizationKey);
-    const postString  =  'name=' + createParam.name
-      + '&address=' + createParam.address
-      + '&outcome=' + createParam.outcome
-    return this._http.post(environment.baseApi + 'visit/jail/create', postString, {headers: _headers});
+    return this._http.post(environment.baseApi + api, postString, {headers: _headers});
   }
   delete(deleteParam) {
     const _headers = new HttpHeaders().set('authorization', deleteParam.authorizationKey);

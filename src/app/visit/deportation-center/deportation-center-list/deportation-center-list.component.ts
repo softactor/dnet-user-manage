@@ -16,6 +16,9 @@ export class DeportationCenterListComponent implements OnInit {
   tableDeleteData;
   tableFeedbackData: any;
   responseError;
+  defaultDate;
+  assignTo;
+  listApi;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -24,15 +27,19 @@ export class DeportationCenterListComponent implements OnInit {
   ) {
     setTimeout(function(){
       $(function() {
-        if(!$.fn.DataTable.isDataTable('#deportation_center_list')){
+        if (!$.fn.DataTable.isDataTable('#deportation_center_list')){
           $('#deportation_center_list').DataTable({
             'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
           });
         }
       });
     }, 1000)
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey).subscribe( response => {
+    this.assignTo = localStorage.getItem('assign_to');
+    // this.defaultDate  = $('#defaultDate').val();
+    this.defaultDate        =   new Date();
+    this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this.listApi  = 'visit/deportationcenter/list?type=deportation';
+    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
         this.tableListData = response;
         this.tableFeedbackData = this.tableListData.results;
       },
@@ -40,6 +47,10 @@ export class DeportationCenterListComponent implements OnInit {
         console.log(error);
       }
     );
+    $('#defaultDate').datepicker({
+      dateFormat: 'yy-mm'
+    });
+    $('#defaultDate').datepicker('setDate', new Date());
   }
 
   ngOnInit() {
@@ -57,7 +68,7 @@ export class DeportationCenterListComponent implements OnInit {
     this._service.delete(deleteParam).subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success('Data have been successfully deleted.');
-      this._service.getListData(this.authorizationKey.toString()).subscribe( listResponse => {
+      this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.tableFeedbackData = this.tableListData.results;
         },

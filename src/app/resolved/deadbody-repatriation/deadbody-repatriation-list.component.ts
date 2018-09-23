@@ -17,6 +17,9 @@ export class DeadbodyRepatriationListComponent implements OnInit {
   feedbackData: any;
   tableFeedbackData;
   responseError;
+  defaultDate;
+  assignTo;
+  listApi;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -29,9 +32,17 @@ export class DeadbodyRepatriationListComponent implements OnInit {
         $('#data_list').DataTable({
           'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
         });
-      }
-    });
+        }
+        $('#defaultDate').datepicker({
+          dateFormat: 'yy-mm'
+        });
+        $('#defaultDate').datepicker('setDate', new Date());
+      });
     }, 1000);
+    this.assignTo = localStorage.getItem('assign_to');
+    // this.defaultDate  = $('#defaultDate').val();
+    this.defaultDate        =   new Date();
+    this.listApi  = 'resolved/deadbodyrepatriation/list?type=Deadbody repatriation';
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._service.getListData(this.authorizationKey, 'resolved/deadbodyrepatriation/list/').subscribe( response => {
         this.tableListData = response;
