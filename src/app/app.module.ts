@@ -156,7 +156,7 @@ import {RemittanceWelfareFundListComponent} from './finance/remittance-welfare-f
 import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-update.component';
 import { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
-import { CompanyReportComponent } from './reports/visit/company/company-report.component';
+import { VisualizationReportComponent } from './reports/visualizations/report.component';
 import { GoogleChartComponent } from './google-chart/google-chart.component';
 import { ApiProcessService } from './api-process.service';
 import { MdCardModule, MdDatepickerModule, MdInputModule, MdNativeDateModule } from '@angular/material';
@@ -688,7 +688,7 @@ const appRoutes: Routes  = [
   {
     path: 'reports',
     canActivate: [AuthGuard],
-    component: CompanyReportComponent
+    component: VisualizationReportComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
@@ -815,7 +815,7 @@ const MY_DATE_FORMATS = {
     RemittanceWelfareFundListComponent,
     RemittanceWelfareFundUpdateComponent,
     MonthWiseViewComponent,
-    CompanyReportComponent,
+    VisualizationReportComponent,
     GoogleChartComponent,
   ],
   imports: [
