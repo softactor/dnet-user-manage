@@ -16,51 +16,29 @@
     <section class="content">
       <div class="row">
           <div class="col-md-12">
-              <div class="box box-primary">
-                  <div class="row">
-                      <div class="col-md-3">
-                           <div>
-                             <mat-form-field>
-                                <input name="from_date" class="form-contrlo" matInput [matDatepicker]="from_date" MAT_DATE_FORMATS="YY-mm-dd" placeholder="From Date:">
-                                <mat-datepicker-toggle matSuffix [for]="from_date"></mat-datepicker-toggle>
-                                <mat-datepicker #from_date></mat-datepicker>
-                              </mat-form-field>
-                           </div>
-                      </div>
-                      <div class="col-md-3">
-                           <div>
-                             <mat-form-field>
-                                <input name="to_date" class="form-contrlo" matInput [matDatepicker]="to_date" placeholder="To Date:">
-                                <mat-datepicker-toggle matSuffix [for]="to_date"></mat-datepicker-toggle>
-                                <mat-datepicker #to_date></mat-datepicker>
-                              </mat-form-field>
-                           </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div><span>Country:</span><br/>
-                            <select class="form-control" ngModel #country="ngModel" name="country" id="country">
-                              <option value="" selected>Select Country</option>
-                              <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
-                            </select>
-                          </div>
-                      </div>
-                       <div class="col-md-3">
-                          <div><span>Labour Attache:</span><br/>
-                              <select class="form-control" ngModel #country="ngModel" name="country" id="labourattache">
-                              <option value="" selected>Select Labourattache</option>
-                              <option *ngFor="let labourattacheList of labourattacheListResponse" [value]="labourattacheList.id">{{labourattacheList.first_name}}</option>
-                            </select>
-                          </div>
-                        </div>
-
-
-
-
-
-
-
-
+            <div class="box box-primary padding-md" style="padding:10px">
+               <form class="form-inline" (ngSubmit)="onDataFilterFormSubmit()">
+                  <div class="form-group">
+                    <label for="from_date">From Date:</label>
+                    <input id="from_date" class="form-control" name="from_date" matInput [matDatepicker]="from_date" MAT_DATE_FORMATS="YY-mm-dd">
+                      <mat-datepicker-toggle matSuffix [for]="from_date"></mat-datepicker-toggle>
+                      <mat-datepicker #from_date></mat-datepicker>
                   </div>
+                  <div class="form-group">
+                    <label for="to_date">To Date:</label>
+                    <input id="to_date" name="to_date" class="form-control" matInput [matDatepicker]="to_date" placeholder="To Date:">
+                    <mat-datepicker-toggle matSuffix [for]="to_date"></mat-datepicker-toggle>
+                    <mat-datepicker #to_date></mat-datepicker>
+                  </div>
+                  <div class="form-group">
+                    <label>Labourattache :</label>
+                    <select id="" class="form-control" ngModel #country="ngModel" name="labourattache" id="labourattache">
+                      <option value="" selected>Select Labourattache</option>
+                      <option *ngFor="let labourattacheList of labourattacheListResponse" [value]="labourattacheList.id">{{labourattacheList.first_name}} {{labourattacheList.last_name}}({{labourattacheList.assigned_country.country_name}})</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
               </div>
           </div>
       </div>

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {GoogleChartComponent} from '../../../google-chart/google-chart.component';
-import { ApiProcessService } from '../../../api-process.service';
-import {AuthenticationService} from '../../../authentication.service';
+import {GoogleChartComponent} from '../../google-chart/google-chart.component';
+import { ApiProcessService } from '../../api-process.service';
+import {AuthenticationService} from '../../authentication.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 declare var $: any;
 
 @Component({
-  selector: 'app-company-report',
-  templateUrl: './company-report.component.html',
+  selector: 'app-report-visualization',
+  templateUrl: './report.component.html',
 })
-export class CompanyReportComponent implements OnInit {
+export class VisualizationReportComponent implements OnInit {
   authorizationKey;
   countryListResponse;
   labourattacheListResponse: any;
@@ -30,14 +30,16 @@ export class CompanyReportComponent implements OnInit {
   budget_FincaneOptions;
   marketassessment_ActivityData;
   marketassessment_ActivityOptions;
-  employeeenhancement_ActivityData;
-  employeeenhancement_ActivityOptions;
+  employeeenhancement_ActivityData:any;
+  employeeenhancement_ActivityOptions:any;
   CompanyReportResponse;
+  from_date;
 
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
               private _http: HttpClient) {
-
+                  this.employeeenhancement_ActivityData='';
+                  this.employeeenhancement_ActivityOptions='';
                }
 
   ngOnInit() {
@@ -166,27 +168,27 @@ export class CompanyReportComponent implements OnInit {
         title: 'Market Assessment Activity ',
       };
 
+      this._apiProcessService.getListData(this.authorizationKey, 'visit/company/reports').subscribe( response => {
+       this.employeeenhancement_ActivityData = response;
+      });
       /*
       * Employee Enhancement
       */
-      this.employeeenhancement_ActivityData = [
-        ['Task', 'Hours per Day'],
-        ['Work',     11],
-        ['Eat',      2],
-        ['Commute',  2],
-        ['Watch TV', 2],
-        ['Sleep',    7] ];
+
       this.employeeenhancement_ActivityOptions  = {
         title: 'Employee Enhancement',
       };
 
-
-
-
-
-
-
-
    }
+
+      //Data Filtering Form Submit
+  onDataFilterFormSubmit() {
+        this.from_date  = $('#from_date').val();
+        console.log(this.from_date);
+        //this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
+        //this.employeeenhancement_ActivityData = response;
+      //});
+       }
+
 
 }
