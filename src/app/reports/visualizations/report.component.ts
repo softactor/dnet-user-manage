@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {GoogleChartComponent} from '../../google-chart/google-chart.component';
+//import {GoogleChartComponent} from '../../google-chart/google-chart.component';
 import { ApiProcessService } from '../../api-process.service';
 import {AuthenticationService} from '../../authentication.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+//import { Chart } from 'angular-highcharts';
 
 declare var $: any;
 
@@ -34,15 +35,65 @@ export class VisualizationReportComponent implements OnInit {
   employeeenhancement_ActivityOptions:any;
   CompanyReportResponse;
   from_date;
+  chart;
+  first_data;
+  companyReportData;
   ChartData: any;
   ChartContainer: any;
+  test_data:any;
 
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
-              private _http: HttpClient) {
+              public _http: HttpClient) {
                   this.employeeenhancement_ActivityData='';
                   this.employeeenhancement_ActivityOptions='';
+                  this.companyReportData=[];
+                  this.ChartData  = [];
+                  this.ChartContainer  = [];
                }
+
+
+  // add point to chart serie
+  //add() {
+    //this.chart.addPoint(Math.floor(Math.random() * 10));
+  //}
+/*
+       onDataFilterFormSubmit() {
+        this.test_data =[]
+        this.ChartData  = [];
+        this.ChartContainer  = [];
+        this.from_date  = $('#from_date').val()
+
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
+          //this.employeeenhancement_ActivityData = response;
+
+
+          this.ChartData = ['Task', 'Hours per Day'];
+          this.ChartContainer.push(this.ChartData);
+
+          this.ChartData = ['Canada', 10];
+          this.ChartContainer.push(this.ChartData);
+
+          this.ChartData = ['Australia', 11];
+          this.ChartContainer.push(this.ChartData);
+
+          this.ChartData = ['Singapore', 15];
+          this.ChartContainer.push(this.ChartData);
+          this.employeeenhancement_ActivityData = this.ChartContainer;
+
+
+          this.employeeenhancement_ActivityOptions  = {
+            title: 'Employee Enhancement',
+          };
+
+      });
+
+    }
+*/
+
+
+
+
 
   ngOnInit() {
         // to solve the left menu hide problem;
@@ -169,35 +220,52 @@ export class VisualizationReportComponent implements OnInit {
       this.marketassessment_ActivityOptions  = {
         title: 'Market Assessment Activity ',
       };
-    this.ChartData  = [];
-    this.ChartContainer  = [];
+
+
+      this.employeeenhancement_ActivityOptions  = {
+        title: 'Employee Enhancement',
+      };
+
+
+
+      this.companyReportData = this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
+         this.companyReportData = response;
+         console.log(this.companyReportData)
+
+      });
     this.from_date  = $('#from_date').val();
     console.log(this.from_date);
+
     this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
       this.employeeenhancement_ActivityData = response;
       this.ChartData = ['Task', 'Hours per Day'];
       this.ChartContainer.push(this.ChartData);
+
       for (const testData of this.employeeenhancement_ActivityData) {
         this.ChartData = [testData.assign_to__country_name, testData.total];
         this.ChartContainer.push(this.ChartData);
       } // end of for
+
       this.employeeenhancement_ActivityData = this.ChartContainer;
       this.employeeenhancement_ActivityOptions  = {
         title: 'Employee Enhancement',
       };
+
       console.log('data report');
       console.log(this.ChartContainer);
     });
    }
 
       // Data Filtering Form Submit
+
   onDataFilterFormSubmit() {
+        this.test_data =[]
         this.ChartData  = [];
         this.ChartContainer  = [];
         this.from_date  = $('#from_date').val();
         console.log(this.from_date);
         this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
-        this.employeeenhancement_ActivityData = response;
+          //this.employeeenhancement_ActivityData = response;
           this.ChartData = ['Task', 'Hours per Day'];
           this.ChartContainer.push(this.ChartData);
 
@@ -210,13 +278,15 @@ export class VisualizationReportComponent implements OnInit {
           this.ChartData = ['Singapore', 15];
           this.ChartContainer.push(this.ChartData);
           this.employeeenhancement_ActivityData = this.ChartContainer;
+
+          this.test_data.push(this.employeeenhancement_ActivityData);
+
           this.employeeenhancement_ActivityOptions  = {
             title: 'Employee Enhancement',
           };
-          console.log('Check data custome');
-          console.log(this.employeeenhancement_ActivityData);
+
       });
-       }
 
-
+      this.employeeenhancement_ActivityData=this.test_data;
+    }
 }

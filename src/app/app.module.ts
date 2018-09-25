@@ -197,6 +197,10 @@ import {
 import { CompatibilityModule } from '@angular/material';
 import {NoConflictStyleCompatibilityMode} from '@angular/material';
 import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
+import{ChartModule} from 'angular-highcharts';
+import { ChartDemosimplechartComponent } from './components/chart-demosimplechart/chart-demosimplechart.component';
+//import { HighchartsChartModule } from 'highcharts-angular';
+
 
 const appRoutes: Routes  = [
   {
@@ -692,7 +696,12 @@ const appRoutes: Routes  = [
     component: VisualizationReportComponent
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component: LoginComponent }
+  { path: '**', component: LoginComponent },
+
+  {
+    path: 'hi-chart-test',
+    component: ChartDemosimplechartComponent
+  },
 ];
 
 const MY_DATE_FORMATS = {
@@ -818,6 +827,7 @@ const MY_DATE_FORMATS = {
     MonthWiseViewComponent,
     VisualizationReportComponent,
     GoogleChartComponent,
+    ChartDemosimplechartComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -870,6 +880,8 @@ const MY_DATE_FORMATS = {
     NoConflictStyleCompatibilityMode,
     MomentModule,
     NgIdleKeepaliveModule.forRoot(),
+    ChartModule,
+    //HighchartsChartModule,
   ],
   providers: [
     UserListService,
