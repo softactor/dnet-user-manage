@@ -160,6 +160,7 @@ import { VisualizationReportComponent } from './reports/visualizations/report.co
 import { GoogleChartComponent } from './google-chart/google-chart.component';
 import { ApiProcessService } from './api-process.service';
 import { MdCardModule, MdDatepickerModule, MdInputModule, MdNativeDateModule } from '@angular/material';
+import { LeftMenuService } from './layout/left-menu/left-menu.service';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -236,7 +237,7 @@ const appRoutes: Routes  = [
     component: CompanyCreateComponent
   },
   {
-    path: 'company-list',
+    path: 'company-list/:list_param',
     canActivate: [AuthGuard],
     component: CompanyListComponent
   },
@@ -912,7 +913,8 @@ const MY_DATE_FORMATS = {
     RemittanceWelfareFundService,
     MonthWiseViewService,
     ApiProcessService,
-
+    LeftMenuService,
+    LeftMenuComponent,
   ],
   bootstrap: [AppComponent]
 })
