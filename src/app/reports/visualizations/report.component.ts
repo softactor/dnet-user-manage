@@ -38,6 +38,8 @@ export class VisualizationReportComponent implements OnInit {
   chart;
   first_data;
   companyReportData;
+  ChartData: any;
+  ChartContainer: any;
 
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
@@ -189,8 +191,7 @@ export class VisualizationReportComponent implements OnInit {
         title: 'Market Assessment Activity ',
       };
 
-
-      /*
+     /*
       * Employee Enhancement
       */
       this.employeeenhancement_ActivityData = [
@@ -239,22 +240,52 @@ export class VisualizationReportComponent implements OnInit {
         series:this.first_data,
   });
 
+    this.ChartData  = [];
+    this.ChartContainer  = [];
+    this.from_date  = $('#from_date').val();
+    console.log(this.from_date);
+    this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
+      this.employeeenhancement_ActivityData = response;
+      this.ChartData = ['Task', 'Hours per Day'];
+      this.ChartContainer.push(this.ChartData);
+      for (const testData of this.employeeenhancement_ActivityData) {
+        this.ChartData = [testData.assign_to__country_name, testData.total];
+        this.ChartContainer.push(this.ChartData);
+      } // end of for
+      this.employeeenhancement_ActivityData = this.ChartContainer;
+      this.employeeenhancement_ActivityOptions  = {
+        title: 'Employee Enhancement',
+      };
+      console.log('data report');
+      console.log(this.ChartContainer);
+    });
    }
 
-      //Data Filtering Form Submit
+      // Data Filtering Form Submit
   onDataFilterFormSubmit() {
+        this.ChartData  = [];
+        this.ChartContainer  = [];
         this.from_date  = $('#from_date').val();
         console.log(this.from_date);
         this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
-        console.log(response);
+        this.employeeenhancement_ActivityData = response;
+          this.ChartData = ['Task', 'Hours per Day'];
+          this.ChartContainer.push(this.ChartData);
+
+          this.ChartData = ['Canada', 10];
+          this.ChartContainer.push(this.ChartData);
+
+          this.ChartData = ['Australia', 11];
+          this.ChartContainer.push(this.ChartData);
+
+          this.ChartData = ['Singapore', 15];
+          this.ChartContainer.push(this.ChartData);
+          this.employeeenhancement_ActivityData = this.ChartContainer;
+          this.employeeenhancement_ActivityOptions  = {
+            title: 'Employee Enhancement',
+          };
+          console.log('Check data custome');
+          console.log(this.employeeenhancement_ActivityData);
       });
-  }
-
-
-
-
-
-
-
-
+    }
 }

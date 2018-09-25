@@ -17,6 +17,9 @@ export class ConferenceListComponent implements OnInit {
   feedbackData: any;
   tableFeedbackData;
   responseError;
+  defaultDate;
+  assignTo;
+  listApi;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
@@ -29,11 +32,19 @@ export class ConferenceListComponent implements OnInit {
         $('#data_list').DataTable({
           'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
         });
-      }
-    });
+        }
+        $('#defaultDate').datepicker({
+          dateFormat: 'yy-mm'
+        });
+        $('#defaultDate').datepicker('setDate', new Date());
+      });
     }, 1000);
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey, 'activity/attestation/list/').subscribe( response => {
+    this.assignTo = localStorage.getItem('assign_to');
+    // this.defaultDate  = $('#defaultDate').val();
+    this.defaultDate        =   new Date();
+    this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+    this.listApi  = 'issues/conferance/list?type=Conference';
+    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
         this.tableListData = response;
         this.feedbackData = this.tableListData.results;
       },
@@ -58,7 +69,7 @@ export class ConferenceListComponent implements OnInit {
     this._service.delete(deleteParam, 'activity/attestation/delete/').subscribe( response => {
       this.tableDeleteData = response;
       this._toasterService.success('Data have been successfully deleted.');
-      this._service.getListData(this.authorizationKey, 'activity/attestation/list/').subscribe( listResponse => {
+      this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
         },

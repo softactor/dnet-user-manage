@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../company.service';
 import { AuthenticationService } from '../../../authentication.service';
 import { TosterService } from '../../../toster.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -19,10 +19,12 @@ export class CompanyListComponent implements OnInit {
   defaultDate;
   assignTo;
   listApi;
+  list_param;
   constructor(
     private _companyService: CompanyService,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
+    private _activateRoute: ActivatedRoute,
     private _service: CompanyService,
     private router: Router,
   ) {
@@ -43,16 +45,21 @@ export class CompanyListComponent implements OnInit {
     // this.defaultDate  = $('#defaultDate').val();
     this.defaultDate        =   new Date();
     this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this.listApi  = 'visit/company/list?type=company';
-    this._service.getCompanyListData(this.authorizationKey, this.listApi)
-      .subscribe( response => {
-        this.tableListData = response;
-        this.feedbackData = this.tableListData.results;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('list_param')
+        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        this.listApi  = 'visit/company/list?type=' + this.list_param;
+        this._service.getCompanyListData(this.authorizationKey, this.listApi)
+          .subscribe( response => {
+              this.tableListData = response;
+              this.feedbackData = this.tableListData.results;
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      });
   }
 
   ngOnInit() {

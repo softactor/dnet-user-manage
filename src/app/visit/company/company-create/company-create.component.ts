@@ -6,6 +6,8 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CompanyService } from '../company.service';
 import { CompanyModel } from '../company.model';
+import { LeftMenuComponent } from "../../../layout/left-menu/left-menu.component";
+
 declare var $: any;
 @Component({
   selector: 'app-company-create',
@@ -29,6 +31,7 @@ export class CompanyCreateComponent implements OnInit {
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: CompanyService,
+    private leftMenu: LeftMenuComponent,
     private _http: HttpClient) {
   }
   ngOnInit() {
@@ -71,14 +74,30 @@ export class CompanyCreateComponent implements OnInit {
       + '&assign_to=' + this.assignTo
       + '&type=' + type
     this._service.create(postString, 'visit/company/create', this.authorizationKey).subscribe( response => {
-      this._toasterService.success('Company has been successfully created.');
-      this.router.navigate(['company-list']);
     },
       error => {
         const error_response  = error;
         this.responseError  = error_response.error;
       }
     );
+    // menu ceate
+    const postMenuString = 'name=' + type
+      + '&module_name=' + type
+      + '&parent_id=' + 1
+      + '&url=company-list/' + type
+      + '&type=' + type
+    this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
+        this._toasterService.success('Entry have successfully done.');
+        this.router.navigate(['company-list/company']);
+        this.leftMenu.childMenuData = response;
+        this.leftMenu.childMenu = this.leftMenu.childMenuData.result;
+      },
+      error => {
+        const error_response  = error;
+        this.responseError  = error_response.error;
+      }
+    );
+    // end of menu create
   }
 
   public copyForm(e) {

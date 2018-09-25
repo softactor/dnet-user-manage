@@ -1,3 +1,4 @@
+/environments/environment.ts
 de_modules
 node_modules
 .idea
@@ -8,4 +9,6 @@ client/**/.js
 client/**/.js.map
 /npm-debug.log
 src/app/components/
+src/environements/
 .env
+.gitignore
