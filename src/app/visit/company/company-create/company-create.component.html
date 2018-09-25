@@ -3,12 +3,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        New Company Visit
+        {{list_param}}
       </h1>
       <ol class="breadcrumb">
         <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a routerLink="/company-list"><i class="fa fa-circle-o"></i> Company Visited List</a></li>
-        <li class="active">New Company Visit Entry</li>
+        <li><a routerLink="/company-list/{{list_param}}"><i class="fa fa-circle-o"></i> {{list_param}} List</a></li>
+        <li class="active">{{list_param}} Entry</li>
       </ol>
     </section>
     <!-- Main content -->

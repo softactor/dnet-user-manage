@@ -1,4 +1,4 @@
-/environments/environment.ts
+src/environments/environment.ts
 de_modules
 node_modules
 .idea

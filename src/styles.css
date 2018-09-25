@@ -53,3 +53,9 @@
 .login-logo {
   color: white;
 }
+.login-page {
+  background-color: #222d32;
+}
+.content-header h1 {
+  text-transform: capitalize;
+}

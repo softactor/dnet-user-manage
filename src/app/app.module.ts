@@ -232,7 +232,7 @@ const appRoutes: Routes  = [
     component: SignupFormComponent
   },
   {
-    path: 'company-create',
+    path: 'company-create/:create_param',
     canActivate: [AuthGuard],
     component: CompanyCreateComponent
   },

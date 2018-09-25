@@ -20,6 +20,7 @@ export class CompanyListComponent implements OnInit {
   assignTo;
   listApi;
   list_param;
+  listTitle;
   constructor(
     private _companyService: CompanyService,
     private _toasterService: TosterService,
@@ -47,8 +48,9 @@ export class CompanyListComponent implements OnInit {
     this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._activateRoute.paramMap
       .subscribe( params => {
-        this.list_param = params.get('list_param')
-        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        this.list_param = params.get('list_param');
+        this.listTitle = this.list_param;
+          this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         this.listApi  = 'visit/company/list?type=' + this.list_param;
         this._service.getCompanyListData(this.authorizationKey, this.listApi)
           .subscribe( response => {

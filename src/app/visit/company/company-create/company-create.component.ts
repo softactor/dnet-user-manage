@@ -3,10 +3,9 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 import { TosterService } from '../../../toster.service';
 import { AuthenticationService } from '../../../authentication.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { CompanyService } from '../company.service';
 import { CompanyModel } from '../company.model';
-import { LeftMenuComponent } from "../../../layout/left-menu/left-menu.component";
 
 declare var $: any;
 @Component({
@@ -25,14 +24,19 @@ export class CompanyCreateComponent implements OnInit {
   defaultDate;
   assignTo;
   form_type;
+  list_param;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: CompanyService,
-    private leftMenu: LeftMenuComponent,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
   ngOnInit() {
     // to solve the left menu hide problem;
@@ -45,7 +49,7 @@ export class CompanyCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Company';
+    this.form_type    = this.list_param;
     this.similarTypes.push(this.form_type);
     const residenceObj = new CompanyModel();
     // @ts-ignore
@@ -89,8 +93,6 @@ export class CompanyCreateComponent implements OnInit {
     this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
         this._toasterService.success('Entry have successfully done.');
         this.router.navigate(['company-list/company']);
-        this.leftMenu.childMenuData = response;
-        this.leftMenu.childMenu = this.leftMenu.childMenuData.result;
       },
       error => {
         const error_response  = error;

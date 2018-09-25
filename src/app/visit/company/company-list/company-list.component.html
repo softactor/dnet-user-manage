@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Company List
+        {{ listTitle }} List
       </h1>
       <ol class="breadcrumb">
         <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -17,9 +17,9 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <p class="pull-left">Date: <input type="text" id="defaultDate" [(ngModel)]="defaultDate"></p>
-              <h3 class="box-title">New Company Visit Entry</h3>
-              <a routerLink="/company-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <input class="form-control" type="text" id="defaultDate" [(ngModel)]="defaultDate">
+              <h3 class="box-title">{{ listTitle }} Entry</h3>
+              <a routerLink="/company-create/{{ listTitle }}" class="btn btn-default"><i class="fa fa-plus"></i></a>
                 <div *ngIf="!feedbackData?.length > 0">
                   <strong>No Data Found !!</strong>
                 </div>
