@@ -3,6 +3,7 @@ import {GoogleChartComponent} from '../../google-chart/google-chart.component';
 import { ApiProcessService } from '../../api-process.service';
 import {AuthenticationService} from '../../authentication.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Chart } from 'angular-highcharts';
 
 declare var $: any;
 
@@ -34,13 +35,33 @@ export class VisualizationReportComponent implements OnInit {
   employeeenhancement_ActivityOptions:any;
   CompanyReportResponse;
   from_date;
+  chart;
+  first_data;
+  companyReportData;
 
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
               private _http: HttpClient) {
                   this.employeeenhancement_ActivityData='';
                   this.employeeenhancement_ActivityOptions='';
+                  this.companyReportData=[];
                }
+
+
+
+
+
+  // add point to chart serie
+  //add() {
+    //this.chart.addPoint(Math.floor(Math.random() * 10));
+  //}
+
+
+
+
+
+
+
 
   ngOnInit() {
         // to solve the left menu hide problem;
@@ -168,16 +189,55 @@ export class VisualizationReportComponent implements OnInit {
         title: 'Market Assessment Activity ',
       };
 
-      this._apiProcessService.getListData(this.authorizationKey, 'visit/company/reports').subscribe( response => {
-       this.employeeenhancement_ActivityData = response;
-      });
+
       /*
       * Employee Enhancement
       */
+      this.employeeenhancement_ActivityData = [
+        ['Task', 'Hours per Day'],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    7] ];
 
       this.employeeenhancement_ActivityOptions  = {
         title: 'Employee Enhancement',
       };
+
+      this.companyReportData = this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
+         this.companyReportData = response;
+         console.log(this.companyReportData)
+
+      });
+
+
+      this.chart = new Chart({
+       chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Stacked bar chart'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total fruit consumption'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series:this.first_data,
+  });
 
    }
 
@@ -185,10 +245,16 @@ export class VisualizationReportComponent implements OnInit {
   onDataFilterFormSubmit() {
         this.from_date  = $('#from_date').val();
         console.log(this.from_date);
-        //this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
-        //this.employeeenhancement_ActivityData = response;
-      //});
-       }
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
+        console.log(response);
+      });
+  }
+
+
+
+
+
+
 
 
 }
