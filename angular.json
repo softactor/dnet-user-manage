@@ -39,7 +39,8 @@
               "src/assets/dist/js/adminlte.min.js",
               "src/assets/dist/js/toastr.min.js",
               "src/assets/bower_components/datatables.net/js/jquery.dataTables.js",
-              "src/assets/dist/js/date.js"
+              "src/assets/dist/js/date.js",
+              "node_modules/chart.js/dist/Chart.bundle.min.js"
             ]
           },
           "configurations": {

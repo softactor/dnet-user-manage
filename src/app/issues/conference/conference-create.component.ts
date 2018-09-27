@@ -89,7 +89,7 @@ export class ConferenceCreateComponent implements OnInit {
         const companyObj = new ConferenceModel();
         // @ts-ignore
         this.conference.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {

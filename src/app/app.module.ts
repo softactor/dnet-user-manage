@@ -158,6 +158,8 @@ import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.componen
 import { GoogleChartComponent } from './google-chart/google-chart.component';
 import { ApiProcessService } from './api-process.service';
 import { LeftMenuService } from './layout/left-menu/left-menu.service';
+import { ChartsModule } from 'ng2-charts';
+import { VisitReportsComponent } from './reports/visit/visit-reports.component';
 
 const appRoutes: Routes  = [
   {
@@ -647,6 +649,11 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: MonthWiseViewComponent
   },
+  {
+    path: 'reports',
+    canActivate: [AuthGuard],
+    component: VisitReportsComponent
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent },
 ];
@@ -773,6 +780,7 @@ const MY_DATE_FORMATS = {
     RemittanceWelfareFundUpdateComponent,
     MonthWiseViewComponent,
     GoogleChartComponent,
+    VisitReportsComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -784,7 +792,8 @@ const MY_DATE_FORMATS = {
     FormsModule,
     BrowserAnimationsModule,
     MomentModule,
-    NgIdleKeepaliveModule.forRoot()
+    NgIdleKeepaliveModule.forRoot(),
+    ChartsModule,
   ],
   providers: [
     UserListService,

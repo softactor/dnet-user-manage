@@ -89,7 +89,7 @@ export class AttestationCreateComponent implements OnInit {
         const companyObj = new AttestationModel();
         // @ts-ignore
         this.attestation.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {
