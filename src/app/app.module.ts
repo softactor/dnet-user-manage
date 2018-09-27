@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdMenuModule, MdSidenavModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule;
@@ -156,51 +155,9 @@ import {RemittanceWelfareFundListComponent} from './finance/remittance-welfare-f
 import {RemittanceWelfareFundUpdateComponent} from './finance/remittance-welfare-fund/remittance-welfare-fund-update.component';
 import { MonthWiseViewService } from './month-wise-view/month-wise-view.service';
 import {MonthWiseViewComponent} from './month-wise-view/month-wise-view.component';
-import { VisualizationReportComponent } from './reports/visualizations/report.component';
 import { GoogleChartComponent } from './google-chart/google-chart.component';
 import { ApiProcessService } from './api-process.service';
-import { MdCardModule, MdDatepickerModule, MdInputModule, MdNativeDateModule } from '@angular/material';
 import { LeftMenuService } from './layout/left-menu/left-menu.service';
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule,
-} from '@angular/material';
-import { CompatibilityModule } from '@angular/material';
-import {NoConflictStyleCompatibilityMode} from '@angular/material';
-import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
-import{ChartModule} from 'angular-highcharts';
-import { ChartDemosimplechartComponent } from './components/chart-demosimplechart/chart-demosimplechart.component';
-//import { HighchartsChartModule } from 'highcharts-angular';
-
 
 const appRoutes: Routes  = [
   {
@@ -690,18 +647,8 @@ const appRoutes: Routes  = [
     canActivate: [AuthGuard],
     component: MonthWiseViewComponent
   },
-  {
-    path: 'reports',
-    canActivate: [AuthGuard],
-    component: VisualizationReportComponent
-  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent },
-
-  {
-    path: 'hi-chart-test',
-    component: ChartDemosimplechartComponent
-  },
 ];
 
 const MY_DATE_FORMATS = {
@@ -825,9 +772,7 @@ const MY_DATE_FORMATS = {
     RemittanceWelfareFundListComponent,
     RemittanceWelfareFundUpdateComponent,
     MonthWiseViewComponent,
-    VisualizationReportComponent,
     GoogleChartComponent,
-    ChartDemosimplechartComponent,
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -838,50 +783,8 @@ const MY_DATE_FORMATS = {
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdSidenavModule,
-    MdDatepickerModule,
-    MdInputModule,
-    MdNativeDateModule,
-    MdCardModule,
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatStepperModule,
-    CompatibilityModule,
-    NoConflictStyleCompatibilityMode,
     MomentModule,
-    NgIdleKeepaliveModule.forRoot(),
-    ChartModule,
-    //HighchartsChartModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
   providers: [
     UserListService,
@@ -925,8 +828,8 @@ const MY_DATE_FORMATS = {
     RemittanceWelfareFundService,
     MonthWiseViewService,
     ApiProcessService,
-    LeftMenuService,
     LeftMenuComponent,
+    LeftMenuService,
   ],
   bootstrap: [AppComponent]
 })
