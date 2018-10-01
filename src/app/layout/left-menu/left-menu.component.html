@@ -2,20 +2,32 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="treeview" *ngFor="let list of feedbackData; index as sln;" id="row_id_{{ list.id }}">
+      <li class="treeview">
         <a href="javascript:void(0);">
-          <i class="fa fa-tag"></i> <span>{{ list.name }}</span>
+          <i class="fa fa-user"></i> <span>User</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
-          <li *ngFor="let Childlist of childMenu; index as sln;" id="child_row_id_{{ list.id }}">
-            <a routerLink="{{ Childlist.url  }}"><i class="fa fa-circle-o"></i> {{ Childlist.name }}</a>
+          <!--<li><a routerLink="/user-signup"><i class="fa fa-circle-o"></i> Signup</a></li>-->
+          <li><a routerLink="/user-list"><i class="fa fa-circle-o"></i> List</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-tag"></i> <span>Visit</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let Childlist of childMenu; index as sln;" id="child_row_id_{{ Childlist.id }}">
+            <a routerLinkActive="active" routerLink="{{ Childlist.url  }}"><i class="fa fa-circle-o"></i> {{ Childlist.name }}</a>
           </li>
         </ul>
       </li>
-      <li><a routerLink="/reports">Reports</a></li>
+      <li><a routerLinkActive="active" routerLink="/reports">Reports</a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

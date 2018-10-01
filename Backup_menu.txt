@@ -1,0 +1,124 @@
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <ul class="sidebar-menu" data-widget="tree">
+      <!--<li class="header">MAIN NAVIGATION</li>-->
+      <!--<li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>-->
+      <li [ngClass]="(selectIndex==1)?'treeview active':'treeview'" (click)="addActiveClass(1)">
+        <a href="javascript:void(0);">
+          <i class="fa fa-user"></i> <span>User</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <!--<li><a routerLink="/user-signup"><i class="fa fa-circle-o"></i> Signup</a></li>-->
+          <li><a routerLink="/user-list"><i class="fa fa-circle-o"></i> List</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-tag"></i> <span>Visit</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/company-list"><i class="fa fa-circle-o"></i> Company</a></li>
+          <li><a routerLink="/residence-list"><i class="fa fa-circle-o"></i> Residence</a></li>
+          <li><a routerLink="/deportation-center-list"><i class="fa fa-circle-o"></i> Deportation center</a></li>
+          <li><a routerLink="/jail-list"><i class="fa fa-circle-o"></i> Jail</a></li>
+          <li><a routerLink="/hospital-list"><i class="fa fa-circle-o"></i> Hospital</a></li>
+          <li><a routerLink="/migrant-shelter-list"><i class="fa fa-circle-o"></i> Migrant shelter</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-pencil-square-o"></i> <span>Activity</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/market-assessment-list"><i class="fa fa-circle-o"></i> Market assessment</a></li>
+          <li><a routerLink="/employee-enhancement-list"><i class="fa fa-circle-o"></i> Employee enhancement</a></li>
+          <li><a routerLink="/other-activity-list"><i class="fa fa-circle-o"></i> Other activity</a></li>
+          <li><a routerLink="/work-plan-list"><i class="fa fa-circle-o"></i> Work plan</a></li>
+          <li><a routerLink="/attestation-list"><i class="fa fa-circle-o"></i> Attestation</a></li>
+          <li><a routerLink="/guest-entertainment-list"><i class="fa fa-circle-o"></i> Guest entertainment</a></li>
+          <li><a routerLink="/liaison-with-expatriates-list"><i class="fa fa-circle-o"></i> Liaison with expatriates</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-life-buoy"></i> <span>Assistance provide</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/general-assistance-list"><i class="fa fa-circle-o"></i> General Assistance</a></li>
+          <li><a routerLink="/legal-assistance-list"><i class="fa fa-circle-o"></i> Legal Assistance</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-bullseye"></i> <span>Query Complain</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/query-received-list"><i class="fa fa-circle-o"></i> Query received</a></li>
+          <li><a routerLink="/complaint-list"><i class="fa fa-circle-o"></i> Complaints</a></li>
+          <li><a routerLink="/trade-query-list"><i class="fa fa-circle-o"></i> Trade query</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-wrench"></i> <span>Issues</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/conference-list"><i class="fa fa-circle-o"></i> Conference</a></li>
+          <li><a routerLink="/meeting-list"><i class="fa fa-circle-o"></i> Meeting</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-star-o"></i> <span>Resolved</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/arbitration-disputes-list"><i class="fa fa-circle-o"></i> Arbitration Disputes</a></li>
+          <li><a routerLink="/arrearpay-list"><i class="fa fa-circle-o"></i> Arrear pay</a></li>
+          <li><a routerLink="/compensation-list"><i class="fa fa-circle-o"></i> Compensation</a></li>
+          <li><a routerLink="/deadbody-repatriation-list"><i class="fa fa-circle-o"></i> Deadbody repatriation</a></li>
+          <li><a routerLink="/death-disability-list"><i class="fa fa-circle-o"></i> Death disability</a></li>
+          <li><a routerLink="/monthly-problem-resolved-list"><i class="fa fa-circle-o"></i> Monthly problem resolved</a></li>
+          <li><a routerLink="/remit-fc-list"><i class="fa fa-circle-o"></i> Remit FC</a></li>
+          <li><a routerLink="/terms-condition-list"><i class="fa fa-circle-o"></i> Terms & Condition Service</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-money"></i> <span>Finance</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a routerLink="/remittance-welfare-fund-list"><i class="fa fa-circle-o"></i> Remittance & welfarefund</a></li>
+          <li><a routerLink="/budget-list"><i class="fa fa-circle-o"></i> Budget</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/month-wise-view"><i class="fa fa-circle-o text-aqua"></i> Monthwise View</a></li>
+      <li><a routerLink="/reports"><i class="fa fa-circle-o"></i><span>Reports</span></a></li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

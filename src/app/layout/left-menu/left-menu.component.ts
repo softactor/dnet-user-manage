@@ -51,7 +51,6 @@ export class LeftMenuComponent implements OnInit {
   }
   getParentMenu() {
     console.log('I am calling');
-    return true;
   }
 
 }
