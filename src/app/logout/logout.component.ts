@@ -28,8 +28,8 @@ export class LogoutComponent implements OnInit {
     this._userLogoutService.userLogout(userLogoutParam).subscribe( response => {
       this.responseMessage  = response;
       this._toasterService.success(this.responseMessage.message);
-      localStorage.removeItem('access_token')
-      localStorage.removeItem('token_type')
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('token_type');
       this.router.navigate(['login']);
     });
   }
