@@ -22,8 +22,86 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li *ngFor="let Childlist of childMenu; index as sln;" id="child_row_id_{{ Childlist.id }}">
-            <a routerLinkActive="active" routerLink="{{ Childlist.url  }}"><i class="fa fa-circle-o"></i> {{ Childlist.name }}</a>
+          <li *ngFor="let Visitlist of visitMenu; index as sln;" id="child_row_id_{{ Visitlist.id }}">
+            <a routerLinkActive="active" routerLink="{{ Visitlist.url  }}"><i class="fa fa-circle-o"></i> {{ Visitlist.name }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-pencil-square-o"></i> <span>Activity</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let activityList of activityMenu; index as sln;" id="child_row_id_{{ activityList.id }}">
+            <a routerLinkActive="active" routerLink="{{ activityList.url  }}"><i class="fa fa-circle-o"></i> {{ activityList.name }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-life-buoy"></i> <span>Assistance provide</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let assistanceprovideList of assistanceprovideMenu; index as sln;" id="child_row_id_{{ assistanceprovideList.id }}">
+            <a routerLinkActive="active" routerLink="{{ assistanceprovideList.url  }}"><i class="fa fa-circle-o"></i> {{ assistanceprovideList.name }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-bullseye"></i> <span>Query Complain</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let querycomplainList of querycomplainMenu; index as sln;" id="child_row_id_{{ querycomplainList.id }}">
+            <a routerLinkActive="active" routerLink="{{ querycomplainList.url  }}"><i class="fa fa-circle-o"></i> {{ querycomplainList.name }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-wrench"></i> <span>Issues</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let issueList of issueMenu; index as sln;" id="child_row_id_{{ issueList.id }}">
+            <a routerLinkActive="active" routerLink="{{ issueList.url  }}"><i class="fa fa-circle-o"></i> {{ issueList.name }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-star-o"></i> <span>Resolved</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let resolvedList of resolvedMenu; index as sln;" id="child_row_id_{{ resolvedList.id }}">
+            <a routerLinkActive="active" routerLink="{{ resolvedList.url  }}"><i class="fa fa-circle-o"></i> {{ resolvedList.name }}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="javascript:void(0);">
+          <i class="fa fa-money"></i> <span>Finance</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li *ngFor="let financeList of financeMenu; index as sln;" id="child_row_id_{{ financeList.id }}">
+            <a routerLinkActive="active" routerLink="{{ financeList.url  }}"><i class="fa fa-circle-o"></i> {{ financeList.name }}</a>
           </li>
         </ul>
       </li>

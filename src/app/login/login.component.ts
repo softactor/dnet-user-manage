@@ -23,6 +23,8 @@ export class LoginComponent {
     private _userUpdateService: UserUpdateService,
   ) {
     this.loginPage  = true;
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('token_type');
   }
   loginUser(e) {
     e.preventDefault();
