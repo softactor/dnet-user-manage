@@ -59,9 +59,8 @@ export class VisualizationReportComponent implements OnInit {
 //Chart Lebels
   public companyPieChartLabels: string[] = [];
   public jailPieChartLabels: string[] = [];
-  public hospitalPieChartLabels: string[] = ['Bangladesh'];
-  public barChartColors: string[] = ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"];
-
+  public hospitalPieChartLabels: string[] = [];
+  
   //Chart Data
   public companyPieChartData: number[] = [];
   public jailPieChartData: number[] = [];
@@ -89,6 +88,8 @@ export class VisualizationReportComponent implements OnInit {
                   this.employeeenhancement_ActivityData='';
                   this.employeeenhancement_ActivityOptions='';
                   this.companyReportData=[];
+                  this.jailReportData=[];
+                  this.hospitalReportData=[];
                   this.ChartData  = [];
                   this.ChartContainer  = [];
                }
@@ -149,9 +150,10 @@ export class VisualizationReportComponent implements OnInit {
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/hospital/report').subscribe( response => {
       this.hospitalReportDataInit = response;
       this.hospitalPieChartData  =  [];
-      for (const hospitalData of this.hospitalReportDataInit) {
-        this.hospitalPieChartLabels.push(hospitalData.assign_to__country_name);
-        this.hospitalPieChartData.push(hospitalData.total);
+      
+      for (const hospitalDataInit of this.hospitalReportDataInit) {
+        this.hospitalPieChartLabels.push(hospitalDataInit.assign_to__country_name);
+        this.hospitalPieChartData.push(hospitalDataInit.total);
       } // end of for
        this.refresh_chart();
     });
@@ -159,9 +161,7 @@ export class VisualizationReportComponent implements OnInit {
    }
 
   public onDataFilterFormSubmit():void {
-        this.test_data =[]
-        this.ChartData  = [];
-        this.ChartContainer  = [];
+        
         this.from_date  = $('#from_date').val()
 
         this.labourattache  = $('#labourattache').val()
@@ -169,11 +169,12 @@ export class VisualizationReportComponent implements OnInit {
         //Company Visit
         this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report?la='+this.labourattache).subscribe( response => {
         this.companyReportData = response;
+        // console.log(this.companyReportData);
         this.companyPieChartLabels.length = 0;
         this.companyPieChartLabels  =  [];
         this.companyPieChartData  =  [];
 
-        for (const companyFilteredData of this.visitReportData) {
+        for (const companyFilteredData of this.companyReportData) {
           this.companyPieChartLabels.push(companyFilteredData.assign_to__country_name);
           this.companyPieChartData.push(companyFilteredData.total);
         }
@@ -181,6 +182,36 @@ export class VisualizationReportComponent implements OnInit {
           this.refresh_chart();
         });
 
+        //Jail Visit
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/jail/report?la='+this.labourattache).subscribe( response => {
+        this.jailReportData = response;
+        this.jailPieChartLabels.length = 0;
+        this.jailPieChartLabels  =  [];
+        this.jailPieChartData  =  [];
+
+        for (const jailData of this.jailReportData) {
+          this.jailPieChartLabels.push(jailData.assign_to__country_name);
+          this.jailPieChartData.push(jailData.total);
+        }
+
+        // end of for
+        this.refresh_chart();
+      });
+
+      //Hospital Visit
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/hospital/report?la='+this.labourattache).subscribe( response => {
+        this.hospitalReportData = response;
+        this.hospitalPieChartLabels.length = 0;
+        this.hospitalPieChartLabels  =  [];
+        this.hospitalPieChartData  =  [];
+
+        for (const hospitalData of this.hospitalReportData) {
+          this.hospitalPieChartLabels.push(hospitalData.assign_to__country_name);
+          this.hospitalPieChartData.push(hospitalData.total);
+        }
+        // end of for
+        this.refresh_chart();
+      });
     }
 
   refresh_chart() {
