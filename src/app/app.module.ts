@@ -160,6 +160,43 @@ import { ApiProcessService } from './api-process.service';
 import { LeftMenuService } from './layout/left-menu/left-menu.service';
 import { ChartsModule } from 'ng2-charts';
 import { VisitReportsComponent } from './reports/visit/visit-reports.component';
+import { VisualizationReportComponent } from './reports/visualizations/report.component';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+//import { CompatibilityModule } from '@angular/material';
+//import {NoConflictStyleCompatibilityMode} from '@angular/material';
+import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
 
 const appRoutes: Routes  = [
   {
@@ -650,9 +687,14 @@ const appRoutes: Routes  = [
     component: MonthWiseViewComponent
   },
   {
-    path: 'reports',
+    path: 'visit-reports',
     canActivate: [AuthGuard],
     component: VisitReportsComponent
+  },
+  {
+    path:'reports',
+    canActivate:[AuthGuard],
+    component:VisualizationReportComponent,
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent },
@@ -781,6 +823,8 @@ const MY_DATE_FORMATS = {
     MonthWiseViewComponent,
     GoogleChartComponent,
     VisitReportsComponent,
+    VisualizationReportComponent,
+
   ],
   imports: [
     SweetAlert2Module.forRoot(),
@@ -794,6 +838,39 @@ const MY_DATE_FORMATS = {
     MomentModule,
     NgIdleKeepaliveModule.forRoot(),
     ChartsModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
+    //CompatibilityModule,
+    //NoConflictStyleCompatibilityMode
   ],
   providers: [
     UserListService,

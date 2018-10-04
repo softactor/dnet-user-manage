@@ -1,0 +1,89 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Market Assessment Create
+      </h1>
+      <ol class="breadcrumb">
+        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Market Assessment Create</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <form class="form-inline" action="/action_page.php">
+                <div class="form-group">
+                  <label for="email">Date</label>
+                  <input type="text" id="defaultDate" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="Similar_Type">Similar Type</label>
+                  <input type="text" id="form_type" class="form-control" placeholder="Similar type" name="form_type"
+                         [(ngModel)]="form_type">
+                  <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <div class="box-body" *ngFor="let fields of marketAssessment; let i = index">
+              <form class="form-inline">
+                <div class="form-group"
+                     [class.has-warning]="responseError?.activity ? true: false"
+                     [class.has-feedback]="responseError?.activity ? true: false">
+                  <label for="activity">Activity</label>
+                  <input type="text"
+                         name="activity"
+                         id="inputActivity"
+                         [(ngModel)]="fields.activity"
+                         class="form-control"
+                         placeholder="Activity">
+                  <span *ngIf="responseError?.activity" class="glyphicon glyphicon-warning-sign error-sign"></span>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.outcome ? true: false"
+                  [class.has-feedback]="responseError?.outcome ? true: false">
+                  <label for="outcome">Outcome</label>
+                  <input type="text"
+                         name="outcome"
+                         [(ngModel)]="fields.outcome"
+                         id="inputOutcome"
+                         class="form-control"
+                         placeholder="Outcome">
+                  <span *ngIf="responseError?.outcome" class="glyphicon glyphicon-warning-sign error-sign"></span>
+                </div>
+                <div
+                  class="form-group" [class.has-warning]="responseError?.remarks ? true: false"
+                  [class.has-feedback]="responseError?.remarks ? true: false">
+                  <label for="remarks">Remarks</label>
+                  <input type="text"
+                         name="remarks"
+                         [(ngModel)]="fields.remarks"
+                         id="inputRemarks"
+                         class="form-control"
+                         placeholder="Remarks">
+                  <span *ngIf="responseError?.remarks" class="glyphicon glyphicon-warning-sign error-sign"></span>
+                </div>
+                <button type="button" class="btn btn-primary form_submit"
+                        (click)="onFormSubmit(fields, similarTypes[i])">Submit
+                </button>
+                <!-- /.box-body -->
+              </form>
+            </div>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->

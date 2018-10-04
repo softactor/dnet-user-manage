@@ -56,6 +56,7 @@ export class VisitReportsComponent implements OnInit {
   public randomize(): void {
     this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report').subscribe( response => {
       this.visitReportData = response;
+
       this.pieChartLabels.length = 0;
       this.pieChartLabels  =  [];
       this.pieChartData  =  [];

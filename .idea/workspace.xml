@@ -2,9 +2,524 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088b59ff-8266-4e83-b187-35f1fae393a0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/attestation/attestation.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/employee-enhancement/employee-enhancement.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/guest-entertainment/guest-entertainment.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/liaison-with-expatriates/liaison-with-expatriates.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/market-assessment/market-assessment.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/other-activity/other-activity.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/activities/work-plan/work-plan.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/api-process.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/app.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/app.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/app.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/app.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/app.module.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/general-assistance/general-assistance.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legal-assistance.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/assistance-provide/legal-assistance/legall-assistance.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/auth.guard.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/auth.guard.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/authentication.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/check-timeout.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/budget/budget.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare-fund.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/finance/remittance-welfare-fund/remittance-welfare.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/google-chart/google-chart.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/google-chart/google-chart.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/google-chart/google-chart.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/google-chart/google-chart.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/conference/conference.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/issues/meeting/meeting.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/footer/footer.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/footer/footer.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/footer/footer.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/footer/footer.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/header/header.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/header/header.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/header/header.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/header/header.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/left-menu/left-menu.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/left-menu/left-menu.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/left-menu/left-menu.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/left-menu/left-menu.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/layout/left-menu/left-menu.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/login/login.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/login/login.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/login/login.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/login/login.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/login/login.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/logout/logout.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/logout/logout.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/logout/logout.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/logout/logout.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/logout/logout.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/logout/logout.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/month-wise-view/month-wise-view.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/month-wise-view/month-wise-view.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/month-wise-view/month-wise-view.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/complaint/complaint.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/query-received/query-received.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/query-complain/trade-query/trade-query.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/reports/visit/visit-report.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/reports/visit/visit-reports.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arbitration-disputes/arbitration-disputes.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/arrearpay/arrearpay.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/compensation/compensation.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/deadbody-repatriation/deadbody-repatriation.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/dead-disability.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/death-disability/death-disability.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/monthly-problem-resolved/monthly-problem-resolved.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/remit-fc/remit-fc.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition-service.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/resolved/terms-condition-service/terms-condition.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/signup-form/signup-form.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/toster.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-create/user-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-create/user-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-create/user-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-create/user-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-create/user-create.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-create/user-create.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-dashboard/user-dashboard.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-dashboard/user-dashboard.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-dashboard/user-dashboard.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-dashboard/user-dashboard.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-list/user-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-list/user-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-list/user-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-list/user-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-list/user-list.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-update/user-update.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-update/user-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-update/user-update.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-update/user-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/user-update/user-update.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-create/company-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-create/company-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-create/company-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-create/company-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-delete/company-delete.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-delete/company-delete.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-delete/company-delete.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-delete/company-delete.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-edit/company-edit.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-edit/company-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-edit/company-edit.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-edit/company-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-list/company-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-list/company-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-list/company-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-list/company-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-update/company-update.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-update/company-update.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-update/company-update.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company-update/company-update.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/company/company.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-create/deportation-center-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-create/deportation-center-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-create/deportation-center-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-create/deportation-center-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-list/deportation-center-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-list/deportation-center-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center-list/deportation-center-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation-center.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/deportation-center/deportation.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-create/hospital-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-create/hospital-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-create/hospital-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-create/hospital-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-edit/hospital-edit.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-edit/hospital-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-edit/hospital-edit.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-edit/hospital-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-list/hospital-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-list/hospital-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-list/hospital-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital-list/hospital-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/hospital/hospital.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-create/jail-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-create/jail-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-create/jail-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-create/jail-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-edit/jail-edit.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-edit/jail-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-edit/jail-edit.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-edit/jail-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-list/jail-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-list/jail-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-list/jail-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail-list/jail-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/jail/jail.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-edit/migrant-shelter-edit.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-edit/migrant-shelter-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-edit/migrant-shelter-edit.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-edit/migrant-shelter-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/migrant-shelter/migrant-shelter.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-create/residence-create.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-create/residence-create.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-create/residence-create.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-create/residence-create.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-delete/residence-delete.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-delete/residence-delete.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-delete/residence-delete.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-delete/residence-delete.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-edit/residence-edit.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-edit/residence-edit.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-edit/residence-edit.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-edit/residence-edit.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-list/residence-list.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-list/residence-list.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-list/residence-list.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence-list/residence-list.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence.model.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app_backup/visit/residence/residence.service.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/README.md" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/animations.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/animations.metadata.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.metadata.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_ast.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_ast.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_ast_builder.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_ast_builder.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_builder.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_builder.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_trigger.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_trigger.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/element_instruction_map.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/element_instruction_map.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/private_export.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/private_export.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_driver.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_next.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_next.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/shared.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/shared.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/timeline_animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/timeline_animation_engine.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/transition_animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/transition_animation_engine.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/util.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.metadata.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/index.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/testing.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/public_api.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_builder.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_builder.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_event.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_event.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_metadata.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_metadata.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animations.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_group_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_group_player.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/private_export.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/private_export.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/util.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/di.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/di.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/package.json" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/public_api.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-events.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-events.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-partial-targets.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-partial-targets.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-partial.component.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-partial.component.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-partial.directive.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal-partial.directive.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal.component.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal.component.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal.directive.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/swal.directive.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/sweetalert2.module.d.ts" afterPath="$PROJECT_DIR$/node_modules/@toverux/ngx-sweetalert2/sweetalert2.module.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/LICENSE" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/README.md" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.all.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.all.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.all.min.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.all.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.css" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.min.css" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.min.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/dist/sweetalert2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/package.json" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/SweetAlert.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/SweetAlert.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/animations.scss" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/animations.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/constants.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/constants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/enhancers.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/enhancers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/enhancers/withGlobalDefaults.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/enhancers/withGlobalDefaults.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/enhancers/withNoNewKeyword.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/enhancers/withNoNewKeyword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/extensions.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/extensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/extensions/withNoNewKeyword.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/extensions/withNoNewKeyword.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/globalState.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/globalState.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/_main.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/_main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/enable-disable-elements.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/enable-disable-elements.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/getInput.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/getInput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/hideLoading.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/hideLoading.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/progress-steps.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/progress-steps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/show-reset-validation-error.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/instanceMethods/show-reset-validation-error.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/mixins.scss" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/privateProps.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/privateProps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/adaptInputValidator.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/adaptInputValidator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/argsToParams.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/argsToParams.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/close.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/close.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/dom.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/dom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/fire.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/fire.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/mixin.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/mixin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/queue.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/queue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/showLoading.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/showLoading.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/timer.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/staticMethods/timer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/sweetalert2.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/sweetalert2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/sweetalert2.scss" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/sweetalert2.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/toasts.scss" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/toasts.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/DismissReason.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/DismissReason.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/Symbol.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/Symbol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/Timer.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/Timer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/WeakMap.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/WeakMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/aria.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/aria.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/classes.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/classes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/defaultInputValidators.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/defaultInputValidators.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/animationEndEvent.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/animationEndEvent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/domUtils.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/domUtils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/getters.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/getters.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/index.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/init.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/measureScrollbar.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/measureScrollbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/parseHtmlToContainer.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/parseHtmlToContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/index.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderActions.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderContent.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderContent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderIcon.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderIcon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderImage.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderImage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderProgressSteps.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderProgressSteps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderTitle.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/dom/renderers/renderTitle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/iosFix.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/iosFix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/isNodeEnv.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/isNodeEnv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/openPopup.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/openPopup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/params.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/params.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/scrollbarFix.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/scrollbarFix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/setParameters.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/setParameters.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/utils.js" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/utils/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/src/variables.scss" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/src/variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sweetalert2/sweetalert2.d.ts" afterPath="$PROJECT_DIR$/node_modules/sweetalert2/sweetalert2.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/api-process.service.ts" afterPath="$PROJECT_DIR$/src/app/api-process.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/reports/visit/visit-reports.component.ts" afterPath="$PROJECT_DIR$/src/app/reports/visit/visit-reports.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -18,68 +533,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="left-menu.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/layout/left-menu/left-menu.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="24" />
-              <folding>
-                <element signature="e#1231#1341#0" expanded="false" />
-                <element signature="e#1527#1633#0" expanded="false" />
-                <element signature="e#1822#1940#0" expanded="false" />
-                <element signature="e#2138#2292#0" expanded="false" />
-                <element signature="e#2486#2624#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="left-menu.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/layout/left-menu/left-menu.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="94" column="8" lean-forward="false" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="199" column="37" lean-forward="false" selection-start-line="199" selection-start-column="37" selection-end-line="199" selection-end-column="37" />
-              <folding>
-                <element signature="e#537#594#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="company-create.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="107" column="22" lean-forward="false" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -139,9 +593,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="19" />
     <option name="y" value="19" />
@@ -150,7 +601,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -231,17 +682,17 @@
       <workItem from="1538534612868" duration="3393000" />
       <workItem from="1538542994975" duration="2328000" />
       <workItem from="1538563698876" duration="833000" />
-      <workItem from="1538624689926" duration="594000" />
+      <workItem from="1538624689926" duration="820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42434000" />
+    <option name="totallyTimeSpent" value="42660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25988287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25988287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -642,8 +1093,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="199" column="37" lean-forward="false" selection-start-line="199" selection-start-column="37" selection-end-line="199" selection-end-column="37" />
+        <state relative-caret-position="1309">
+          <caret line="236" column="37" lean-forward="false" selection-start-line="236" selection-start-column="37" selection-end-line="236" selection-end-column="37" />
           <folding>
             <element signature="e#537#594#0" expanded="true" />
           </folding>
