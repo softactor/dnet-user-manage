@@ -86,10 +86,9 @@
                 </div>
                 <div class="col-md-6">
                   <div class="box-header with-border">
-                      <!--<div id="migrationshelter_visit" [chartData]="migrationshelter_VisitData" [chartOptions] = "migrationshelter_VisitOptions" chartType="PieChart" GoogleChart></div>-->
                       <label>Migration Shelter Visit</label>
                       <div style="display: block">
-                            <!--<canvas baseChart  [data]="companyPieChartData" [labels]="companyPieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"(chartClick)="chartClicked($event)"></canvas>-->
+                            <canvas baseChart  [data]="migrantshelterPieChartData" [labels]="migrantshelterPieChartLabels" [chartType]="polarAreaChartType" [options]="backgroundColor" (chartHover)="chartHovered($event)"(chartClick)="chartClicked($event)"></canvas>
                       </div>
                   </div>
                 </div>

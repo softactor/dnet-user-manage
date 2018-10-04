@@ -36,8 +36,6 @@ export class VisualizationReportComponent implements OnInit {
   budget_FincaneOptions;
   marketassessment_ActivityData;
   marketassessment_ActivityOptions;
-  employeeenhancement_ActivityData:any;
-  employeeenhancement_ActivityOptions:any;
   CompanyReportResponse;
   from_date;
   chart;
@@ -49,29 +47,45 @@ export class VisualizationReportComponent implements OnInit {
   test_data:any;
   assignTo;
   visitReportData;
+  migrantshelterReportData;
   // Pie
   labourattache;
   companyReportDataInit;
   jailReportDataInit;
   hospitalReportDataInit;
   hospitalReportData;
+  migrantshelterReportDataInit;
 
 //Chart Lebels
   public companyPieChartLabels: string[] = [];
   public jailPieChartLabels: string[] = [];
   public hospitalPieChartLabels: string[] = [];
+  public migrantshelterPieChartLabels: string[] = [];
   
   //Chart Data
   public companyPieChartData: number[] = [];
   public jailPieChartData: number[] = [];
   public hospitalPieChartData: number[] = [];
+  public migrantshelterPieChartData: number[] =[];
 
   //Chart Type
   public pieChartType: string ='pie';
   public lineChartType: string ='line';
   public doughnutChartType: string ='doughnut';
   public barChartType: string ='bar';
+  public polarAreaChartType: string ='polarArea';
 
+  //Color Effect
+  public backgroundColor: string = 'fillPattern';
+  public borderColor: [
+    'rgba(255,99,132,1)',
+    'rgba(54, 162, 235, 1)',
+    'rgba(255, 206, 86, 1)',
+    'rgba(75, 192, 192, 1)',
+    'rgba(153, 102, 255, 1)',
+    'rgba(255, 159, 64, 1)'
+  ];
+ 
 
   // events
   public chartClicked(e: any): void {
@@ -85,8 +99,6 @@ export class VisualizationReportComponent implements OnInit {
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
               public _http: HttpClient) {
-                  this.employeeenhancement_ActivityData='';
-                  this.employeeenhancement_ActivityOptions='';
                   this.companyReportData=[];
                   this.jailReportData=[];
                   this.hospitalReportData=[];
@@ -158,6 +170,18 @@ export class VisualizationReportComponent implements OnInit {
        this.refresh_chart();
     });
 
+    // get Migration Shelter visit reports;
+    this._apiProcessService.getReportData(this.authorizationKey, 'visit/migrantshelter/report').subscribe( response => {
+      this.migrantshelterReportDataInit = response;
+      this.migrantshelterPieChartData  =  [];
+      
+      for (const migrantshelterDataInit of this.migrantshelterReportDataInit) {
+        this.migrantshelterPieChartLabels.push(migrantshelterDataInit.assign_to__country_name);
+        this.migrantshelterPieChartData.push(migrantshelterDataInit.total);
+      } // end of for
+       this.refresh_chart();
+    });
+
    }
 
   public onDataFilterFormSubmit():void {
@@ -208,6 +232,21 @@ export class VisualizationReportComponent implements OnInit {
         for (const hospitalData of this.hospitalReportData) {
           this.hospitalPieChartLabels.push(hospitalData.assign_to__country_name);
           this.hospitalPieChartData.push(hospitalData.total);
+        }
+        // end of for
+        this.refresh_chart();
+      });
+
+      // Migrantshelter Visit
+      this._apiProcessService.getListData(this.authorizationKey, 'visit/hospital/report?la='+this.labourattache).subscribe( response => {
+        this.migrantshelterReportData = response;
+        this.migrantshelterPieChartLabels.length = 0;
+        this.migrantshelterPieChartLabels  =  [];
+        this.migrantshelterPieChartData  =  [];
+
+        for (const migrantshelterData of this.migrantshelterReportData) {
+          this.hospitalPieChartLabels.push(migrantshelterData.assign_to__country_name);
+          this.hospitalPieChartData.push(migrantshelterData.total);
         }
         // end of for
         this.refresh_chart();
