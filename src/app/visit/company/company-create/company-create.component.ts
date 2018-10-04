@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import { CompanyService } from '../company.service';
 import { CompanyModel } from '../company.model';
+import { Location } from '@angular/common';
 
 declare var $: any;
 @Component({
@@ -26,6 +27,7 @@ export class CompanyCreateComponent implements OnInit {
   form_type;
   list_param;
   constructor(
+    private _location: Location,
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
@@ -93,6 +95,7 @@ export class CompanyCreateComponent implements OnInit {
     this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
         this._toasterService.success('Entry have successfully done.');
         this.router.navigate(['company-list/company']);
+        location.reload();
       },
       error => {
         const error_response  = error;
