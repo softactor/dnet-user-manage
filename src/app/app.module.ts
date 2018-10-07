@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { HttpModule} from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -916,6 +917,7 @@ const MY_DATE_FORMATS = {
     ApiProcessService,
     LeftMenuComponent,
     LeftMenuService,
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })
