@@ -652,12 +652,12 @@ const appRoutes: Routes  = [
     component: TermsConditionServiceUpdateComponent
   },
   {
-    path: 'budget-list',
+    path: 'budget-list/:list_param',
     canActivate: [AuthGuard],
     component: BudgetListComponent
   },
   {
-    path: 'budget-create',
+    path: 'budget-create/:create_param',
     canActivate: [AuthGuard],
     component: BudgetCreateComponent
   },
@@ -667,12 +667,12 @@ const appRoutes: Routes  = [
     component: BudgetUpdateComponent
   },
   {
-    path: 'remittance-welfare-fund-list',
+    path: 'remittance-welfare-fund-list/:list_param',
     canActivate: [AuthGuard],
     component: RemittanceWelfareFundListComponent
   },
   {
-    path: 'remittance-welfare-fund-create',
+    path: 'remittance-welfare-fund-create/:create_param',
     canActivate: [AuthGuard],
     component: RemittanceWelfareFundCreateComponent
   },

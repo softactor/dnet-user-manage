@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data List
+        {{ listTitle }} List
       </h1>
       <ol class="breadcrumb">
         <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -18,8 +18,8 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">Create Data</h3>
-              <a routerLink="/remittance-welfare-fund-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title">{{ listTitle }} Entry</h3>
+              <a routerLink="/remittance-welfare-fund-create/{{ listTitle }}" class="btn btn-default"><i class="fa fa-plus"></i></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
