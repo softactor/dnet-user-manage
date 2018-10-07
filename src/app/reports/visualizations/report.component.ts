@@ -7,6 +7,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { TosterService } from '../../toster.service';
 import { BaseChartDirective } from 'ng2-charts';
+import {DatePipe} from '@angular/common';
 
 declare var $: any;
 
@@ -38,6 +39,7 @@ export class VisualizationReportComponent implements OnInit {
   marketassessment_ActivityOptions;
   CompanyReportResponse;
   from_date;
+  to_date;
   chart;
   first_data;
   companyReportData;
@@ -98,6 +100,7 @@ export class VisualizationReportComponent implements OnInit {
 
   constructor(private _apiProcessService: ApiProcessService,
               private _authentication: AuthenticationService,
+              private _datePipe:DatePipe,
               public _http: HttpClient) {
                   this.companyReportData=[];
                   this.jailReportData=[];
@@ -136,6 +139,8 @@ export class VisualizationReportComponent implements OnInit {
     // get company visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/company/report').subscribe( response => {
       this.companyReportDataInit = response;
+      this.companyPieChartLabels.length=0;
+      this.companyPieChartData.length=0;
       this.companyPieChartLabels  =  [];
       this.companyPieChartData  =  [];
 
@@ -149,6 +154,8 @@ export class VisualizationReportComponent implements OnInit {
     // get jail visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/jail/report').subscribe( response => {
       this.jailReportDataInit = response;
+      this.jailPieChartLabels.length=0;
+      this.jailPieChartData.length=0;
       this.jailPieChartData  =  [];
 
       for (const jailData of this.jailReportDataInit) {
@@ -161,6 +168,8 @@ export class VisualizationReportComponent implements OnInit {
     // get hospital visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/hospital/report').subscribe( response => {
       this.hospitalReportDataInit = response;
+      this.hospitalPieChartLabels.length=0;
+      this.hospitalPieChartData.length=0;
       this.hospitalPieChartData  =  [];
       
       for (const hospitalDataInit of this.hospitalReportDataInit) {
@@ -185,17 +194,20 @@ export class VisualizationReportComponent implements OnInit {
    }
 
   public onDataFilterFormSubmit():void {
-        
-        this.from_date  = $('#from_date').val()
+        // const date = new Date();
+        this.from_date  = $('#from_date').val();
+        this.to_date  = $('#to_date').val();
 
+        this.from_date = this._datePipe.transform(this.from_date,"yyy-MM-dd");
+        this.to_date = this._datePipe.transform(this.to_date,"yyyy-MM-dd");
+        
         this.labourattache  = $('#labourattache').val()
 
         //Company Visit
-        this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report?la='+this.labourattache).subscribe( response => {
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/company/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
         this.companyReportData = response;
-        // console.log(this.companyReportData);
         this.companyPieChartLabels.length = 0;
-        this.companyPieChartLabels  =  [];
+        // this.companyPieChartLabels  =  [];
         this.companyPieChartData  =  [];
 
         for (const companyFilteredData of this.companyReportData) {
@@ -207,11 +219,11 @@ export class VisualizationReportComponent implements OnInit {
         });
 
         //Jail Visit
-        this._apiProcessService.getListData(this.authorizationKey, 'visit/jail/report?la='+this.labourattache).subscribe( response => {
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/jail/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
         this.jailReportData = response;
         this.jailPieChartLabels.length = 0;
         this.jailPieChartLabels  =  [];
-        this.jailPieChartData  =  [];
+        this.jailPieChartData.length=0;
 
         for (const jailData of this.jailReportData) {
           this.jailPieChartLabels.push(jailData.assign_to__country_name);
@@ -223,11 +235,11 @@ export class VisualizationReportComponent implements OnInit {
       });
 
       //Hospital Visit
-        this._apiProcessService.getListData(this.authorizationKey, 'visit/hospital/report?la='+this.labourattache).subscribe( response => {
+        this._apiProcessService.getListData(this.authorizationKey, 'visit/hospital/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
         this.hospitalReportData = response;
-        this.hospitalPieChartLabels.length = 0;
+        this.hospitalPieChartLabels.length=0;
         this.hospitalPieChartLabels  =  [];
-        this.hospitalPieChartData  =  [];
+        this.hospitalPieChartData.length=0;
 
         for (const hospitalData of this.hospitalReportData) {
           this.hospitalPieChartLabels.push(hospitalData.assign_to__country_name);
@@ -238,15 +250,15 @@ export class VisualizationReportComponent implements OnInit {
       });
 
       // Migrantshelter Visit
-      this._apiProcessService.getListData(this.authorizationKey, 'visit/hospital/report?la='+this.labourattache).subscribe( response => {
+      this._apiProcessService.getListData(this.authorizationKey, 'visit/migrantshelter/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
         this.migrantshelterReportData = response;
         this.migrantshelterPieChartLabels.length = 0;
         this.migrantshelterPieChartLabels  =  [];
-        this.migrantshelterPieChartData  =  [];
+        this.migrantshelterPieChartData.length=0;
 
         for (const migrantshelterData of this.migrantshelterReportData) {
-          this.hospitalPieChartLabels.push(migrantshelterData.assign_to__country_name);
-          this.hospitalPieChartData.push(migrantshelterData.total);
+          this.migrantshelterPieChartLabels.push(migrantshelterData.assign_to__country_name);
+          this.migrantshelterPieChartData.push(migrantshelterData.total);
         }
         // end of for
         this.refresh_chart();
