@@ -91,7 +91,7 @@ export class BudgetCreateComponent implements OnInit {
     const postMenuString = 'name=' + type
       + '&module_name=' + type
       + '&parent_id=' + 7
-      + '&url=company-list/' + type
+      + '&url=budget-list/' + type
       + '&type=' + type
     this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe( response => {
         this._toasterService.success('Entry have successfully done.');
