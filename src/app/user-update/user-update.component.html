@@ -37,20 +37,29 @@
                   <input required type="text" class="form-control" [(ngModel)]="last_name" name="last_name" id="last_name" placeholder="Last Name">
                   <div class="alert alert-danger" *ngIf="responseError?.last_name">{{responseError?.last_name}}</div>
                 </div>
+
                 <div class="form-group"
                      [class.has-warning]="responseError?.country ? true: false"
                      [class.has-feedback]="responseError?.country ? true: false">
                   <label for="exampleInputEmail1">Country</label>
-                  <input required type="text" class="form-control" [(ngModel)]="country" name="country" id="country" placeholder="Enter Country">
+                  <select class="form-control"  [(ngModel)]="country.id" name="country" id="country">
+                    <option value="" selected>Select</option>
+                    <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
+                  </select>
                   <div class="alert alert-danger" *ngIf="responseError?.country">{{responseError?.country}}</div>
                 </div>
+
                 <div class="form-group"
-                     [class.has-warning]="responseError?.assigned_country ? true: false"
-                     [class.has-feedback]="responseError?.assigned_country ? true: false">
+                     [class.has-warning]="responseError?.country ? true: false"
+                     [class.has-feedback]="responseError?.country ? true: false">
                   <label for="exampleInputEmail1">Assigned Country</label>
-                  <input required type="text" class="form-control" [(ngModel)]="assigned_country" name="assigned_country" id="assigned_country" placeholder="Assigned Country">
-                  <div class="alert alert-danger" *ngIf="responseError?.assigned_country">{{responseError?.assigned_country}}</div>
+                  <select class="form-control"  [(ngModel)]="assigned_country.id" name="assigned_country" id="assigned_country">
+                    <option value="" selected>Select</option>
+                    <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
+                  </select>
+                  <div class="alert alert-danger" *ngIf="responseError?.country">{{responseError?.country}}</div>
                 </div>
+
                 <div class="form-group"
                      [class.has-warning]="responseError?.mobile ? true: false"
                      [class.has-feedback]="responseError?.mobile ? true: false">

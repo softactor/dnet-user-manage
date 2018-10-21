@@ -18,6 +18,8 @@ export class UserUpdateComponent implements OnInit {
   userAccessLevelResponse;
   responseError;
   userDetailsDataContainer;
+  countryList;
+  countryListResponse;
   first_name        = '';
   last_name         = '';
   email             = '';
@@ -62,9 +64,13 @@ export class UserUpdateComponent implements OnInit {
         });
       });
       // get user access level;
-    this._userUpdateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {
+    this._userUpdateService.getUserAccessLevel(this.authorizationKey).subscribe( response => {
       this.userAccessLevelResponse = response;
       this.userAccessLevel = this.userAccessLevelResponse.results;
+    });
+    // get country list;
+    this._userUpdateService.getListData(this.authorizationKey, 'locations/countries/list').subscribe( response => {
+      this.countryListResponse = response;
     });
   }
   updateUser(form: NgForm, e) {
