@@ -16,6 +16,7 @@ export class UserUpdateComponent implements OnInit {
   authorizationKey;
   userAccessLevel;
   userAccessLevelResponse;
+  responseError;
   userDetailsDataContainer;
   first_name        = '';
   last_name         = '';
@@ -68,7 +69,6 @@ export class UserUpdateComponent implements OnInit {
   }
   updateUser(form: NgForm, e) {
     e.preventDefault();
-    if (form.valid) {
       const userUpdateParam = {
         address           : form.value.address,
         assigned_country  : form.value.assigned_country,
@@ -84,10 +84,11 @@ export class UserUpdateComponent implements OnInit {
       this._userUpdateService.updateUserData(userUpdateParam).subscribe( respose => {
         this._toasterService.success('User has been successfully updated.');
         this.router.navigate(['user-list']);
-      });
-    }else {
-      this._toasterService.error('All fields are required');
-    }
+      },
+        error => {
+          const error_response  = error;
+          this.responseError  = error_response.error;
+        });
   }
 
 }

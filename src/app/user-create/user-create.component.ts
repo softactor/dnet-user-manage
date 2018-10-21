@@ -17,6 +17,7 @@ export class UserCreateComponent implements OnInit {
   userAccessLevel;
   countryList;
   countryListResponse;
+  responseError;
 
   constructor(private _userCreateService: UserCreateService,
               private router: Router,
@@ -44,7 +45,6 @@ export class UserCreateComponent implements OnInit {
   }
   createUser(form: NgForm, e) {
     e.preventDefault();
-    if (form.valid) {
       const postString  =  'first_name=' + form.value.first_name
         + '&last_name='         + form.value.last_name
         + '&mobile='            + form.value.mobile
@@ -58,9 +58,10 @@ export class UserCreateComponent implements OnInit {
       this._userCreateService.creteUserData(postString, this.authorizationKey).subscribe(response => {
         this._toasterService.success('User has been successfully created.');
         this.router.navigate(['user-list']);
-      });
-    }else {
-      this._toasterService.error('All fields are required');
-    }
+      },
+        error => {
+          const error_response  = error;
+          this.responseError  = error_response.error;
+        });
   }
 }

@@ -24,53 +24,70 @@
                     <!-- form start -->
                     <form  #userCreateForm = "ngForm" (ngSubmit)="createUser(userCreateForm, $event)"  role="form">
                     <div class="box-body">
-                      <div class="form-group">
+                      <div class="form-group"
+                             [class.has-warning]="responseError?.first_name ? true: false"
+                             [class.has-feedback]="responseError?.first_name ? true: false">
                         <label for="exampleInputEmail1">First Name</label>
                         <input required type="text" class="form-control" ngModel #first_name="ngModel" name="first_name" id="first_name" placeholder="First Name">
-                        <div class="alert alert-danger" *ngIf="first_name.touched && !first_name.valid">First name is required</div>
+                        <div class="alert alert-danger" *ngIf="responseError?.first_name">{{responseError?.first_name}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                           [class.has-warning]="responseError?.last_name ? true: false"
+                           [class.has-feedback]="responseError?.last_name ? true: false">
                         <label for="exampleInputEmail1">Last Name</label>
                         <input required type="text" class="form-control" ngModel #last_name="ngModel" name="last_name" id="last_name" placeholder="Last Name">
-                        <div class="alert alert-danger" *ngIf="last_name.touched && !last_name.valid">Last name is required</div>
+                        <div class="alert alert-danger" *ngIf="responseError?.last_name">{{responseError?.last_name}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                           [class.has-warning]="responseError?.country ? true: false"
+                           [class.has-feedback]="responseError?.country ? true: false">
                         <label for="exampleInputEmail1">Country</label>
-                        <div class="alert alert-danger" *ngIf="country.touched && !country.valid">Country is required</div>
                         <select class="form-control" ngModel #country="ngModel" name="country" id="country">
                           <option value="" selected>Select</option>
                           <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
                         </select>
+                        <div class="alert alert-danger" *ngIf="responseError?.country">{{responseError?.country}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                           [class.has-warning]="responseError?.assigned_country ? true: false"
+                           [class.has-feedback]="responseError?.assigned_country ? true: false">
                         <label for="exampleInputEmail1">Assigned Country</label>
-                        <div class="alert alert-danger" *ngIf="assigned_country.touched && !assigned_country.valid">Assigned country is required</div>
                         <select class="form-control" ngModel #assigned_country="ngModel" name="assigned_country" id="assigned_country">
                           <option value="" selected>Select</option>
                           <option *ngFor="let countryList of countryListResponse" [value]="countryList.id">{{countryList.country_name}}</option>
                         </select>
+                        <div class="alert alert-danger" *ngIf="responseError?.assigned_country">{{responseError?.assigned_country}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                           [class.has-warning]="responseError?.email ? true: false"
+                           [class.has-feedback]="responseError?.email ? true: false">
                         <label for="exampleInputEmail1">Email</label>
                         <input required type="email" class="form-control" ngModel #email="ngModel" name="email" id="email" placeholder="Enter email">
-                        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is required</div>
+                        <div class="alert alert-danger" *ngIf="responseError?.email">{{responseError?.email}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                             [class.has-warning]="responseError?.mobile ? true: false"
+                             [class.has-feedback]="responseError?.mobile ? true: false">
                         <label for="exampleInputEmail1">Mobile</label>
                         <input required type="text" class="form-control" ngModel #mobile="ngModel" name="mobile" id="mobile" placeholder="Enter Mobile">
-                        <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">Mobile is required</div>
+                        <div class="alert alert-danger" *ngIf="responseError?.mobile">{{responseError?.mobile}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                           [class.has-warning]="responseError?.address ? true: false"
+                           [class.has-feedback]="responseError?.address ? true: false">
                         <label for="exampleInputPassword1">Address</label>
                         <textarea required class="form-control" ngModel #address="ngModel" name="address" id="address" placeholder="Enter address"></textarea>
-                        <div class="alert alert-danger" *ngIf="address.touched && !address.valid">Address is required</div>
+                        <div class="alert alert-danger" *ngIf="responseError?.address">{{responseError?.address}}</div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group"
+                           [class.has-warning]="responseError?.access ? true: false"
+                           [class.has-feedback]="responseError?.access ? true: false">
                         <label for="select">Access</label>
                         <select class="form-control" name="access" id="access" [(ngModel)]="access">
                           <option value="" selected>Select</option>
                           <option *ngFor="let access of userAccessLevel" [value]="access.id">{{access.description}}</option>
                         </select>
+                        <div class="alert alert-danger" *ngIf="responseError?.access">{{responseError?.access}}</div>
                       </div>
                     </div>
                     <!-- /.box-body -->

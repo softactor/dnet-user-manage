@@ -52,10 +52,9 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(deleteUserId) {
-    this.authorizationKey = this._authentication.token_type + ' ' + this._authentication.access_token;
     const userDeleteParam  = {
       userId        : deleteUserId,
-      authorizationKey  : this.authorizationKey.toString()
+      authorizationKey  : this.authorizationKey
     };
     this._service.deleteUserData(userDeleteParam).subscribe( response => {
       this.userDeleteData = response;
