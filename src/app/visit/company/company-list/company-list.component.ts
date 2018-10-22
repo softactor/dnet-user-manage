@@ -29,7 +29,7 @@ export class CompanyListComponent implements OnInit {
     private _service: CompanyService,
     private router: Router,
   ) {
-    setTimeout(function(){
+    setTimeout(function() {
       $(function() {
         if (!$.fn.DataTable.isDataTable('#company_list')) {
         $('#company_list').DataTable({

@@ -18,22 +18,11 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <!-- User Account: style can be found in dropdown.less -->
-        <li class="dropdown user user-menu">
-          <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-            <!--<img src="/assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
-            <span class="hidden-xs">{{loggedInUserName}}</span>
-          </a>
-          <ul class="dropdown-menu">
-            <!-- Menu Footer-->
-            <li class="user-footer">
-              <div class="pull-left">
-                <a routerLink="/user-dashboard" class="btn btn-default btn-flat">Profile</a>
-              </div>
-              <div class="pull-right">
-                <a routerLink="/logout" class="btn btn-default btn-flat">Sign out</a>
-              </div>
-            </li>
-          </ul>
+        <li>
+            <a routerLink="/user-dashboard" class="btn btn-flat">Profile</a>
+        </li>
+        <li>
+            <a routerLink="/logout" class="btn btn-flat">Sign out</a>
         </li>
       </ul>
     </div>

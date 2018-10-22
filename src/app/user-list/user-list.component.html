@@ -40,10 +40,10 @@
                     <td>{{ sln+1 }}</td>
                     <td>{{ user.first_name }}</td>
                     <td>{{ user.last_name }}</td>
-                    <td>{{ user.assigned_country }}</td>
+                    <td>{{ user.assigned_country.country_name }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.mobile }}</td>
-                    <td>{{ user.country }}</td>
+                    <td>{{ user.country.country_name }}</td>
                     <td>
                       <a routerLink="/user-update/{{user.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                       <button [swal]="deleteSwal"

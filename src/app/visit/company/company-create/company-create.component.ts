@@ -94,7 +94,7 @@ export class CompanyCreateComponent implements OnInit {
       + '&type=' + type
     this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
         this._toasterService.success('Entry have successfully done.');
-        this.router.navigate(['company-list/company']);
+        this.router.navigate(['company-list/' + type]);
         location.reload();
       },
       error => {

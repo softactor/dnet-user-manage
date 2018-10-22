@@ -30,6 +30,8 @@ export class LogoutComponent implements OnInit {
       this._toasterService.success(this.responseMessage.message);
       localStorage.removeItem('access_token');
       localStorage.removeItem('token_type');
+      localStorage.removeItem('logged_in_id');
+      localStorage.removeItem('expires_in');
       this.router.navigate(['login']);
     });
   }

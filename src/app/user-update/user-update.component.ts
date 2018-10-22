@@ -16,7 +16,10 @@ export class UserUpdateComponent implements OnInit {
   authorizationKey;
   userAccessLevel;
   userAccessLevelResponse;
+  responseError;
   userDetailsDataContainer;
+  countryList;
+  countryListResponse;
   first_name        = '';
   last_name         = '';
   email             = '';
@@ -61,14 +64,17 @@ export class UserUpdateComponent implements OnInit {
         });
       });
       // get user access level;
-    this._userUpdateService.getUserAccessLevel(this.authorizationKey.toString()).subscribe( response => {
+    this._userUpdateService.getUserAccessLevel(this.authorizationKey).subscribe( response => {
       this.userAccessLevelResponse = response;
       this.userAccessLevel = this.userAccessLevelResponse.results;
+    });
+    // get country list;
+    this._userUpdateService.getListData(this.authorizationKey, 'locations/countries/list').subscribe( response => {
+      this.countryListResponse = response;
     });
   }
   updateUser(form: NgForm, e) {
     e.preventDefault();
-    if (form.valid) {
       const userUpdateParam = {
         address           : form.value.address,
         assigned_country  : form.value.assigned_country,
@@ -84,10 +90,11 @@ export class UserUpdateComponent implements OnInit {
       this._userUpdateService.updateUserData(userUpdateParam).subscribe( respose => {
         this._toasterService.success('User has been successfully updated.');
         this.router.navigate(['user-list']);
-      });
-    }else {
-      this._toasterService.error('All fields are required');
-    }
+      },
+        error => {
+          const error_response  = error;
+          this.responseError  = error_response.error;
+        });
   }
 
 }

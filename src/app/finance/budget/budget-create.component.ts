@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationService } from '../../authentication.service';
 import { HttpClient,  HttpHeaders} from '@angular/common/http';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -24,13 +24,19 @@ export class BudgetCreateComponent implements OnInit {
   defaultDate;
   assignTo;
   form_type;
+  list_param;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: BudgetService,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
   ngOnInit() {
     // to solve the left menu hide problem;
@@ -43,7 +49,7 @@ export class BudgetCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Budget';
+    this.form_type    = this.list_param;
     this.similarTypes.push(this.form_type);
     const residenceObj = new BudgetModel();
     // @ts-ignore
@@ -75,14 +81,29 @@ export class BudgetCreateComponent implements OnInit {
       + '&type=' + type
     this._service.create(postString, this.authorizationKey,
       'finance/budget/create').subscribe( response => {
-        this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['budget-list']);
       },
       error => {
         const error_response  = error;
         this.responseError  = error_response.error;
       }
     );
+    // menu ceate
+    const postMenuString = 'name=' + type
+      + '&module_name=' + type
+      + '&parent_id=' + 7
+      + '&url=budget-list/' + type
+      + '&type=' + type
+    this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe( response => {
+        this._toasterService.success('Entry have successfully done.');
+        this.router.navigate(['budget-list/' + type]);
+        location.reload();
+      },
+      error => {
+        const error_response  = error;
+        this.responseError  = error_response.error;
+      }
+    );
+    // end of menu create
   }
   public copyForm(e) {
     if (this.form_type) {
