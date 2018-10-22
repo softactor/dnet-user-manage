@@ -13,11 +13,13 @@ declare var $: any;
 })
 export class CompanyEditComponent implements OnInit {
   editId;
+  type;
   authorizationKey;
   editData;
   name  = '';
   address = '';
   outcome = '';
+  date;
   updateResponse;
   responseError;
   constructor(
@@ -42,7 +44,7 @@ export class CompanyEditComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam).subscribe( Details => {
@@ -50,21 +52,23 @@ export class CompanyEditComponent implements OnInit {
           this.name = this.editData.name;
           this.address = this.editData.address;
           this.outcome = this.editData.outcome;
+          this.type = this.editData.type;
+          this.date = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
       const updateParam = {
-        name           : form.value.name,
-        address        : form.value.address,
-        outcome        : form.value.outcome,
+        name           :  ((form.value.name === undefined)    ? ''  :  form.value.name),
+        address        :  ((form.value.address === undefined) ? ''  :  form.value.address),
+        outcome        :  ((form.value.outcome === undefined) ? ''  :  form.value.outcome),
         editId         : this.editId,
         authorization  : this.authorizationKey
       };
       this._service.update(updateParam).subscribe( response => {
-        this._toasterService.success('Company has been successfully updated.');
-        this.router.navigate(['residence-list']);
+        this._toasterService.success('Data has been successfully updated.');
+          this.router.navigate(['company-list/' + this.type]);
       },
         error => {
           const error_response  = error;

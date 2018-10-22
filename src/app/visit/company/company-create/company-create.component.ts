@@ -56,6 +56,7 @@ export class CompanyCreateComponent implements OnInit {
     const residenceObj = new CompanyModel();
     // @ts-ignore
     this.company.push(residenceObj);
+    console.log(this.company);
     this.assignTo = localStorage.getItem('assign_to');
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.inputFields = {
@@ -73,46 +74,47 @@ export class CompanyCreateComponent implements OnInit {
 
   public onFormSubmit(fields, type) {
     this.defaultDate = $('#defaultDate').val();
-    const postString = 'name=' + fields.name
-      + '&address=' + fields.address
-      + '&outcome=' + fields.outcome
+    const postString = 'name=' + ((fields.name === undefined) ? '' : fields.name)
+      + '&address=' + ((fields.address === undefined) ? '' : fields.address)
+      + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
       + '&date=' + this.defaultDate
       + '&assign_to=' + this.assignTo
       + '&type=' + type
     this._service.create(postString, 'visit/company/create', this.authorizationKey).subscribe( response => {
+        // menu ceate
+        const postMenuString = 'name=' + type
+          + '&module_name=' + type
+          + '&parent_id=' + 1
+          + '&url=company-list/' + type
+          + '&type=' + type
+        this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
+            this._toasterService.success('Entry have successfully done.');
+            this.router.navigate(['company-list/' + type]);
+            location.reload();
+          },
+          error => {
+            const error_response  = error;
+            this.responseError  = error_response.error;
+          }
+        );
+        // end of menu create
     },
       error => {
         const error_response  = error;
         this.responseError  = error_response.error;
       }
     );
-    // menu ceate
-    const postMenuString = 'name=' + type
-      + '&module_name=' + type
-      + '&parent_id=' + 1
-      + '&url=company-list/' + type
-      + '&type=' + type
-    this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
-        this._toasterService.success('Entry have successfully done.');
-        this.router.navigate(['company-list/' + type]);
-        location.reload();
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
-      }
-    );
-    // end of menu create
   }
 
   public copyForm(e) {
+    console.log(this.similarTypes);
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
         this.similarTypes.push(this.form_type);
         const companyObj = new CompanyModel();
         // @ts-ignore
         this.company.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {

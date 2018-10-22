@@ -47,13 +47,12 @@ export class LoginComponent {
           editUserId        : this.loginDataResponse.user_id,
           authorizationKey  : authorizationKey.toString()
         };
-
         this._userUpdateService.getUserDetailsById(getUserDetailsParam).subscribe( getUserDetails => {
           this.userDetailsDataContainer = getUserDetails;
           localStorage.setItem(
             'logged_user_name', this.userDetailsDataContainer.first_name
             + ' ' + this.userDetailsDataContainer.last_name);
-          localStorage.setItem('assign_to', this.userDetailsDataContainer.assigned_country);
+          localStorage.setItem('assign_to', this.userDetailsDataContainer.assigned_country.id);
         });
         this.router.navigate(['user-dashboard']);
       }
