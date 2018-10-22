@@ -82,8 +82,8 @@ export class VisualizationReportComponent implements OnInit {
   public migrantshelterPieChartData: number[] =[];
   public budgetPieChartData: number[] = [];
   public remittancePieChartData:number[] =[];
-  public testData1: number[] =[];
-  public testData2: number[] =[];
+  public testData1: number[] =  [];
+  public testData2: number[] =  [];
 
   //Chart Type
   public pieChartType: string ='pie';
@@ -168,17 +168,20 @@ export class VisualizationReportComponent implements OnInit {
     //Jail Visit
     this._apiProcessService.getListData(this.authorizationKey, 'visit/jail/report').subscribe( response => {
       this.jailReportData = response;
-      this.jailPieChartLabels.length = 0;
-      this.jailPieChartLabels  =  [];
-      this.jailPieChartData.length=0;        
-      this.testData1.length =0;
-      this.testData2.length =0;
-      this.chartLabels.length =0;
-      
+      // this.jailPieChartLabels.length = 0;
+      // this.jailPieChartLabels  =  [];
+      // this.jailPieChartData.length=0;        
+      // this.testData1.length =0;
+      // this.testData2.length =0;
+      // this.chartLabels.length =0;
+      this.jailPieChartData=[];
+      this.jailChartData =[];
+      this.testData1 =[];
+      this.testData2 =[];
 
       for (const jailData of this.jailReportData) {
         this.jailPieChartLabels.push(jailData.assign_to__country_name);
-        this.jailPieChartData.push(jailData.total);
+        // this.jailPieChartData.push(jailData.total);
         this.testData1.push(jailData.total);
         this.testData2.push(jailData.no_of_bd);
         this.chartLabels.push(jailData.assign_to__country_name);
@@ -263,7 +266,9 @@ export class VisualizationReportComponent implements OnInit {
         this.companyReportData = response;
         this.companyPieChartLabels.length = 0;
         // this.companyPieChartLabels  =  [];
-        this.companyPieChartData  =  [];
+        this.companyPieChartLabels.length=0;
+        this.companyPieChartLabels  =  [];
+        this.companyPieChartData.length=0;
 
         for (const companyFilteredData of this.companyReportData) {
           this.companyPieChartLabels.push(companyFilteredData.assign_to__country_name);
@@ -278,7 +283,7 @@ export class VisualizationReportComponent implements OnInit {
         this.jailReportData = response;
         this.jailPieChartLabels.length = 0;
         this.jailPieChartLabels  =  [];
-        this.jailPieChartData.length=0;        
+        // this.jailPieChartData.length=0;        
         this.testData1.length =0;
         this.testData2.length =0;
         this.chartLabels.length =0;
@@ -286,7 +291,7 @@ export class VisualizationReportComponent implements OnInit {
 
         for (const jailData of this.jailReportData) {
           this.jailPieChartLabels.push(jailData.assign_to__country_name);
-          this.jailPieChartData.push(jailData.total);
+          // this.jailPieChartData.push(jailData.total);
           this.testData1.push(jailData.total);
           this.testData2.push(jailData.no_of_bd);
           this.chartLabels.push(jailData.assign_to__country_name);
@@ -294,7 +299,7 @@ export class VisualizationReportComponent implements OnInit {
         
         this.jailChartData = [
           { data: this.testData1, label: 'Total Count' },
-          { data: this.testData2, label: 'No Of Bangladeshi' }
+          { data: this.testData2, label: 'No Of Bangladeshi'}
         ];
         // end of for
         this.refresh_chart();

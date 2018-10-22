@@ -71,9 +71,13 @@
                 <div class="col-md-6">
                   <div class="box-header with-border">
                       <label>Jail Visit</label>
-                      <div style="display: block" ng-if="jailPieChartData">
-                            <canvas baseChart  [data]="jailPieChartData" [labels]="jailPieChartLabels" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                      <div style="display: block" ng-if="jailChartData">
+                            <!-- <canvas baseChart  [data]="jailPieChartData" [labels]="jailPieChartLabels" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
+                            <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true"></canvas> 
                       </div>
+                      <!-- <div style="display: inline-block" ng-if="jailChartData">
+                        <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true"></canvas> 
+                      </div> -->
                   </div>                 
                 </div>
                 <div class="col-md-6">
