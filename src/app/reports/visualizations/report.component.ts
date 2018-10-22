@@ -56,19 +56,34 @@ export class VisualizationReportComponent implements OnInit {
   jailReportDataInit;
   hospitalReportDataInit;
   hospitalReportData;
-  migrantshelterReportDataInit;
+  migrantshelterReportDataInit;  
+  budgetReportDataInit;
+  budgetReportData;
+  remittanceReportDataInit;
+  remittanceReportData;
+  
+  
 
 //Chart Lebels
   public companyPieChartLabels: string[] = [];
   public jailPieChartLabels: string[] = [];
   public hospitalPieChartLabels: string[] = [];
   public migrantshelterPieChartLabels: string[] = [];
+  public budgetPieChartLabels: string[] = [];
+  public remittancePieChartLabels: string[] = [];
+  
+  // public testData1: number[] =[];
+  // public testData2: number[] =[];
   
   //Chart Data
   public companyPieChartData: number[] = [];
   public jailPieChartData: number[] = [];
   public hospitalPieChartData: number[] = [];
   public migrantshelterPieChartData: number[] =[];
+  public budgetPieChartData: number[] = [];
+  public remittancePieChartData:number[] =[];
+  public testData1: number[] =  [];
+  public testData2: number[] =  [];
 
   //Chart Type
   public pieChartType: string ='pie';
@@ -76,20 +91,17 @@ export class VisualizationReportComponent implements OnInit {
   public doughnutChartType: string ='doughnut';
   public barChartType: string ='bar';
   public polarAreaChartType: string ='polarArea';
-
-  //Color Effect
-  public backgroundColor: string = 'fillPattern';
-  public borderColor: [
-    'rgba(255,99,132,1)',
-    'rgba(54, 162, 235, 1)',
-    'rgba(255, 206, 86, 1)',
-    'rgba(75, 192, 192, 1)',
-    'rgba(153, 102, 255, 1)',
-    'rgba(255, 159, 64, 1)'
-  ];
- 
-
-  // events
+  public radarChartType: string ='radar';
+  
+  public chartLabels : string[] = [];
+  
+  jailChartData;
+  
+  chartOptions = {
+    responsive:true
+  }
+  
+    // events
   public chartClicked(e: any): void {
     console.log(e);
   }
@@ -107,6 +119,7 @@ export class VisualizationReportComponent implements OnInit {
                   this.hospitalReportData=[];
                   this.ChartData  = [];
                   this.ChartContainer  = [];
+                  this.chartLabels = [];
                }
 
 
@@ -139,61 +152,106 @@ export class VisualizationReportComponent implements OnInit {
     // get company visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/company/report').subscribe( response => {
       this.companyReportDataInit = response;
-      this.companyPieChartLabels.length=0;
-      this.companyPieChartData.length=0;
-      this.companyPieChartLabels  =  [];
-      this.companyPieChartData  =  [];
+      // this.companyPieChartLabels.length=0;
+      // this.companyPieChartData.length=0;
+      // this.companyPieChartLabels  =  [];
+      // this.companyPieChartData  =  [];
+      this.companyPieChartData=[];
 
       for (const companyData of this.companyReportDataInit) {
         this.companyPieChartLabels.push(companyData.assign_to__country_name);
         this.companyPieChartData.push(companyData.total);
       } // end of for
-       this.refresh_chart();
+      //  this.refresh_chart();
     });
 
-    // get jail visit reports;
-    this._apiProcessService.getReportData(this.authorizationKey, 'visit/jail/report').subscribe( response => {
-      this.jailReportDataInit = response;
-      this.jailPieChartLabels.length=0;
-      this.jailPieChartData.length=0;
-      this.jailPieChartData  =  [];
+    //Jail Visit
+    this._apiProcessService.getListData(this.authorizationKey, 'visit/jail/report').subscribe( response => {
+      this.jailReportData = response;
+      // this.jailPieChartLabels.length = 0;
+      // this.jailPieChartLabels  =  [];
+      // this.jailPieChartData.length=0;        
+      // this.testData1.length =0;
+      // this.testData2.length =0;
+      // this.chartLabels.length =0;
+      this.jailPieChartData=[];
+      this.jailChartData =[];
+      this.testData1 =[];
+      this.testData2 =[];
 
-      for (const jailData of this.jailReportDataInit) {
+      for (const jailData of this.jailReportData) {
         this.jailPieChartLabels.push(jailData.assign_to__country_name);
-        this.jailPieChartData.push(jailData.total);
-      } // end of for
-       this.refresh_chart();
+        // this.jailPieChartData.push(jailData.total);
+        this.testData1.push(jailData.total);
+        this.testData2.push(jailData.no_of_bd);
+        this.chartLabels.push(jailData.assign_to__country_name);
+      }
+      
+      this.jailChartData = [
+        { data: this.testData1, label: 'Total Count' },
+        { data: this.testData2, label: 'No Of Bangladeshi' }
+      ];
+      // end of for
+      this.refresh_chart();
     });
 
     // get hospital visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/hospital/report').subscribe( response => {
       this.hospitalReportDataInit = response;
-      this.hospitalPieChartLabels.length=0;
-      this.hospitalPieChartData.length=0;
-      this.hospitalPieChartData  =  [];
+      // this.hospitalPieChartLabels.length=0;
+      this.hospitalPieChartData = [];
       
       for (const hospitalDataInit of this.hospitalReportDataInit) {
         this.hospitalPieChartLabels.push(hospitalDataInit.assign_to__country_name);
         this.hospitalPieChartData.push(hospitalDataInit.total);
       } // end of for
-       this.refresh_chart();
+      //  this.refresh_chart();
     });
 
     // get Migration Shelter visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/migrantshelter/report').subscribe( response => {
       this.migrantshelterReportDataInit = response;
       this.migrantshelterPieChartData  =  [];
-      
+         
       for (const migrantshelterDataInit of this.migrantshelterReportDataInit) {
         this.migrantshelterPieChartLabels.push(migrantshelterDataInit.assign_to__country_name);
         this.migrantshelterPieChartData.push(migrantshelterDataInit.total);
-      } // end of for
-       this.refresh_chart();
-    });
+       }
 
-   }
+      //  this.refresh_chart();
+    });  
+
+    // get Finance budget reports;
+    this._apiProcessService.getReportData(this.authorizationKey, 'finance/budget/report').subscribe( response => {
+      this.budgetReportDataInit = response;
+      this.budgetPieChartData  =  [];
+         
+      for (const budgetDataInit of this.budgetReportDataInit) {
+        this.budgetPieChartLabels.push(budgetDataInit.assign_to__country_name);
+        this.budgetPieChartData.push(budgetDataInit.expenditure);
+       }
+
+      //  this.refresh_chart();
+    }); 
+    // get Finance Remittance reports;
+    this._apiProcessService.getReportData(this.authorizationKey, 'finance/remittanceandwelfarefund/report').subscribe( response => {
+      this.remittanceReportDataInit = response;
+      this.remittancePieChartData  =  [];
+         
+      for (const remittanceDataInit of this.remittanceReportDataInit) {
+        this.remittancePieChartLabels.push(remittanceDataInit.assign_to__country_name);
+        this.remittancePieChartData.push(remittanceDataInit.remittance);
+       }
+
+      //  this.refresh_chart();
+    }); 
+
+  }
 
   public onDataFilterFormSubmit():void {
+    
+    this.chartLabels = [];
+        
         // const date = new Date();
         this.from_date  = $('#from_date').val();
         this.to_date  = $('#to_date').val();
@@ -208,11 +266,13 @@ export class VisualizationReportComponent implements OnInit {
         this.companyReportData = response;
         this.companyPieChartLabels.length = 0;
         // this.companyPieChartLabels  =  [];
-        this.companyPieChartData  =  [];
+        this.companyPieChartLabels.length=0;
+        this.companyPieChartLabels  =  [];
+        this.companyPieChartData.length=0;
 
         for (const companyFilteredData of this.companyReportData) {
           this.companyPieChartLabels.push(companyFilteredData.assign_to__country_name);
-          this.companyPieChartData.push(companyFilteredData.total);
+          this.companyPieChartData.push(companyFilteredData.total);          
         }
         // end of for
           this.refresh_chart();
@@ -223,13 +283,24 @@ export class VisualizationReportComponent implements OnInit {
         this.jailReportData = response;
         this.jailPieChartLabels.length = 0;
         this.jailPieChartLabels  =  [];
-        this.jailPieChartData.length=0;
+        // this.jailPieChartData.length=0;        
+        this.testData1.length =0;
+        this.testData2.length =0;
+        this.chartLabels.length =0;
+        
 
         for (const jailData of this.jailReportData) {
           this.jailPieChartLabels.push(jailData.assign_to__country_name);
-          this.jailPieChartData.push(jailData.total);
+          // this.jailPieChartData.push(jailData.total);
+          this.testData1.push(jailData.total);
+          this.testData2.push(jailData.no_of_bd);
+          this.chartLabels.push(jailData.assign_to__country_name);
         }
-
+        
+        this.jailChartData = [
+          { data: this.testData1, label: 'Total Count' },
+          { data: this.testData2, label: 'No Of Bangladeshi'}
+        ];
         // end of for
         this.refresh_chart();
       });
@@ -263,6 +334,36 @@ export class VisualizationReportComponent implements OnInit {
         // end of for
         this.refresh_chart();
       });
+
+
+      // get Finance budget reports;
+    this._apiProcessService.getReportData(this.authorizationKey, 'finance/budget/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+      this.budgetReportData = response;
+      this.budgetPieChartLabels.length  = 0;
+      this.budgetPieChartLabels  =  [];
+      this.budgetPieChartData.length=0;     
+         
+      for (const budgetData of this.budgetReportData) {
+        this.budgetPieChartLabels.push(budgetData.assign_to__country_name);
+        this.budgetPieChartData.push(budgetData.expenditure);
+       }
+
+       this.refresh_chart();
+    }); 
+    // get Finance Remittance reports;
+    this._apiProcessService.getReportData(this.authorizationKey, 'finance/remittanceandwelfarefund/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+      this.remittanceReportData = response;
+      this.remittancePieChartLabels.length  =  0;
+      this.remittancePieChartData.length=0;
+      this.remittancePieChartLabels  =  [];
+      
+         
+      for (const remittanceData of this.remittanceReportData) {
+        this.remittancePieChartLabels.push(remittanceData.assign_to__country_name);
+        this.remittancePieChartData.push(remittanceData.remittance);
+       }
+       this.refresh_chart();
+      }); 
     }
 
   refresh_chart() {
@@ -270,5 +371,4 @@ export class VisualizationReportComponent implements OnInit {
       this._chartRef.refresh();
     }, 100);
   }
-
 }
