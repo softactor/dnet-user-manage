@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="088b59ff-8266-4e83-b187-35f1fae393a0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.html" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.html" afterPath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company.service.ts" afterPath="$PROJECT_DIR$/src/app/visit/company/company.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -62,7 +60,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company.service.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="report.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7531">
+              <caret line="443" column="0" lean-forward="true" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="environment.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="company.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/visit/company/company.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
@@ -128,7 +148,6 @@
         <option value="$PROJECT_DIR$/src/app/layout/left-menu/left-menu.component.ts" />
         <option value="$PROJECT_DIR$/src/app/layout/left-menu/left-menu.component.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
         <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.html" />
@@ -151,11 +170,12 @@
         <option value="$PROJECT_DIR$/src/app/user-update/user-update.component.html" />
         <option value="$PROJECT_DIR$/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.html" />
-        <option value="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" />
         <option value="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.html" />
         <option value="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/visit/company/company.service.ts" />
         <option value="$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" />
+        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
       </list>
     </option>
   </component>
@@ -210,6 +230,12 @@
               <item name="labor-report" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
+              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,12 +293,12 @@
       <workItem from="1540095169770" duration="3936000" />
       <workItem from="1540112654604" duration="4899000" />
       <workItem from="1540179306291" duration="15535000" />
-      <workItem from="1540267350064" duration="54000" />
+      <workItem from="1540267350064" duration="1303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98040000" />
+    <option name="totallyTimeSpent" value="99289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -554,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/user-update/user-update.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -614,13 +633,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="164" column="40" lean-forward="false" selection-start-line="164" selection-start-column="40" selection-end-line="164" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -628,14 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -668,6 +673,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7531">
+          <caret line="443" column="0" lean-forward="true" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding />
         </state>
       </provider>

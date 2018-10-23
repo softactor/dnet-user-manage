@@ -61,39 +61,36 @@
             <div role="tabpanel" class="tab-pane fade in active" id="visit">
              <div class="row">
                 <div class="col-md-6">
-                  <div class="box-header with-border">
-                      <label>Company Visit</label>
-                      <div style="display: block" ng-if="companyPieChartData">
-                            <canvas baseChart  [data]="companyPieChartData" [labels]="companyPieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-                      </div>
-                  </div>
+                    <div class="box-header with-border">
+                        <label>Jail Visit</label>
+                        <div style="display: block" *ngIf="jailChartData">
+                              <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="jailChartLabels" [options]="chartOptions" [legend]="true"></canvas> 
+                        </div>                      
+                    </div>                 
                 </div>
                 <div class="col-md-6">
-                  <div class="box-header with-border">
-                      <label>Jail Visit</label>
-                      <div style="display: block" ng-if="jailChartData">
-                            <!-- <canvas baseChart  [data]="jailPieChartData" [labels]="jailPieChartLabels" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
-                            <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true"></canvas> 
-                      </div>
-                      <!-- <div style="display: inline-block" ng-if="jailChartData">
-                        <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true"></canvas> 
-                      </div> -->
-                  </div>                 
-                </div>
+                    <div class="box-header with-border">
+                        <label>Company Visit</label>
+                        <div style="display: block" *ngIf="companyChartData">
+                            <canvas baseChart [chartType]="barChartType" [datasets]="companyChartData" [labels]="companyChartLabels" [options]="chartOptions" [legend]="true"></canvas> 
+                          </div>
+                    </div>
+                  </div>  
                 <div class="col-md-6">
-                  <div class="box-header with-border">
-                      <label>Hostpital Visit</label>
-                      <div style="display: block" ng-if="hospitalPieChartData">
-                            <canvas baseChart  [data]="hospitalPieChartData" [labels]="hospitalPieChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"(chartClick)="chartClicked($event)"></canvas>
-                      </div>
-                  </div>
-                </div>
+                    <div class="box-header with-border">
+                        <label>Hostpital Visit</label>
+                        <div style="display: block" *ngIf="hospitalChartData">
+                              <!-- <canvas baseChart  [data]="hospitalPieChartData" [labels]="hospitalPieChartLabels" [chartType]="pieChartType"></canvas> -->
+                              <canvas baseChart [chartType]="barChartType" [datasets]="hospitalChartData" [labels]="hospitalChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                        </div>
+                    </div>
+                  </div>   
                 <div class="col-md-6">
                   <div class="box-header with-border">
                       <label>Migration Shelter Visit</label>
-                      <div style="display: block" ng-if="migrantshelterPieChartData">
-                            <canvas baseChart  [data]="migrantshelterPieChartData" [labels]="migrantshelterPieChartLabels" [chartType]="barChartType"  (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-                      </div>
+                      <div style="display: block" *ngIf="migrantshelterChartData">
+                            <canvas baseChart [chartType]="barChartType" [datasets]="migrantshelterChartData" [labels]="migrantshelterChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                       </div>
                   </div>
                 </div>
               </div>
@@ -102,9 +99,8 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="box-header with-border">
-                      <!--<div id="remittance" [chartData]="remittance_FincaneData" [chartOptions] = "remittance_FincaneOptions" chartType="BarChart" GoogleChart></div>-->
                       <label>Budget</label>
-                      <div style="display: block" ng-if="budgetPieChartData">
+                      <div style="display: block" *ngIf="budgetPieChartData">
                             <canvas baseChart  [data]="budgetPieChartData" [labels]="budgetPieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
                       </div>
                   </div>
@@ -112,7 +108,7 @@
                 <div class="col-md-6">
                   <div class="box-header with-border">
                       <label>Remittance</label>
-                      <div style="display: block" ng-if="remittancePieChartData">
+                      <div style="display: block" *ngIf="remittancePieChartData">
                             <canvas baseChart  [data]="remittancePieChartData" [labels]="remittancePieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
                       </div>
                   </div>
@@ -125,7 +121,7 @@
                   <div class="box-header with-border">
                       <label>Market Assessment</label>
                       <div style="display: block" ng-if="remittancePieChartData">
-                            <!--<canvas baseChart  [data]="companyPieChartData" [labels]="companyPieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"(chartClick)="chartClicked($event)"></canvas>-->
+                            
                       </div>
                   </div>
                 </div>
@@ -133,21 +129,10 @@
                   <div class="box-header with-border">
                       <label>Employee Enhancement</label>
                       <div style="display: block">
-                            <!--<canvas baseChart  [data]="companyPieChartData" [labels]="companyPieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"(chartClick)="chartClicked($event)"></canvas>-->
+                            
                       </div>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <!-- <div style="width: 100%;" ng-if="jailChartData">
-                    <canvas baseChart
-                        [chartType]="'bar'"
-                        [datasets]="jailChartData"
-                        [labels]="chartLabels"
-                        [options]="chartOptions"
-                        [legend]="true">
-                    </canvas> 
-                  </div> -->
-                </div>
+                </div>     
               </div>
             </div>
           </div>
