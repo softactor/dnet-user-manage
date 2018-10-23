@@ -61,15 +61,15 @@ export class CompanyEditComponent implements OnInit {
       });
   }
   public update(form: NgForm, e) {
-    console.log(form);
     e.preventDefault();
+    const dateField = $('#date').val();
       const updateParam = {
         name           :  ((form.value.name === undefined)    ? ''  :  form.value.name),
         address        :  ((form.value.address === undefined) ? ''  :  form.value.address),
         outcome        :  ((form.value.outcome === undefined) ? ''  :  form.value.outcome),
-        date           :  ((form.value.date === undefined) ? ''  :  form.value.date),
-        editId         : this.editId,
-        authorization  : this.authorizationKey
+        date           :  ((dateField) ? dateField  :  ''),
+        editId         :  this.editId,
+        authorization  :  this.authorizationKey
       };
       this._service.update(updateParam).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
