@@ -56,13 +56,13 @@ export class VisualizationReportComponent implements OnInit {
   jailReportDataInit;
   hospitalReportDataInit;
   hospitalReportData;
-  migrantshelterReportDataInit;  
+  migrantshelterReportDataInit;
   budgetReportDataInit;
   budgetReportData;
   remittanceReportDataInit;
   remittanceReportData;
-  
-  
+
+
 
 //Chart Lebels
   public companyPieChartLabels: string[] = [];
@@ -71,10 +71,10 @@ export class VisualizationReportComponent implements OnInit {
   public migrantshelterPieChartLabels: string[] = [];
   public budgetPieChartLabels: string[] = [];
   public remittancePieChartLabels: string[] = [];
-  
+
   // public testData1: number[] =[];
   // public testData2: number[] =[];
-  
+
   //Chart Data
   public companyPieChartData: number[] = [];
   public jailPieChartData: number[] = [];
@@ -104,7 +104,7 @@ export class VisualizationReportComponent implements OnInit {
   public barChartType: string ='bar';
   public polarAreaChartType: string ='polarArea';
   public radarChartType: string ='radar';
-  
+
   public jailChartLabels : string[] = [];
   public companyChartLabels : string[] = [];
   public migrantshelterChartLabels : string[] = [];
@@ -114,14 +114,14 @@ export class VisualizationReportComponent implements OnInit {
   
   canvas:any;
 
-  
+
   jailChartData;
   companyChartData;
   migrantshelterChartData;
   hospitalChartData;
   budgetChartData;
   remittanceChartData;
-  
+
   chartOptions = {
     responsive:true,
     scales: {
@@ -150,18 +150,18 @@ export class VisualizationReportComponent implements OnInit {
               private _authentication: AuthenticationService,
               private _datePipe:DatePipe,
               public _http: HttpClient) {
-                  this.companyReportData=[];
-                  this.jailReportData=[];
-                  this.hospitalReportData=[];
-                  this.ChartData  = [];
-                  this.ChartContainer  = [];
-                  this.jailChartLabels = [];
-                  this.companyChartLabels = [];
-                  this.migrantshelterChartLabels = [];
-               }
+    this.companyReportData=[];
+    this.jailReportData=[];
+    this.hospitalReportData=[];
+    this.ChartData  = [];
+    this.ChartContainer  = [];
+    this.jailChartLabels = [];
+    this.companyChartLabels = [];
+    this.migrantshelterChartLabels = [];
+  }
 
   ngOnInit() {
-    
+
     // to solve the left menu hide problem;
     this.jailChartLabels = [];
     this.companyChartLabels =[];
@@ -180,43 +180,42 @@ export class VisualizationReportComponent implements OnInit {
     this.assignTo = localStorage.getItem('assign_to');
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
 
-      // get country list;
-      this._apiProcessService.getListData(this.authorizationKey, 'locations/countries/list').subscribe( response => {
+    // get country list;
+    this._apiProcessService.getListData(this.authorizationKey, 'locations/countries/list').subscribe( response => {
       this.countryListResponse = response;
-       });
+    });
 
-      // get labourattache list;
-      this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
+    // get labourattache list;
+    this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
       this.labourattacheListResponse = response;
-      });
+    });
 
     // get company visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/company/report').subscribe( response => {
-      this.companyReportData = response;      
-        this.companyData1.length =0;
-        this.companyData2.length =0;
-        this.companyChartLabels.length =0; 
-        this.companyChartLabels =[];       
+      this.companyReportData = response;
+      this.companyData1.length =0;
+      this.companyData2.length =0;
+      this.companyChartLabels.length =0;
+      this.companyChartLabels =[];
 
-        for (const companyData of this.companyReportData) {
-          this.companyData1.push(companyData.total);
-          this.companyData2.push(companyData.no_of_bd);
-          this.companyChartLabels.push(companyData.assign_to__country_name);
-        }
-        
-        this.companyChartData = [
-          { data: this.companyData1, label: 'Total Count' },
-          { data: this.companyData2, label: 'No Of Bangladeshi'}
-        ];
-        // end of for
-        this.refresh_chart();
+      for (const companyData of this.companyReportData) {
+        this.companyData1.push(companyData.total);
+        this.companyData2.push(companyData.no_of_bd);
+        this.companyChartLabels.push(companyData.assign_to__country_name);
+      }
+
+      this.companyChartData = [
+        { data: this.companyData1, label: 'Total Count' },
+        { data: this.companyData2, label: 'No Of Bangladeshi'}
+      ];
+      // end of for
+      this.refresh_chart();
     });
 
     // Jail Visit
-    
+
     this._apiProcessService.getListData(this.authorizationKey, 'visit/jail/report').subscribe( response => {
-      this.jailReportData = response;
-               
+      this.jailReportData = response;   
         this.testData1.length =0;
         this.testData2.length =0;
         this.jailChartLabels.length =0;
@@ -237,56 +236,56 @@ export class VisualizationReportComponent implements OnInit {
         // end of for
         this.refresh_chart();
     });
-      
+
     // get hospital visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/hospital/report').subscribe( response => {
       this.hospitalReportData = response;
-        this.hospitalData1.length =0;
-        this.hospitalData2.length =0;
-        this.hospitalChartLabels.length =0;
-        this.hospitalChartLabels = [];
+      this.hospitalData1.length =0;
+      this.hospitalData2.length =0;
+      this.hospitalChartLabels.length =0;
+      this.hospitalChartLabels = [];
 
-        for (const hospitalData of this.hospitalReportData) {
-          this.hospitalData1.push(hospitalData.total);
-          this.hospitalData2.push(hospitalData.no_of_bd);
-          this.hospitalChartLabels.push(hospitalData.assign_to__country_name);
-        }
-        
-        this.hospitalChartData = [
-          { data: this.hospitalData1, label: 'Total Count' },
-          { data: this.hospitalData2, label: 'No Of Bangladeshi'}
-        ];
-        // end of for
-        this.refresh_chart();
+      for (const hospitalData of this.hospitalReportData) {
+        this.hospitalData1.push(hospitalData.total);
+        this.hospitalData2.push(hospitalData.no_of_bd);
+        this.hospitalChartLabels.push(hospitalData.assign_to__country_name);
+      }
+
+      this.hospitalChartData = [
+        { data: this.hospitalData1, label: 'Total Count' },
+        { data: this.hospitalData2, label: 'No Of Bangladeshi'}
+      ];
+      // end of for
+      this.refresh_chart();
     });
 
     // get Migration Shelter visit reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'visit/migrantshelter/report').subscribe( response => {
       this.migrantshelterReportDataInit = response;
-         
-        this.migrantshelterData1.length =0;
-        this.migrantshelterData2.length =0;
-        this.migrantshelterChartLabels.length =0;
-        this.migrantshelterChartLabels = [];
-        
 
-        for (const migrantshelterData of this.migrantshelterReportDataInit) {
-          this.migrantshelterData1.push(migrantshelterData.total);
-          this.migrantshelterData2.push(migrantshelterData.no_of_bd);
-          this.migrantshelterChartLabels.push(migrantshelterData.assign_to__country_name);
-        }
-        
-        this.migrantshelterChartData = [
-          { data: this.migrantshelterData1, label: 'Total Count' },
-          { data: this.migrantshelterData2, label: 'No Of Bangladeshi'}
-        ];
-        // end of for
-        this.refresh_chart();
-    });  
+      this.migrantshelterData1.length =0;
+      this.migrantshelterData2.length =0;
+      this.migrantshelterChartLabels.length =0;
+      this.migrantshelterChartLabels = [];
+
+
+      for (const migrantshelterData of this.migrantshelterReportDataInit) {
+        this.migrantshelterData1.push(migrantshelterData.total);
+        this.migrantshelterData2.push(migrantshelterData.no_of_bd);
+        this.migrantshelterChartLabels.push(migrantshelterData.assign_to__country_name);
+      }
+
+      this.migrantshelterChartData = [
+        { data: this.migrantshelterData1, label: 'Total Count' },
+        { data: this.migrantshelterData2, label: 'No Of Bangladeshi'}
+      ];
+      // end of for
+      this.refresh_chart();
+    });
 
     // get Finance budget reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'finance/budget/report').subscribe( response => {
-      this.budgetReportDataInit = response;  
+    this.budgetReportDataInit = response;  
         
       this.budgetData1.length =0;
         this.budgetData2.length =0;
@@ -334,6 +333,7 @@ export class VisualizationReportComponent implements OnInit {
         // end of for
         this.refresh_chart();
     }); 
+
 
   }
 
@@ -485,7 +485,7 @@ export class VisualizationReportComponent implements OnInit {
     }
 
   refresh_chart() {
-        
+
     setTimeout(() => {
       this._chartRef.refresh();
     }, 100);

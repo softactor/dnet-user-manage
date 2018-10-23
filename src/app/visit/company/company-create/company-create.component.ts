@@ -90,7 +90,7 @@ export class CompanyCreateComponent implements OnInit {
         this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe( response => {
             this._toasterService.success('Entry have successfully done.');
             this.router.navigate(['company-list/' + type]);
-            location.reload();
+            // location.reload();
           },
           error => {
             const error_response  = error;
@@ -107,10 +107,10 @@ export class CompanyCreateComponent implements OnInit {
   }
 
   public copyForm(e) {
-    console.log(this.similarTypes);
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
-        this.similarTypes.push(this.form_type);
+        this.company  = [];
+        this.similarTypes = this.form_type;
         const companyObj = new CompanyModel();
         // @ts-ignore
         this.company.push(companyObj);

@@ -32,6 +32,7 @@ export class CompanyService {
     const postString = 'name=' + updateParam.name
       + '&address=' + updateParam.address
       + '&outcome=' + updateParam.outcome
+      + '&date=' + updateParam.date
       + '&authorization=' + updateParam.authorization;
     return this._http.put(
       environment.baseApi + 'visit/company/update/' + updateParam.editId,
