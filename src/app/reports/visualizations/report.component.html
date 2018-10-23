@@ -100,17 +100,18 @@
                 <div class="col-md-6">
                   <div class="box-header with-border">
                       <label>Budget</label>
-                      <div style="display: block" *ngIf="budgetPieChartData">
-                            <canvas baseChart  [data]="budgetPieChartData" [labels]="budgetPieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                      <div style="display: block" *ngIf="budgetChartData">
+                        <canvas baseChart [chartType]="barChartType" [datasets]="budgetChartData" [labels]="budgetChartLabels" [options]="chartOptions" [legend]="true"></canvas>
                       </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box-header with-border">
                       <label>Remittance</label>
-                      <div style="display: block" *ngIf="remittancePieChartData">
-                            <canvas baseChart  [data]="remittancePieChartData" [labels]="remittancePieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-                      </div>
+                      <div style="display: block" *ngIf="remittanceChartData">
+                            <!-- <canvas baseChart  [data]="remittancePieChartData" [labels]="remittancePieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
+                            <canvas baseChart [chartType]="barChartType" [datasets]="remittanceChartData" [labels]="remittanceChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                          </div>
                   </div>
                 </div>
               </div>
