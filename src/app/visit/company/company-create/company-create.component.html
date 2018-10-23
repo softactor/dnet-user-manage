@@ -34,7 +34,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <div class="box-body" *ngFor="let fields of company; let i = index">
-              <h3>{{ similarTypes[ i ] | titlecase }}</h3>
+              <h3>{{ form_type | titlecase }}</h3>
               <form>
                 <div class="form-group"
                      [class.has-warning]="responseError?.name ? true: false"
@@ -72,7 +72,7 @@
                          placeholder="Outcome">
                 </div>
                 <button type="button" class="btn btn-primary form_submit"
-                        (click)="onFormSubmit(fields, similarTypes[i])">Submit
+                        (click)="onFormSubmit(fields, form_type)">Submit
                 </button>
                 <!-- /.box-body -->
               </form>
