@@ -195,9 +195,9 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
-//import { CompatibilityModule } from '@angular/material';
-//import {NoConflictStyleCompatibilityMode} from '@angular/material';
-import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
+// import { CompatibilityModule } from '@angular/material';
+// import {NoConflictStyleCompatibilityMode} from '@angular/material';
+import { MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter } from '@angular/material';
 
 const appRoutes: Routes  = [
   {
@@ -283,7 +283,7 @@ const appRoutes: Routes  = [
     component: HospitalCreateComponent
   },
   {
-    path: 'hospital-list',
+    path: 'hospital-list/:list_param',
     canActivate: [AuthGuard],
     component: HospitalListComponent
   },
