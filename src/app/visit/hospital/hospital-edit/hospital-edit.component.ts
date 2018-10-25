@@ -21,6 +21,7 @@ export class HospitalEditComponent implements OnInit {
   outcome = '';
   no_of_bangladeshis = '';
   type = '';
+  date;
   updateResponse;
   responseError;
   formData;
@@ -39,13 +40,9 @@ export class HospitalEditComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
-    });
-    this.formData = this.fb.group({
-      name                    : ['', Validators.required],
-      address                 : ['', Validators.required],
-      no_of_bangladeshis      : ['', Validators.required],
-      type                    : ['', Validators.required],
-      outcome                 : ['', Validators.requiredTrue]
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this._activateRoute.paramMap
       .subscribe( params => {
@@ -63,24 +60,23 @@ export class HospitalEditComponent implements OnInit {
           this.outcome            = this.editData.outcome;
           this.no_of_bangladeshis = this.editData.no_of_bangladeshis;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
 
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = {
-      name                      : form.value.name,
-      address                   : form.value.address,
-      outcome                   : form.value.outcome,
-      no_of_bangladeshis        : form.value.no_of_bangladeshis,
-      type                      : form.value.type,
-      editId                    : this.editId,
-      authorization             : this.authorizationKey
-    };
-    this._service.update(updateParam).subscribe( response => {
+    const dateField = $('#date').val();
+    const updateParam = 'name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
+      + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
+      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
+      + '&type=' + this.type
+    this._service.update(updateParam, this.authorizationKey, 'visit/hospital/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['hospital-list']);
+        this.router.navigate(['hospital-list/' + this.type]);
       },
       error => {
         const error_response  = error;

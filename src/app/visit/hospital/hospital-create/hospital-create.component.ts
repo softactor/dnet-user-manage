@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { TosterService } from '../../../toster.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationService } from '../../../authentication.service';
 import { HospitalService } from '../hospital.service';
 import { HospitalModel } from '../hospital.model';
@@ -23,6 +23,7 @@ export class HospitalCreateComponent implements OnInit {
   responseError;
   defaultDate;
   assignTo;
+  list_param;
   form_type;
   constructor(
     private fb: FormBuilder,
@@ -30,7 +31,12 @@ export class HospitalCreateComponent implements OnInit {
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: HospitalService,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
 
   ngOnInit() {
@@ -44,7 +50,7 @@ export class HospitalCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Hospital';
+    this.form_type    = this.list_param
     this.similarTypes.push(this.form_type);
     const dataModelObj = new HospitalModel();
     // @ts-ignore

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { TosterService } from '../../../toster.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationService } from '../../../authentication.service';
 import { ResidenceService } from '../residence.service';
 import { ResidenceModel } from '../residence.model';
@@ -26,14 +26,20 @@ export class ResidenceCreateComponent implements OnInit {
   defaultDate;
   assignTo;
   showDropDown;
+  list_param;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
+    private _activateRoute: ActivatedRoute,
     private _service: ResidenceService,
     // private completerService: CompleterService,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
     this.listApi  = 'visit/residence/list?type=Residence';
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this.assignTo = localStorage.getItem('assign_to');
@@ -60,7 +66,7 @@ export class ResidenceCreateComponent implements OnInit {
       this.defaultDate = $('#defaultDate').val();
     });
     this.similarTypes = [];
-    this.form_type    = 'Residence';
+    this.form_type    = this.list_param;
     this.similarTypes.push(this.form_type);
     const residenceObj = new ResidenceModel();
     // @ts-ignore
@@ -82,29 +88,45 @@ export class ResidenceCreateComponent implements OnInit {
   }
 
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const postString = 'name=' + fields.name
-      + '&address=' + fields.address
-      + '&outcome=' + fields.outcome
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + type
-    this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe(response => {
-        this._toasterService.success('Data has been successfully created.');
-        this._service.getListData(this.authorizationKey, this.listApi).subscribe(listResponse => {
-            this.tableListData = listResponse;
-            this.feedbackData = this.tableListData.results;
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const postString = 'name=' + ((fields.name === undefined) ? '' : fields.name)
+          + '&address=' + ((fields.address === undefined) ? '' : fields.address)
+          + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + type
+        this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + type
+              + '&module_name=' + type
+              + '&parent_id=' + 1
+              + '&url=company-list/' + type
+              + '&type=' + type
+            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['residence-list/' + type]);
+                // location.reload();
+              },
+              error => {
+                const error_response = error;
+                this.responseError = error_response.error;
+              }
+            );
+            // end of menu create
           },
           error => {
-            console.log(error);
+            const error_response = error;
+            this.responseError = error_response.error;
           }
         );
-      },
-      error => {
-        const error_response = error;
-        this.responseError = error_response.error;
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
 
   public copyForm(e) {

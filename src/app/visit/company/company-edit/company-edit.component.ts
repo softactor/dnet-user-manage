@@ -68,9 +68,9 @@ export class CompanyEditComponent implements OnInit {
     const updateParam = 'name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
       + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
       + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
-      + '&date=' + ((form.value.date === undefined) ? ''  :  form.value.date)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
       + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
-      + '&type=' + this.type
+      + '&type=' + this.type;
       this._service.update(updateParam, this.authorizationKey, 'visit/company/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
           this.router.navigate(['company-list/' + this.type]);

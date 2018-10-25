@@ -17,8 +17,11 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">New Residence Visit Entry</h3>
-              <a routerLink="/residence-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <a routerLink="/residence-create/{{ listTitle }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title pull-right">{{ listTitle }} Entry</h3>
+              <div *ngIf="!feedbackData?.length > 0">
+                <strong>No Data Found !!</strong>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">

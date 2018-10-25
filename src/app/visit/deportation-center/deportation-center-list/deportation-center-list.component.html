@@ -17,12 +17,16 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">New Deportation Center Visit Entry</h3>
-              <a routerLink="/deportation-center-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <!--<input class="form-control" type="text" id="defaultDate" [(ngModel)]="defaultDate">-->
+              <a routerLink="/deportation-center-create/{{ listTitle }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title pull-right">{{ listTitle }} Entry</h3>
+              <div *ngIf="!feedbackData?.length > 0">
+                <strong>No Data Found !!</strong>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-              <table id="deportation_center_list" class="table table-striped display" style="width:100%" *ngIf="tableFeedbackData?.length > 0">
+              <table id="deportation_center_list" class="table table-striped display" style="width:100%" *ngIf="feedbackData?.length > 0">
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
@@ -33,7 +37,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let DeportationCenter of tableFeedbackData; index as sln" id="row_id_{{ DeportationCenter.id }}">
+                <tr *ngFor="let DeportationCenter of feedbackData; index as sln" id="row_id_{{ DeportationCenter.id }}">
                   <td>{{ sln+1 }}</td>
                   <td>{{ DeportationCenter.name }}</td>
                   <td>{{ DeportationCenter.address }}</td>

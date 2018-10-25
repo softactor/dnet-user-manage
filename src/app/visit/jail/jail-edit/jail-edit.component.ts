@@ -23,6 +23,7 @@ export class JailEditComponent implements OnInit {
   updateResponse;
   responseError;
   formData;
+  date;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -38,6 +39,9 @@ export class JailEditComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       name                    : ['', Validators.required],
@@ -52,7 +56,7 @@ export class JailEditComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam).subscribe( Details => {
@@ -62,23 +66,22 @@ export class JailEditComponent implements OnInit {
           this.outcome            = this.editData.outcome;
           this.no_of_bangladeshis = this.editData.no_of_bangladeshis;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = {
-      name                      : form.value.name,
-      address                   : form.value.address,
-      outcome                   : form.value.outcome,
-      no_of_bangladeshis        : form.value.no_of_bangladeshis,
-      type                      : form.value.type,
-      editId                    : this.editId,
-      authorization             : this.authorizationKey
-    };
-    this._service.update(updateParam).subscribe( response => {
+    const dateField = $('#date').val();
+    const updateParam = 'name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
+      + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
+      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
+      + '&type=' + this.type
+    this._service.update(updateParam, this.authorizationKey, 'visit/jail/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['jail-list']);
+        this.router.navigate(['jail-list/' + this.type]);
       },
       error => {
         const error_response  = error;
