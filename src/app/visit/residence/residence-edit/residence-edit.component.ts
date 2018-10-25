@@ -21,6 +21,8 @@ export class ResidenceEditComponent implements OnInit {
   outcome = '';
   updateResponse;
   responseError;
+  date;
+  type;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -51,28 +53,30 @@ export class ResidenceEditComponent implements OnInit {
           this.name = this.editData.name;
           this.address = this.editData.address;
           this.outcome = this.editData.outcome;
+          this.date = this.editData.date;
+          this.type = this.editData.type;
         });
       });
   }
 
   public update(form: NgForm, e) {
     e.preventDefault();
-      const updateParam = {
-        name           : form.value.name,
-        address        : form.value.address,
-        outcome        : form.value.outcome,
-        editId         : this.editId,
-        authorization  : this.authorizationKey
-      };
-      this._service.update(updateParam).subscribe( response => {
+    const dateField = $('#date').val();
+    const updateParam = 'name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
+      + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
+      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
+      + '&type=' + this.type;
+    this._service.update(updateParam, this.authorizationKey, 'visit/residence/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['residence-list']);
+        this.router.navigate(['residence-list/' + this.type]);
       },
-        error => {
-          const error_response  = error;
-          this.responseError  = error_response.error;
-        }
-      );
+      error => {
+        const error_response  = error;
+        this.responseError  = error_response.error;
+      }
+    );
   }
 
 }

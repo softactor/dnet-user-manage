@@ -86,7 +86,7 @@ export class JailCreateComponent implements OnInit {
               + '&parent_id=' + 1
               + '&url=company-list/' + this.form_type
               + '&type=' + this.form_type
-            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
                 this.router.navigate(['jail-list/' + this.form_type]);
                 // location.reload();
@@ -113,6 +113,7 @@ export class JailCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.jail  = [];
         this.similarTypes.push(this.form_type);
         const dataModelObj = new JailModel();
         // @ts-ignore

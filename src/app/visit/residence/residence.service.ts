@@ -22,18 +22,13 @@ export class ResidenceService {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
     return this._http.get(environment.baseApi + 'visit/residence/details/' + detailsParam.editId, {headers: _headers});
   }
-  update(updateParam) {
+  update(updateParam, authorizationKey, apiUrl, editId) {
     const _headers = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('authorization', updateParam.authorization)
-    ;
-    const postString = 'name=' + updateParam.name
-      + '&address=' + updateParam.address
-      + '&outcome=' + updateParam.outcome
-      + '&authorization=' + updateParam.authorization;
+      .set('authorization', authorizationKey);
     return this._http.put(
-      environment.baseApi + 'visit/residence/update/' + updateParam.editId,
-      postString,
+      environment.baseApi + apiUrl + editId,
+      updateParam,
       {
         headers: _headers
       }

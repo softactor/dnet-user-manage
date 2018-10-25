@@ -22,7 +22,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form #companyUpdateForm = "ngForm" (ngSubmit)="update(companyUpdateForm, $event)" class="form-inline">
+                    <form #companyUpdateForm = "ngForm" (ngSubmit)="update(companyUpdateForm, $event)">
                       <div class="box-body">
                         <div
                           class="form-group custom-col-md-4"
@@ -37,6 +37,13 @@
                           <label for="address">Address</label>
                           <input required type="text" class="form-control" [(ngModel)]="address" name="address" id="address" placeholder="Address">
                           <span *ngIf="responseError?.address" class="glyphicon glyphicon-warning-sign error-sign"></span>
+                        </div>
+                        <div
+                          class="form-group custom-col-md-12"
+                          [class.has-warning]="responseError?.date ? true: false" [class.has-feedback]="responseError?.date ? true: false">
+                          <label for="date">Date</label>
+                          <input required type="text" class="form-control" [(ngModel)]="date" name="date" id="date" placeholder="Date">
+                          <span *ngIf="responseError?.date" class="glyphicon glyphicon-warning-sign error-sign"></span>
                         </div>
                         <div
                           class="form-group custom-col-md-4"

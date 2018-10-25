@@ -24,13 +24,19 @@ export class LiaisonWithExpatriatesCreateComponent implements OnInit {
   defaultDate;
   assignTo;
   form_type;
+  list_param;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: LiaisonWithExpatriatesService,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
   ngOnInit() {
     // to solve the left menu hide problem;
@@ -43,7 +49,7 @@ export class LiaisonWithExpatriatesCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Liaison with expatriates';
+    this.form_type    = this.list_param;
     this.similarTypes.push(this.form_type);
     const residenceObj = new LiaisonWithExpatriatesModel();
     // @ts-ignore
@@ -64,33 +70,61 @@ export class LiaisonWithExpatriatesCreateComponent implements OnInit {
       type         : ['', Validators.requiredTrue],
     });
   }
+
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const createFormData = this.formData.value;
-    const postString  =  'number_of_meeting_held='
-      + fields.number_of_meeting_held
-      + '&outcome=' + fields.outcome
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + type
-    this._service.create(postString, this.authorizationKey, 'activity/liaisonwithexpatriates/create').subscribe( response => {
-        this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['liaison-with-expatriates-list']);
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const postString = 'number_of_meeting_held='
+          + ((fields.number_of_meeting_held === undefined) ? '' : fields.number_of_meeting_held)
+          + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + this.form_type
+        this._service.create(postString, this.authorizationKey, 'activity/liaisonwithexpatriates/create').subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
+              + '&parent_id=' + 3
+              + '&url=liaison-with-expatriates-list/' + this.form_type
+              + '&type=' + this.form_type
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+                console.log('i am success ');
+                console.log(menu_response);
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['liaison-with-expatriates-list/' + this.form_type]);
+                // location.reload();
+              },
+              menu_error => {
+                console.log('i am error ');
+                console.log(menu_error);
+                const error_response = menu_error;
+                this.responseError = error_response.error;
+              }
+            );
+            // end of menu create
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
+        );
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
-        this.similarTypes.push(this.form_type);
+        this.liaisonWithExpatriates  = [];
+        this.similarTypes = this.form_type;
         const companyObj = new LiaisonWithExpatriatesModel();
         // @ts-ignore
         this.liaisonWithExpatriates.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {

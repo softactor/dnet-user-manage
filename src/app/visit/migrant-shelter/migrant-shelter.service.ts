@@ -25,20 +25,13 @@ export class MigrantShelterService {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
     return this._http.get(environment.baseApi + 'visit/migrantshelter/details/' + detailsParam.editId, {headers: _headers});
   }
-  update(updateParam) {
+  update(updateParam, authorizationKey, apiUrl, editId) {
     const _headers = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('authorization', updateParam.authorization)
-    ;
-    const postString = 'name=' + updateParam.name
-      + '&address=' + updateParam.address
-      + '&no_of_bangladeshis=' + updateParam.no_of_bangladeshis
-      + '&type=' + updateParam.type
-      + '&remark=' + updateParam.remark
-      + '&authorization=' + updateParam.authorization;
+      .set('authorization', authorizationKey);
     return this._http.put(
-      environment.baseApi + 'visit/migrantshelter/update/' + updateParam.editId,
-      postString,
+      environment.baseApi + apiUrl + editId,
+      updateParam,
       {
         headers: _headers
       }
