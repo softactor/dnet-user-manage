@@ -17,15 +17,19 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">New Jail Visit Entry</h3>
-              <a routerLink="/jail-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <!--<input class="form-control" type="text" id="defaultDate" [(ngModel)]="defaultDate">-->
+              <a routerLink="/jail-create/{{ listTitle }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title pull-right">{{ listTitle }} Entry</h3>
+              <div *ngIf="!feedbackData?.length > 0">
+                <strong>No Data Found !!</strong>
+              </div>
             </div>
-            <div *ngIf="!tableFeedbackData?.length > 0">
+            <div *ngIf="!feedbackData?.length > 0">
               <strong>No Data Found !!</strong>
             </div>
             <div class="box-body no-padding">
 
-              <table id="jail_list" class="table table-striped display" style="width:100%" *ngIf="tableFeedbackData?.length > 0">
+              <table id="jail_list" class="table table-striped display" style="width:100%" *ngIf="feedbackData?.length > 0">
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
@@ -36,7 +40,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let Jail of tableFeedbackData; index as sln" id="row_id_{{ Jail.id }}">
+                <tr *ngFor="let Jail of feedbackData; index as sln" id="row_id_{{ Jail.id }}">
                   <td>{{ sln+1 }}</td>
                   <td>{{ Jail.name }}</td>
                   <td>{{ Jail.address }}</td>

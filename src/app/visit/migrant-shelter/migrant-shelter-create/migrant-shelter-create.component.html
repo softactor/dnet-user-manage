@@ -34,6 +34,7 @@
                 </div>
             <!-- /.box-header -->
                 <div class="box-body" *ngFor="let fields of migrantShelter; let i = index">
+                  <h3>{{ form_type | titlecase }}</h3>
                   <form>
                     <div
                       class="form-group"
@@ -82,6 +83,7 @@
                              id="input_no_of_bangladeshis"
                              class="form-control"
                              placeholder="No of bangladeshis">
+                      <div class="error-message" *ngIf="responseError?.no_of_bangladeshis">{{responseError?.remark}}</div>
                     </div>
                     <button type="button" class="btn btn-primary form_submit"
                             (click)="onFormSubmit(fields, similarTypes[i])">Submit

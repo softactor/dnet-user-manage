@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../../authentication.service';
 import { TosterService } from '../../../toster.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ResidenceService } from '../residence.service';
 
 declare var $: any;
@@ -19,13 +19,16 @@ export class ResidenceListComponent implements OnInit {
   tableDeleteData;
   feedbackData: any;
   listApi;
+  list_param;
+  listTitle;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: ResidenceService,
+    private _activateRoute: ActivatedRoute,
     private router: Router,
   ) {
-    setTimeout(function(){
+    setTimeout(function() {
       $(function() {
         if (!$.fn.DataTable.isDataTable('#residence_list')){
           $('#residence_list').DataTable({
@@ -34,16 +37,22 @@ export class ResidenceListComponent implements OnInit {
         }
       });
     }, 1000);
-    this.listApi  = 'visit/residence/list?type=Residence';
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
-        this.tableListData = response;
-        this.feedbackData = this.tableListData.results;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('list_param');
+        this.listTitle = this.list_param;
+        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        this.listApi  = 'visit/residence/list?type=' + this.list_param;
+        this._service.getListData(this.authorizationKey, this.listApi)
+          .subscribe( response => {
+              this.tableListData = response;
+              this.feedbackData = this.tableListData.results;
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      });
   }
 
   ngOnInit() {

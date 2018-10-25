@@ -65,21 +65,19 @@ export class DeportationCenterEditComponent implements OnInit {
         });
       });
   }
-
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = {
-      name                      : form.value.name,
-      address                   : form.value.address,
-      outcome                   : form.value.outcome,
-      no_of_bangladeshis        : form.value.no_of_bangladeshis,
-      type                      : form.value.type,
-      editId                    : this.editId,
-      authorization             : this.authorizationKey
-    };
-    this._service.update(updateParam).subscribe( response => {
+    const dateField = $('#date').val();
+    const updateParam = 'name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
+      + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
+      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
+      + '&type=' + this.type;
+    this._service.update(updateParam,
+      this.authorizationKey, 'visit/deportation-center-update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['deportation-center-list']);
+        this.router.navigate(['deportation-center-list/' + this.type]);
       },
       error => {
         const error_response  = error;

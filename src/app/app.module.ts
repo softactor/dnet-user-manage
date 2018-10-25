@@ -195,9 +195,9 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
-//import { CompatibilityModule } from '@angular/material';
-//import {NoConflictStyleCompatibilityMode} from '@angular/material';
-import{MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter} from '@angular/material';
+// import { CompatibilityModule } from '@angular/material';
+// import {NoConflictStyleCompatibilityMode} from '@angular/material';
+import { MatDateFormats, MAT_DATE_FORMATS, NativeDateAdapter, DateAdapter } from '@angular/material';
 
 const appRoutes: Routes  = [
   {
@@ -248,12 +248,12 @@ const appRoutes: Routes  = [
     component: CompanyEditComponent
   },
   {
-    path: 'residence-list',
+    path: 'residence-list/:list_param',
     canActivate: [AuthGuard],
     component: ResidenceListComponent
   },
   {
-    path: 'residence-create',
+    path: 'residence-create/:create_param',
     canActivate: [AuthGuard],
     component: ResidenceCreateComponent
   },
@@ -263,12 +263,12 @@ const appRoutes: Routes  = [
     component: ResidenceEditComponent
   },
   {
-    path: 'deportation-center-create',
+    path: 'deportation-center-create/:create_param',
     canActivate: [AuthGuard],
     component: DeportationCenterCreateComponent
   },
   {
-    path: 'deportation-center-list',
+    path: 'deportation-center-list/:list_param',
     canActivate: [AuthGuard],
     component: DeportationCenterListComponent
   },
@@ -278,12 +278,12 @@ const appRoutes: Routes  = [
     component: DeportationCenterEditComponent
   },
   {
-    path: 'hospital-create',
+    path: 'hospital-create/:create_param',
     canActivate: [AuthGuard],
     component: HospitalCreateComponent
   },
   {
-    path: 'hospital-list',
+    path: 'hospital-list/:list_param',
     canActivate: [AuthGuard],
     component: HospitalListComponent
   },
@@ -293,12 +293,12 @@ const appRoutes: Routes  = [
     component: HospitalEditComponent
   },
   {
-    path: 'jail-create',
+    path: 'jail-create/:create_param',
     canActivate: [AuthGuard],
     component: JailCreateComponent
   },
   {
-    path: 'jail-list',
+    path: 'jail-list/:list_param',
     canActivate: [AuthGuard],
     component: JailListComponent
   },
@@ -308,12 +308,12 @@ const appRoutes: Routes  = [
     component: JailEditComponent
   },
   {
-    path: 'migrant-shelter-create',
+    path: 'migrant-shelter-create/:create_param',
     canActivate: [AuthGuard],
     component: MigrantShelterCreateComponent
   },
   {
-    path: 'migrant-shelter-list',
+    path: 'migrant-shelter-list/:list_param',
     canActivate: [AuthGuard],
     component: MigrantShelterListComponent
   },
@@ -398,12 +398,12 @@ const appRoutes: Routes  = [
     component: AttestationUpdateComponent
   },
   {
-    path: 'guest-entertainment-list',
+    path: 'guest-entertainment-list/:list_param',
     canActivate: [AuthGuard],
     component: GuestEntertainmentListComponent
   },
   {
-    path: 'guest-entertainment-create',
+    path: 'guest-entertainment-create/:create_param',
     canActivate: [AuthGuard],
     component: GuestEntertainmentCreateComponent
   },
@@ -413,12 +413,12 @@ const appRoutes: Routes  = [
     component: GuestEntertainmentUpdateComponent
   },
   {
-    path: 'liaison-with-expatriates-list',
+    path: 'liaison-with-expatriates-list/:list_param',
     canActivate: [AuthGuard],
     component: LiaisonWithExpatriatesListComponent
   },
   {
-    path: 'liaison-with-expatriates-create',
+    path: 'liaison-with-expatriates-create/:create_param',
     canActivate: [AuthGuard],
     component: LiaisonWithExpatriatesCreateComponent
   },

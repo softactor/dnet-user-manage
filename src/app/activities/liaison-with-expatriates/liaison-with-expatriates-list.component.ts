@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LiaisonWithExpatriatesService } from './liaison-with-expatriates.service';
 import { AuthenticationService } from '../../authentication.service';
 import { TosterService } from '../../toster.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -20,10 +20,14 @@ export class LiaisonWithExpatriatesListComponent implements OnInit {
   defaultDate;
   assignTo;
   listApi;
+  list_param;
+  listTitle;
+
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: LiaisonWithExpatriatesService,
+    private _activateRoute: ActivatedRoute,
     private router: Router,
   ) {
     setTimeout(function(){
@@ -40,18 +44,24 @@ export class LiaisonWithExpatriatesListComponent implements OnInit {
       });
     }, 1000);
     this.assignTo = localStorage.getItem('assign_to');
-    // this.defaultDate  = $('#defaultDate').val();
     this.defaultDate        =   new Date();
     this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this.listApi  = 'activity/liaisonwithexpatriates/list?type=Liaison with expatriates';
-    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
-        this.tableListData = response;
-        this.feedbackData = this.tableListData.results;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('list_param');
+        this.listTitle = this.list_param;
+        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        this.listApi  = 'activity/liaisonwithexpatriates/list?type=' + this.list_param;
+        this._service.getListData(this.authorizationKey, this.listApi)
+          .subscribe( response => {
+              this.tableListData = response;
+              this.feedbackData = this.tableListData.results;
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      });
   }
 
   ngOnInit() {

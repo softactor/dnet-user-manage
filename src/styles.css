@@ -59,3 +59,12 @@
 .content-header h1 {
   text-transform: capitalize;
 }
+.box-header{
+  width: 100% !important;
+}
+.box-header a{
+  margin-left: 2%;
+}
+.box-header h3{
+  margin-top: 1% !important;
+}

@@ -19,10 +19,11 @@ export class GuestEntertainmentUpdateComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
-  activity  = '';
-  remarks = '';
+  total_number  = '';
+  purpose = '';
   outcome = '';
   type = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -39,14 +40,14 @@ export class GuestEntertainmentUpdateComponent implements OnInit {
       trees.tree();
     });
     this.formData = this.fb.group({
-      activity                : ['', Validators.required],
-      remarks                 : ['', Validators.required],
+      total_number                : ['', Validators.required],
+      purpose                 : ['', Validators.required],
       outcome                 : ['', Validators.required],
       type                    : ['', Validators.required]
     });
     this._activateRoute.paramMap
       .subscribe( params => {
-        this.editId = params.get('other_activity_id')
+        this.editId = params.get('guest_entertainment_id')
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
@@ -55,23 +56,23 @@ export class GuestEntertainmentUpdateComponent implements OnInit {
 
         this._service.getDetailsById(getDetailsParam, 'activity/gestentertainment/details/').subscribe( Details => {
           this.editData = Details;
-          this.activity           = this.editData.activity;
-          this.remarks            = this.editData.remarks;
+          this.total_number           = this.editData.total_number;
+          this.purpose            = this.editData.purpose;
           this.outcome            = this.editData.outcome;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'activity=' + form.value.activity
-      + '&remarks=' + form.value.remarks
-      + '&outcome=' + form.value.outcome
-      + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+    const updateParam = 'total_number='
+      + ((form.value.total_number === undefined)    ? ''  :  form.value.total_number)
+      + '&purpose=' + ((form.value.purpose === undefined)    ? ''  :  form.value.purpose)
+      + '&date=' + ((form.value.date === undefined)    ? ''  :  form.value.date);
     this._service.update(updateParam, this.authorizationKey, 'activity/gestentertainment/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['gestentertainment-list']);
+        this.router.navigate(['guest-entertainment-list/' + this.type]);
       },
       error => {
         const error_response  = error;

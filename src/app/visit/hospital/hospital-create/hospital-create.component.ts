@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { TosterService } from '../../../toster.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationService } from '../../../authentication.service';
 import { HospitalService } from '../hospital.service';
 import { HospitalModel } from '../hospital.model';
@@ -23,6 +23,7 @@ export class HospitalCreateComponent implements OnInit {
   responseError;
   defaultDate;
   assignTo;
+  list_param;
   form_type;
   constructor(
     private fb: FormBuilder,
@@ -30,7 +31,12 @@ export class HospitalCreateComponent implements OnInit {
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: HospitalService,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
 
   ngOnInit() {
@@ -44,7 +50,7 @@ export class HospitalCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Hospital';
+    this.form_type    = this.list_param
     this.similarTypes.push(this.form_type);
     const dataModelObj = new HospitalModel();
     // @ts-ignore
@@ -68,32 +74,56 @@ export class HospitalCreateComponent implements OnInit {
     });
   }
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const postString  =  'name=' + fields.name
-      + '&address=' + fields.address
-      + '&outcome=' + fields.outcome
-      + '&no_of_bangladeshis=' + fields.no_of_bangladeshis
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + type
-    this._service.create(postString, 'visit/hospital/create', this.authorizationKey).subscribe( response => {
-      this._toasterService.success('Data has been successfully created.');
-      this.router.navigate(['hospital-list']);
-    },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const postString = 'name=' + ((fields.name === undefined) ? '' : fields.name)
+          + '&address=' + ((fields.address === undefined) ? '' : fields.address)
+          + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
+          + '&no_of_bangladeshis=' + ((fields.no_of_bangladeshis === undefined) ? '' : fields.no_of_bangladeshis)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + type
+        this._service.create(postString, 'visit/hospital/create', this.authorizationKey).subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + type
+              + '&module_name=' + type
+              + '&parent_id=' + 1
+              + '&url=company-list/' + type
+              + '&type=' + type
+            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['hospital-list/' + type]);
+                // location.reload();
+              },
+              error => {
+                const error_response = error;
+                this.responseError = error_response.error;
+              }
+            );
+            // end of menu create
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
+        );
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {
+      this.hospital  = [];
       if (this.similarTypes.indexOf(this.form_type) === -1) {
-        this.similarTypes.push(this.form_type);
+        this.similarTypes = this.form_type;
         const dataModelObj = new HospitalModel();
         // @ts-ignore
         this.hospital.push(dataModelObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {

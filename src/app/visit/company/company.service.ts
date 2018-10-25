@@ -24,19 +24,13 @@ export class CompanyService {
     const _headers = new HttpHeaders().set('authorization', detailsParam.authorizationKey);
     return this._http.get(environment.baseApi + 'visit/company/details/' + detailsParam.editId, {headers: _headers});
   }
-  update(updateParam) {
+  update(updateParam, authorizationKey, apiUrl, editId) {
     const _headers = new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
-      .set('authorization', updateParam.authorization)
-    ;
-    const postString = 'name=' + updateParam.name
-      + '&address=' + updateParam.address
-      + '&outcome=' + updateParam.outcome
-      + '&date=' + updateParam.date
-      + '&authorization=' + updateParam.authorization;
+      .set('authorization', authorizationKey);
     return this._http.put(
-      environment.baseApi + 'visit/company/update/' + updateParam.editId,
-      postString,
+      environment.baseApi + apiUrl + editId,
+      updateParam,
       {
         headers: _headers
         }
