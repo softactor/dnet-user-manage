@@ -64,7 +64,7 @@
                     <div class="box-header with-border">
                         <label>Jail Visit</label>
                         <div style="display: block" *ngIf="jailChartData">
-                              <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="jailChartLabels" [options]="chartOptions" [legend]="true"></canvas> 
+                              <canvas baseChart [chartType]="barChartType" [datasets]="jailChartData" [labels]="jailChartLabels" [options]="visitChartOptions" [legend]="true"></canvas> 
                         </div>                      
                     </div>                 
                 </div>
@@ -72,16 +72,16 @@
                     <div class="box-header with-border">
                         <label>Company Visit</label>
                         <div style="display: block" *ngIf="companyChartData">
-                            <canvas baseChart [chartType]="barChartType" [datasets]="companyChartData" [labels]="companyChartLabels" [options]="chartOptions" [legend]="true"></canvas> 
+                            <canvas baseChart [chartType]="barChartType" [datasets]="companyChartData" [labels]="companyChartLabels" [options]="visitChartOptions" [legend]="true"></canvas> 
                           </div>
                     </div>
                   </div>  
                 <div class="col-md-6">
                     <div class="box-header with-border">
-                        <label>Hostpital Visit</label>
+                        <label>Hospital Visit</label>
                         <div style="display: block" *ngIf="hospitalChartData">
                               <!-- <canvas baseChart  [data]="hospitalPieChartData" [labels]="hospitalPieChartLabels" [chartType]="pieChartType"></canvas> -->
-                              <canvas baseChart [chartType]="barChartType" [datasets]="hospitalChartData" [labels]="hospitalChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                              <canvas baseChart [chartType]="barChartType" [datasets]="hospitalChartData" [labels]="hospitalChartLabels" [options]="visitChartOptions" [legend]="true"></canvas>
                         </div>
                     </div>
                   </div>   
@@ -89,7 +89,7 @@
                   <div class="box-header with-border">
                       <label>Migration Shelter Visit</label>
                       <div style="display: block" *ngIf="migrantshelterChartData">
-                            <canvas baseChart [chartType]="barChartType" [datasets]="migrantshelterChartData" [labels]="migrantshelterChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                            <canvas baseChart [chartType]="barChartType" [datasets]="migrantshelterChartData" [labels]="migrantshelterChartLabels" [options]="visitChartOptions" [legend]="true"></canvas>
                        </div>
                   </div>
                 </div>

@@ -127,11 +127,24 @@ export class VisualizationReportComponent implements OnInit {
     scales: {
       yAxes: [{
           ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          stepSize:1000,
           }
         }]
       }
   }
+  visitChartOptions = {
+    responsive:true,
+    scales: {
+      yAxes: [{
+          ticks: {
+          beginAtZero: true,
+          stepSize:2,
+          }
+        }]
+      }
+  }
+
   public chartColors: any[] = [
     { 
       // backgroundColor:["#ff3385", "#0000ff", "#000099", "#cc0099", "#00a3cc","#ff3385", "#0000ff", "#000099", "#cc0099", "#00a3cc", "#cc0099", "#00a3cc"] 
