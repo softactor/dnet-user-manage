@@ -77,7 +77,7 @@ export class DeportationCenterListComponent implements OnInit {
     };
     this._service.delete(deleteParam).subscribe( response => {
       this.tableDeleteData = response;
-      this._toasterService.success(this.tableDeleteData.message);
+      this._toasterService.success('Data have deleted successfully');
       this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
           this.feedbackData = this.tableListData.results;
