@@ -15,7 +15,7 @@ export class MigrantShelterService {
     const _headers    =  new HttpHeaders()
       .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('authorization', authorizationKey);
-    return this._http.post(environment.baseApi + 'visit/migrantshelter/create', postString, {headers: _headers});
+    return this._http.post(environment.baseApi + api, postString, {headers: _headers});
   }
   delete(deleteParam) {
     const _headers = new HttpHeaders().set('authorization', deleteParam.authorizationKey);

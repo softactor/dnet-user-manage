@@ -103,14 +103,15 @@ export class ResidenceCreateComponent implements OnInit {
           + '&type=' + this.form_type
         this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe(response => {
             // menu ceate
-            const postMenuString = 'name=' + this.form_type
-              + '&module_name=' + this.form_type
+            let formType  = this.form_type.toLowerCase();
+            const postMenuString = 'name=' + formType
+              + '&module_name=' + formType
               + '&parent_id=' + 1
-              + '&url=company-list/' + this.form_type
-              + '&type=' + this.form_type
+              + '&url=residence-list/' + formType
+              + '&type=' + formType
             this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['residence-list/' + this.form_type]);
+                this.router.navigate(['residence-list/' + formType]);
                 // location.reload();
               },
               error => {
