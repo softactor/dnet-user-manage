@@ -77,7 +77,7 @@ export class HospitalListComponent implements OnInit {
       this._toasterService.success('Data have been successfully deleted.');
       this._service.getListData(this.authorizationKey, this.listApi).subscribe( listResponse => {
           this.tableListData = listResponse;
-          this.tableFeedbackData = this.tableListData.results;
+          this.feedbackData = this.tableListData.results;
         },
         error => {
           const error_response  = error;
