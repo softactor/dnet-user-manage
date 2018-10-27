@@ -22,6 +22,7 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
   number_of_meeting_held  = '';
   outcome = '';
   type = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -36,10 +37,14 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       number_of_meeting_held                : ['', Validators.required],
       outcome                 : ['', Validators.required],
+      date                 : ['', Validators.required],
       type                    : ['', Validators.required]
     });
     this._activateRoute.paramMap
@@ -56,20 +61,20 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
           this.number_of_meeting_held           = this.editData.number_of_meeting_held;
           this.outcome            = this.editData.outcome;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'number_of_meeting_held='
-      + form.value.number_of_meeting_held
-      + '&outcome=' + form.value.outcome
-      + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.number_of_meeting_held === undefined)    ? ''  :  form.value.number_of_meeting_held)
+      + '&outcome=' + ((form.value.outcome === undefined)    ? ''  :  form.value.outcome)
+      + '&date=' + ((form.value.date === undefined)    ? ''  :  form.value.date);
     this._service.update(updateParam, this.authorizationKey,
       'activity/liaisonwithexpatriates/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['liaison-with-expatriates-list']);
+        this.router.navigate(['liaison-with-expatriates-list/' + this.type]);
       },
       error => {
         const error_response  = error;

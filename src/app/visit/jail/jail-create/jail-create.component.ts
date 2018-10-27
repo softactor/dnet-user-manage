@@ -78,17 +78,18 @@ export class JailCreateComponent implements OnInit {
           + '&no_of_bangladeshis=' + ((fields.no_of_bangladeshis === undefined) ? '' : fields.no_of_bangladeshis)
           + '&date=' + this.defaultDate
           + '&assign_to=' + this.assignTo
-          + '&type=' + this.form_type
+          + '&type=' + this.form_type.toLowerCase()
         this._service.create(postString, 'visit/jail/create', this.authorizationKey).subscribe(response => {
             // menu ceate
+            let formType  = this.form_type.toLowerCase();
             const postMenuString = 'name=' + this.form_type
-              + '&module_name=' + this.form_type
+              + '&module_name=' + formType
               + '&parent_id=' + 1
-              + '&url=company-list/' + this.form_type
-              + '&type=' + this.form_type
-            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+              + '&url=/jail-list/' + formType
+              + '&type=' + formType
+            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['jail-list/' + this.form_type]);
+                this.router.navigate(['jail-list/' + formType]);
                 // location.reload();
               },
               error => {
@@ -113,6 +114,7 @@ export class JailCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.jail  = [];
         this.similarTypes.push(this.form_type);
         const dataModelObj = new JailModel();
         // @ts-ignore

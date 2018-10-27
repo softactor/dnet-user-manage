@@ -4,7 +4,6 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class DeportationCenterService {
-
   constructor(
     private _http: HttpClient) { }
   // get list

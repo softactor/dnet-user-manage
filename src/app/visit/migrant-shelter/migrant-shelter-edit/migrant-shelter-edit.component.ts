@@ -25,6 +25,7 @@ export class MigrantShelterEditComponent implements OnInit {
   updateResponse;
   responseError;
   formData;
+  date;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -47,6 +48,7 @@ export class MigrantShelterEditComponent implements OnInit {
       no_of_bangladeshis      : ['', Validators.required],
       type                    : ['', Validators.required],
       remark                  : ['', Validators.required],
+      date                  : ['', Validators.required],
     });
     this._activateRoute.paramMap
       .subscribe( params => {
@@ -65,24 +67,24 @@ export class MigrantShelterEditComponent implements OnInit {
           this.no_of_bangladeshis = this.editData.no_of_bangladeshis;
           this.type               = this.editData.type;
           this.remark               = this.editData.remark;
+          this.date               = this.editData.date;
         });
       });
   }
 
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = {
-      name                      : form.value.name,
-      address                   : form.value.address,
-      outcome                   : form.value.outcome,
-      no_of_bangladeshis        : form.value.no_of_bangladeshis,
-      type                      : form.value.type,
-      editId                    : this.editId,
-      authorization             : this.authorizationKey
-    };
-    this._service.update(updateParam).subscribe( response => {
+    const dateField = $('#date').val();
+    const updateParam = 'name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
+      + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
+      + '&remark=' + ((form.value.remark === undefined) ? ''  :  form.value.remark)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
+      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
+      + '&type=' + this.type;
+    this._service.update(updateParam, this.authorizationKey, 'visit/migrantshelter/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['migrant-shelter-list']);
+        this.router.navigate(['migrant-shelter-list/' + this.type]);
       },
       error => {
         const error_response  = error;

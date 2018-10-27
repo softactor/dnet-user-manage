@@ -84,17 +84,18 @@ export class DeportationCenterCreateComponent implements OnInit {
         + '&no_of_bangladeshis=' + ((fields.no_of_bangladeshis === undefined) ? '' : fields.no_of_bangladeshis)
         + '&date=' + this.defaultDate
         + '&assign_to=' + this.assignTo
-        + '&type=' + type
+        + '&type=' + this.form_type
       this._service.create(postString, 'visit/deportationcenter/create', this.authorizationKey).subscribe(response => {
           // menu ceate
-          const postMenuString = 'name=' + type
-            + '&module_name=' + type
+          let formType  = this.form_type.toLowerCase();
+          const postMenuString = 'name=' + formType
+            + '&module_name=' + formType
             + '&parent_id=' + 1
-            + '&url=company-list/' + type
-            + '&type=' + type
-          this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+            + '&url=/deportation-center-list/' + formType
+            + '&type=' + formType
+          this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
               this._toasterService.success('Entry have successfully done.');
-              this.router.navigate(['deportation-center-list/' + type]);
+              this.router.navigate(['deportation-center-list/' + formType]);
               // location.reload();
             },
             error => {

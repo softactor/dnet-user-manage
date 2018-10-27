@@ -24,6 +24,7 @@ export class ResidenceCreateComponent implements OnInit {
   form_type;
   listApi;
   defaultDate;
+  no_of_bangladeshis;
   assignTo;
   showDropDown;
   list_param;
@@ -76,6 +77,7 @@ export class ResidenceCreateComponent implements OnInit {
       name: '',
       address: '',
       form_type: '',
+      no_of_bangladeshis : '',
       outcome: ''
     };
 
@@ -83,6 +85,7 @@ export class ResidenceCreateComponent implements OnInit {
       name:       ['', Validators.required],
       address:    ['', Validators.required],
       form_type:  ['', ''],
+      no_of_bangladeshis      : ['', Validators.requiredTrue],
       outcome:    ['', Validators.requiredTrue]
     });
   }
@@ -95,18 +98,20 @@ export class ResidenceCreateComponent implements OnInit {
           + '&address=' + ((fields.address === undefined) ? '' : fields.address)
           + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
           + '&date=' + this.defaultDate
+          + '&no_of_bangladeshis=' + ((fields.no_of_bangladeshis === undefined) ? '' : fields.no_of_bangladeshis)
           + '&assign_to=' + this.assignTo
-          + '&type=' + type
+          + '&type=' + this.form_type
         this._service.create(postString, 'visit/residence/create', this.authorizationKey).subscribe(response => {
             // menu ceate
-            const postMenuString = 'name=' + type
-              + '&module_name=' + type
+            let formType  = this.form_type.toLowerCase();
+            const postMenuString = 'name=' + formType
+              + '&module_name=' + formType
               + '&parent_id=' + 1
-              + '&url=company-list/' + type
-              + '&type=' + type
-            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+              + '&url=residence-list/' + formType
+              + '&type=' + formType
+            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['residence-list/' + type]);
+                this.router.navigate(['residence-list/' + formType]);
                 // location.reload();
               },
               error => {

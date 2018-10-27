@@ -74,7 +74,7 @@ export class CompanyListComponent implements OnInit {
   delete(deleteId) {
     const deleteParam  = {
       id                : deleteId,
-      authorizationKey  : this.authorizationKey.toString()
+      authorizationKey  : this.authorizationKey
     };
     this._service.delete(deleteParam).subscribe( response => {
       this.tableDeleteData = response;

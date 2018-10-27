@@ -73,7 +73,7 @@ export class HospitalEditComponent implements OnInit {
       + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
       + '&date=' + ((dateField === undefined) ? ''  :  dateField)
       + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
-      + '&type=' + this.type
+      + '&type=' + this.type;
     this._service.update(updateParam, this.authorizationKey, 'visit/hospital/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
         this.router.navigate(['hospital-list/' + this.type]);

@@ -23,6 +23,7 @@ export class DeportationCenterEditComponent implements OnInit {
   updateResponse;
   responseError;
   formData;
+  date;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -38,13 +39,17 @@ export class DeportationCenterEditComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       name                    : ['', Validators.required],
       address                 : ['', Validators.required],
       no_of_bangladeshis      : ['', Validators.required],
       type                    : ['', Validators.required],
-      outcome                 : ['', Validators.requiredTrue]
+      outcome                 : ['', Validators.requiredTrue],
+      date                 : ['', Validators.requiredTrue]
     });
     this._activateRoute.paramMap
       .subscribe( params => {
@@ -62,6 +67,7 @@ export class DeportationCenterEditComponent implements OnInit {
           this.outcome            = this.editData.outcome;
           this.no_of_bangladeshis = this.editData.no_of_bangladeshis;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
@@ -72,8 +78,7 @@ export class DeportationCenterEditComponent implements OnInit {
       + '&address=' + ((form.value.address === undefined) ? ''  :  form.value.address)
       + '&outcome=' + ((form.value.outcome === undefined) ? ''  :  form.value.outcome)
       + '&date=' + ((dateField === undefined) ? ''  :  dateField)
-      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
-      + '&type=' + this.type;
+      + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis);
     this._service.update(updateParam,
       this.authorizationKey, 'visit/deportationcenter/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
