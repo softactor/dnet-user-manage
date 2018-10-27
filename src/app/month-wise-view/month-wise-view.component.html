@@ -10,10 +10,35 @@
         <li class="active">Month wise view</li>
       </ol>
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="row">
+          <div class="col-md-12">
+              <div class="box box-primary padding-md" style="padding:10px">
+                 <form class="form-inline" (ngSubmit)="onDataFilterFormSubmit()">
+                    <div class="form-group">
+                      <label for="from_date">From Date:&nbsp;&nbsp;</label>
+                      <input id="from_date" class="form-control" name="from_date" [(ngModel)]="selectedFromDate" matInput [matDatepicker]="from_date">
+                        <mat-datepicker-toggle matSuffix [for]="from_date" dateFormat="DD-MM-YYYY"></mat-datepicker-toggle>
+                        <mat-datepicker #from_date></mat-datepicker>
+                    </div>
+                    <div class="form-group">
+                      <label for="to_date">To Date: &nbsp;&nbsp;</label>
+                      <input id="to_date" name="to_date" class="form-control" [(ngModel)]="selectedToDate" matInput [matDatepicker]="to_date" placeholder="To Date:">
+                      <mat-datepicker-toggle matSuffix [for]="to_date"></mat-datepicker-toggle>
+                      <mat-datepicker #to_date></mat-datepicker>
+                    </div>
+                    <div class="form-group">
+                      <label style="padding-top:10px">Labourattache:&nbsp;&nbsp;</label>
+                      <select id="labourattache" class="form-control" [(ngModel)]="selectedLabourattch" name="labourattache" id="labourattache">
+                        <option value="" selected>Select Labourattache</option>
+                        <option *ngFor="let labourattacheList of labourattacheListResponse" [value]="labourattacheList.id">{{labourattacheList.first_name}} {{labourattacheList.last_name}}({{labourattacheList.assigned_country.country_name}})</option>
+                      </select>
+                    </div>                    
+                    <button style="margin-top:5px;margin-left:5px;" type="submit" (click)="onDataFilterFormSubmit()" class="btn btn-default">Submit</button>
+                  </form>
+                </div>
+            </div>
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -23,13 +48,13 @@
             <div class="dataTables_wrapper">
 
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#menu0" (click)="getTabdata('visit')">Visit</a></li>
-                <li><a data-toggle="tab" href="#menu1" (click)="getTabdata('activity')">Activity</a></li>
-                <li><a data-toggle="tab" href="#menu2" (click)="getTabdata('assistance')">Assistance provide</a></li>
-                <li><a data-toggle="tab" href="#menu3" (click)="getTabdata('complain')">Query Complain</a></li>
-                <li><a data-toggle="tab" href="#menu4" (click)="getTabdata('issue')">Issues</a></li>
-                <li><a data-toggle="tab" href="#menu5" (click)="getTabdata('resolved')">Resolved</a></li>
-                <li><a data-toggle="tab" href="#menu6" (click)="getTabdata('finance')">Finance</a></li>
+                <li class="active"><a data-toggle="tab" href="#menu0" (click)="getTabdata('visit', selectedFromDate, selectedToDate, selectedLabourattch)">Visit</a></li>
+                <li><a data-toggle="tab" href="#menu1" (click)="getTabdata('activity', selectedFromDate, selectedToDate, selectedLabourattch)">Activity</a></li>
+                <li><a data-toggle="tab" href="#menu2" (click)="getTabdata('assistance', selectedFromDate, selectedToDate, selectedLabourattch)">Assistance provide</a></li>
+                <li><a data-toggle="tab" href="#menu3" (click)="getTabdata('complain', selectedFromDate, selectedToDate, selectedLabourattch)">Query Complain</a></li>
+                <li><a data-toggle="tab" href="#menu4" (click)="getTabdata('issue', selectedFromDate, selectedToDate, selectedLabourattch)">Issues</a></li>
+                <li><a data-toggle="tab" href="#menu5" (click)="getTabdata('resolved', selectedFromDate, selectedToDate, selectedLabourattch)">Resolved</a></li>
+                <li><a data-toggle="tab" href="#menu6" (click)="getTabdata('finance', selectedFromDate, selectedToDate, selectedLabourattch)">Finance</a></li>
               </ul>
 
               <div class="tab-content">
@@ -41,7 +66,7 @@
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>#</th>
+                            <th>SL</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -51,8 +76,8 @@
                           </thead>
                           <tbody>
                           <!--apiData-->
-                          <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                            <td>#</td>
+                          <tr *ngFor="let tablelist of list.apiData; let i = index" id="row_id_{{ tablelist.id }}">
+                            <td>{{i+1}}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -66,13 +91,13 @@
                     </div>
                 </div>
                 <div id="menu1" class="tab-pane fade">
-                  <div *ngFor="let list of visitData;">
+                  <div *ngFor="let list of activityData;">
                     <h3>{{list.component}}</h3>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>#</th>
+                          <th>SL</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Outcome</th>
@@ -82,8 +107,8 @@
                         </thead>
                         <tbody>
                         <!--apiData-->
-                        <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                          <td>#</td>
+                        <tr *ngFor="let tablelist of list.apiData;let i = index" id="row_id_{{ tablelist.id }}">
+                          <td>{{i+1}}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.outcome }}</td>
@@ -97,13 +122,13 @@
                   </div>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                  <div *ngFor="let list of visitData;">
+                  <div *ngFor="let list of assistanceData;">
                     <h3>{{list.component}}</h3>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>#</th>
+                          <th>SL</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Outcome</th>
@@ -113,8 +138,8 @@
                         </thead>
                         <tbody>
                         <!--apiData-->
-                        <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                          <td>#</td>
+                        <tr *ngFor="let tablelist of list.apiData; let i = index" id="row_id_{{ tablelist.id }}">
+                          <td>{{i+1}}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.outcome }}</td>
@@ -128,13 +153,13 @@
                   </div>
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                  <div *ngFor="let list of visitData;">
+                  <div *ngFor="let list of complaintData;">
                     <h3>{{list.component}}</h3>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>#</th>
+                          <th>SL</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Outcome</th>
@@ -144,8 +169,8 @@
                         </thead>
                         <tbody>
                         <!--apiData-->
-                        <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                          <td>#</td>
+                        <tr *ngFor="let tablelist of list.apiData;let i = index" id="row_id_{{ tablelist.id }}">
+                          <td>{{i+1}}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.outcome }}</td>
@@ -159,13 +184,13 @@
                   </div>
                 </div>
                 <div id="menu4" class="tab-pane fade">
-                  <div *ngFor="let list of visitData;">
+                  <div *ngFor="let list of issueData;">
                     <h3>{{list.component}}</h3>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>#</th>
+                          <th>SL</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Outcome</th>
@@ -175,8 +200,8 @@
                         </thead>
                         <tbody>
                         <!--apiData-->
-                        <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                          <td>#</td>
+                        <tr *ngFor="let tablelist of list.apiData;let i = index" id="row_id_{{ tablelist.id }}">
+                          <td>{{i+1}}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.outcome }}</td>
@@ -190,13 +215,13 @@
                   </div>
                 </div>
                 <div id="menu5" class="tab-pane fade">
-                    <div *ngFor="let list of visitData;">
+                    <div *ngFor="let list of resolvedData;">
                       <h3>{{list.component}}</h3>
                       <div class="table-responsive">
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>#</th>
+                            <th>SL</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -206,8 +231,8 @@
                           </thead>
                           <tbody>
                           <!--apiData-->
-                          <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                            <td>#</td>
+                          <tr *ngFor="let tablelist of list.apiData;let i = index" id="row_id_{{ tablelist.id }}">
+                            <td>{{i+1}}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -221,13 +246,14 @@
                     </div>
                   </div>
                 <div id="menu6" class="tab-pane fade">
-                  <div *ngFor="let list of visitData;">
+                  <div *ngFor="let list of financeData;">
+                    {{list.apiData}}
                     <h3>{{list.component}}</h3>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>#</th>
+                          <th>SL</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Outcome</th>
@@ -237,8 +263,8 @@
                         </thead>
                         <tbody>
                         <!--apiData-->
-                        <tr *ngFor="let tablelist of list.apiData;" id="row_id_{{ tablelist.id }}">
-                          <td>#</td>
+                        <tr *ngFor="let tablelist of list.apiData;let i = index" id="row_id_{{ tablelist.id }}">
+                          <td>{{i+1}}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.outcome }}</td>

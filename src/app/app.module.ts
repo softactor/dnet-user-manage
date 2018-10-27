@@ -209,7 +209,7 @@ const appRoutes: Routes  = [
     component: LogoutComponent
   },
   {
-    path: 'user-dashboard',
+    path: 'user-dashboard1',
     canActivate: [AuthGuard],
     component: UserDashboardComponent
   },
@@ -693,7 +693,7 @@ const appRoutes: Routes  = [
     component: VisitReportsComponent
   },
   {
-    path:'reports',
+    path:'user-dashboard',
     canActivate:[AuthGuard],
     component:VisualizationReportComponent,
   },

@@ -75,9 +75,9 @@ export class DeportationCenterEditComponent implements OnInit {
       + '&no_of_bangladeshis=' + ((form.value.no_of_bangladeshis === undefined) ? ''  :  form.value.no_of_bangladeshis)
       + '&type=' + this.type;
     this._service.update(updateParam,
-      this.authorizationKey, 'visit/deportation-center-update/', this.editId).subscribe( response => {
+      this.authorizationKey, 'visit/deportationcenter/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['deportation-center-list/' + this.type]);
+        this.router.navigate(['deportationcenter/list/' + this.type]);
       },
       error => {
         const error_response  = error;

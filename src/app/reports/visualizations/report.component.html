@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Reports Visualizations
+        Dashboard
       </h1>
       <ol class="breadcrumb">
-        <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Report</li>
+        <!-- <li><a routerLink="/user-dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li> -->
+        <!-- <li class="active">Report</li> -->
       </ol>
     </section>
 
@@ -18,25 +18,25 @@
             <div class="box box-primary padding-md" style="padding:10px">
                <form class="form-inline" (ngSubmit)="onDataFilterFormSubmit()">
                   <div class="form-group">
-                    <label for="from_date">From Date:</label>
+                    <label for="from_date">From Date:&nbsp;&nbsp;</label>
                     <input id="from_date" class="form-control" name="from_date" matInput [matDatepicker]="from_date">
                       <mat-datepicker-toggle matSuffix [for]="from_date" dateFormat="DD-MM-YYYY"></mat-datepicker-toggle>
                       <mat-datepicker #from_date></mat-datepicker>
                   </div>
                   <div class="form-group">
-                    <label for="to_date">To Date:</label>
+                    <label for="to_date">To Date:&nbsp;&nbsp;</label>
                     <input id="to_date" name="to_date" class="form-control" matInput [matDatepicker]="to_date" placeholder="To Date:">
                     <mat-datepicker-toggle matSuffix [for]="to_date"></mat-datepicker-toggle>
                     <mat-datepicker #to_date></mat-datepicker>
                   </div>
                   <div class="form-group">
-                    <label>Labourattache :</label>
+                    <label style="padding-top:10px">Labourattache : &nbsp;&nbsp;</label>
                     <select id="labourattache" class="form-control" ngModel #country="ngModel" name="labourattache" id="labourattache">
                       <option value="" selected>Select Labourattache</option>
                       <option *ngFor="let labourattacheList of labourattacheListResponse" [value]="labourattacheList.id">{{labourattacheList.first_name}} {{labourattacheList.last_name}}({{labourattacheList.assigned_country.country_name}})</option>
                     </select>
                   </div>
-                  <button type="submit" (click)="onDataFilterFormSubmit()" class="btn btn-default">Submit</button>
+                  <button style="margin-top:5px;margin-left:5px;" type="submit" (click)="onDataFilterFormSubmit()" class="btn btn-default">Submit</button>
                 </form>
               </div>
           </div>
@@ -52,7 +52,10 @@
               <a class="nav-link" href="#finance" role="tab" data-toggle="tab">Finance</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#activity" role="tab" data-toggle="tab">Activity</a>
+              <a class="nav-link" href="#query_complain" role="tab" data-toggle="tab">Query Complain</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resolved" role="tab" data-toggle="tab">Resolved</a>
             </li>
           </ul>
 
@@ -101,7 +104,7 @@
                   <div class="box-header with-border">
                       <label>Budget</label>
                       <div style="display: block" *ngIf="budgetChartData">
-                        <canvas baseChart [chartType]="barChartType" [datasets]="budgetChartData" [labels]="budgetChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                        <canvas baseChart [chartType]="barChartType" [datasets]="budgetChartData" [labels]="budgetChartLabels" [options]="financeChartOptions" [legend]="true"></canvas>
                       </div>
                   </div>
                 </div>
@@ -110,17 +113,17 @@
                       <label>Remittance</label>
                       <div style="display: block" *ngIf="remittanceChartData">
                             <!-- <canvas baseChart  [data]="remittancePieChartData" [labels]="remittancePieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
-                            <canvas baseChart [chartType]="barChartType" [datasets]="remittanceChartData" [labels]="remittanceChartLabels" [options]="chartOptions" [legend]="true"></canvas>
+                            <canvas baseChart [chartType]="barChartType" [datasets]="remittanceChartData" [labels]="remittanceChartLabels" [options]="financeChartOptions" [legend]="true"></canvas>
                           </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="activity">
+            <div role="tabpanel" class="tab-pane fade" id="query_complain">
                 <div class="row">
                 <div class="col-md-6">
                   <div class="box-header with-border">
-                      <label>Market Assessment</label>
+                      <label>Complaints</label>
                       <div style="display: block" ng-if="remittancePieChartData">
                             
                       </div>
@@ -136,6 +139,26 @@
                 </div>     
               </div>
             </div>
+            <div role="tabpanel" class="tab-pane fade" id="resolved">
+              <div class="row">
+              <div class="col-md-6">
+                <div class="box-header with-border">
+                    <label>Complaints</label>
+                    <div style="display: block" ng-if="remittancePieChartData">
+                          
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="box-header with-border">
+                    <label>Employee Enhancement</label>
+                    <div style="display: block">
+                          
+                    </div>
+                </div>
+              </div>     
+            </div>
+          </div>
           </div>
             <!-- /.box-header -->
             <!-- form start -->
