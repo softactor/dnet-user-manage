@@ -19,9 +19,12 @@ export class MeetingUpdateComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
-  name_of_activity  = '';
-  description = '';
+  issue_discussed  = '';
+  organization = '';
+  outcome = '';
+  date = '';
   type = '';
+  name;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -44,31 +47,37 @@ export class MeetingUpdateComponent implements OnInit {
     });
     this._activateRoute.paramMap
       .subscribe( params => {
-        this.editId = params.get('attestation_id')
+        this.editId = params.get('meeting_id')
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
-        this._service.getDetailsById(getDetailsParam, 'activity/attestation/details/').subscribe( Details => {
+        this._service.getDetailsById(getDetailsParam, 'issues/meeting/details/').subscribe( Details => {
           this.editData = Details;
-          this.name_of_activity           = this.editData.name_of_activity;
-          this.description            = this.editData.description;
+          this.issue_discussed           = this.editData.issue_discussed;
+          this.name           = this.editData.name;
+          this.organization            = this.editData.organization;
+          this.outcome               = this.editData.outcome;
+          this.date               = this.editData.date;
           this.type               = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'name_of_activity=' + form.value.name_of_activity
-      + '&description=' + form.value.description
-      + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+    const dateField = $('#date').val();
+    const updateParam = 'issue_discussed=' + ((form.value.issue_discussed === undefined)    ? ''  :  form.value.issue_discussed)
+      + '&name=' + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&organization=' + ((form.value.organization === undefined)    ? ''  :  form.value.organization)
+      + '&outcome=' + ((form.value.outcome === undefined)    ? ''  :  form.value.outcome)
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
+      + '&type=' + this.type;
     this._service.update(updateParam, this.authorizationKey,
-      'activity/attestation/update/', this.editId).subscribe( response => {
+      'issues/meeting/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['attestation-list']);
+        this.router.navigate(['meeting-list/' + this.type]);
       },
       error => {
         const error_response  = error;

@@ -353,12 +353,12 @@ const appRoutes: Routes  = [
     component: EmployeeEnhancementUpdateComponent
   },
   {
-    path: 'other-activity-list',
+    path: 'other-activity-list/:list_param',
     canActivate: [AuthGuard],
     component: OtherActivityListComponent
   },
   {
-    path: 'other-activity-create',
+    path: 'other-activity-create/:create_param',
     canActivate: [AuthGuard],
     component: OtherActivityCreateComponent
   },
@@ -368,12 +368,12 @@ const appRoutes: Routes  = [
     component: OtherActivityUpdateComponent
   },
   {
-    path: 'work-plan-list',
+    path: 'work-plan-list/:list_param',
     canActivate: [AuthGuard],
     component: WorkPlanListComponent
   },
   {
-    path: 'work-plan-create',
+    path: 'work-plan-create/:create_param',
     canActivate: [AuthGuard],
     component: WorkPlanCreateComponent
   },
@@ -383,12 +383,12 @@ const appRoutes: Routes  = [
     component: WorkPlanUpdateComponent
   },
   {
-    path: 'attestation-list',
+    path: 'attestation-list/:list_param',
     canActivate: [AuthGuard],
     component: AttestationListComponent
   },
   {
-    path: 'attestation-create',
+    path: 'attestation-create/:create_param',
     canActivate: [AuthGuard],
     component: AttestationCreateComponent
   },
@@ -428,12 +428,12 @@ const appRoutes: Routes  = [
     component: LiaisonWithExpatriatesUpdateComponent
   },
   {
-    path: 'general-assistance-list',
+    path: 'general-assistance-list/:list_param',
     canActivate: [AuthGuard],
     component: GeneralAssistanceListComponent
   },
   {
-    path: 'general-assistance-create',
+    path: 'general-assistance-create/:create_param',
     canActivate: [AuthGuard],
     component: GeneralAssistanceCreateComponent
   },
@@ -443,12 +443,12 @@ const appRoutes: Routes  = [
     component: GeneralAssistanceUpdateComponent
   },
   {
-    path: 'legal-assistance-list',
+    path: 'legal-assistance-list/:list_param',
     canActivate: [AuthGuard],
     component: LegalAssistanceListComponent
   },
   {
-    path: 'legal-assistance-create',
+    path: 'legal-assistance-create/:create_param',
     canActivate: [AuthGuard],
     component: LegalAssistanceCreateComponent
   },
@@ -458,12 +458,12 @@ const appRoutes: Routes  = [
     component: LegalAssistanceUpdateComponent
   },
   {
-    path: 'query-received-list',
+    path: 'query-received-list/:list_param',
     canActivate: [AuthGuard],
     component: QueryReceivedListComponent
   },
   {
-    path: 'query-received-create',
+    path: 'query-received-create/:create_param',
     canActivate: [AuthGuard],
     component: QueryReceivedCreateComponent
   },
@@ -473,12 +473,12 @@ const appRoutes: Routes  = [
     component: QueryReceivedUpdateComponent
   },
   {
-    path: 'complaint-list',
+    path: 'complaint-list/:list_param',
     canActivate: [AuthGuard],
     component: ComplaintListComponent
   },
   {
-    path: 'complaint-create',
+    path: 'complaint-create/:create_param',
     canActivate: [AuthGuard],
     component: ComplaintCreateComponent
   },
@@ -488,12 +488,12 @@ const appRoutes: Routes  = [
     component: ComplaintUpdateComponent
   },
   {
-    path: 'trade-query-list',
+    path: 'trade-query-list/:list_param',
     canActivate: [AuthGuard],
     component: TradeQueryListComponent
   },
   {
-    path: 'trade-query-create',
+    path: 'trade-query-create/:create_param',
     canActivate: [AuthGuard],
     component: TradeQueryCreateComponent
   },
@@ -503,12 +503,12 @@ const appRoutes: Routes  = [
     component: TradeQueryUpdateComponent
   },
   {
-    path: 'meeting-list',
+    path: 'meeting-list/:list_param',
     canActivate: [AuthGuard],
     component: MeetingListComponent
   },
   {
-    path: 'meeting-create',
+    path: 'meeting-create/:create_param',
     canActivate: [AuthGuard],
     component: MeetingCreateComponent
   },
@@ -518,12 +518,12 @@ const appRoutes: Routes  = [
     component: MeetingUpdateComponent
   },
   {
-    path: 'conference-list',
+    path: 'conference-list/:list_param',
     canActivate: [AuthGuard],
     component: ConferenceListComponent
   },
   {
-    path: 'conference-create',
+    path: 'conference-create/:create_param',
     canActivate: [AuthGuard],
     component: ConferenceCreateComponent
   },

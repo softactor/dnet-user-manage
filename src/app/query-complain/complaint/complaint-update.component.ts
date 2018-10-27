@@ -21,6 +21,7 @@ export class ComplaintUpdateComponent implements OnInit {
   responseError;
   total_number  = '';
   action_taken = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -35,6 +36,9 @@ export class ComplaintUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       total_number               : ['', Validators.required],
@@ -46,7 +50,7 @@ export class ComplaintUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'querycomplain/complaints/details/').subscribe( Details => {
@@ -58,15 +62,16 @@ export class ComplaintUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'total_number='
-      + form.value.total_number
-      + '&action_taken=' + form.value.action_taken
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.description === undefined)    ? ''  :  form.value.description)
+      + '&action_taken=' + ((form.value.description === undefined)    ? ''  :  form.value.description)
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'querycomplain/complaints/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['complaint-list']);
+        this.router.navigate(['complaint-list/']);
       },
       error => {
         const error_response  = error;

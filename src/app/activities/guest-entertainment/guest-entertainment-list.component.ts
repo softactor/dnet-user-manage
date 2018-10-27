@@ -29,7 +29,7 @@ export class GuestEntertainmentListComponent implements OnInit {
     private _activateRoute: ActivatedRoute,
     private router: Router,
   ) {
-    setTimeout(function(){
+    setTimeout(function() {
       $(function() {
         if (!$.fn.DataTable.isDataTable('#data_list')) {
           $('#data_list').DataTable({
@@ -73,7 +73,7 @@ export class GuestEntertainmentListComponent implements OnInit {
   delete(deleteId) {
     const deleteParam  = {
       id                : deleteId,
-      authorizationKey  : this.authorizationKey.toString()
+      authorizationKey  : this.authorizationKey
     };
     this._service.delete(deleteParam, 'activity/gestentertainment/delete/').subscribe( response => {
       this.tableDeleteData = response;

@@ -18,8 +18,11 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">Create Data</h3>
-              <a routerLink="/meeting-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <a routerLink="/meeting-create/{{ listTitle }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title pull-right">{{ listTitle }} Entry</h3>
+              <div *ngIf="!feedbackData?.length > 0">
+                <strong>No Data Found !!</strong>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -27,20 +30,22 @@
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Name of activity</th>
-                  <th>description</th>
-                  <th>Type</th>
+                  <th>Issue discussed</th>
+                  <th>Name</th>
+                  <th>Organization</th>
+                  <th>Outcome</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
                   <td>{{ sln+1 }}</td>
-                  <td>{{ list.name_of_activity }}</td>
-                  <td>{{ list.description }}</td>
-                  <td>{{ list.type }}</td>
+                  <td>{{ list.issue_discussed }}</td>
+                  <td>{{ list.name }}</td>
+                  <td>{{ list.organization }}</td>
+                  <td>{{ list.outcome }}</td>
                   <td>
-                    <a routerLink="/attestation-update/{{list.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <a routerLink="/meeting-update/{{list.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                     <button [swal]="deleteSwal"
                             type="button" class="btn bg-red">
                       <i class="fa fa-minus"></i></button>
@@ -60,9 +65,10 @@
                 <tfoot>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Name of activity</th>
-                  <th>description</th>
-                  <th>Type</th>
+                  <th>Issue discussed</th>
+                  <th>Name</th>
+                  <th>Organization</th>
+                  <th>Outcome</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

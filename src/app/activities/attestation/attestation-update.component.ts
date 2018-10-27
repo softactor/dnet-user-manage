@@ -22,6 +22,7 @@ export class AttestationUpdateComponent implements OnInit {
   name_of_activity  = '';
   description = '';
   type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -36,6 +37,9 @@ export class AttestationUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       name_of_activity                : ['', Validators.required],
@@ -48,7 +52,7 @@ export class AttestationUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'activity/attestation/details/').subscribe( Details => {
@@ -56,19 +60,22 @@ export class AttestationUpdateComponent implements OnInit {
           this.name_of_activity           = this.editData.name_of_activity;
           this.description            = this.editData.description;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'name_of_activity=' + form.value.name_of_activity
-      + '&description=' + form.value.description
+    const dateField = $('#date').val();
+    const updateParam = 'name_of_activity=' + ((form.value.name_of_activity === undefined)    ? ''  :  form.value.name_of_activity)
+      + '&description=' + ((form.value.description === undefined)    ? ''  :  form.value.description)
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
       + '&type=' + form.value.type
       + '&authorization=' + this.authorizationKey;
     this._service.update(updateParam, this.authorizationKey,
       'activity/attestation/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['attestation-list']);
+        this.router.navigate(['attestation-list/' + this.type]);
       },
       error => {
         const error_response  = error;

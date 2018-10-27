@@ -23,6 +23,7 @@ export class OtherActivityUpdateComponent implements OnInit {
   remarks = '';
   outcome = '';
   type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -37,6 +38,9 @@ export class OtherActivityUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       activity                : ['', Validators.required],
@@ -50,7 +54,7 @@ export class OtherActivityUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'activity/otheractivity/details/').subscribe( Details => {
@@ -58,18 +62,20 @@ export class OtherActivityUpdateComponent implements OnInit {
           this.activity           = this.editData.activity;
           this.remarks            = this.editData.remarks;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'activity=' + form.value.activity
-      + '&remarks=' + form.value.remarks
-      + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+    const dateField = $('#date').val();
+    const updateParam = 'activity=' + ((form.value.activity === undefined)    ? ''  :  form.value.activity)
+      + '&remarks=' + ((form.value.remarks === undefined)    ? ''  :  form.value.remarks)
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
+      + '&type=' + this.type
     this._service.update(updateParam, this.authorizationKey, 'activity/otheractivity/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['other-activity-list']);
+        this.router.navigate(['other-activity-list/' + this.type]);
       },
       error => {
         const error_response  = error;

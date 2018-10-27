@@ -35,7 +35,8 @@
             <!-- /.box-header -->
             <!-- form start -->
             <div class="box-body" *ngFor="let fields of otherActivity; let i = index">
-              <form class="form-inline">
+              <h3>{{ form_type | titlecase }}</h3>
+              <form>
                 <div
                   class="form-group"
                   [class.has-warning]="responseError?.activity ? true: false"

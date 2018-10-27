@@ -22,7 +22,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+            <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
@@ -30,7 +30,6 @@
                   <label for="number_of_trade">Number of trade</label>
                   <input type="text"
                          name="number_of_trade"
-                         formControlName = "number_of_trade"
                          id="inputNumberOfTrade"
                          [(ngModel)]="number_of_trade"
                          class="form-control"
@@ -43,7 +42,6 @@
                   <label for="Type_of_query">Type of query</label>
                   <input type="text"
                          name="Type_of_query"
-                         formControlName = "Type_of_query"
                          id="inputTypeOfQuery"
                          [(ngModel)]="Type_of_query"
                          class="form-control"
@@ -56,12 +54,18 @@
                   <label for="remarks">Remarks</label>
                   <input type="text"
                          name="remarks"
-                         formControlName = "remarks"
                          id="inputRemarks"
                          class="form-control"
                          [(ngModel)]="remarks"
                          placeholder="Remarks">
                   <div class="error-message" *ngIf="responseError?.remarks">{{responseError?.remarks}}</div>
+                </div>
+                <div
+                  class="form-group custom-col-md-12"
+                  [class.has-warning]="responseError?.date ? true: false" [class.has-feedback]="responseError?.date ? true: false">
+                  <label for="date">Date</label>
+                  <input required type="text" class="form-control" [(ngModel)]="date" name="date" id="date" placeholder="Date">
+                  <span *ngIf="responseError?.date" class="glyphicon glyphicon-warning-sign error-sign"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>

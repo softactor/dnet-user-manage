@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComplaintService } from './complaint.service';
 import { AuthenticationService } from '../../authentication.service';
 import { TosterService } from '../../toster.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -19,11 +19,14 @@ export class ComplaintListComponent implements OnInit {
   responseError;
   defaultDate;
   assignTo;
+  list_param;
   listApi;
+  listTitle;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: ComplaintService,
+    private _activateRoute: ActivatedRoute,
     private router: Router,
   ) {
     setTimeout(function(){
@@ -39,19 +42,26 @@ export class ComplaintListComponent implements OnInit {
         $('#defaultDate').datepicker('setDate', new Date());
       });
     }, 1000);
+
     this.assignTo = localStorage.getItem('assign_to');
     // this.defaultDate  = $('#defaultDate').val();
     this.defaultDate        =   new Date();
-    this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this.listApi  = 'querycomplain/complaints/list?type=Query complaint';
-    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
-        this.tableListData = response;
-        this.feedbackData = this.tableListData.results;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('list_param');
+        this.listTitle = this.list_param;
+        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        this.listApi  = 'querycomplain/complaints/list?type=' + this.list_param;
+        this._service.getListData(this.authorizationKey, this.listApi)
+          .subscribe( response => {
+              this.tableListData  = response;
+              this.feedbackData   = this.tableListData.results;
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      });
   }
 
   ngOnInit() {
@@ -64,7 +74,7 @@ export class ComplaintListComponent implements OnInit {
   delete(deleteId) {
     const deleteParam  = {
       id                : deleteId,
-      authorizationKey  : this.authorizationKey.toString()
+      authorizationKey  : this.authorizationKey
     };
     this._service.delete(deleteParam, 'querycomplain/complaints/delete/').subscribe( response => {
       this.tableDeleteData = response;

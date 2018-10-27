@@ -24,6 +24,7 @@ export class GeneralAssistanceUpdateComponent implements OnInit {
   issue = '';
   action_taken = '';
   type = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -38,6 +39,9 @@ export class GeneralAssistanceUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       name                : ['', Validators.required],
@@ -62,23 +66,25 @@ export class GeneralAssistanceUpdateComponent implements OnInit {
           this.issue              = this.editData.issue;
           this.action_taken       = this.editData.action_taken;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'name='
-      + form.value.name
-      + '&address=' + form.value.address
-      + '&issue=' + form.value.issue
-      + '&action_taken=' + form.value.action_taken
-      + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined)    ? ''  :  form.value.address)
+      + '&issue=' + ((form.value.issue === undefined)    ? ''  :  form.value.issue)
+      + '&action_taken=' + ((form.value.action_taken === undefined)    ? ''  :  form.value.action_taken)
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
+      + '&type=' + this.type
     this._service.update(updateParam, this.authorizationKey,
       'assistanceprovidation/generalassistance/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['general-assistance-list']);
+        this.router.navigate(['general-assistance-list/' + this.type]);
       },
       error => {
         const error_response  = error;

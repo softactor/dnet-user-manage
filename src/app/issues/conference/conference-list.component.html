@@ -18,8 +18,11 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">Create Data</h3>
-              <a routerLink="/conference-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <a routerLink="/conference-create/{{ listTitle }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title pull-right">{{ listTitle }} Entry</h3>
+              <div *ngIf="!feedbackData?.length > 0">
+                <strong>No Data Found !!</strong>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -27,20 +30,20 @@
                 <thead>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Name of activity</th>
-                  <th>description</th>
-                  <th>Type</th>
+                  <th>Conferance details</th>
+                  <th>Outcome</th>
+                  <th>Topic</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
                   <td>{{ sln+1 }}</td>
-                  <td>{{ list.name_of_activity }}</td>
-                  <td>{{ list.description }}</td>
-                  <td>{{ list.type }}</td>
+                  <td>{{ list.details_conferance }}</td>
+                  <td>{{ list.outcome }}</td>
+                  <td>{{ list.topic }}</td>
                   <td>
-                    <a routerLink="/attestation-update/{{list.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
+                    <a routerLink="/conference-update/{{list.id}}" type="button" class="btn bg-orange"><i class="fa fa-pencil margin-r-5"></i></a>&nbsp;
                     <button [swal]="deleteSwal"
                             type="button" class="btn bg-red">
                       <i class="fa fa-minus"></i></button>
@@ -60,9 +63,9 @@
                 <tfoot>
                 <tr>
                   <th style="width: 10px">#</th>
-                  <th>Name of activity</th>
-                  <th>description</th>
-                  <th>Type</th>
+                  <th>Conferance details</th>
+                  <th>Outcome</th>
+                  <th>Topic</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
