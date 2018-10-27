@@ -2,71 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088b59ff-8266-4e83-b187-35f1fae393a0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/background.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/favicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/logo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/favicon.ico" afterPath="$PROJECT_DIR$/src/images/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.html" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-update.component.html" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-update.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-update.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-update.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.html" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-update.component.html" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-update.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.html" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-update.component.html" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-update.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-update.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-create.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-create.component.ts" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.ts" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-update.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-update.component.ts" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-create.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-create.component.ts" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.ts" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-update.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-update.component.ts" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-create.component.html" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-create.component.ts" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.ts" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-update.component.html" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-update.component.ts" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-create.component.html" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-create.component.ts" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.ts" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-update.component.html" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-update.component.ts" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-create.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-create.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-create.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-create.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layout/header/header.component.html" afterPath="$PROJECT_DIR$/src/app/layout/header/header.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/login/login.component.html" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.html" afterPath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.ts" afterPath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.html" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-list/user-list.component.html" afterPath="$PROJECT_DIR$/src/app/user-list/user-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles.css" afterPath="$PROJECT_DIR$/src/styles.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -85,8 +61,21 @@
         <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="515" column="37" lean-forward="false" selection-start-line="515" selection-start-column="27" selection-end-line="515" selection-end-column="37" />
-              <folding />
+              <caret line="515" column="37" lean-forward="false" selection-start-line="515" selection-start-column="37" selection-end-line="515" selection-end-column="37" />
+              <folding>
+                <marker date="1540643025520" expanded="true" signature="16387:28986" ph="[...]" />
+                <marker date="1540643025520" expanded="true" signature="16509:16536" ph="{&quot;path&quot;: 'user-dashboard'...}" />
+                <marker date="1540643025520" expanded="true" signature="28802:28881" ph="{&quot;path&quot;: 'reports'...}" />
+                <marker date="1540643025520" expanded="true" signature="29013:29359" ph="{...}" />
+                <marker date="1540643025520" expanded="true" signature="29026:29106" ph="{...}" />
+                <marker date="1540643025520" expanded="true" signature="29121:29356" ph="{&quot;dateInput&quot;: 'input'...}" />
+                <marker date="1540643025520" expanded="true" signature="29397:35067" ph="{...}" />
+                <marker date="1540643025520" expanded="true" signature="29415:32887" ph="[...]" />
+                <marker date="1540643025520" expanded="true" signature="32900:33932" ph="[...]" />
+                <marker date="1540643025520" expanded="true" signature="33867:33928" ph="//..." />
+                <marker date="1540643025520" expanded="true" signature="33947:35036" ph="[...]" />
+                <marker date="1540643025520" expanded="true" signature="35092:35095" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,11 +92,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="meeting-list.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="meeting-list.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+            <state relative-caret-position="578">
+              <caret line="58" column="49" lean-forward="false" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1948#1954#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conference-list.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -117,7 +119,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-update.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
-              <caret line="76" column="28" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="28" />
+              <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="28" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -215,7 +217,6 @@
         <option value="$PROJECT_DIR$/src/app/issues/conference/conference-create.component.html" />
         <option value="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/issues/conference/conference-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/issues/conference/conference-update.component.html" />
         <option value="$PROJECT_DIR$/src/app/issues/conference/conference-update.component.ts" />
         <option value="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.ts" />
@@ -225,6 +226,7 @@
         <option value="$PROJECT_DIR$/src/app/issues/meeting/meeting-update.component.html" />
         <option value="$PROJECT_DIR$/src/app/issues/meeting/meeting-update.component.ts" />
         <option value="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" />
       </list>
     </option>
   </component>
@@ -364,12 +366,12 @@
       <workItem from="1540394192761" duration="13985000" />
       <workItem from="1540435949589" duration="20029000" />
       <workItem from="1540556526993" duration="20977000" />
-      <workItem from="1540615488696" duration="21683000" />
+      <workItem from="1540615488696" duration="22116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211525000" />
+    <option name="totallyTimeSpent" value="211958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -758,14 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="25" column="18" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-create.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -823,15 +817,28 @@
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="515" column="37" lean-forward="false" selection-start-line="515" selection-start-column="27" selection-end-line="515" selection-end-column="37" />
-          <folding />
+          <caret line="515" column="37" lean-forward="false" selection-start-line="515" selection-start-column="37" selection-end-line="515" selection-end-column="37" />
+          <folding>
+            <marker date="1540643025520" expanded="true" signature="16387:28986" ph="[...]" />
+            <marker date="1540643025520" expanded="true" signature="16509:16536" ph="{&quot;path&quot;: 'user-dashboard'...}" />
+            <marker date="1540643025520" expanded="true" signature="28802:28881" ph="{&quot;path&quot;: 'reports'...}" />
+            <marker date="1540643025520" expanded="true" signature="29013:29359" ph="{...}" />
+            <marker date="1540643025520" expanded="true" signature="29026:29106" ph="{...}" />
+            <marker date="1540643025520" expanded="true" signature="29121:29356" ph="{&quot;dateInput&quot;: 'input'...}" />
+            <marker date="1540643025520" expanded="true" signature="29397:35067" ph="{...}" />
+            <marker date="1540643025520" expanded="true" signature="29415:32887" ph="[...]" />
+            <marker date="1540643025520" expanded="true" signature="32900:33932" ph="[...]" />
+            <marker date="1540643025520" expanded="true" signature="33867:33928" ph="//..." />
+            <marker date="1540643025520" expanded="true" signature="33947:35036" ph="[...]" />
+            <marker date="1540643025520" expanded="true" signature="35092:35095" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-update.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
-          <caret line="76" column="28" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="28" />
+          <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="28" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -858,8 +865,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        <state relative-caret-position="578">
+          <caret line="58" column="49" lean-forward="false" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1948#1954#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
           <folding />
         </state>
       </provider>

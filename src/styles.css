@@ -68,3 +68,47 @@
 .box-header h3{
   margin-top: 1% !important;
 }
+.skin-blue .wrapper, .skin-blue .skin-blue{
+  /* background: url(images/background.jpg) no-repeat center center fixed;  */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-color:#f5f8fa;
+
+}
+
+.login-page{
+  /* background: url(images/background.jpg) no-repeat center center fixed;  */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-color:#f5f8fa; 
+}
+.login-box{
+  padding: 20px;
+  background: white;
+  width: 500px;
+}
+.login-box .login-logo .logo{
+  width: 6%;float: left;
+}
+.login-box .login-logo .text_header{
+  width: 83%;
+  font-size: 16px !important;
+  float: right;
+  color: #1a80d8;
+  text-align: left;
+  padding-top: 5%;
+  font-weight: 800;
+  font-family: fantasy;
+}
+.login-box .login-logo{
+  margin-bottom: 60px;
+}
+.skin-blue .main-header .logo{
+   font-size: 15px;
+}

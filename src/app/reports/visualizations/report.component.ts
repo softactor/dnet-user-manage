@@ -122,13 +122,13 @@ export class VisualizationReportComponent implements OnInit {
   budgetChartData;
   remittanceChartData;
 
-  chartOptions = {
+  financeChartOptions = {
     responsive:true,
     scales: {
       yAxes: [{
           ticks: {
           beginAtZero: true,
-          stepSize:1000,
+          stepSize:10000,
           }
         }]
       }
@@ -139,7 +139,7 @@ export class VisualizationReportComponent implements OnInit {
       yAxes: [{
           ticks: {
           beginAtZero: true,
-          stepSize:2,
+          stepSize: 10
           }
         }]
       }
@@ -218,8 +218,8 @@ export class VisualizationReportComponent implements OnInit {
       }
 
       this.companyChartData = [
-        { data: this.companyData1, label: 'Total Count' },
-        { data: this.companyData2, label: 'No Of Bangladeshi'}
+        { data: this.companyData1, label: 'Total Visit' },
+        { data: this.companyData2, label: 'Total No Of Bangladeshi Met'}
       ];
       // end of for
       this.refresh_chart();
@@ -243,8 +243,8 @@ export class VisualizationReportComponent implements OnInit {
         }
         
         this.jailChartData = [
-          { data: this.testData1, label: 'Total Count' },
-          { data: this.testData2, label: 'No Of Bangladeshi'}
+          { data: this.testData1, label: 'Total Visit' },
+          { data: this.testData2, label: 'Total No Of Bangladeshi Met'}
         ];
         // end of for
         this.refresh_chart();
@@ -265,8 +265,8 @@ export class VisualizationReportComponent implements OnInit {
       }
 
       this.hospitalChartData = [
-        { data: this.hospitalData1, label: 'Total Count' },
-        { data: this.hospitalData2, label: 'No Of Bangladeshi'}
+        { data: this.hospitalData1, label: 'Total Visit' },
+        { data: this.hospitalData2, label: 'Total No Of Bangladeshi Met'}
       ];
       // end of for
       this.refresh_chart();
@@ -289,8 +289,8 @@ export class VisualizationReportComponent implements OnInit {
       }
 
       this.migrantshelterChartData = [
-        { data: this.migrantshelterData1, label: 'Total Count' },
-        { data: this.migrantshelterData2, label: 'No Of Bangladeshi'}
+        { data: this.migrantshelterData1, label: 'Total Visit' },
+        { data: this.migrantshelterData2, label: 'Total No Of Bangladeshi Met'}
       ];
       // end of for
       this.refresh_chart();
@@ -375,8 +375,8 @@ export class VisualizationReportComponent implements OnInit {
             }
             
             this.companyChartData = [
-              { data: this.companyData1, label: 'Total Count' },
-              { data: this.companyData2, label: 'No Of Bangladeshi'}
+              { data: this.companyData1, label: 'Total Visit' },
+              { data: this.companyData2, label: 'Total No Of Bangladeshi Met'}
             ];
             // end of for
             this.refresh_chart();
@@ -397,9 +397,9 @@ export class VisualizationReportComponent implements OnInit {
         }
         
         this.jailChartData = [
-          { data: this.testData1, label: 'Total Count' },
-          { data: this.testData2, label: 'No Of Bangladeshi'}
-        ];
+          { data: this.testData1, label: 'Total Visit' },
+          { data: this.testData2, label: 'Total No Of Bangladeshi Met'}
+          ];
         // end of for
         this.refresh_chart();
       });
@@ -418,9 +418,9 @@ export class VisualizationReportComponent implements OnInit {
         }
         
         this.hospitalChartData = [
-          { data: this.hospitalData1, label: 'Total Count' },
-          { data: this.hospitalData2, label: 'No Of Bangladeshi'}
-        ];
+          { data: this.hospitalData1, label: 'Total Visit' },
+          { data: this.hospitalData2, label: 'Total No Of Bangladeshi Met'}
+          ];
         // end of for
         this.refresh_chart();
       });
@@ -440,9 +440,9 @@ export class VisualizationReportComponent implements OnInit {
         }
         
         this.migrantshelterChartData = [
-          { data: this.migrantshelterData1, label: 'Total Count' },
-          { data: this.migrantshelterData2, label: 'No Of Bangladeshi'}
-        ];
+          { data: this.migrantshelterData1, label: 'Total Visit' },
+          { data: this.migrantshelterData2, label: 'Total No Of Bangladeshi Met'}
+          ];
         // end of for
         this.refresh_chart();
       });

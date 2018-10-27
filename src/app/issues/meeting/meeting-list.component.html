@@ -29,7 +29,7 @@
               <table id="data_list" class="table table-striped display" style="width:100%">
                 <thead>
                 <tr>
-                  <th style="width: 10px">#</th>
+                  <th style="width: 10px">SL</th>
                   <th>Issue discussed</th>
                   <th>Name</th>
                   <th>Organization</th>
@@ -56,22 +56,11 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="delete(list.id)"
-                    >
+                      (confirm)="delete(list.id)">
                     </swal>
                   </td>
                 </tr>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Issue discussed</th>
-                  <th>Name</th>
-                  <th>Organization</th>
-                  <th>Outcome</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
