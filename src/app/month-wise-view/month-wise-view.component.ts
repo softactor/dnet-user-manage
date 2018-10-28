@@ -62,7 +62,6 @@ export class MonthWiseViewComponent implements OnInit {
   remittanceandwelfarefundVisitDataArray;
   budgetVisitDataArray;
   
-
   financeData:any;
   resolvedData: any;
   issueData: any;
@@ -139,8 +138,7 @@ export class MonthWiseViewComponent implements OnInit {
     let compoList;
    
     switch(component) {
-      case 'visit':
-        
+      case 'visit':        
         this._apiProcessService.getReportData(this.authorizationKey, 'visit/company/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
           this.companyVisitDataArray = response; 
           this.companyVisitData =   this.companyVisitDataArray.results;         

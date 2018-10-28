@@ -28,7 +28,7 @@
               <table id="data_list" class="table table-striped display" style="width:100%">
                 <thead>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>places visited</th>
                   <th>Number of verified</th>
                   <th>Action taken</th>
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{  list.date }}</td>
                   <td>{{ list.places_visited }}</td>
                   <td>{{ list.number_of_verified }}</td>
                   <td>{{ list.action_taken }}</td>
@@ -53,15 +53,14 @@
                       type="question"
                       [showCancelButton]="true"
                       [focusCancel]="true"
-                      (confirm)="delete(list.id)"
-                    >
+                      (confirm)="delete(list.id)">
                     </swal>
                   </td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>places visited</th>
                   <th>Number of verified</th>
                   <th>Action taken</th>
