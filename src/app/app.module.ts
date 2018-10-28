@@ -353,12 +353,12 @@ const appRoutes: Routes  = [
     component: EmployeeEnhancementUpdateComponent
   },
   {
-    path: 'other-activity-list',
+    path: 'other-activity-list/:list_param',
     canActivate: [AuthGuard],
     component: OtherActivityListComponent
   },
   {
-    path: 'other-activity-create',
+    path: 'other-activity-create/:create_param',
     canActivate: [AuthGuard],
     component: OtherActivityCreateComponent
   },
@@ -368,12 +368,12 @@ const appRoutes: Routes  = [
     component: OtherActivityUpdateComponent
   },
   {
-    path: 'work-plan-list',
+    path: 'work-plan-list/:list_param',
     canActivate: [AuthGuard],
     component: WorkPlanListComponent
   },
   {
-    path: 'work-plan-create',
+    path: 'work-plan-create/:create_param',
     canActivate: [AuthGuard],
     component: WorkPlanCreateComponent
   },
@@ -383,12 +383,12 @@ const appRoutes: Routes  = [
     component: WorkPlanUpdateComponent
   },
   {
-    path: 'attestation-list',
+    path: 'attestation-list/:list_param',
     canActivate: [AuthGuard],
     component: AttestationListComponent
   },
   {
-    path: 'attestation-create',
+    path: 'attestation-create/:create_param',
     canActivate: [AuthGuard],
     component: AttestationCreateComponent
   },
@@ -428,12 +428,12 @@ const appRoutes: Routes  = [
     component: LiaisonWithExpatriatesUpdateComponent
   },
   {
-    path: 'general-assistance-list',
+    path: 'general-assistance-list/:list_param',
     canActivate: [AuthGuard],
     component: GeneralAssistanceListComponent
   },
   {
-    path: 'general-assistance-create',
+    path: 'general-assistance-create/:create_param',
     canActivate: [AuthGuard],
     component: GeneralAssistanceCreateComponent
   },
@@ -443,12 +443,12 @@ const appRoutes: Routes  = [
     component: GeneralAssistanceUpdateComponent
   },
   {
-    path: 'legal-assistance-list',
+    path: 'legal-assistance-list/:list_param',
     canActivate: [AuthGuard],
     component: LegalAssistanceListComponent
   },
   {
-    path: 'legal-assistance-create',
+    path: 'legal-assistance-create/:create_param',
     canActivate: [AuthGuard],
     component: LegalAssistanceCreateComponent
   },
@@ -458,12 +458,12 @@ const appRoutes: Routes  = [
     component: LegalAssistanceUpdateComponent
   },
   {
-    path: 'query-received-list',
+    path: 'query-received-list/:list_param',
     canActivate: [AuthGuard],
     component: QueryReceivedListComponent
   },
   {
-    path: 'query-received-create',
+    path: 'query-received-create/:create_param',
     canActivate: [AuthGuard],
     component: QueryReceivedCreateComponent
   },
@@ -473,12 +473,12 @@ const appRoutes: Routes  = [
     component: QueryReceivedUpdateComponent
   },
   {
-    path: 'complaint-list',
+    path: 'complaint-list/:list_param',
     canActivate: [AuthGuard],
     component: ComplaintListComponent
   },
   {
-    path: 'complaint-create',
+    path: 'complaint-create/:create_param',
     canActivate: [AuthGuard],
     component: ComplaintCreateComponent
   },
@@ -488,12 +488,12 @@ const appRoutes: Routes  = [
     component: ComplaintUpdateComponent
   },
   {
-    path: 'trade-query-list',
+    path: 'trade-query-list/:list_param',
     canActivate: [AuthGuard],
     component: TradeQueryListComponent
   },
   {
-    path: 'trade-query-create',
+    path: 'trade-query-create/:create_param',
     canActivate: [AuthGuard],
     component: TradeQueryCreateComponent
   },
@@ -503,12 +503,12 @@ const appRoutes: Routes  = [
     component: TradeQueryUpdateComponent
   },
   {
-    path: 'meeting-list',
+    path: 'meeting-list/:list_param',
     canActivate: [AuthGuard],
     component: MeetingListComponent
   },
   {
-    path: 'meeting-create',
+    path: 'meeting-create/:create_param',
     canActivate: [AuthGuard],
     component: MeetingCreateComponent
   },
@@ -518,12 +518,12 @@ const appRoutes: Routes  = [
     component: MeetingUpdateComponent
   },
   {
-    path: 'conference-list',
+    path: 'conference-list/:list_param',
     canActivate: [AuthGuard],
     component: ConferenceListComponent
   },
   {
-    path: 'conference-create',
+    path: 'conference-create/:create_param',
     canActivate: [AuthGuard],
     component: ConferenceCreateComponent
   },
@@ -533,12 +533,12 @@ const appRoutes: Routes  = [
     component: ConferenceUpdateComponent
   },
   {
-    path: 'arbitration-disputes-list',
+    path: 'arbitration-disputes-list/:list_param',
     canActivate: [AuthGuard],
     component: ArbitrationDisputesListComponent
   },
   {
-    path: 'arbitration-disputes-create',
+    path: 'arbitration-disputes-create/:create_param',
     canActivate: [AuthGuard],
     component: ArbitrationDisputesCreateComponent
   },
@@ -548,12 +548,12 @@ const appRoutes: Routes  = [
     component: ArbitrationDisputesUpdateComponent
   },
   {
-    path: 'arrearpay-list',
+    path: 'arrearpay-list/:list_param',
     canActivate: [AuthGuard],
     component: ArrearpayListComponent
   },
   {
-    path: 'arrearpay-create',
+    path: 'arrearpay-create/:create_param',
     canActivate: [AuthGuard],
     component: ArrearpayCreateComponent
   },
@@ -563,12 +563,12 @@ const appRoutes: Routes  = [
     component: ArrearpayUpdateComponent
   },
   {
-    path: 'compensation-list',
+    path: 'compensation-list/:list_param',
     canActivate: [AuthGuard],
     component: CompensationListComponent
   },
   {
-    path: 'compensation-create',
+    path: 'compensation-create/:create_param',
     canActivate: [AuthGuard],
     component: CompensationCreateComponent
   },
@@ -578,12 +578,12 @@ const appRoutes: Routes  = [
     component: CompensationUpdateComponent
   },
   {
-    path: 'deadbody-repatriation-list',
+    path: 'deadbody-repatriation-list/:list_param',
     canActivate: [AuthGuard],
     component: DeadbodyRepatriationListComponent
   },
   {
-    path: 'deadbody-repatriation-create',
+    path: 'deadbody-repatriation-create/:create_param',
     canActivate: [AuthGuard],
     component: DeadbodyRepatriationCreateComponent
   },
@@ -593,12 +593,12 @@ const appRoutes: Routes  = [
     component: DeadbodyRepatriationUpdateComponent
   },
   {
-    path: 'death-disability-list',
+    path: 'death-disability-list/:list_param',
     canActivate: [AuthGuard],
     component: DeathDisabilityListComponent
   },
   {
-    path: 'death-disability-create',
+    path: 'death-disability-create/:create_param',
     canActivate: [AuthGuard],
     component: DeathDisabilityCreateComponent
   },
@@ -608,12 +608,12 @@ const appRoutes: Routes  = [
     component: DeathDisabilityUpdateComponent
   },
   {
-    path: 'monthly-problem-resolved-list',
+    path: 'monthly-problem-resolved-list/:list_param',
     canActivate: [AuthGuard],
     component: MonthlyProblemResolvedListComponent
   },
   {
-    path: 'monthly-problem-resolved-create',
+    path: 'monthly-problem-resolved-create/:create_param',
     canActivate: [AuthGuard],
     component: MonthlyProblemResolvedCreateComponent
   },
@@ -623,12 +623,12 @@ const appRoutes: Routes  = [
     component: MonthlyProblemResolvedUpdateComponent
   },
   {
-    path: 'remit-fc-list',
+    path: 'remit-fc-list/:list_param',
     canActivate: [AuthGuard],
     component: RemitFcListComponent
   },
   {
-    path: 'remit-fc-create',
+    path: 'remit-fc-create/:create_param',
     canActivate: [AuthGuard],
     component: RemitFcCreateComponent
   },
@@ -638,12 +638,12 @@ const appRoutes: Routes  = [
     component: RemitFcUpdateComponent
   },
   {
-    path: 'terms-condition-list',
+    path: 'terms-condition-list/:list_param',
     canActivate: [AuthGuard],
     component: TermsConditionServiceListComponent
   },
   {
-    path: 'terms-condition-create',
+    path: 'terms-condition-create/:create_param',
     canActivate: [AuthGuard],
     component: TermsConditionServiceCreateComponent
   },

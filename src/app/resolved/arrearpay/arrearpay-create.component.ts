@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../../authentication.service';
 import { HttpClient,  HttpHeaders} from '@angular/common/http';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -24,12 +24,14 @@ export class ArrearpayCreateComponent implements OnInit {
   defaultDate;
   assignTo;
   form_type;
+  list_param;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: ArrearpayService,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
   }
   ngOnInit() {
@@ -43,7 +45,7 @@ export class ArrearpayCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Arrear pay';
+    this.form_type    = this.list_param;
     this.similarTypes.push(this.form_type);
     const residenceObj = new ArrearpayModel();
     // @ts-ignore
@@ -65,15 +67,30 @@ export class ArrearpayCreateComponent implements OnInit {
   public onFormSubmit(fields, type) {
     this.defaultDate = $('#defaultDate').val();
     const createFormData = this.formData.value;
-    const postString  =  'person_concern_type=' + fields.person_concern_type
-      + '&total_number=' + fields.total_number
-      + '&number_of_case_resolved=' + fields.number_of_case_resolved
+    const postString  =  'person_concern_type=' + ((fields.total_number === undefined) ? '' : fields.total_number)
+      + '&total_number=' + ((fields.total_number === undefined) ? '' : fields.total_number)
+      + '&number_of_case_resolved=' + ((fields.total_number === undefined) ? '' : fields.total_number)
       + '&date=' + this.defaultDate
       + '&assign_to=' + this.assignTo
-      + '&type=' + type
+      + '&type=' + this.form_type
     this._service.create(postString, this.authorizationKey, 'resolved/arrearpay/create').subscribe( response => {
-        this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['arrearpay-list']);
+        // menu ceate
+        const postMenuString = 'name=' + this.form_type
+          + '&module_name=' + this.form_type
+          + '&parent_id=' + 6
+          + '&url=arrearpay-list/' + this.form_type
+          + '&type=' + this.form_type
+        this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+            this._toasterService.success('Entry have successfully done.');
+            this.router.navigate(['arrearpay-list/' + this.form_type]);
+            // location.reload();
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
+        );
+        // end of menu create
       },
       error => {
         const error_response  = error;
@@ -84,6 +101,7 @@ export class ArrearpayCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.arrearpay  = [];
         this.similarTypes.push(this.form_type);
         const companyObj = new ArrearpayModel();
         // @ts-ignore

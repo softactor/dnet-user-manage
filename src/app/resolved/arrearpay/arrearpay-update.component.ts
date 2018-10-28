@@ -22,6 +22,8 @@ export class ArrearpayUpdateComponent implements OnInit {
   person_concern_type  = '';
   total_number = '';
   number_of_case_resolved = '';
+  date = '';
+  type = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -48,7 +50,7 @@ export class ArrearpayUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'resolved/arrearpay/details/').subscribe( Details => {
@@ -56,21 +58,22 @@ export class ArrearpayUpdateComponent implements OnInit {
           this.person_concern_type               = this.editData.person_concern_type;
           this.number_of_case_resolved            = this.editData.number_of_case_resolved;
           this.total_number              = this.editData.total_number;
+          this.date              = this.editData.date;
+          this.type              = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'person_concern_type='
-      + form.value.person_concern_type
-      + '&total_number=' + form.value.total_number
-      + '&number_of_case_resolved=' + form.value.number_of_case_resolved
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.person_concern_type === undefined) ? '' : form.value.person_concern_type)
+      + '&total_number=' + ((form.value.total_number === undefined) ? '' : form.value.total_number)
+      + '&number_of_case_resolved=' + ((form.value.number_of_case_resolved === undefined) ? '' : form.value.number_of_case_resolved);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/arrearpay/edit/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['arrearpay-list']);
+        this.router.navigate(['arrearpay-list/' + this.type]);
       },
       error => {
         const error_response  = error;

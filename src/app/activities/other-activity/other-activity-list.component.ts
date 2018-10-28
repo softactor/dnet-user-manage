@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OtherActivityService } from './other-activity.service';
 import { AuthenticationService } from '../../authentication.service';
 import { TosterService } from '../../toster.service';
-import {Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -20,10 +20,13 @@ export class OtherActivityListComponent implements OnInit {
   defaultDate;
   assignTo;
   listApi;
+  list_param;
+  listTitle;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: OtherActivityService,
+    private _activateRoute: ActivatedRoute,
     private router: Router,
   ) {
     setTimeout(function(){
@@ -33,21 +36,30 @@ export class OtherActivityListComponent implements OnInit {
           'lengthMenu': [[25, 50, -1], [25, 50, 'All']]
         });
       }
-    });
+        $('#defaultDate').datepicker({
+          dateFormat: 'yy-mm'
+        });
+        $('#defaultDate').datepicker('setDate', new Date());
+      });
     }, 1000);
     this.assignTo = localStorage.getItem('assign_to');
-    // this.defaultDate  = $('#defaultDate').val();
     this.defaultDate        =   new Date();
-    this.listApi  = 'activity/otheractivity/list?type=Other activity';
-    this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
-        this.tableListData = response;
-        this.feedbackData = this.tableListData.results;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('list_param');
+        this.listTitle = this.list_param;
+        this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+        this.listApi  = 'activity/otheractivity/list?type=' + this.list_param;
+        this._service.getListData(this.authorizationKey, this.listApi)
+          .subscribe( response => {
+              this.tableListData  = response;
+              this.feedbackData   = this.tableListData.results;
+            },
+            error => {
+              console.log(error);
+            }
+          );
+      });
   }
 
   ngOnInit() {
@@ -60,7 +72,7 @@ export class OtherActivityListComponent implements OnInit {
   delete(deleteId) {
     const deleteParam  = {
       id                : deleteId,
-      authorizationKey  : this.authorizationKey.toString()
+      authorizationKey  : this.authorizationKey
     };
     this._service.delete(deleteParam, 'activity/otheractivity/delete/').subscribe( response => {
       this.tableDeleteData = response;

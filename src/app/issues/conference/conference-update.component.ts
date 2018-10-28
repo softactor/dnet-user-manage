@@ -19,9 +19,11 @@ export class ConferenceUpdateComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
-  name_of_activity  = '';
-  description = '';
+  details_conferance  = '';
+  outcome = '';
+  topic = '';
   type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -36,39 +38,48 @@ export class ConferenceUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
-      name_of_activity                : ['', Validators.required],
-      description                 : ['', Validators.required],
-      type                    : ['', Validators.required]
+      details_conferance                : ['', Validators.required],
+      outcome                 : ['', Validators.required],
+      date                 : ['', Validators.required],
+      topic                 : ['', Validators.required]
     });
     this._activateRoute.paramMap
       .subscribe( params => {
-        this.editId = params.get('attestation_id')
+        this.editId = params.get('conference_id')
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
-        this._service.getDetailsById(getDetailsParam, 'activity/attestation/details/').subscribe( Details => {
+        this._service.getDetailsById(getDetailsParam, 'issues/conferance/details/').subscribe( Details => {
           this.editData = Details;
-          this.name_of_activity           = this.editData.name_of_activity;
-          this.description            = this.editData.description;
-          this.type               = this.editData.type;
+          this.details_conferance           = this.editData.details_conferance;
+          this.outcome                      = this.editData.outcome;
+          this.date                         = this.editData.date;
+          this.topic                        = this.editData.topic;
+          this.type                         = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'name_of_activity=' + form.value.name_of_activity
-      + '&description=' + form.value.description
-      + '&type=' + form.value.type
+    const dateField = $('#date').val();
+    const updateParam = 'details_conferance=' + ((form.value.details_conferance === undefined)    ? ''  :  form.value.details_conferance)
+      + '&outcome=' + ((form.value.outcome === undefined)    ? ''  :  form.value.outcome)
+      + '&topic=' + ((form.value.topic === undefined)    ? ''  :  form.value.topic)
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
+      + '&type=' + this.type
       + '&authorization=' + this.authorizationKey;
     this._service.update(updateParam, this.authorizationKey,
-      'activity/attestation/update/', this.editId).subscribe( response => {
+      'issues/conferance/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['attestation-list']);
+        this.router.navigate(['conference-list/' + this.type]);
       },
       error => {
         const error_response  = error;

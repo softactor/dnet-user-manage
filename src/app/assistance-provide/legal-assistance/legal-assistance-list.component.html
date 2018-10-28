@@ -18,8 +18,11 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header pull-right">
-              <h3 class="box-title">Create Data</h3>
-              <a routerLink="/legal-assistance-create" class="btn btn-default"><i class="fa fa-plus"></i></a>
+              <a routerLink="/legal-assistance-create/{{ listTitle }}" class="btn btn-default pull-right"><i class="fa fa-plus"></i></a>
+              <h3 class="box-title pull-right">{{ listTitle }} Entry</h3>
+              <div *ngIf="!feedbackData?.length > 0">
+                <strong>No Data Found !!</strong>
+              </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -40,7 +43,7 @@
                   <td>{{ sln+1 }}</td>
                   <td>{{ list.name }}</td>
                   <td>{{ list.address }}</td>
-                  <td>{{ list.issue }}</td>
+                  <td>{{ list.legal_issue }}</td>
                   <td>{{ list.assistance_provided }}</td>
                   <td>{{ list.type }}</td>
                   <td>

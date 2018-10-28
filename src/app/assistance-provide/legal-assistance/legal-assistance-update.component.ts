@@ -24,6 +24,7 @@ export class LegalAssistanceUpdateComponent implements OnInit {
   leagal_issue = '';
   assistance_provided = '';
   type = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -38,6 +39,9 @@ export class LegalAssistanceUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       name                : ['', Validators.required],
@@ -55,30 +59,32 @@ export class LegalAssistanceUpdateComponent implements OnInit {
           authorizationKey  : this.authorizationKey.toString()
         };
 
-        this._service.getDetailsById(getDetailsParam, 'assistanceprovidation/leagalassistance/details/').subscribe( Details => {
+        this._service.getDetailsById(getDetailsParam, 'assistanceprovidation/legalassistance/details/').subscribe( Details => {
           this.editData = Details;
           this.name               = this.editData.name;
           this.address            = this.editData.address;
-          this.leagal_issue              = this.editData.leagal_issue;
+          this.leagal_issue              = this.editData.legal_issue;
           this.assistance_provided       = this.editData.assistance_provided;
           this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'name='
-      + form.value.name
-      + '&address=' + form.value.address
-      + '&leagal_issue=' + form.value.leagal_issue
-      + '&assistance_provided=' + form.value.assistance_provided
-      + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + '&address=' + ((form.value.address === undefined)    ? ''  :  form.value.address)
+      + '&legal_issue=' + ((form.value.leagal_issue === undefined)    ? ''  :  form.value.leagal_issue)
+      + '&assistance_provided=' + ((form.value.assistance_provided === undefined)    ? ''  :  form.value.assistance_provided)
+      + '&type=' + this.type
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField);
     this._service.update(updateParam, this.authorizationKey,
-      'assistanceprovidation/leagalassistance/edit/', this.editId)
+      'assistanceprovidation/legalassistance/edit/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['legal-assistance-list']);
+        this.router.navigate(['legal-assistance-list/' + this.type]);
       },
       error => {
         const error_response  = error;

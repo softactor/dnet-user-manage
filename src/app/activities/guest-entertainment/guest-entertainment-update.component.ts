@@ -54,7 +54,7 @@ export class GuestEntertainmentUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'activity/gestentertainment/details/').subscribe( Details => {
@@ -69,10 +69,11 @@ export class GuestEntertainmentUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'total_number='
       + ((form.value.total_number === undefined)    ? ''  :  form.value.total_number)
       + '&purpose=' + ((form.value.purpose === undefined)    ? ''  :  form.value.purpose)
-      + '&date=' + ((form.value.date === undefined)    ? ''  :  form.value.date);
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField);
     this._service.update(updateParam, this.authorizationKey, 'activity/gestentertainment/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
         this.router.navigate(['guest-entertainment-list/' + this.type]);

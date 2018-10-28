@@ -36,6 +36,7 @@
             <!-- form start -->
             <div class="box-body" *ngFor="let fields of arbitrationDisputes; let i = index">
               <form>
+                <h3>{{ form_type | titlecase }}</h3>
                 <div
                   class="form-group"
                   [class.has-warning]="responseError?.resolved_case ? true: false"

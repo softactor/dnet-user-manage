@@ -22,7 +22,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+            <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
@@ -30,7 +30,6 @@
                   <label for="budget_type">Budget type</label>
                   <input type="text"
                          name="budget_type"
-                         formControlName = "budget_type"
                          id="inputbudget_type"
                          [(ngModel)]="budget_type"
                          class="form-control"
@@ -43,7 +42,6 @@
                   <label for="opening_balance">Opening balance</label>
                   <input type="text"
                          name="opening_balance"
-                         formControlName = "opening_balance"
                          id="opening_balance"
                          [(ngModel)]="opening_balance"
                          class="form-control"
@@ -54,7 +52,6 @@
                   <label for="closing_balance">Closing balance</label>
                   <input type="text"
                          name="closing_balance"
-                         formControlName = "closing_balance"
                          id="closing_balance"
                          [(ngModel)]="closing_balance"
                          class="form-control"
@@ -64,7 +61,6 @@
                   <label for="total_expenditure">Total expenditure</label>
                   <input type="text"
                          name="total_expenditure"
-                         formControlName = "total_expenditure"
                          id="total_expenditure"
                          [(ngModel)]="total_expenditure"
                          class="form-control"

@@ -22,43 +22,44 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+            <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.name_of_activity ? true: false" [class.has-feedback]="responseError?.name_of_activity ? true: false">
-                  <label for="name_of_activity">Name of activity</label>
+                  [class.has-warning]="responseError?.details_conferance ? true: false" [class.has-feedback]="responseError?.details_conferance ? true: false">
+                  <label for="details_conferance">Conferance details</label>
                   <input type="text"
-                         name="name_of_activity"
-                         formControlName = "name_of_activity"
+                         name="details_conferance"
                          id="inputNameOfActivity"
-                         [(ngModel)]="name_of_activity"
+                         [(ngModel)]="details_conferance"
                          class="form-control"
                          placeholder="Name of activity">
                   <div class="error-message" *ngIf="responseError?.name_of_activity">{{responseError?.name_of_activity}}</div>
                 </div>
-                <div
-                  class="form-group"
-                  [class.has-warning]="responseError?.description ? true: false" [class.has-feedback]="responseError?.description ? true: false">
-                  <label for="description">Description</label>
+                <div class="form-group">
+                  <label for="outcome">Outcome</label>
                   <input type="text"
-                         name="description"
-                         formControlName = "description"
-                         id="inputDescription"
-                         [(ngModel)]="description"
+                         name="outcome"
+                         id="inputtype"
+                         [(ngModel)]="outcome"
                          class="form-control"
-                         placeholder="Description">
-                  <div class="error-message" *ngIf="responseError?.description">{{responseError?.description}}</div>
+                         placeholder="Outcome">
                 </div>
                 <div class="form-group">
-                  <label for="type">Type</label>
+                  <label for="topic">Topic</label>
                   <input type="text"
-                         name="type"
-                         formControlName = "type"
-                         id="inputtype"
-                         [(ngModel)]="type"
+                         name="topic"
+                         id="inputtopic"
+                         [(ngModel)]="topic"
                          class="form-control"
-                         placeholder="Type">
+                         placeholder="Topic">
+                </div>
+                <div
+                  class="form-group custom-col-md-12"
+                  [class.has-warning]="responseError?.date ? true: false" [class.has-feedback]="responseError?.date ? true: false">
+                  <label for="date">Date</label>
+                  <input required type="text" class="form-control" [(ngModel)]="date" name="date" id="date" placeholder="Date">
+                  <span *ngIf="responseError?.date" class="glyphicon glyphicon-warning-sign error-sign"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>

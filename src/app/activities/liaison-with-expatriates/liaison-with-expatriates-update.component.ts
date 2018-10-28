@@ -67,10 +67,11 @@ export class LiaisonWithExpatriatesUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'number_of_meeting_held='
       + ((form.value.number_of_meeting_held === undefined)    ? ''  :  form.value.number_of_meeting_held)
       + '&outcome=' + ((form.value.outcome === undefined)    ? ''  :  form.value.outcome)
-      + '&date=' + ((form.value.date === undefined)    ? ''  :  form.value.date);
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'activity/liaisonwithexpatriates/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');

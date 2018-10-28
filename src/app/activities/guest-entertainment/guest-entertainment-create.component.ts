@@ -85,10 +85,10 @@ export class GuestEntertainmentCreateComponent implements OnInit {
             // menu ceate
             const postMenuString = 'name=' + this.form_type
               + '&module_name=' + this.form_type
-              + '&parent_id=' + 2
-              + '&url=company-list/' + this.form_type
+              + '&parent_id=' + 3
+              + '&url=guest-entertainment-list/' + this.form_type
               + '&type=' + this.form_type
-            this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(response => {
                 this._toasterService.success('Entry have successfully done.');
                 this.router.navigate(['guest-entertainment-list/' + this.form_type]);
                 // location.reload();
@@ -115,11 +115,12 @@ export class GuestEntertainmentCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.guestEntertainment  = [];
         this.similarTypes.push(this.form_type);
         const companyObj = new GuestEntertainmentModel();
         // @ts-ignore
         this.guestEntertainment.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {

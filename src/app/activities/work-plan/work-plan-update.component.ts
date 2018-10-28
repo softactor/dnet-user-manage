@@ -23,6 +23,7 @@ export class WorkPlanUpdateComponent implements OnInit {
   path = '';
   description = '';
   type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -37,6 +38,9 @@ export class WorkPlanUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       path                : ['', Validators.required],
@@ -50,7 +54,7 @@ export class WorkPlanUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'activity/wrokplane/details/').subscribe( Details => {
@@ -59,19 +63,22 @@ export class WorkPlanUpdateComponent implements OnInit {
           this.path                       = this.editData.path;
           this.description                = this.editData.description;
           this.type                       = this.editData.type;
+          this.date                       = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'name_of_activity=' + form.value.name_of_activity
-      + '&path=' + form.value.path
-      + '&description=' + form.value.description
-      + '&type=' + form.value.type
+    const dateField = $('#date').val();
+    const updateParam = 'name_of_activity=' + ((form.value.name_of_activity === undefined)    ? ''  :  form.value.name_of_activity)
+      + '&path=' + ((form.value.path === undefined)    ? ''  :  form.value.path)
+      + '&description=' + ((form.value.description === undefined)    ? ''  :  form.value.description)
+      + '&type=' + this.type
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
       + '&authorization=' + this.authorizationKey;
     this._service.update(updateParam, this.authorizationKey, 'activity/wrokplane/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['work-plan-list']);
+        this.router.navigate(['work-plan-list/' + this.type]);
       },
       error => {
         const error_response  = error;

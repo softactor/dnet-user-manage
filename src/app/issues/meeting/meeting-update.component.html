@@ -22,43 +22,49 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+            <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.name_of_activity ? true: false" [class.has-feedback]="responseError?.name_of_activity ? true: false">
-                  <label for="name_of_activity">Name of activity</label>
+                  [class.has-warning]="responseError?.issue_discussed ? true: false" [class.has-feedback]="responseError?.issue_discussed ? true: false">
+                  <label for="issue_discussed">Issue discussed</label>
                   <input type="text"
-                         name="name_of_activity"
-                         formControlName = "name_of_activity"
+                         name="issue_discussed"
                          id="inputNameOfActivity"
-                         [(ngModel)]="name_of_activity"
+                         [(ngModel)]="issue_discussed"
                          class="form-control"
-                         placeholder="Name of activity">
-                  <div class="error-message" *ngIf="responseError?.name_of_activity">{{responseError?.name_of_activity}}</div>
+                         placeholder="Issue discussed">
+                  <div class="error-message" *ngIf="responseError?.issue_discussed">{{responseError?.issue_discussed}}</div>
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.description ? true: false" [class.has-feedback]="responseError?.description ? true: false">
-                  <label for="description">Description</label>
+                  [class.has-warning]="responseError?.name ? true: false" [class.has-feedback]="responseError?.name ? true: false">
+                  <label for="name">Name</label>
                   <input type="text"
-                         name="description"
-                         formControlName = "description"
+                         name="name"
                          id="inputDescription"
-                         [(ngModel)]="description"
+                         [(ngModel)]="name"
                          class="form-control"
-                         placeholder="Description">
-                  <div class="error-message" *ngIf="responseError?.description">{{responseError?.description}}</div>
+                         placeholder="Name">
+                  <div class="error-message" *ngIf="responseError?.name">{{responseError?.name}}</div>
                 </div>
                 <div class="form-group">
-                  <label for="type">Type</label>
+                  <label for="organization">Organization</label>
                   <input type="text"
-                         name="type"
-                         formControlName = "type"
+                         name="organization"
                          id="inputtype"
-                         [(ngModel)]="type"
+                         [(ngModel)]="organization"
                          class="form-control"
-                         placeholder="Type">
+                         placeholder="Organization">
+                </div>
+                <div class="form-group">
+                  <label for="outcome">Outcome</label>
+                  <input type="text"
+                         name="outcome"
+                         id="inputtype"
+                         [(ngModel)]="outcome"
+                         class="form-control"
+                         placeholder="Outcome">
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>
