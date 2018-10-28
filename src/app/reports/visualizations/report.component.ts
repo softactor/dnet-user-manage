@@ -118,7 +118,7 @@ export class VisualizationReportComponent implements OnInit {
   hospitalChartData;
   budgetChartData;
   remittanceChartData;
-  maxVal = 50000;
+  maxVal = 0;
   financeChartOptions: any;
   budgetMaxValues: number[] = [];
 
@@ -129,7 +129,7 @@ export class VisualizationReportComponent implements OnInit {
           yAxes: [{
               ticks: {
               beginAtZero: true,
-              stepSize:(this.maxVal <= 1) ? 1 : parseInt((this.maxVal + 100) / 10),
+              stepSize:(this.maxVal <= 1) ? 1 : Math.round((this.maxVal + 100) / 10)
               }
             }]
           }
@@ -473,7 +473,7 @@ export class VisualizationReportComponent implements OnInit {
           i++;
           this.budgetMaxValues[i] = budgetData.closing_balance;
           i++;
-          this.budgetMaxValues.push[i] = budgetData.expenditure;
+          this.budgetMaxValues[i] = budgetData.expenditure;
           i++;
         }
         this.maxVal = Math.max.apply(null, this.budgetMaxValues);
