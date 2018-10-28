@@ -5,6 +5,8 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class MonthWiseViewService {
   tableListData;
+  monthWiseDataInint;
+  monthWiseData;
   feedbackData: any;
   constructor(
     private _http: HttpClient) { }
@@ -23,5 +25,5 @@ export class MonthWiseViewService {
       });
     }
     return feedbackDataArray;
-  }
+  };
 }

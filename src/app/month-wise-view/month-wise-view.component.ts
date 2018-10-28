@@ -8,6 +8,7 @@ import { MonthWiseViewService } from './month-wise-view.service';
 import { ApiProcessService } from '../api-process.service';
 import {DatePipe} from '@angular/common';
 
+
 declare var $: any;
 
 @Component({
@@ -20,7 +21,48 @@ export class MonthWiseViewComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
-  visitData: any;
+  companyVisitData;
+  residenceVisitData : any;
+  deportationcenterVisitData : any;
+  jailVisitData : any;
+  migrantshelterVisitData : any;
+  
+  companyVisitDataArray;
+  residenceVisitDataArray;
+  financeVisitDataArray;
+  resolvedVisitDataArray;
+  issueVisitDataArray;
+  complaintVisitDataArray;
+  assistanceVisitDataArray;
+  activityVisitDataArray;
+  deportationcenterVisitDataArray;
+  jailVisitDataArray;
+  migrantshelterVisitDataArray;
+  employeeenhancementVisitDataArray;
+  otheractivityVisitDataArray;
+  wrokplaneVisitDataArray;
+  gestentertainmentVisitDataArray;
+  liaisonwithexpatriatesVisitDataArray;
+  attestationVisitDataArray;
+  generalassistanceVisitDataArray;
+  legalassistanceVisitDataArray;
+  queryreceivedVisitDataArray;
+  complaintsVisitDataArray;
+  tradequeryVisitDataArray;
+  meetingVisitDataArray;
+  conferanceVisitDataArray;
+  arbitrationanddisputesVisitDataArray;
+  arrearpayVisitDataArray;
+  compensationVisitDataArray;
+  deadbodyrepatriationVisitDataArray;
+  deathordisabilityVisitDataArray;
+  monthlyproblemresolvedVisitDataArray;
+  remitfcVisitDataArray;
+  termsandconditionserviceVisitDataArray;
+  remittanceandwelfarefundVisitDataArray;
+  budgetVisitDataArray;
+  
+
   financeData:any;
   resolvedData: any;
   issueData: any;
@@ -31,6 +73,31 @@ export class MonthWiseViewComponent implements OnInit {
   from_date;
   to_date;
   labourattache;
+  activityVisitData;
+  employeeenhancementVisitData;
+  otheractivityVisitData;
+  wrokplaneVisitData;
+  gestentertainmentVisitData;
+  liaisonwithexpatriatesVisitData;
+  attestationVisitData;
+  generalassistanceVisitData;
+  legalassistanceVisitData;
+  queryreceivedVisitData;
+  complaintsVisitData;
+  tradequeryVisitData;
+  meetingVisitData;
+  conferanceVisitData;
+  arbitrationanddisputesVisitData;
+  arrearpayVisitData;
+  compensationVisitData;
+  deadbodyrepatriationVisitData;
+  deathordisabilityVisitData;
+  monthlyproblemresolvedVisitData;
+  remitfcVisitData;
+  termsandconditionserviceVisitData;
+  remittanceandwelfarefundVisitData;
+  budgetVisitData;
+
   
   constructor(
     private fb: FormBuilder,
@@ -54,10 +121,9 @@ export class MonthWiseViewComponent implements OnInit {
     
     this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
     this._apiProcessService.getListData(this.authorizationKey, 'user/labourattache').subscribe( response => {
-      this.labourattacheListResponse = response;
+    this.labourattacheListResponse = response;
     });
-    
-    
+        
     this.getTabdata('visit')
   }
 
@@ -74,155 +140,149 @@ export class MonthWiseViewComponent implements OnInit {
    
     switch(component) {
       case 'visit':
-        compoList = [
-          {
-            component : 'Company',
-            api       : 'visit/company/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Residence',
-            api       : 'visit/residence/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Deportation center',
-            api       : 'visit/deportationcenter/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Jail',
-            api       : 'visit/jail/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Migrant shelter',
-            api       : 'visit/migrantshelter/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.visitData = this._service.getComponetListData(compoList, this.authorizationKey);
-        break;
-      case 'activity':
-        compoList = [
-          {
-            component : 'Market assessment',
-            api       : 'activity/attestation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Employee enhancement',
-            api       : 'activity/employeeenhancement/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Other activity',
-            api       : 'activity/otheractivity/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Work plan',
-            api       : 'activity/wrokplane/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Attestation',
-            api       : 'activity/attestation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Guest entertainment',
-            api       : 'activity/gestentertainment/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Liaison with expatriates',
-            api       : 'activity/liaisonwithexpatriates/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.activityData = this._service.getComponetListData(compoList, this.authorizationKey);
+        
+        this._apiProcessService.getReportData(this.authorizationKey, 'visit/company/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.companyVisitDataArray = response; 
+          this.companyVisitData =   this.companyVisitDataArray.results;         
+        });   
+        this._apiProcessService.getReportData(this.authorizationKey, 'visit/residence/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.residenceVisitDataArray = response; 
+          this.residenceVisitData =   this.residenceVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'visit/residence/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.residenceVisitDataArray = response; 
+          this.residenceVisitData =   this.residenceVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'visit/deportationcenter/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.deportationcenterVisitDataArray = response; 
+          this.deportationcenterVisitData =   this.deportationcenterVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'visit/jail/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.jailVisitDataArray = response; 
+          this.jailVisitData =   this.jailVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'visit/migrantshelter/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.migrantshelterVisitDataArray = response; 
+          this.migrantshelterVisitData =   this.migrantshelterVisitDataArray.results;         
+        });  
+        
+         break;
+      case 'activity':        
+        
+        this._apiProcessService.getReportData(this.authorizationKey, 'activity/attestation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.attestationVisitDataArray = response; 
+          this.attestationVisitData =   this.attestationVisitDataArray.results;         
+        });   
+        this._apiProcessService.getReportData(this.authorizationKey, 'activity/employeeenhancement/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.employeeenhancementVisitDataArray = response; 
+          this.employeeenhancementVisitData =   this.employeeenhancementVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'activity/otheractivity/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.otheractivityVisitDataArray = response; 
+          this.otheractivityVisitData =   this.otheractivityVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'activity/wrokplane/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.wrokplaneVisitDataArray = response; 
+          this.wrokplaneVisitData =   this.wrokplaneVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'activity/gestentertainment/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.gestentertainmentVisitDataArray = response; 
+          this.gestentertainmentVisitData =   this.gestentertainmentVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'activity/liaisonwithexpatriates/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.liaisonwithexpatriatesVisitDataArray = response; 
+          this.liaisonwithexpatriatesVisitData =   this.liaisonwithexpatriatesVisitDataArray.results;         
+        }); 
+                
         break;
       case 'assistance':
-        compoList = [
-          {
-            component : 'General Assistance',
-            api       : 'assistanceprovidation/generalassistance/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Legal Assistance',
-            api       : 'assistanceprovidation/legalassistance/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.assistanceData = this._service.getComponetListData(compoList, this.authorizationKey);
+        this._apiProcessService.getReportData(this.authorizationKey, 'assistanceprovidation/generalassistance/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.generalassistanceVisitDataArray = response; 
+          this.generalassistanceVisitData =   this.generalassistanceVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'assistanceprovidation/legalassistance/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.legalassistanceVisitDataArray = response; 
+          this.legalassistanceVisitData =   this.legalassistanceVisitDataArray.results;         
+        }); 
+        
         break;
       case 'complain':
-        compoList = [
-          {
-            component : 'Query received',
-            api       : 'querycomplain/queryreceived/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Complaints',
-            api       : 'querycomplain/complaints/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Trade query',
-            api       : 'querycomplain/tradequery/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.complaintData = this._service.getComponetListData(compoList, this.authorizationKey);
+       
+        this._apiProcessService.getReportData(this.authorizationKey, 'querycomplain/queryreceived/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.queryreceivedVisitDataArray = response; 
+          this.queryreceivedVisitData =   this.queryreceivedVisitDataArray.results;         
+        });   
+        this._apiProcessService.getReportData(this.authorizationKey, 'querycomplain/complaints/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.complaintsVisitDataArray = response; 
+          this.complaintsVisitData =   this.complaintsVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'querycomplain/tradequery/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.tradequeryVisitDataArray = response; 
+          this.tradequeryVisitData =   this.tradequeryVisitDataArray.results;         
+        });
+        
+        
         break;
-      case 'issue':
-        compoList = [
-          {
-            component : 'Conference',
-            api       : 'activity/attestation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Meeting',
-            api       : 'activity/attestation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.issueData = this._service.getComponetListData(compoList, this.authorizationKey);
+      case 'issue':         
+        this._apiProcessService.getReportData(this.authorizationKey, 'issues/meeting/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.meetingVisitDataArray = response; 
+          this.meetingVisitData =   this.meetingVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'issues/conferance/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.conferanceVisitDataArray = response; 
+          this.conferanceVisitData =   this.conferanceVisitDataArray.results;         
+        });        
+        
         break;
       case 'resolved':
-        compoList = [
-          {
-            component : 'Arbitration Disputes',
-            api       : 'resolved/arbitrationanddisputes/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Arrear pay',
-            api       : 'resolved/arrearpay/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Compensation',
-            api       : 'resolved/compensation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Deadbody repatriation',
-            api       : 'resolved/deadbodyrepatriation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Death disability',
-            api       : 'resolved/deathordisability/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Monthly problem resolved',
-            api       : 'resolved/monthlyproblemresolved/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Remit FC',
-            api       : 'resolved/remitfc/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Terms & Condition Service',
-            api       : 'resolved/termsandconditionservice/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.resolvedData = this._service.getComponetListData(compoList, this.authorizationKey);
+       
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/arbitrationanddisputes/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.arbitrationanddisputesVisitDataArray = response; 
+          this.arbitrationanddisputesVisitData =   this.arbitrationanddisputesVisitDataArray.results;         
+        });   
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/arrearpay/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.arrearpayVisitDataArray = response; 
+          this.arrearpayVisitData =   this.arrearpayVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/compensation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.compensationVisitDataArray = response; 
+          this.compensationVisitData =   this.compensationVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/deadbodyrepatriation/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.deadbodyrepatriationVisitDataArray = response; 
+          this.deadbodyrepatriationVisitData =   this.deadbodyrepatriationVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/deathordisability/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.deathordisabilityVisitDataArray = response; 
+          this.deathordisabilityVisitData =   this.deathordisabilityVisitDataArray.results;         
+        });
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/monthlyproblemresolved/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.monthlyproblemresolvedVisitDataArray = response; 
+          this.monthlyproblemresolvedVisitData =   this.monthlyproblemresolvedVisitDataArray.results;         
+        });  
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/remitfc/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.remitfcVisitDataArray = response; 
+          this.remitfcVisitData =   this.remitfcVisitDataArray.results;         
+        }); 
+
+        this._apiProcessService.getReportData(this.authorizationKey, 'resolved/termsandconditionservice/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.termsandconditionserviceVisitDataArray = response; 
+          this.termsandconditionserviceVisitData =   this.termsandconditionserviceVisitDataArray.results;         
+        });
+         
         break;
       case 'finance':
-        compoList = [
-          {
-            component : 'Remittance and welfare fund',
-            api       : 'finance/remittanceandwelfarefund/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          },
-          {
-            component : 'Budget',
-            api       : 'finance/budget/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date
-          }
-        ];
-        this.financeData = this._service.getComponetListData(compoList, this.authorizationKey);
+        
+        this._apiProcessService.getReportData(this.authorizationKey, 'finance/remittanceandwelfarefund/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.remittanceandwelfarefundVisitDataArray = response; 
+          this.remittanceandwelfarefundVisitData =   this.remittanceandwelfarefundVisitDataArray.results;         
+        }); 
+
+        this._apiProcessService.getReportData(this.authorizationKey, 'finance/budget/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
+          this.budgetVisitDataArray = response; 
+          this.budgetVisitData =   this.budgetVisitDataArray.results;         
+        });
+                
         break;
     }
   }
