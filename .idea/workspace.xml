@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088b59ff-8266-4e83-b187-35f1fae393a0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.html" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-update.component.html" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-update.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-update.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/environments/environment.ts" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -32,38 +17,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <file leaf-file-name="environment.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-937">
-              <caret line="594" column="3" lean-forward="true" selection-start-line="594" selection-start-column="3" selection-end-line="594" selection-end-column="3" />
+            <state relative-caret-position="136">
+              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding>
-                <marker date="1540705206204" expanded="true" signature="16509:16536" ph="{&quot;path&quot;: 'user-dashboard'...}" />
-                <marker date="1540705206204" expanded="true" signature="28932:29011" ph="{&quot;path&quot;: 'reports'...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remittance-welfare-fund-update.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-update.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="51" lean-forward="false" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="budget-update.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-update.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="77" column="59" lean-forward="true" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +81,6 @@
         <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-create.component.html" />
-        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.html" />
         <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" />
@@ -160,6 +119,7 @@
         <option value="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
       </list>
     </option>
   </component>
@@ -208,50 +168,6 @@
               <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
               <item name="labor-report" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assistance-provide" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assistance-provide" type="462c0819:PsiDirectoryNode" />
-              <item name="general-assistance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="finance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="finance" type="462c0819:PsiDirectoryNode" />
-              <item name="budget" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="finance" type="462c0819:PsiDirectoryNode" />
-              <item name="remittance-welfare-fund" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
@@ -327,14 +243,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229877000" />
+    <option name="totallyTimeSpent" value="229919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31844804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31844804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -345,12 +261,23 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31844804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,9 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="83" column="8" lean-forward="false" selection-start-line="83" selection-start-column="8" selection-end-line="99" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -385,7 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -403,7 +326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="24" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -421,7 +343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -449,7 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -467,7 +387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="50" lean-forward="false" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -475,7 +394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -483,7 +401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="77" column="64" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -501,7 +418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="24" column="87" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -529,7 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="25" column="18" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -547,7 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -565,7 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="24" column="87" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -593,7 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="25" column="18" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="26" column="58" lean-forward="false" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-604">
           <caret line="24" column="18" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="24" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="25" column="18" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,10 +704,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-937">
           <caret line="594" column="3" lean-forward="true" selection-start-line="594" selection-start-column="3" selection-end-line="594" selection-end-column="3" />
-          <folding>
-            <marker date="1540705206204" expanded="true" signature="16509:16536" ph="{&quot;path&quot;: 'user-dashboard'...}" />
-            <marker date="1540705206204" expanded="true" signature="28932:29011" ph="{&quot;path&quot;: 'reports'...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
