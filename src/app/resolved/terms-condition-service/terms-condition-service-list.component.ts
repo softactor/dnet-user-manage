@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TermsConditionServiceService } from './terms-condition-service.service';
 import { AuthenticationService } from '../../authentication.service';
 import { TosterService } from '../../toster.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -19,11 +19,14 @@ export class TermsConditionServiceListComponent implements OnInit {
   responseError;
   defaultDate;
   assignTo;
+  list_param;
   listApi;
+  listTitle;
   constructor(
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: TermsConditionServiceService,
+    private _activateRoute: ActivatedRoute,
     private router: Router,
   ) {
     setTimeout(function(){
@@ -40,18 +43,24 @@ export class TermsConditionServiceListComponent implements OnInit {
       });
     }, 1000);
     this.assignTo = localStorage.getItem('assign_to');
-    // this.defaultDate  = $('#defaultDate').val();
-    this.defaultDate        =   new Date();
-    this.authorizationKey   =   localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-    this.listApi            = 'resolved/termsandconditionservice/list?type=Terms & condition';
-    this._service.getListData(this.authorizationKey, this.listApi).subscribe( response => {
-        this.tableListData = response;
-        this.feedbackData = this.tableListData.results;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.defaultDate = new Date();
+
+    this._activateRoute.paramMap
+      .subscribe( params => {
+          this.list_param = params.get('list_param');
+          this.listTitle = this.list_param;
+          this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
+          this.listApi  = 'activity/termsandconditionservice/list?type=' + this.list_param;
+          this._service.getListData(this.authorizationKey, this.listApi)
+              .subscribe( response => {
+                  this.tableListData  = response;
+                  this.feedbackData   = this.tableListData.results;
+              },
+              error => {
+                  console.log(error);
+              }
+          );
+      });
   }
 
   ngOnInit() {

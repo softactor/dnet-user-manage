@@ -21,7 +21,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+            <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
@@ -29,7 +29,6 @@
                   <label for="remit_type">remit_type</label>
                   <input type="text"
                          name="remit_type"
-                         formControlName = "remit_type"
                          id="inputremit_type"
                          [(ngModel)]="remit_type"
                          class="form-control"
@@ -42,7 +41,6 @@
                   <label for="no">No</label>
                   <input type="text"
                          name="no"
-                         formControlName = "no"
                          id="inputno"
                          [(ngModel)]="no"
                          class="form-control"
@@ -55,7 +53,6 @@
                   <label for="outcome">outcome</label>
                   <input type="text"
                          name="outcome"
-                         formControlName = "outcome"
                          id="inputoutcome"
                          class="form-control"
                          [(ngModel)]="outcome"

@@ -22,6 +22,8 @@ export class TermsConditionServiceUpdateComponent implements OnInit {
   places_visited  = '';
   number_of_verified = '';
   action_taken = '';
+  type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -53,19 +55,20 @@ export class TermsConditionServiceUpdateComponent implements OnInit {
 
         this._service.getDetailsById(getDetailsParam, 'resolved/termsandconditionservice/details/').subscribe( Details => {
           this.editData = Details;
-          this.places_visited               = this.editData.places_visited;
-          this.number_of_verified            = this.editData.number_of_verified;
+          this.places_visited     = this.editData.places_visited;
+          this.number_of_verified = this.editData.number_of_verified;
           this.action_taken       = this.editData.action_taken;
+          this.type         = this.editData.type;
+          this.date         = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'places_visited='
-      + form.value.places_visited
-      + '&number_of_verified=' + form.value.number_of_verified
-      + '&action_taken=' + form.value.action_taken
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.places_visited === undefined)    ? ''  :  form.value.places_visited)
+      + '&number_of_verified=' + ((form.value.number_of_verified === undefined)    ? ''  :  form.value.number_of_verified)
+      + '&action_taken=' + ((form.value.action_taken === undefined)    ? ''  :  form.value.action_taken);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/termsandconditionservice/update/', this.editId)
       .subscribe( response => {

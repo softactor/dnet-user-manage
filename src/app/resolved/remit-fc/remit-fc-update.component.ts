@@ -22,6 +22,8 @@ export class RemitFcUpdateComponent implements OnInit {
   remit_type  = '';
   no = '';
   outcome = '';
+  type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -53,19 +55,20 @@ export class RemitFcUpdateComponent implements OnInit {
 
         this._service.getDetailsById(getDetailsParam, 'resolved/remitfc/details/').subscribe( Details => {
           this.editData = Details;
-          this.remit_type               = this.editData.remit_type;
+          this.remit_type    = this.editData.remit_type;
           this.no            = this.editData.no;
-          this.outcome              = this.editData.outcome;
+          this.outcome       = this.editData.outcome;
+          this.type         = this.editData.type;
+          this.date         = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'remit_type='
-      + form.value.remit_type
-      + '&no=' + form.value.no
-      + '&outcome=' + form.value.outcome
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.remit_type === undefined)    ? ''  :  form.value.remit_type)
+      + '&no=' + ((form.value.no === undefined)    ? ''  :  form.value.no)
+      + '&outcome=' + ((form.value.outcome === undefined)    ? ''  :  form.value.outcome);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/remitfc/update/', this.editId)
       .subscribe( response => {

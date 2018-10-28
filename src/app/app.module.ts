@@ -608,12 +608,12 @@ const appRoutes: Routes  = [
     component: DeathDisabilityUpdateComponent
   },
   {
-    path: 'monthly-problem-resolved-list',
+    path: 'monthly-problem-resolved-list/:list_param',
     canActivate: [AuthGuard],
     component: MonthlyProblemResolvedListComponent
   },
   {
-    path: 'monthly-problem-resolved-create',
+    path: 'monthly-problem-resolved-create/:create_param',
     canActivate: [AuthGuard],
     component: MonthlyProblemResolvedCreateComponent
   },
@@ -623,12 +623,12 @@ const appRoutes: Routes  = [
     component: MonthlyProblemResolvedUpdateComponent
   },
   {
-    path: 'remit-fc-list',
+    path: 'remit-fc-list/:list_param',
     canActivate: [AuthGuard],
     component: RemitFcListComponent
   },
   {
-    path: 'remit-fc-create',
+    path: 'remit-fc-create/:create_param',
     canActivate: [AuthGuard],
     component: RemitFcCreateComponent
   },
@@ -638,12 +638,12 @@ const appRoutes: Routes  = [
     component: RemitFcUpdateComponent
   },
   {
-    path: 'terms-condition-list',
+    path: 'terms-condition-list/:list_param',
     canActivate: [AuthGuard],
     component: TermsConditionServiceListComponent
   },
   {
-    path: 'terms-condition-create',
+    path: 'terms-condition-create/:create_param',
     canActivate: [AuthGuard],
     component: TermsConditionServiceCreateComponent
   },
