@@ -22,6 +22,8 @@ export class RemittanceWelfareFundUpdateComponent implements OnInit {
   previous_balance  = '';
   lastmonth_income = '';
   amount_of_remittance = '';
+  type = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -48,7 +50,7 @@ export class RemittanceWelfareFundUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'finance/remittanceandwelfarefund/details/').subscribe( Details => {
@@ -56,19 +58,20 @@ export class RemittanceWelfareFundUpdateComponent implements OnInit {
           this.previous_balance           = this.editData.previous_balance;
           this.lastmonth_income            = this.editData.lastmonth_income;
           this.amount_of_remittance               = this.editData.amount_of_remittance;
+          this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'previous_balance=' + form.value.previous_balance
-      + '&lastmonth_income=' + form.value.lastmonth_income
-      + '&amount_of_remittance=' + form.value.amount_of_remittance
-      + '&authorization=' + this.authorizationKey;
+    const updateParam = 'previous_balance=' + ((form.value.previous_balance === undefined)    ? ''  :  form.value.previous_balance)
+      + '&lastmonth_income=' + ((form.value.lastmonth_income === undefined)    ? ''  :  form.value.lastmonth_income)
+      + '&amount_of_remittance=' + ((form.value.amount_of_remittance === undefined)    ? ''  :  form.value.amount_of_remittance)
     this._service.update(updateParam, this.authorizationKey,
       'finance/remittanceandwelfarefund/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['remittance-welfare-fund-list']);
+        this.router.navigate(['remittance-welfare-fund-list/' + this.type]);
       },
       error => {
         const error_response  = error;

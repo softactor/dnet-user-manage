@@ -23,6 +23,8 @@ export class BudgetUpdateComponent implements OnInit {
   opening_balance = '';
   closing_balance = '';
   total_expenditure = '';
+  type = '';
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -50,7 +52,7 @@ export class BudgetUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'finance/budget/details/').subscribe( Details => {
@@ -59,20 +61,21 @@ export class BudgetUpdateComponent implements OnInit {
           this.opening_balance            = this.editData.opening_balance;
           this.closing_balance               = this.editData.closing_balance;
           this.total_expenditure               = this.editData.total_expenditure;
+          this.type               = this.editData.type;
+          this.date               = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
-    const updateParam = 'budget_type=' + form.value.budget_type
-      + '&opening_balance=' + form.value.opening_balance
-      + '&total_expenditure=' + form.value.total_expenditure
-      + '&closing_balance=' + form.value.closing_balance
-      + '&authorization=' + this.authorizationKey;
+    const updateParam = 'budget_type=' + ((form.value.budget_type === undefined)    ? ''  :  form.value.budget_type)
+      + '&opening_balance=' + ((form.value.opening_balance === undefined)    ? ''  :  form.value.opening_balance)
+      + '&total_expenditure=' + ((form.value.total_expenditure === undefined)    ? ''  :  form.value.total_expenditure)
+      + '&closing_balance=' + ((form.value.closing_balance === undefined)    ? ''  :  form.value.closing_balance);
     this._service.update(updateParam, this.authorizationKey,
       'finance/budget/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['budget-list']);
+        this.router.navigate(['budget-list/' + this.type]);
       },
       error => {
         const error_response  = error;

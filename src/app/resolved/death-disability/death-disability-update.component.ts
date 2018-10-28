@@ -23,7 +23,8 @@ export class DeathDisabilityUpdateComponent implements OnInit {
   number = '';
   present_status = '';
   remarks = '';
-
+  type;
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -51,7 +52,7 @@ export class DeathDisabilityUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'resolved/deathordisability/details/').subscribe( Details => {
@@ -60,22 +61,23 @@ export class DeathDisabilityUpdateComponent implements OnInit {
           this.number              = this.editData.number;
           this.present_status       = this.editData.present_status;
           this.remarks               = this.editData.remarks;
+          this.date               = this.editData.date;
+          this.type               = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'category='
-      + form.value.category
-      + '&number=' + form.value.number
-      + '&present_status=' + form.value.present_status
-      + '&remarks=' + form.value.remarks
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.category === undefined) ? '' : form.value.category)
+      + '&number=' + ((form.value.number === undefined) ? '' : form.value.number)
+      + '&present_status=' + ((form.value.present_status === undefined) ? '' : form.value.present_status)
+      + '&remarks=' + ((form.value.remarks === undefined) ? '' : form.value.remarks)
     this._service.update(updateParam, this.authorizationKey,
       'resolved/deathordisability/edit/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['death-disability-list']);
+        this.router.navigate(['death-disability-list/' + this.type]);
       },
       error => {
         const error_response  = error;

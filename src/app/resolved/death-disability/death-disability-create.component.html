@@ -24,7 +24,7 @@
                   <input type="text" id="defaultDate" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="Similar_Type">Similar Type</label>
+                  <label for="Similar_Type">Similar Type y</label>
                   <input type="text" id="form_type" class="form-control" placeholder="Similar type" name="form_type"
                          [(ngModel)]="form_type">
                   <button type="button" class="btn btn-sm" (click)="copyForm($event)"><i class="fa fa-plus"></i>
@@ -35,6 +35,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <div class="box-body" *ngFor="let fields of deadDisability; let i = index">
+              <h3>{{ form_type | titlecase }}</h3>
               <form>
                 <div
                   class="form-group"
