@@ -23,6 +23,8 @@ export class DeadbodyRepatriationUpdateComponent implements OnInit {
   number = '';
   cause_of_death = '';
   action_taken = '';
+  type;
+  date;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -50,7 +52,7 @@ export class DeadbodyRepatriationUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'resolved/deadbodyrepatriation/details/').subscribe( Details => {
@@ -59,22 +61,23 @@ export class DeadbodyRepatriationUpdateComponent implements OnInit {
           this.number            = this.editData.number;
           this.cause_of_death              = this.editData.cause_of_death;
           this.action_taken       = this.editData.cause_of_death;
+          this.date       = this.editData.date;
+          this.type       = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'name='
-      + form.value.name
-      + '&number=' + form.value.number
-      + '&cause_of_death=' + form.value.cause_of_death
-      + '&action_taken=' + form.value.action_taken
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.name === undefined) ? '' : form.value.name)
+      + '&number=' + ((form.value.number === undefined) ? '' : form.value.number)
+      + '&cause_of_death=' + ((form.value.cause_of_death === undefined) ? '' : form.value.cause_of_death)
+      + '&action_taken=' + ((form.value.action_taken === undefined) ? '' : form.value.action_taken);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/deadbodyrepatriation/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['deadbody-repatriation-list']);
+        this.router.navigate(['deadbody-repatriation-list/' + this.type]);
       },
       error => {
         const error_response  = error;

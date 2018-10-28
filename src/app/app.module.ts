@@ -533,12 +533,12 @@ const appRoutes: Routes  = [
     component: ConferenceUpdateComponent
   },
   {
-    path: 'arbitration-disputes-list',
+    path: 'arbitration-disputes-list/:list_param',
     canActivate: [AuthGuard],
     component: ArbitrationDisputesListComponent
   },
   {
-    path: 'arbitration-disputes-create',
+    path: 'arbitration-disputes-create/:create_param',
     canActivate: [AuthGuard],
     component: ArbitrationDisputesCreateComponent
   },
@@ -548,12 +548,12 @@ const appRoutes: Routes  = [
     component: ArbitrationDisputesUpdateComponent
   },
   {
-    path: 'arrearpay-list',
+    path: 'arrearpay-list/:list_param',
     canActivate: [AuthGuard],
     component: ArrearpayListComponent
   },
   {
-    path: 'arrearpay-create',
+    path: 'arrearpay-create/:create_param',
     canActivate: [AuthGuard],
     component: ArrearpayCreateComponent
   },
@@ -563,12 +563,12 @@ const appRoutes: Routes  = [
     component: ArrearpayUpdateComponent
   },
   {
-    path: 'compensation-list',
+    path: 'compensation-list/:list_param',
     canActivate: [AuthGuard],
     component: CompensationListComponent
   },
   {
-    path: 'compensation-create',
+    path: 'compensation-create/:create_param',
     canActivate: [AuthGuard],
     component: CompensationCreateComponent
   },
@@ -578,12 +578,12 @@ const appRoutes: Routes  = [
     component: CompensationUpdateComponent
   },
   {
-    path: 'deadbody-repatriation-list',
+    path: 'deadbody-repatriation-list/:list_param',
     canActivate: [AuthGuard],
     component: DeadbodyRepatriationListComponent
   },
   {
-    path: 'deadbody-repatriation-create',
+    path: 'deadbody-repatriation-create/:create_param',
     canActivate: [AuthGuard],
     component: DeadbodyRepatriationCreateComponent
   },
@@ -593,12 +593,12 @@ const appRoutes: Routes  = [
     component: DeadbodyRepatriationUpdateComponent
   },
   {
-    path: 'death-disability-list',
+    path: 'death-disability-list/:list_param',
     canActivate: [AuthGuard],
     component: DeathDisabilityListComponent
   },
   {
-    path: 'death-disability-create',
+    path: 'death-disability-create/:create_param',
     canActivate: [AuthGuard],
     component: DeathDisabilityCreateComponent
   },

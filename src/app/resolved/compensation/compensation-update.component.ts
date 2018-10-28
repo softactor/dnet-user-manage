@@ -22,6 +22,8 @@ export class CompensationUpdateComponent implements OnInit {
   remit_type  = '';
   no = '';
   outcome = '';
+  date = '';
+  type;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -48,7 +50,7 @@ export class CompensationUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'resolved/compensation/details/').subscribe( Details => {
@@ -56,21 +58,21 @@ export class CompensationUpdateComponent implements OnInit {
           this.remit_type               = this.editData.remit_type;
           this.no            = this.editData.no;
           this.outcome              = this.editData.outcome;
+          this.type              = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'remit_type='
-      + form.value.remit_type
-      + '&no=' + form.value.no
-      + '&outcome=' + form.value.outcome
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.remit_type === undefined) ? '' : form.value.remit_type)
+      + '&no=' + ((form.value.no === undefined) ? '' : form.value.no)
+      + '&outcome=' + ((form.value.outcome === undefined) ? '' : form.value.outcome);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/compensation/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['compensation-list']);
+        this.router.navigate(['compensation-list/' + this.type]);
       },
       error => {
         const error_response  = error;

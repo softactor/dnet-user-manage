@@ -35,6 +35,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <div class="box-body" *ngFor="let fields of compensation; let i = index">
+              <h3>{{ form_type | titlecase }}</h3>
               <form>
                 <div
                   class="form-group"

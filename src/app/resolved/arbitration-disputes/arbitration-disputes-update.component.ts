@@ -22,6 +22,7 @@ export class ArbitrationDisputesUpdateComponent implements OnInit {
   total_number = '';
   resolved_case = '';
   type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -48,7 +49,7 @@ export class ArbitrationDisputesUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'resolved/arbitrationanddisputes/details/').subscribe( Details => {
@@ -56,6 +57,7 @@ export class ArbitrationDisputesUpdateComponent implements OnInit {
           this.total_number       = this.editData.total_number;
           this.resolved_case      = this.editData.resolved_case;
           this.type               = this.editData.type;
+          this.date              = this.editData.date;
         });
       });
   }
@@ -70,7 +72,7 @@ export class ArbitrationDisputesUpdateComponent implements OnInit {
       'resolved/arbitrationanddisputes/edit/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['arbitration-disputes-list']);
+        this.router.navigate(['arbitration-disputes-list/' + this.type]);
       },
       error => {
         const error_response  = error;
