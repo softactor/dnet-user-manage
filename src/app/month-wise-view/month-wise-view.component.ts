@@ -297,7 +297,7 @@ export class MonthWiseViewComponent implements OnInit {
     
     this.labourattache  = $('#labourattache').val()
     // this.getContent(this.labourattache, this.from_date, this.to_date)
-    this.getTabdata('visit', this.labourattache, this.from_date, this.to_date)
+    this.getTabdata('visit', this.from_date, this.to_date, this.labourattache)
   }
   // getContent(labourattache='', from_date='',to_date=''){
   //   const compoList = [
