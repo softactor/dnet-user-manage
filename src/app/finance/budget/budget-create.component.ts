@@ -72,13 +72,13 @@ export class BudgetCreateComponent implements OnInit {
   }
   public onFormSubmit(fields, type) {
     this.defaultDate = $('#defaultDate').val();
-    const postString  =  'budget_type=' + fields.budget_type
-      + '&opening_balance=' + fields.opening_balance
-      + '&closing_balance=' + fields.closing_balance
-      + '&total_expenditure=' + fields.total_expenditure
+    const postString  =  'budget_type=' + ((fields.budget_type === undefined) ? '' : fields.budget_type)
+      + '&opening_balance=' + ((fields.opening_balance === undefined) ? '' : fields.opening_balance)
+      + '&closing_balance=' + ((fields.closing_balance === undefined) ? '' : fields.closing_balance)
+      + '&total_expenditure=' + ((fields.total_expenditure === undefined) ? '' : fields.total_expenditure)
       + '&date=' + this.defaultDate
       + '&assign_to=' + this.assignTo
-      + '&type=' + type
+      + '&type=' + this.form_type
     this._service.create(postString, this.authorizationKey,
       'finance/budget/create').subscribe( response => {
       },
@@ -88,14 +88,14 @@ export class BudgetCreateComponent implements OnInit {
       }
     );
     // menu ceate
-    const postMenuString = 'name=' + type
-      + '&module_name=' + type
+    const postMenuString = 'name=' + this.form_type
+      + '&module_name=' + this.form_type
       + '&parent_id=' + 7
-      + '&url=budget-list/' + type
-      + '&type=' + type
+      + '&url=budget-list/' + this.form_type
+      + '&type=' + this.form_type
     this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe( response => {
         this._toasterService.success('Entry have successfully done.');
-        this.router.navigate(['budget-list/' + type]);
+        this.router.navigate(['budget-list/' + this.form_type]);
         location.reload();
       },
       error => {
@@ -108,11 +108,12 @@ export class BudgetCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.budget = [];
         this.similarTypes.push(this.form_type);
         const companyObj = new BudgetModel();
         // @ts-ignore
         this.budget.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {

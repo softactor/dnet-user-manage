@@ -70,12 +70,12 @@ export class RemittanceWelfareFundCreateComponent implements OnInit {
   }
   public onFormSubmit(fields, type) {
     this.defaultDate = $('#defaultDate').val();
-    const postString  =  'previous_balance=' + fields.previous_balance
-      + '&lastmonth_income=' + fields.lastmonth_income
-      + '&amount_of_remittance=' + fields.amount_of_remittance
+    const postString  =  'previous_balance=' + ((fields.previous_balance === undefined) ? '' : fields.previous_balance)
+      + '&lastmonth_income=' + ((fields.lastmonth_income === undefined) ? '' : fields.lastmonth_income)
+      + '&amount_of_remittance=' + ((fields.amount_of_remittance === undefined) ? '' : fields.amount_of_remittance)
       + '&date=' + this.defaultDate
       + '&assign_to=' + this.assignTo
-      + '&type=' + type
+      + '&type=' + this.form_type
     this._service.create(postString, this.authorizationKey,
       'finance/remittanceandwelfarefund/create').subscribe( response => {
       },
@@ -85,14 +85,14 @@ export class RemittanceWelfareFundCreateComponent implements OnInit {
       }
     );
     // menu ceate
-    const postMenuString = 'name=' + type
-      + '&module_name=' + type
+    const postMenuString = 'name=' + this.form_type
+      + '&module_name=' + this.form_type
       + '&parent_id=' + 7
-      + '&url=remittance-welfare-fund-list/' + type
-      + '&type=' + type
+      + '&url=remittance-welfare-fund-list/' + this.form_type
+      + '&type=' + this.form_type
     this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe( response => {
         this._toasterService.success('Entry have successfully done.');
-        this.router.navigate(['remittance-welfare-fund-list/' + type]);
+        this.router.navigate(['remittance-welfare-fund-list/' + this.form_type]);
         location.reload();
       },
       error => {
@@ -105,11 +105,12 @@ export class RemittanceWelfareFundCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.remittanceWelfare  = [];
         this.similarTypes.push(this.form_type);
         const companyObj = new RemittanceWelfareModel();
         // @ts-ignore
         this.remittanceWelfare.push(companyObj);
-      }else {
+      } else {
         this._toasterService.warning('Type is already there');
       }
     } else {
