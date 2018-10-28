@@ -25,7 +25,7 @@
               <table id="hospital_list" class="table table-striped display" style="width:100%">
                 <thead>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>Name</th>
                   <th>Address</th>
                   <th>Outcome</th>
@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let Hospital of feedbackData; index as sln" id="row_id_{{ Hospital.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{ list.date }}</td>
                   <td>{{ Hospital.name }}</td>
                   <td>{{ Hospital.address }}</td>
                   <td>{{ Hospital.outcome }}</td>
@@ -60,7 +60,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>Name</th>
                   <th>Address</th>
                   <th>Outcome</th>

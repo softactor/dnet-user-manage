@@ -29,7 +29,7 @@
               <table id="migrant_shelter_list" class="table table-striped display" style="width:100%">
                 <thead>
                 <tr>
-                  <th style="width: 10px">#</th>
+                  <th style="width: 10px">Date</th>
                   <th>Name</th>
                   <th>Address</th>
                   <th>Remark</th>
@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let migrant of feedbackData; index as sln" id="row_id_{{ migrant.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{ list.date }}</td>
                   <td>{{ migrant.name }}</td>
                   <td>{{ migrant.address }}</td>
                   <td>{{ migrant.remark }}</td>
@@ -59,16 +59,7 @@
                     </swal>
                   </td>
                 </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th style="width: 10px">#</th>
-                  <th>Name</th>
-                  <th>Address</th>
-                  <th>Remark</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
+                </tbody>                
               </table>
             </div>
             <!-- /.box-body -->

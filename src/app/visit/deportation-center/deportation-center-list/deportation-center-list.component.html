@@ -29,7 +29,7 @@
               <table id="deportation_center_list" class="table table-striped display" style="width:100%" *ngIf="feedbackData?.length > 0">
                 <thead>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>Name</th>
                   <th>Address</th>
                   <th>Outcome</th>
@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let DeportationCenter of feedbackData; index as sln" id="row_id_{{ DeportationCenter.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{ list.date }}</td>
                   <td>{{ DeportationCenter.name }}</td>
                   <td>{{ DeportationCenter.address }}</td>
                   <td>{{ DeportationCenter.outcome }}</td>
@@ -62,7 +62,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>Name</th>
                   <th>Address</th>
                   <th>Outcome</th>

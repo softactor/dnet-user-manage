@@ -29,7 +29,7 @@
               <table id="data_list" class="table table-striped display" style="width:100%">
                 <thead>
                 <tr>
-                  <th style="width: 10px">#</th>
+                  <th style="width: 10px">Date</th>
                   <th>Details of Person</th>
                   <th>Nature of query</th>
                   <th>Action taken</th>
@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{ list.date }}</td>
                   <td>{{ list.details_of_person }}</td>
                   <td>{{ list.nature_of_query }}</td>
                   <td>{{ list.action_taken }}</td>
@@ -62,7 +62,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th style="width: 10px">#</th>
+                  <th style="width: 10px">Date</th>
                   <th>Details of Person</th>
                   <th>Nature of query</th>
                   <th>Action taken</th>
