@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../../authentication.service';
 import { HttpClient,  HttpHeaders} from '@angular/common/http';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -24,12 +24,14 @@ export class TermsConditionServiceCreateComponent implements OnInit {
   defaultDate;
   assignTo;
   form_type;
+  list_param;
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _toasterService: TosterService,
     private _authentication: AuthenticationService,
     private _service: TermsConditionServiceService,
+    private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
   }
   ngOnInit() {
@@ -43,7 +45,7 @@ export class TermsConditionServiceCreateComponent implements OnInit {
       $('#defaultDate').datepicker('setDate', new Date());
     });
     this.similarTypes = [];
-    this.form_type    = 'Terms & condition';
+    this.form_type    = this.list_param;
     this.similarTypes.push(this.form_type);
     const residenceObj = new TermsConditionModel();
     // @ts-ignore
@@ -65,12 +67,27 @@ export class TermsConditionServiceCreateComponent implements OnInit {
   public onFormSubmit(fields, type) {
     this.defaultDate = $('#defaultDate').val();
     const createFormData = this.formData.value;
-    const postString  =  'places_visited=' + createFormData.places_visited
-      + '&number_of_verified=' + createFormData.number_of_verified
+    const postString  =  'places_visited=' + ((fields.places_visited === undefined) ? '' : fields.places_visited)
+      + '&number_of_verified=' + ((fields.number_of_verified === undefined) ? '' : fields.number_of_verified)
       + '&action_taken=' + createFormData.action_taken
     this._service.create(postString, this.authorizationKey, 'resolved/termsandconditionservice/create').subscribe( response => {
-        this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['terms-condition-list']);
+        // menu ceate
+        const postMenuString = 'name=' + this.form_type
+            + '&module_name=' + this.form_type
+            + '&parent_id=' + 6
+            + '&url=terms-condition-list/' + this.form_type
+            + '&type=' + this.form_type
+        this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['terms-condition-list/' + this.form_type]);
+                // location.reload();
+            },
+            error => {
+                const error_response = error;
+                this.responseError = error_response.error;
+            }
+        );
+        // end of menu create
       },
       error => {
         const error_response  = error;
@@ -81,10 +98,11 @@ export class TermsConditionServiceCreateComponent implements OnInit {
   public copyForm(e) {
     if (this.form_type) {
       if (this.similarTypes.indexOf(this.form_type) === -1) {
+        this.termsCondition = [];
         this.similarTypes.push(this.form_type);
-        const companyObj = new TermsConditionModel();
+        const termsConditionObj = new TermsConditionModel();
         // @ts-ignore
-        this.termsCondition.push(companyObj);
+        this.termsCondition.push(termsConditionObj);
       }else {
         this._toasterService.warning('Type is already there');
       }

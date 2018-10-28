@@ -21,6 +21,8 @@ export class MonthlyProblemResolvedUpdateComponent implements OnInit {
   responseError;
   type_of_problem = '';
   total_number = '';
+  type = '';
+  date = '';
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -46,22 +48,23 @@ export class MonthlyProblemResolvedUpdateComponent implements OnInit {
         this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
         const getDetailsParam  = {
           editId        : this.editId,
-          authorizationKey  : this.authorizationKey.toString()
+          authorizationKey  : this.authorizationKey
         };
 
         this._service.getDetailsById(getDetailsParam, 'resolved/monthlyproblemresolved/details/').subscribe( Details => {
           this.editData = Details;
           this.type_of_problem         = this.editData.type_of_problem;
           this.total_number            = this.editData.total_number;
+          this.type         = this.editData.type;
+          this.date         = this.editData.date;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
     const updateParam = 'type_of_problem='
-      + form.value.type_of_problem
-      + '&total_number=' + form.value.total_number
-      + '&authorization=' + this.authorizationKey;
+      + ((form.value.type_of_problem === undefined)    ? ''  :  form.value.type_of_problem)
+      + '&total_number=' + ((form.value.total_number === undefined)    ? ''  :  form.value.total_number);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/monthlyproblemresolved/edit/', this.editId)
       .subscribe( response => {

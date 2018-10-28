@@ -21,7 +21,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+            <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
@@ -29,7 +29,6 @@
                   <label for="places_visited">Places visited</label>
                   <input type="text"
                          name="places_visited"
-                         formControlName = "places_visited"
                          id="inputName"
                          [(ngModel)]="places_visited"
                          class="form-control"
@@ -42,7 +41,6 @@
                   <label for="number_of_verified">Number of verified</label>
                   <input type="text"
                          name="number_of_verified"
-                         formControlName = "number_of_verified"
                          id="inputnumber_of_verified"
                          class="form-control"
                          [(ngModel)]="number_of_verified"
@@ -53,7 +51,6 @@
                   <label for="action_taken">Action taken</label>
                   <input type="text"
                          name="action_taken"
-                         formControlName = "action_taken"
                          id="inputActionTaken"
                          [(ngModel)]="action_taken"
                          class="form-control"

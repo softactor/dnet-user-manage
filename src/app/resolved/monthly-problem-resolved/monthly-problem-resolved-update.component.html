@@ -22,7 +22,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form [formGroup]="formData" (ngSubmit)="update(formData, $event)">
+              <form #guEUpdateForm = "ngForm" (ngSubmit)="update(guEUpdateForm, $event)">
               <div class="box-body">
                 <div
                   class="form-group"
@@ -30,7 +30,6 @@
                   <label for="type_of_problem">Type of problem</label>
                   <input type="text"
                          name="type_of_problem"
-                         formControlName = "type_of_problem"
                          id="inputtypeOfProblem"
                          [(ngModel)]="type_of_problem"
                          class="form-control"
@@ -43,7 +42,6 @@
                   <label for="total_number">Total number</label>
                   <input type="text"
                          name="total_number"
-                         formControlName = "total_number"
                          id="inputTotalNumber"
                          [(ngModel)]="total_number"
                          class="form-control"
