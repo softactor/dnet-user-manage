@@ -19,9 +19,12 @@ export class CompensationUpdateComponent implements OnInit {
   authorizationKey;
   feedbackData;
   responseError;
-  remit_type  = '';
-  no = '';
-  outcome = '';
+  action_taken;
+  amount;
+  compensation_type;
+  details;
+  number;
+  pending_since;
   date = '';
   type;
   constructor(
@@ -40,9 +43,12 @@ export class CompensationUpdateComponent implements OnInit {
       trees.tree();
     });
     this.formData = this.fb.group({
-      remit_type                : ['', Validators.required],
-      no             : ['', Validators.required],
-      outcome               : ['', Validators.required],
+      action_taken                : ['', Validators.required],
+      amount                : ['', Validators.required],
+      compensation_type             : ['', Validators.required],
+      details               : ['', Validators.required],
+      number               : ['', Validators.required],
+      pending_since               : ['', Validators.required],
     });
     this._activateRoute.paramMap
       .subscribe( params => {
@@ -55,10 +61,14 @@ export class CompensationUpdateComponent implements OnInit {
 
         this._service.getDetailsById(getDetailsParam, 'resolved/compensation/details/').subscribe( Details => {
           this.editData = Details;
-          this.remit_type               = this.editData.remit_type;
-          this.no            = this.editData.no;
-          this.outcome              = this.editData.outcome;
+          this.action_taken               = this.editData.action_taken;
+          this.amount            = this.editData.amount;
+          this.compensation_type              = this.editData.compensation_type;
+          this.details               = this.editData.details;
+          this.number            = this.editData.number;
+          this.pending_since              = this.editData.pending_since;
           this.type              = this.editData.type;
+          this.date              = this.editData.date;
         });
       });
   }

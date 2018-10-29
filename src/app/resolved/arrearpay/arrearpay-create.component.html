@@ -53,7 +53,10 @@
                   </div>
 
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.total_number ? true: false"
+                  [class.has-feedback]="responseError?.total_number ? true: false">
                   <label for="total_number">Total number</label>
                   <input type="text"
                          name="total_number"
@@ -61,8 +64,14 @@
                          id="inputTotalNumber"
                          class="form-control"
                          placeholder="Total number">
+                  <div class="error-message" *ngIf="responseError?.total_number">
+                    {{responseError?.total_number}}
+                  </div>
                 </div>
-                <div class="form-group">
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.number_of_case_resolved ? true: false"
+                  [class.has-feedback]="responseError?.number_of_case_resolved ? true: false">
                   <label for="number_of_case_resolved">Number of case resolved</label>
                   <input type="text"
                          name="number_of_case_resolved"
@@ -70,6 +79,9 @@
                          id="inputnumber_of_case_resolved"
                          class="form-control"
                          placeholder="Number of case resolved">
+                  <div class="error-message" *ngIf="responseError?.number_of_case_resolved">
+                    {{responseError?.number_of_case_resolved}}
+                  </div>
                 </div>
                 <button type="button" class="btn btn-primary form_submit"
                         (click)="onFormSubmit(fields, similarTypes[i])">Submit

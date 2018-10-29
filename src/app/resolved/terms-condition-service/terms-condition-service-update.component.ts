@@ -73,7 +73,7 @@ export class TermsConditionServiceUpdateComponent implements OnInit {
       'resolved/termsandconditionservice/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['terms-condition-list']);
+        this.router.navigate(['terms-condition-list/' + this.type.toLowerCase()]);
       },
       error => {
         const error_response  = error;

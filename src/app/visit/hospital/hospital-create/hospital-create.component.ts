@@ -83,19 +83,19 @@ export class HospitalCreateComponent implements OnInit {
           + '&no_of_bangladeshis=' + ((fields.no_of_bangladeshis === undefined) ? '' : fields.no_of_bangladeshis)
           + '&date=' + this.defaultDate
           + '&assign_to=' + this.assignTo
-          + '&type=' + this.form_type
+          + '&type=' + this.form_type.toLowerCase()
         this._service.create(postString, 'visit/hospital/create', this.authorizationKey).subscribe(response => {
             // menu ceate
             let formType  = this.form_type.toLowerCase();
-            const postMenuString = 'name=' + formType
-              + '&module_name=' + formType
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
               + '&parent_id=' + 1
-              + '&url=/hospital-list/' + formType
-              + '&type=' + formType
+              + '&url=/hospital-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
             this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['hospital-list/' + formType]);
-                // location.reload();
+                this.router.navigate(['hospital-list/' + this.form_type.toLowerCase()]);
+                location.reload();
               },
               error => {
                 const error_response = error;

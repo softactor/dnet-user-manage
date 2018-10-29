@@ -79,7 +79,7 @@ export class AttestationCreateComponent implements OnInit {
           + '&description=' + ((fields.description === undefined) ? '' : fields.description)
           + '&date=' + this.defaultDate
           + '&assign_to=' + this.assignTo
-          + '&type=' + this.form_type
+          + '&type=' + this.form_type.toLowerCase()
         this._service.create(postString, this.authorizationKey,
           'activity/attestation/create').subscribe(response => {
             // menu ceate
@@ -87,10 +87,10 @@ export class AttestationCreateComponent implements OnInit {
               + '&module_name=' + this.form_type
               + '&parent_id=' + 3
               + '&url=attestation-list/' + this.form_type
-              + '&type=' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
             this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['attestation-list/' + this.form_type]);
+                this.router.navigate(['attestation-list/' + this.form_type.toLowerCase()]);
                 // location.reload();
               },
               error => {

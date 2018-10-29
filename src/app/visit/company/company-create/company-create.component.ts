@@ -86,20 +86,20 @@ export class CompanyCreateComponent implements OnInit {
           + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
           + '&date=' + this.defaultDate
           + '&assign_to=' + this.assignTo
-          + '&type=' + type
+          + '&type=' + this.form_type.toLowerCase()
           + '&no_of_bangladeshis=' + ((fields.no_of_bangladeshis === undefined) ? '' : fields.no_of_bangladeshis)
         this._service.create(postString, 'visit/company/create', this.authorizationKey).subscribe(response => {
             // menu ceate
             let formType  = this.form_type.toLowerCase();
-            const postMenuString = 'name=' + formType
-              + '&module_name=' + formType
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
               + '&parent_id=' + 1
-              + '&url=/company-list/' + formType
-              + '&type=' + formType
+              + '&url=/company-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
             this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['company-list/' + formType]);
-                // location.reload();
+                this.router.navigate(['company-list/' + this.form_type.toLowerCase()]);
+                location.reload();
               },
               error => {
                 const error_response = error;

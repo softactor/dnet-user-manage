@@ -68,39 +68,49 @@ export class RemittanceWelfareFundCreateComponent implements OnInit {
       amount_of_remittance         : ['', Validators.requiredTrue],
     });
   }
+
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const postString  =  'previous_balance=' + ((fields.previous_balance === undefined) ? '' : fields.previous_balance)
-      + '&lastmonth_income=' + ((fields.lastmonth_income === undefined) ? '' : fields.lastmonth_income)
-      + '&amount_of_remittance=' + ((fields.amount_of_remittance === undefined) ? '' : fields.amount_of_remittance)
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + this.form_type
-    this._service.create(postString, this.authorizationKey,
-      'finance/remittanceandwelfarefund/create').subscribe( response => {
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const createFormData = this.formData.value;
+        const postString = 'previous_balance=' + ((fields.previous_balance === undefined) ? '' : fields.previous_balance)
+          + '&lastmonth_income=' + ((fields.lastmonth_income === undefined) ? '' : fields.lastmonth_income)
+          + '&amount_of_remittance=' + ((fields.amount_of_remittance === undefined) ? '' : fields.amount_of_remittance)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + this.form_type
+        this._service.create(postString, this.authorizationKey,
+          'finance/remittanceandwelfarefund/create').subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
+              + '&parent_id=' + 7
+              + '&url=remittance-welfare-fund-list/' + this.form_type
+              + '&type=' + this.form_type
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(response => {
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['remittance-welfare-fund-list/' + this.form_type]);
+                location.reload();
+              },
+              error => {
+                const error_response = error;
+                this.responseError = error_response.error;
+              }
+            );
+            // end of menu create
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
+        );
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
-    // menu ceate
-    const postMenuString = 'name=' + this.form_type
-      + '&module_name=' + this.form_type
-      + '&parent_id=' + 7
-      + '&url=remittance-welfare-fund-list/' + this.form_type
-      + '&type=' + this.form_type
-    this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe( response => {
-        this._toasterService.success('Entry have successfully done.');
-        this.router.navigate(['remittance-welfare-fund-list/' + this.form_type]);
-        location.reload();
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
-      }
-    );
-    // end of menu create
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {

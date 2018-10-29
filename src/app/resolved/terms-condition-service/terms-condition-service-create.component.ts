@@ -33,6 +33,10 @@ export class TermsConditionServiceCreateComponent implements OnInit {
     private _service: TermsConditionServiceService,
     private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
   ngOnInit() {
     // to solve the left menu hide problem;
@@ -64,36 +68,48 @@ export class TermsConditionServiceCreateComponent implements OnInit {
       number_of_verified          : ['', Validators.requiredTrue],
     });
   }
+
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const createFormData = this.formData.value;
-    const postString  =  'places_visited=' + ((fields.places_visited === undefined) ? '' : fields.places_visited)
-      + '&number_of_verified=' + ((fields.number_of_verified === undefined) ? '' : fields.number_of_verified)
-      + '&action_taken=' + createFormData.action_taken
-    this._service.create(postString, this.authorizationKey, 'resolved/termsandconditionservice/create').subscribe( response => {
-        // menu ceate
-        const postMenuString = 'name=' + this.form_type
-            + '&module_name=' + this.form_type
-            + '&parent_id=' + 6
-            + '&url=terms-condition-list/' + this.form_type
-            + '&type=' + this.form_type
-        this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const createFormData = this.formData.value;
+        const postString = 'places_visited=' + ((fields.places_visited === undefined) ? '' : fields.places_visited)
+          + '&number_of_verified=' + ((fields.number_of_verified === undefined) ? '' : fields.number_of_verified)
+          + '&action_taken=' + ((fields.action_taken === undefined) ? '' : fields.action_taken)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + this.form_type.toLowerCase()
+        this._service.create(postString, this.authorizationKey, 'resolved/termsandconditionservice/create').subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
+              + '&parent_id=' + 6
+              + '&url=terms-condition-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['terms-condition-list/' + this.form_type]);
+                this.router.navigate(['terms-condition-list/' + this.form_type.toLowerCase()]);
                 // location.reload();
-            },
-            error => {
+              },
+              error => {
                 const error_response = error;
                 this.responseError = error_response.error;
-            }
+              }
+            );
+            // end of menu create
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
         );
-        // end of menu create
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {

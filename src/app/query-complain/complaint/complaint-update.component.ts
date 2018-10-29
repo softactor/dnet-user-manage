@@ -22,6 +22,7 @@ export class ComplaintUpdateComponent implements OnInit {
   total_number  = '';
   action_taken = '';
   date;
+  type;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -57,6 +58,8 @@ export class ComplaintUpdateComponent implements OnInit {
           this.editData = Details;
           this.total_number       = this.editData.total_number;
           this.action_taken       = this.editData.action_taken;
+          this.date       = this.editData.date;
+          this.type       = this.editData.type;
         });
       });
   }
@@ -64,14 +67,14 @@ export class ComplaintUpdateComponent implements OnInit {
     e.preventDefault();
     const dateField = $('#date').val();
     const updateParam = 'total_number='
-      + ((form.value.description === undefined)    ? ''  :  form.value.description)
-      + '&action_taken=' + ((form.value.description === undefined)    ? ''  :  form.value.description)
+      + ((form.value.total_number === undefined)    ? ''  :  form.value.total_number)
+      + '&action_taken=' + ((form.value.action_taken === undefined)    ? ''  :  form.value.action_taken)
       + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'querycomplain/complaints/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['complaint-list/']);
+        this.router.navigate(['complaint-list/' + this.type.toLowerCase()]);
       },
       error => {
         const error_response  = error;

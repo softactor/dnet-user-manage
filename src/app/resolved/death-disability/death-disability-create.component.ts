@@ -33,6 +33,10 @@ export class DeathDisabilityCreateComponent implements OnInit {
     private _service: DeathDisabilityService,
     private _activateRoute: ActivatedRoute,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
   ngOnInit() {
     // to solve the left menu hide problem;
@@ -66,40 +70,49 @@ export class DeathDisabilityCreateComponent implements OnInit {
       remarks  : ['', Validators.requiredTrue],
     });
   }
+
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const createFormData = this.formData.value;
-    const postString  =  'category=' + ((fields.category === undefined) ? '' : fields.category)
-      + '&number=' + ((fields.number === undefined) ? '' : fields.number)
-      + '&present_status=' + ((fields.present_status === undefined) ? '' : fields.present_status)
-      + '&remarks=' + ((fields.remarks === undefined) ? '' : fields.remarks)
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + type
-    this._service.create(postString, this.authorizationKey, 'resolved/deathordisability/create').subscribe( response => {
-        // menu ceate
-        const postMenuString = 'name=' + this.form_type
-          + '&module_name=' + this.form_type
-          + '&parent_id=' + 6
-          + '&url=death-disability-list/' + this.form_type
-          + '&type=' + this.form_type
-        this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
-            this._toasterService.success('Entry have successfully done.');
-            this.router.navigate(['death-disability-list/' + this.form_type]);
-            // location.reload();
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const createFormData = this.formData.value;
+        const postString = 'category=' + ((fields.category === undefined) ? '' : fields.category)
+          + '&number=' + ((fields.number === undefined) ? '' : fields.number)
+          + '&present_status=' + ((fields.present_status === undefined) ? '' : fields.present_status)
+          + '&remarks=' + ((fields.remarks === undefined) ? '' : fields.remarks)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + this.form_type.toLowerCase()
+        this._service.create(postString, this.authorizationKey, 'resolved/deathordisability/create').subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
+              + '&parent_id=' + 6
+              + '&url=death-disability-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['death-disability-list/' + this.form_type.toLowerCase()]);
+                // location.reload();
+              },
+              error => {
+                const error_response = error;
+                this.responseError = error_response.error;
+              }
+            );
+            // end of menu create
           },
           error => {
             const error_response = error;
             this.responseError = error_response.error;
           }
         );
-        // end of menu create
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {

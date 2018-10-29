@@ -83,14 +83,14 @@ export class JailCreateComponent implements OnInit {
             // menu ceate
             let formType  = this.form_type.toLowerCase();
             const postMenuString = 'name=' + this.form_type
-              + '&module_name=' + formType
+              + '&module_name=' + this.form_type
               + '&parent_id=' + 1
-              + '&url=/jail-list/' + formType
-              + '&type=' + formType
+              + '&url=/jail-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
             this._service.create(postMenuString, 'menumanagment/leftmenu/create', this.authorizationKey).subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['jail-list/' + formType]);
-                // location.reload();
+                this.router.navigate(['jail-list/' + this.form_type.toLowerCase()]);
+                location.reload();
               },
               error => {
                 const error_response = error;

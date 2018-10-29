@@ -79,7 +79,7 @@ export class GuestEntertainmentCreateComponent implements OnInit {
           + '&purpose=' + ((fields.purpose === undefined) ? '' : fields.purpose)
           + '&date=' + this.defaultDate
           + '&assign_to=' + this.assignTo
-          + '&type=' + this.form_type;
+          + '&type=' + this.form_type.toLowerCase();
         this._service.create(postString, this.authorizationKey,
           'activity/gestentertainment/create').subscribe(response => {
             // menu ceate
@@ -87,10 +87,10 @@ export class GuestEntertainmentCreateComponent implements OnInit {
               + '&module_name=' + this.form_type
               + '&parent_id=' + 3
               + '&url=guest-entertainment-list/' + this.form_type
-              + '&type=' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
             this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['guest-entertainment-list/' + this.form_type]);
+                this.router.navigate(['guest-entertainment-list/' + this.form_type.toLowerCase()]);
                 // location.reload();
               },
               error => {

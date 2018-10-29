@@ -50,7 +50,7 @@ export class RemitFcListComponent implements OnInit {
           this.list_param = params.get('list_param');
           this.listTitle = this.list_param;
           this.authorizationKey = localStorage.getItem('token_type') + ' ' + localStorage.getItem('access_token');
-          this.listApi  = 'activity/remitfc/list?type=' + this.list_param;
+          this.listApi  = 'resolved/remitfc/list?type=' + this.list_param;
           this._service.getListData(this.authorizationKey, this.listApi)
               .subscribe( response => {
                   this.tableListData  = response;

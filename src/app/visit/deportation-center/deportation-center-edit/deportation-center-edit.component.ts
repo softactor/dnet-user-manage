@@ -82,7 +82,7 @@ export class DeportationCenterEditComponent implements OnInit {
     this._service.update(updateParam,
       this.authorizationKey, 'visit/deportationcenter/update/', this.editId).subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['deportationcenter/list/' + this.type]);
+        this.router.navigate(['deportation-center-list/' + this.type]);
       },
       error => {
         const error_response  = error;

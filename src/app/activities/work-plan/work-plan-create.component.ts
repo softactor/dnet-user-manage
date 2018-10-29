@@ -79,17 +79,17 @@ export class WorkPlanCreateComponent implements OnInit {
       + '&description=' + ((fields.description === undefined) ? '' : fields.description)
       + '&date=' + this.defaultDate
       + '&assign_to=' + this.assignTo
-      + '&type=' + this.form_type
+      + '&type=' + this.form_type.toLowerCase()
     this._service.create(postString, this.authorizationKey, 'activity/wrokplane/create').subscribe( response => {
         // menu ceate
         const postMenuString = 'name=' + this.form_type
           + '&module_name=' + this.form_type
           + '&parent_id=' + 3
           + '&url=work-plan-list/' + this.form_type
-          + '&type=' + this.form_type
+          + '&type=' + this.form_type.toLowerCase()
         this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
             this._toasterService.success('Entry have successfully done.');
-            this.router.navigate(['work-plan-list/' + this.form_type]);
+            this.router.navigate(['work-plan-list/' + this.form_type.toLowerCase()]);
             // location.reload();
           },
           error => {

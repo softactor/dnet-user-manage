@@ -26,39 +26,75 @@
               <div class="box-body">
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.remit_type ? true: false" [class.has-feedback]="responseError?.remit_type ? true: false">
-                  <label for="remit_type">Remit type</label>
+                  [class.has-warning]="responseError?.action_taken ? true: false" [class.has-feedback]="responseError?.action_taken ? true: false">
+                  <label for="action_taken">Action taken</label>
                   <input type="text"
-                         name="remit_type"
+                         name="action_taken"
                          id="inputRemitType"
-                         [(ngModel)]="remit_type"
+                         [(ngModel)]="action_taken"
                          class="form-control"
-                         placeholder="Remit type">
-                  <div class="error-message" *ngIf="responseError?.remit_type">{{responseError?.remit_type}}</div>
+                         placeholder="Action taken">
+                  <div class="error-message" *ngIf="responseError?.action_taken">{{responseError?.action_taken}}</div>
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.no ? true: false" [class.has-feedback]="responseError?.no ? true: false">
-                  <label for="no">No</label>
+                  [class.has-warning]="responseError?.amount ? true: false" [class.has-feedback]="responseError?.amount ? true: false">
+                  <label for="amount">amount</label>
                   <input type="text"
-                         name="no"
+                         name="amount"
                          id="inputNo"
-                         [(ngModel)]="no"
+                         [(ngModel)]="amount"
                          class="form-control"
-                         placeholder="No">
-                  <div class="error-message" *ngIf="responseError?.no">{{responseError?.no}}</div>
+                         placeholder="amount">
+                  <div class="error-message" *ngIf="responseError?.amount">{{responseError?.amount}}</div>
                 </div>
                 <div
                   class="form-group"
-                  [class.has-warning]="responseError?.outcome ? true: false" [class.has-feedback]="responseError?.outcome ? true: false">
-                  <label for="outcome">Outcome</label>
+                  [class.has-warning]="responseError?.compensation_type ? true: false" [class.has-feedback]="responseError?.compensation_type ? true: false">
+                  <label for="compensation_type">Compensation type</label>
                   <input type="text"
-                         name="outcome"
+                         name="compensation_type"
                          id="inputOutcome"
                          class="form-control"
-                         [(ngModel)]="outcome"
-                         placeholder="Outcome">
-                  <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
+                         [(ngModel)]="compensation_type"
+                         placeholder="Compensation type">
+                  <div class="error-message" *ngIf="responseError?.compensation_type">{{responseError?.compensation_type}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.details ? true: false" [class.has-feedback]="responseError?.details ? true: false">
+                  <label for="details">Details</label>
+                  <input type="text"
+                         name="details"
+                         id="inputRemitType"
+                         [(ngModel)]="details"
+                         class="form-control"
+                         placeholder="Details">
+                  <div class="error-message" *ngIf="responseError?.details">{{responseError?.details}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.number ? true: false" [class.has-feedback]="responseError?.number ? true: false">
+                  <label for="number">Number</label>
+                  <input type="text"
+                         name="number"
+                         id="inputNo"
+                         [(ngModel)]="number"
+                         class="form-control"
+                         placeholder="Number">
+                  <div class="error-message" *ngIf="responseError?.number">{{responseError?.number}}</div>
+                </div>
+                <div
+                  class="form-group"
+                  [class.has-warning]="responseError?.pending_since ? true: false" [class.has-feedback]="responseError?.pending_since ? true: false">
+                  <label for="pending_since">Pending since</label>
+                  <input type="text"
+                         name="pending_since"
+                         id="inputOutcome"
+                         class="form-control"
+                         [(ngModel)]="pending_since"
+                         placeholder="Pending since">
+                  <div class="error-message" *ngIf="responseError?.pending_since">{{responseError?.pending_since}}</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>

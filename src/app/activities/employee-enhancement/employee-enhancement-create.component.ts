@@ -64,24 +64,48 @@ export class EmployeeEnhancementCreateComponent implements OnInit {
       type         : ['', Validators.requiredTrue],
     });
   }
+
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const createFormData = this.formData.value;
-    const postString  =  'enhancement_type=' + fields.enhancement_type
-      + '&outcome=' + fields.outcome
-      + '&remarks=' + fields.remarks
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + type
-    this._service.create(postString, this.authorizationKey, 'activity/employeeenhancement/create').subscribe( response => {
-        this._toasterService.success('Data has been successfully created.');
-        this.router.navigate(['employee-enhancement-list']);
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const createFormData = this.formData.value;
+        const postString = 'enhancement_type=' + ((fields.enhancement_type === undefined) ? '' : fields.enhancement_type)
+          + '&outcome=' + ((fields.outcome === undefined) ? '' : fields.outcome)
+          + '&remarks=' + ((fields.remarks === undefined) ? '' : fields.remarks)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + this.form_type.toLowerCase()
+        this._service.create(postString, this.authorizationKey, 'activity/employeeenhancement/create').subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
+              + '&parent_id=' + 3
+              + '&url=employee-enhancement-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+                this._toasterService.success('Entry have successfully done.');
+                this.router.navigate(['employee-enhancement-list/' + this.form_type.toLowerCase()]);
+                // location.reload();
+              },
+              error => {
+                const error_response = error;
+                this.responseError = error_response.error;
+              }
+            );
+            // end of menu create
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
+        );
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {

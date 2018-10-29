@@ -33,6 +33,10 @@ export class MonthlyProblemResolvedCreateComponent implements OnInit {
     private _activateRoute: ActivatedRoute,
     private _service: MonthlyProblemResolvedService,
     private _http: HttpClient) {
+    this._activateRoute.paramMap
+      .subscribe( params => {
+        this.list_param = params.get('create_param');
+      });
   }
   ngOnInit() {
     // to solve the left menu hide problem;
@@ -62,38 +66,47 @@ export class MonthlyProblemResolvedCreateComponent implements OnInit {
       total_number       : ['', Validators.required],
     });
   }
+
   public onFormSubmit(fields, type) {
-    this.defaultDate = $('#defaultDate').val();
-    const createFormData = this.formData.value;
-    const postString  =  'type_of_problem=' + ((fields.type_of_problem === undefined) ? '' : fields.type_of_problem)
-      + '&total_number=' + ((fields.total_number === undefined) ? '' : fields.total_number)
-      + '&date=' + this.defaultDate
-      + '&assign_to=' + this.assignTo
-      + '&type=' + this.form_type
-    this._service.create(postString, this.authorizationKey, 'resolved/monthlyproblemresolved/create').subscribe( response => {
-        // menu ceate
-        const postMenuString = 'name=' + this.form_type
-            + '&module_name=' + this.form_type
-            + '&parent_id=' + 6
-            + '&url=monthly-problem-resolved-list/' + this.form_type
-            + '&type=' + this.form_type
-        this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
+    if (this.form_type) {
+      this.defaultDate = $('#defaultDate').val();
+      if (this.defaultDate) {
+        const createFormData = this.formData.value;
+        const postString = 'type_of_problem=' + ((fields.type_of_problem === undefined) ? '' : fields.type_of_problem)
+          + '&total_number=' + ((fields.total_number === undefined) ? '' : fields.total_number)
+          + '&date=' + this.defaultDate
+          + '&assign_to=' + this.assignTo
+          + '&type=' + this.form_type.toLowerCase()
+        this._service.create(postString, this.authorizationKey, 'resolved/monthlyproblemresolved/create').subscribe(response => {
+            // menu ceate
+            const postMenuString = 'name=' + this.form_type
+              + '&module_name=' + this.form_type
+              + '&parent_id=' + 6
+              + '&url=monthly-problem-resolved-list/' + this.form_type
+              + '&type=' + this.form_type.toLowerCase()
+            this._service.create(postMenuString, this.authorizationKey, 'menumanagment/leftmenu/create').subscribe(menu_response => {
                 this._toasterService.success('Entry have successfully done.');
-                this.router.navigate(['monthly-problem-resolved-list/' + this.form_type]);
+                this.router.navigate(['monthly-problem-resolved-list/' + this.form_type.toLowerCase()]);
                 // location.reload();
-            },
-            error => {
+              },
+              error => {
                 const error_response = error;
                 this.responseError = error_response.error;
-            }
+              }
+            );
+            // end of menu create
+          },
+          error => {
+            const error_response = error;
+            this.responseError = error_response.error;
+          }
         );
-        // end of menu create
-      },
-      error => {
-        const error_response  = error;
-        this.responseError  = error_response.error;
+      } else {
+        this._toasterService.warning('Please select a date');
       }
-    );
+    } else {
+      this._toasterService.warning('Please type a similar form name');
+    }
   }
   public copyForm(e) {
     if (this.form_type) {
