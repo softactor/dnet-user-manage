@@ -2,73 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088b59ff-8266-4e83-b187-35f1fae393a0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.ts" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html" afterPath="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" afterPath="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" afterPath="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" afterPath="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layout/left-menu/left-menu.component.html" afterPath="$PROJECT_DIR$/src/app/layout/left-menu/left-menu.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html" afterPath="$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.html" afterPath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.ts" afterPath="$PROJECT_DIR$/src/app/month-wise-view/month-wise-view.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" afterPath="$PROJECT_DIR$/src/app/reports/visualizations/report.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-create.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-create/deportation-center-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-create/deportation-center-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/hospital/hospital-create/hospital-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/hospital/hospital-create/hospital-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/jail/jail-create/jail-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/jail/jail-create/jail-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-create/migrant-shelter-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/residence/residence-create/residence-create.component.ts" afterPath="$PROJECT_DIR$/src/app/visit/residence/residence-create/residence-create.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -84,24 +48,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <file leaf-file-name="market-assessment-list.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="665" column="37" lean-forward="true" selection-start-line="665" selection-start-column="37" selection-end-line="665" selection-end-column="37" />
+            <state relative-caret-position="263">
+              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="complaint-update.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts">
+      <file leaf-file-name="environment.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liaison-with-expatriates-list.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guest-entertainment-list.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employee-enhancement-list.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attestation-list.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,32 +156,7 @@
         <option value="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-create.component.ts" />
@@ -189,8 +166,6 @@
         <option value="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.html" />
         <option value="$PROJECT_DIR$/src/environments/environment.ts" />
@@ -198,6 +173,33 @@
         <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" />
         <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html" />
         <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" />
       </list>
     </option>
   </component>
@@ -251,45 +253,6 @@
               <item name="labor-report" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="query-complain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="query-complain" type="462c0819:PsiDirectoryNode" />
-              <item name="complaint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="visit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="visit" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="visit" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-              <item name="company-create" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
@@ -363,12 +326,12 @@
       <workItem from="1540686760291" duration="1680000" />
       <workItem from="1540694016652" duration="16185000" />
       <workItem from="1540739715164" duration="3107000" />
-      <workItem from="1540746691198" duration="7289000" />
+      <workItem from="1540746691198" duration="8331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254409000" />
+    <option name="totallyTimeSpent" value="255451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -412,236 +375,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="65" column="24" lean-forward="false" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-791">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="67" column="24" lean-forward="false" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="879">
-          <caret line="112" column="5" lean-forward="true" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="75" column="51" lean-forward="false" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -720,22 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
@@ -748,14 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="63" column="39" lean-forward="false" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -832,14 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="665" column="37" lean-forward="true" selection-start-line="665" selection-start-column="37" selection-end-line="665" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-493">
@@ -847,6 +548,262 @@
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-454">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1028">
+          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="977">
+          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="665" column="37" lean-forward="false" selection-start-line="665" selection-start-column="37" selection-end-line="665" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="51" lean-forward="false" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="926">
+          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="926">
+          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/work-plan/work-plan-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="62" column="21" lean-forward="false" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/assistance-provide/legal-assistance/legal-assistance-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="64" column="21" lean-forward="false" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/assistance-provide/general-assistance/general-assistance-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/issues/meeting/meeting-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/issues/conference/conference-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

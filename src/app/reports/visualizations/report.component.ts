@@ -62,8 +62,6 @@ export class VisualizationReportComponent implements OnInit {
   remittanceReportDataInit;
   remittanceReportData;
 
-
-
 //Chart Lebels
   public companyPieChartLabels: string[] = [];
   public jailPieChartLabels: string[] = [];
@@ -114,23 +112,27 @@ export class VisualizationReportComponent implements OnInit {
   
   canvas:any;
 
-
   jailChartData;
   companyChartData;
   migrantshelterChartData;
   hospitalChartData;
   budgetChartData;
   remittanceChartData;
+  maxVal = 0;
+  financeChartOptions: any;
+  budgetMaxValues: number[] = [];
 
-  financeChartOptions = {
-    responsive:true,
-    scales: {
-      yAxes: [{
-          ticks: {
-          beginAtZero: true,
-          stepSize:10000,
+  loadFinanceChartOptions() {
+      this.financeChartOptions = {
+        responsive:true,
+        scales: {
+          yAxes: [{
+              ticks: {
+              beginAtZero: true,
+              stepSize:(this.maxVal <= 1) ? 1 : Math.round((this.maxVal + 100) / 10)
+              }
+            }]
           }
-        }]
       }
   }
   visitChartOptions = {
@@ -298,20 +300,28 @@ export class VisualizationReportComponent implements OnInit {
 
     // get Finance budget reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'finance/budget/report').subscribe( response => {
-    this.budgetReportDataInit = response;  
+        this.budgetReportDataInit = response;
         
-      this.budgetData1.length =0;
+        this.budgetData1.length =0;
         this.budgetData2.length =0;
         this.budgetData3.length =0;
         this.budgetChartLabels.length =0;
         this.budgetChartLabels = [];
 
+        var i = 0;
         for (const budgetData of this.budgetReportDataInit) {
           this.budgetData1.push(budgetData.opening_balance);
           this.budgetData2.push(budgetData.closing_balance);
           this.budgetData3.push(budgetData.expenditure);
           this.budgetChartLabels.push(budgetData.assign_to__country_name);
+          this.budgetMaxValues[i] = budgetData.opening_balance;
+          i++;
+          this.budgetMaxValues[i] = budgetData.closing_balance;
+          i++;
+          this.budgetMaxValues[i] = budgetData.expenditure;
+          i++;
         }
+        this.maxVal = Math.max.apply(null, this.budgetMaxValues);
         
         this.budgetChartData = [
           { data: this.budgetData1, label: 'Opening Balance' },
@@ -319,7 +329,8 @@ export class VisualizationReportComponent implements OnInit {
           { data: this.budgetData3, label: 'Budget' },
         ];
         // end of for
-        this.refresh_chart();
+        //this.refresh_chart();
+        this.loadFinanceChartOptions();
     }); 
     // get Finance Remittance reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'finance/remittanceandwelfarefund/report').subscribe( response => {
@@ -345,13 +356,10 @@ export class VisualizationReportComponent implements OnInit {
         ];
         // end of for
         this.refresh_chart();
-    }); 
-
-
+    });
   }
 
   public onDataFilterFormSubmit():void {
-                
         // const date = new Date();
         this.from_date  = $('#from_date').val();
         this.to_date  = $('#to_date').val();
@@ -449,27 +457,34 @@ export class VisualizationReportComponent implements OnInit {
 
       // get Finance budget reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'finance/budget/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
-      this.budgetReportDataInit = response;  
-        
-      this.budgetData1.length =0;
+        this.budgetReportDataInit = response;
+        this.budgetData1.length =0;
         this.budgetData2.length =0;
         this.budgetData3.length =0;
         this.budgetChartLabels.length =0;
 
+        var i = 0;
         for (const budgetData of this.budgetReportDataInit) {
           this.budgetData1.push(budgetData.opening_balance);
           this.budgetData2.push(budgetData.closing_balance);
           this.budgetData3.push(budgetData.expenditure);
           this.budgetChartLabels.push(budgetData.assign_to__country_name);
+          this.budgetMaxValues[i] = budgetData.opening_balance;
+          i++;
+          this.budgetMaxValues[i] = budgetData.closing_balance;
+          i++;
+          this.budgetMaxValues[i] = budgetData.expenditure;
+          i++;
         }
-        
+        this.maxVal = Math.max.apply(null, this.budgetMaxValues);
         this.budgetChartData = [
           { data: this.budgetData1, label: 'Opening Balance' },
           { data: this.budgetData2, label: 'Closing Balance' },
           { data: this.budgetData3, label: 'Budget' },
         ];
         // end of for
-        this.refresh_chart();
+        //this.refresh_chart();
+        this.loadFinanceChartOptions();
     }); 
     // get Finance Remittance reports;
     this._apiProcessService.getReportData(this.authorizationKey, 'finance/remittanceandwelfarefund/report?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
@@ -498,7 +513,6 @@ export class VisualizationReportComponent implements OnInit {
     }
 
   refresh_chart() {
-
     setTimeout(() => {
       this._chartRef.refresh();
     }, 100);

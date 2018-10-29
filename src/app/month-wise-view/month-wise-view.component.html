@@ -36,6 +36,7 @@
                       </select>
                     </div>                    
                     <button style="margin-top:5px;margin-left:5px;" type="submit" (click)="onDataFilterFormSubmit()" class="btn btn-default">Submit</button>
+                    <button style="margin-top:5px;margin-left:5px;" type="submit" (click)="onDataFilterFormExport()" class="btn btn-default">Export</button>
                   </form>
                 </div>
             </div>
@@ -66,7 +67,7 @@
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>SL</th>
+                            <th>Date</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -79,7 +80,7 @@
                           <tbody>
                           <!--apiData-->
                           <tr *ngFor="let tablelist of companyVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                            <td>{{i+1}}</td>
+                            <td>{{ tablelist.date }}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -98,7 +99,7 @@
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>SL</th>
+                            <th>Date</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -110,7 +111,7 @@
                           <tbody>
                           <!--apiData-->
                           <tr *ngFor="let tablelist of residenceVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                            <td>{{i+1}}</td>
+                            <td>{{ tablelist.date }}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -129,7 +130,7 @@
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>SL</th>
+                            <th>Date</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -141,7 +142,7 @@
                           <tbody>
                           <!--apiData-->
                           <tr *ngFor="let tablelist of deportationcenterVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                            <td>{{i+1}}</td>
+                            <td>{{ tablelist.date }}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -160,7 +161,7 @@
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>SL</th>
+                            <th>Date</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -172,7 +173,7 @@
                           <tbody>
                           <!--apiData-->
                           <tr *ngFor="let tablelist of jailVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                            <td>{{i+1}}</td>
+                            <td>{{ tablelist.date }}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -191,7 +192,7 @@
                         <table class="table">
                           <thead>
                           <tr>
-                            <th>SL</th>
+                            <th>Date</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Outcome</th>
@@ -202,7 +203,7 @@
                           <tbody>
                           <!--apiData-->
                           <tr *ngFor="let tablelist of migrantshelterVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                            <td>{{i+1}}</td>
+                            <td>{{ tablelist.date }}</td>
                             <td>{{ tablelist.name }}</td>
                             <td>{{ tablelist.address }}</td>
                             <td>{{ tablelist.outcome }}</td>
@@ -222,7 +223,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Name of Activity</th>
                           <th>Description</th>
                           <th>Type</th>
@@ -234,7 +235,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of attestationVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.name_of_activity }}</td>
                           <td>{{ tablelist.description }}</td>
                           <td>{{ tablelist.type }}</td>
@@ -253,7 +254,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Name of Activity</th>
                           <th>Description</th>
                           <th>Type</th>
@@ -264,7 +265,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of wrokplaneVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.name_of_activity }}</td>
                           <td>{{ tablelist.description }}</td>
                           <td>{{ tablelist.type }}</td>
@@ -282,7 +283,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Total Number</th>
                           <th>Purpose</th>
                           <th>Type</th>
@@ -293,7 +294,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of gestentertainmentVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.total_number }}</td>
                           <td>{{ tablelist.purpose }}</td>
                           <td>{{ tablelist.type }}</td>
@@ -311,7 +312,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Number of Meeting Held</th>
                           <th>Outcome</th>
                           <th>Type</th>
@@ -322,7 +323,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of liaisonwithexpatriatesVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.number_of_meeting_held }}</td>
                           <td>{{ tablelist.outcome }}</td>
                           <td>{{ tablelist.type }}</td>
@@ -340,7 +341,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Activity</th>
                           <th>Remarks</th>
                           <th>Type</th>
@@ -351,7 +352,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of otheractivityVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.activity }}</td>
                           <td>{{ tablelist.remarks }}</td>
                           <td>{{ tablelist.type }}</td>
@@ -372,7 +373,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Issue</th>
@@ -385,7 +386,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of generalassistanceVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.issue }}</td>
@@ -404,7 +405,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Name</th>
                           <th>Address</th>
                           <th>Legal Issue</th>
@@ -417,7 +418,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of legalassistanceVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.address }}</td>
                           <td>{{ tablelist.legal_issue }}</td>
@@ -439,7 +440,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Details of Person</th>
                           <th>Nature of Query</th>
                           <th>Action Taken</th>
@@ -450,7 +451,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of queryreceivedVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.details_of_person }}</td>
                           <td>{{ tablelist.nature_of_query }}</td>
                           <td>{{ tablelist.action_taken }}</td>
@@ -468,7 +469,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Total Number</th>
                           <th>Outcome</th>
                           <th>Type</th>
@@ -479,7 +480,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of complaintsVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.total_number }}</td>
                           <td>{{ tablelist.action_taken }}</td>
                           <td>{{ tablelist.type }}</td>
@@ -497,7 +498,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Number of Trade</th>
                           <th>Type of Query</th>
                           <th>Remarks</th>
@@ -508,7 +509,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of tradequeryVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.number_of_trade }}</td>
                           <td>{{ tablelist.Type_of_query }}</td>
                           <td>{{ tablelist.remarks }}</td>
@@ -529,7 +530,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>name</th>
                           <th>Organization</th>
                           <th>Issue Discussed</th>
@@ -541,7 +542,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of meetingVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.organization }}</td>
                           <td>{{ tablelist.issue_discussed }}</td>
@@ -560,7 +561,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Details Conferance</th>
                           <th>Topic</th>
                           <th>Outcome</th>
@@ -571,7 +572,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of conferanceVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.details_conferance }}</td>
                           <td>{{ tablelist.topic }}</td>
                           <td>{{ tablelist.outcome }}</td>
@@ -592,7 +593,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Arbitrationanddisputes Type</th>
                           <th>Total Number</th>
                           <th>Resolved Case</th>
@@ -603,7 +604,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of arbitrationanddisputesVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.type }}</td>
                           <td>{{ tablelist.total_number }}</td>
                           <td>{{ tablelist.resolved_case }}</td>
@@ -622,7 +623,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Person Concern Type</th>
                           <th>Total Number</th>
                           <th>Number of Case Resolved</th>
@@ -633,7 +634,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of arrearpayVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.person_concern_type }}</td>
                           <td>{{ tablelist.total_number }}</td>
                           <td>{{ tablelist.number_of_case_resolved }}</td>
@@ -653,7 +654,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>compensation_type</th>
                           <th>Number</th>
                           <th>Details</th>
@@ -666,7 +667,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of compensationVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.compensation_type }}</td>
                           <td>{{ tablelist.number }}</td>
                           <td>{{ tablelist.details }}</td>
@@ -688,7 +689,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Name</th>
                           <th>Number</th>
                           <th>Cause of Death</th>
@@ -700,7 +701,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of deadbodyrepatriationVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.name }}</td>
                           <td>{{ tablelist.number }}</td>
                           <td>{{ tablelist.cause_of_death }}</td>
@@ -720,7 +721,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Category</th>
                           <th>Number</th>
                           <th>Present Status</th>
@@ -732,7 +733,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of deathordisabilityVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.category }}</td>
                           <td>{{ tablelist.number }}</td>
                           <td>{{ tablelist.present_status }}</td>
@@ -751,7 +752,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Type of Problem</th>
                           <th>Total Number</th>
                           <th>Present Status</th>
@@ -763,7 +764,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of monthlyproblemresolvedVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.type_of_problem }}</td>
                           <td>{{ tablelist.total_number }}</td>
                           <td class="pull-right">
@@ -780,7 +781,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>remit_type</th>
                           <th>No</th>
                           <th>Outcome</th>
@@ -791,7 +792,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of remitfcVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.remit_type }}</td>
                           <td>{{ tablelist.no }}</td>
                           <td>{{ tablelist.outcome}}</td>
@@ -809,7 +810,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Places Visited</th>
                           <th>Number of Verified</th>
                           <th>Action Taken</th>
@@ -820,7 +821,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of termsandconditionserviceVisitData; let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.places_visited }}</td>
                           <td>{{ tablelist.number_of_verified }}</td>
                           <td>{{ tablelist.action_taken}}</td>
@@ -841,8 +842,8 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
-                          <th>Previous Calance</th>
+                          <th>Date</th>
+                          <th>Previous Balance</th>
                           <th>Lastmonth Income</th>
                           <th>Amount of Remittance</th>
                           <th>
@@ -852,7 +853,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of remittanceandwelfarefundVisitData;let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.previous_balance }}</td>
                           <td>{{ tablelist.lastmonth_income }}</td>
                           <td>{{ tablelist.amount_of_remittance }}</td>
@@ -870,7 +871,7 @@
                       <table class="table">
                         <thead>
                         <tr>
-                          <th>SL</th>
+                          <th>Date</th>
                           <th>Budget Type</th>
                           <th>Opening Balance</th>
                           <th>Closing Balance</th>
@@ -882,7 +883,7 @@
                         <tbody>
                         <!--apiData-->
                         <tr *ngFor="let tablelist of budgetVisitData;let i = index" id="row_id_{{ tablelist.id }}">
-                          <td>{{i+1}}</td>
+                          <td>{{ tablelist.date }}</td>
                           <td>{{ tablelist.budget_type }}</td>
                           <td>{{ tablelist.opening_balance }}</td>
                           <td>{{ tablelist.closing_balance }}</td>

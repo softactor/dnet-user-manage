@@ -29,7 +29,7 @@
               <table id="data_list" class="table table-striped display" style="width:100%">
                 <thead>
                 <tr>
-                  <th style="width: 10px">SL</th>
+                  <th style="width: 10px">Date</th>
                   <th>Type of problem</th>
                   <th>Total number</th>
                   <th>Action</th>
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{  list.date }}</td>
                   <td>{{ list.type_of_problem }}</td>
                   <td>{{ list.total_number }}</td>
                   <td>

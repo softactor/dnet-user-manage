@@ -62,7 +62,6 @@ export class MonthWiseViewComponent implements OnInit {
   remittanceandwelfarefundVisitDataArray;
   budgetVisitDataArray;
   
-
   financeData:any;
   resolvedData: any;
   issueData: any;
@@ -127,7 +126,7 @@ export class MonthWiseViewComponent implements OnInit {
     this.getTabdata('visit')
   }
 
-  getTabdata(component,from_date='',to_date='',labourattache='') {
+  getTabdata(component, from_date='', to_date='', labourattache='') {
     // const date = new Date();
     this.from_date  = from_date;
     this.to_date  = to_date;
@@ -139,8 +138,7 @@ export class MonthWiseViewComponent implements OnInit {
     let compoList;
    
     switch(component) {
-      case 'visit':
-        
+      case 'visit':        
         this._apiProcessService.getReportData(this.authorizationKey, 'visit/company/list?la='+this.labourattache +'&from_date='+this.from_date+'&to_date='+this.to_date).subscribe( response => {
           this.companyVisitDataArray = response; 
           this.companyVisitData =   this.companyVisitDataArray.results;         
@@ -324,5 +322,16 @@ export class MonthWiseViewComponent implements OnInit {
   //   ];
   //   this.visitData = this._service.getComponetListData(compoList, this.authorizationKey);
   // }
+
+    public onDataFilterFormExport():void {
+        /*this.from_date  = $('#from_date').val();
+        this.to_date  = $('#to_date').val();
+
+        this.from_date = this._datePipe.transform(this.from_date,"yyy-MM-dd");
+        this.to_date = this._datePipe.transform(this.to_date,"yyyy-MM-dd");
+
+        this.labourattache  = $('#labourattache').val()
+        this.getTabdata('visit', this.from_date, this.to_date, this.labourattache)*/
+    }
 }
 
