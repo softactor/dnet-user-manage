@@ -37,6 +37,9 @@ export class ArbitrationDisputesUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       total_number              : ['', Validators.required],
@@ -63,11 +66,12 @@ export class ArbitrationDisputesUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'total_number='
       + form.value.total_number
       + '&resolved_case=' + form.value.resolved_case
       + '&type=' + form.value.type
-      + '&authorization=' + this.authorizationKey;
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'resolved/arbitrationanddisputes/edit/', this.editId)
       .subscribe( response => {

@@ -23,6 +23,7 @@ export class TradeQueryUpdateComponent implements OnInit {
   remarks = '';
   number_of_trade = '';
   date;
+  type;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -61,6 +62,7 @@ export class TradeQueryUpdateComponent implements OnInit {
           this.number_of_trade      = this.editData.number_of_trade;
           this.remarks              = this.editData.remarks;
           this.date               = this.editData.date;
+          this.type               = this.editData.type;
         });
       });
   }
@@ -68,7 +70,7 @@ export class TradeQueryUpdateComponent implements OnInit {
     e.preventDefault();
     const dateField = $('#date').val();
     const updateParam = 'Type_of_query='
-      + ((form.value.name === undefined)    ? ''  :  form.value.name)
+      + ((form.value.Type_of_query === undefined)    ? ''  :  form.value.Type_of_query)
       + '&remarks=' + ((form.value.remarks === undefined)    ? ''  :  form.value.remarks)
       + '&number_of_trade=' + ((form.value.number_of_trade === undefined)    ? ''  :  form.value.number_of_trade)
       + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
@@ -76,7 +78,7 @@ export class TradeQueryUpdateComponent implements OnInit {
       'querycomplain/tradequery/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['trade-query-list/']);
+        this.router.navigate(['trade-query-list/' + this.type]);
       },
       error => {
         const error_response  = error;

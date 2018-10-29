@@ -3,15 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="088b59ff-8266-4e83-b187-35f1fae393a0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" afterPath="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html" afterPath="$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.html" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.ts" afterPath="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.html" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts" afterPath="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -26,91 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="arbitration-disputes-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html">
+      <file leaf-file-name="environment.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="arrearpay-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compensation-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="49" column="51" lean-forward="false" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deadbody-repatriation-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monthly-problem-resolved-create.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remit-fc-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="terms-condition-service-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="budget-list.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
-              <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="remittance-welfare-fund-list.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+            <state relative-caret-position="51">
+              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -157,29 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/activities/other-activity/other-activity-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/activities/work-plan/work-plan-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/activities/market-assessment/market-assessment-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-edit/deportation-center-edit.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/finance/budget/budget-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/compensation/compensation-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.html" />
-        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
-        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html" />
-        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html" />
@@ -208,6 +118,29 @@
         <option value="$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.html" />
+        <option value="$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.ts" />
+        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
       </list>
     </option>
   </component>
@@ -255,27 +188,6 @@
               <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
               <item name="labor-report" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="finance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labor-report" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="finance" type="462c0819:PsiDirectoryNode" />
-              <item name="remittance-welfare-fund" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="labor-report" type="b2602c69:ProjectViewProjectNode" />
@@ -349,12 +261,12 @@
       <workItem from="1540686760291" duration="1680000" />
       <workItem from="1540694016652" duration="16185000" />
       <workItem from="1540739715164" duration="3107000" />
-      <workItem from="1540746691198" duration="9535000" />
+      <workItem from="1540746691198" duration="13696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256655000" />
+    <option name="totallyTimeSpent" value="260816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -398,278 +310,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="94" column="98" lean-forward="false" selection-start-line="94" selection-start-column="98" selection-end-line="94" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="88" column="101" lean-forward="false" selection-start-line="88" selection-start-column="101" selection-end-line="88" selection-end-column="101" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/attestation/attestation-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="107" column="6" lean-forward="true" selection-start-line="107" selection-start-column="6" selection-end-line="113" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="39" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="3" lean-forward="false" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="63" column="39" lean-forward="false" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="75" column="75" lean-forward="true" selection-start-line="75" selection-start-column="75" selection-end-line="75" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="91" column="95" lean-forward="true" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#73#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-create/company-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="64" column="110" lean-forward="false" selection-start-line="64" selection-start-column="110" selection-end-line="64" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="89" column="89" lean-forward="true" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="665" column="37" lean-forward="false" selection-start-line="665" selection-start-column="37" selection-end-line="665" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="59" column="24" lean-forward="false" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-list/company-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/deportation-center/deportation-center-list/deportation-center-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="40" column="42" lean-forward="false" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/hospital/hospital-list/hospital-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="37" column="33" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/jail/jail-list/jail-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/migrant-shelter/migrant-shelter-list/migrant-shelter-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/visit/residence/residence-list/residence-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/attestation/attestation-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/employee-enhancement/employee-enhancement-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/guest-entertainment/guest-entertainment-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/activities/liaison-with-expatriates/liaison-with-expatriates-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/activities/other-activity/other-activity-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -758,14 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/resolved/compensation/compensation-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -814,6 +446,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="796">
@@ -822,10 +462,284 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/finance/remittance-welfare-fund/remittance-welfare-fund-list.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+        <state relative-caret-position="284">
+          <caret line="80" column="64" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/trade-query/trade-query-create.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="75" column="116" lean-forward="true" selection-start-line="75" selection-start-column="46" selection-end-line="75" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/query-received/query-received-create.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-create.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="77" column="103" lean-forward="false" selection-start-line="77" selection-start-column="103" selection-end-line="77" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/query-received/query-received-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="24" column="87" lean-forward="false" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/complaint/complaint-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/query-complain/query-received/query-received-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="70" column="39" lean-forward="false" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-create.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="77" column="123" lean-forward="false" selection-start-line="77" selection-start-column="123" selection-end-line="77" selection-end-column="123" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/finance/budget/budget-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="77" column="22" lean-forward="false" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="77" column="22" lean-forward="false" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="48" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="56" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="67" column="22" lean-forward="false" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/visit/company/company-edit/company-edit.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arbitration-disputes/arbitration-disputes-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/arrearpay/arrearpay-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="75" column="66" lean-forward="false" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/compensation/compensation-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="83" column="65" lean-forward="false" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/deadbody-repatriation/deadbody-repatriation-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/death-disability/death-disability-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="84" column="69" lean-forward="true" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/monthly-problem-resolved/monthly-problem-resolved-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="76" column="77" lean-forward="false" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/remit-fc/remit-fc-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="80" column="61" lean-forward="false" selection-start-line="80" selection-start-column="61" selection-end-line="80" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/resolved/terms-condition-service/terms-condition-service-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-328">
+          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>

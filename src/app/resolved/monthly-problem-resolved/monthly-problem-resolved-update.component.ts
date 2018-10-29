@@ -37,6 +37,9 @@ export class MonthlyProblemResolvedUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       type_of_problem                : ['', Validators.required],
@@ -62,14 +65,16 @@ export class MonthlyProblemResolvedUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'type_of_problem='
       + ((form.value.type_of_problem === undefined)    ? ''  :  form.value.type_of_problem)
       + '&total_number=' + ((form.value.total_number === undefined)    ? ''  :  form.value.total_number);
+    + '&date=' + ((dateField === undefined) ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'resolved/monthlyproblemresolved/edit/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['monthly-problem-resolved-list']);
+        this.router.navigate(['monthly-problem-resolved-list/' + this.type]);
       },
       error => {
         const error_response  = error;

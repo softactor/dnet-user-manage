@@ -38,6 +38,9 @@ export class RemitFcUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       remit_type                : ['', Validators.required],
@@ -65,15 +68,17 @@ export class RemitFcUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'remit_type='
       + ((form.value.remit_type === undefined)    ? ''  :  form.value.remit_type)
       + '&no=' + ((form.value.no === undefined)    ? ''  :  form.value.no)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
       + '&outcome=' + ((form.value.outcome === undefined)    ? ''  :  form.value.outcome);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/remitfc/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['remit-fc-list']);
+        this.router.navigate(['remit-fc-list/' + this.type]);
       },
       error => {
         const error_response  = error;

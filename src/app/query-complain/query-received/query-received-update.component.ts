@@ -22,6 +22,8 @@ export class QueryReceivedUpdateComponent implements OnInit {
   details_of_person = '';
   nature_of_query = '';
   action_taken = '';
+  date;
+  type;
   constructor(
     private _activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -36,6 +38,9 @@ export class QueryReceivedUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       details_of_person             : ['', Validators.required],
@@ -56,21 +61,24 @@ export class QueryReceivedUpdateComponent implements OnInit {
           this.details_of_person            = this.editData.details_of_person;
           this.nature_of_query              = this.editData.nature_of_query;
           this.action_taken       = this.editData.action_taken;
+          this.date       = this.editData.date;
+          this.type       = this.editData.type;
         });
       });
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'details_of_person='
       + form.value.details_of_person
       + '&nature_of_query=' + form.value.nature_of_query
       + '&action_taken=' + form.value.action_taken
-      + '&authorization=' + this.authorizationKey;
+      + '&date=' + ((dateField === undefined)    ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'querycomplain/queryreceived/update/', this.editId)
       .subscribe( response => {
         this._toasterService.success('Data has been successfully updated.');
-        this.router.navigate(['query-received-list']);
+        this.router.navigate(['query-received-list/' + this.type]);
       },
       error => {
         const error_response  = error;

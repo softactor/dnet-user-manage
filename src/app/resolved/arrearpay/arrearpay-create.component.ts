@@ -73,9 +73,9 @@ export class ArrearpayCreateComponent implements OnInit {
       this.defaultDate = $('#defaultDate').val();
       if (this.defaultDate) {
         const createFormData = this.formData.value;
-    const postString  =  'person_concern_type=' + ((fields.total_number === undefined) ? '' : fields.total_number)
+    const postString  =  'person_concern_type=' + ((fields.person_concern_type === undefined) ? '' : fields.person_concern_type)
       + '&total_number=' + ((fields.total_number === undefined) ? '' : fields.total_number)
-      + '&number_of_case_resolved=' + ((fields.total_number === undefined) ? '' : fields.total_number)
+      + '&number_of_case_resolved=' + ((fields.number_of_case_resolved === undefined) ? '' : fields.number_of_case_resolved)
       + '&date=' + this.defaultDate
       + '&assign_to=' + this.assignTo
       + '&type=' + this.form_type.toLowerCase()

@@ -59,6 +59,13 @@
                          placeholder="outcome">
                   <div class="error-message" *ngIf="responseError?.outcome">{{responseError?.outcome}}</div>
                 </div>
+                <div
+                  class="form-group custom-col-md-12"
+                  [class.has-warning]="responseError?.date ? true: false" [class.has-feedback]="responseError?.date ? true: false">
+                  <label for="date">Date</label>
+                  <input required type="text" class="form-control" [(ngModel)]="date" name="date" id="date" placeholder="Date">
+                  <span *ngIf="responseError?.date" class="glyphicon glyphicon-warning-sign error-sign"></span>
+                </div>
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>
               <!-- /.box-body -->

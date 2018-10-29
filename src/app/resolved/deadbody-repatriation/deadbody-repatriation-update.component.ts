@@ -39,6 +39,9 @@ export class DeadbodyRepatriationUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       name                : ['', Validators.required],
@@ -68,10 +71,12 @@ export class DeadbodyRepatriationUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'name='
       + ((form.value.name === undefined) ? '' : form.value.name)
       + '&number=' + ((form.value.number === undefined) ? '' : form.value.number)
       + '&cause_of_death=' + ((form.value.cause_of_death === undefined) ? '' : form.value.cause_of_death)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
       + '&action_taken=' + ((form.value.action_taken === undefined) ? '' : form.value.action_taken);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/deadbodyrepatriation/update/', this.editId)

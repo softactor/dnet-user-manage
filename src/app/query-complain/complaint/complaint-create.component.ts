@@ -72,9 +72,10 @@ export class ComplaintCreateComponent implements OnInit {
       this.defaultDate = $('#defaultDate').val();
       if (this.defaultDate) {
         const createFormData = this.formData.value;
-        const postString = 'total_number='
-          + ((fields.total_number === undefined) ? '' : fields.total_number)
-          + '&action_taken=' + ((fields.action_taken === undefined) ? '' : fields.action_taken)
+        const postString = 'action_taken='
+          + ((fields.action_taken === undefined) ? '' : fields.action_taken)
+          + '&details_of_person=' + ((fields.details_of_person === undefined) ? '' : fields.details_of_person)
+          + '&nature_of_query=' + ((fields.nature_of_query === undefined) ? '' : fields.nature_of_query)
           + '&date=' + this.defaultDate
           + '&assign_to=' + this.assignTo
           + '&type=' + this.form_type.toLowerCase()

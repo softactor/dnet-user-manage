@@ -41,6 +41,9 @@ export class CompensationUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       action_taken                : ['', Validators.required],
@@ -74,9 +77,11 @@ export class CompensationUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'remit_type='
       + ((form.value.remit_type === undefined) ? '' : form.value.remit_type)
       + '&no=' + ((form.value.no === undefined) ? '' : form.value.no)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
       + '&outcome=' + ((form.value.outcome === undefined) ? '' : form.value.outcome);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/compensation/update/', this.editId)

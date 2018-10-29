@@ -39,6 +39,9 @@ export class DeathDisabilityUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       category             : ['', Validators.required],
@@ -68,11 +71,13 @@ export class DeathDisabilityUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'category='
       + ((form.value.category === undefined) ? '' : form.value.category)
       + '&number=' + ((form.value.number === undefined) ? '' : form.value.number)
       + '&present_status=' + ((form.value.present_status === undefined) ? '' : form.value.present_status)
       + '&remarks=' + ((form.value.remarks === undefined) ? '' : form.value.remarks)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
     this._service.update(updateParam, this.authorizationKey,
       'resolved/deathordisability/edit/', this.editId)
       .subscribe( response => {

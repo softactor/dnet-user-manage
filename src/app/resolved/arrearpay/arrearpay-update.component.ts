@@ -38,6 +38,9 @@ export class ArrearpayUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       person_concern_type                : ['', Validators.required],
@@ -65,10 +68,12 @@ export class ArrearpayUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'person_concern_type='
       + ((form.value.person_concern_type === undefined) ? '' : form.value.person_concern_type)
       + '&total_number=' + ((form.value.total_number === undefined) ? '' : form.value.total_number)
-      + '&number_of_case_resolved=' + ((form.value.number_of_case_resolved === undefined) ? '' : form.value.number_of_case_resolved);
+      + '&number_of_case_resolved=' + ((form.value.number_of_case_resolved === undefined) ? '' : form.value.number_of_case_resolved)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/arrearpay/edit/', this.editId)
       .subscribe( response => {

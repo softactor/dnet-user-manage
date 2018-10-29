@@ -38,6 +38,9 @@ export class TermsConditionServiceUpdateComponent implements OnInit {
     $(document).ready(() => {
       const trees: any = $('[data-widget="tree"]');
       trees.tree();
+      $('#date').datepicker({
+        dateFormat: 'yy-mm-dd'
+      });
     });
     this.formData = this.fb.group({
       places_visited             : ['', Validators.required],
@@ -65,9 +68,11 @@ export class TermsConditionServiceUpdateComponent implements OnInit {
   }
   public update(form: NgForm, e) {
     e.preventDefault();
+    const dateField = $('#date').val();
     const updateParam = 'places_visited='
       + ((form.value.places_visited === undefined)    ? ''  :  form.value.places_visited)
       + '&number_of_verified=' + ((form.value.number_of_verified === undefined)    ? ''  :  form.value.number_of_verified)
+      + '&date=' + ((dateField === undefined) ? ''  :  dateField)
       + '&action_taken=' + ((form.value.action_taken === undefined)    ? ''  :  form.value.action_taken);
     this._service.update(updateParam, this.authorizationKey,
       'resolved/termsandconditionservice/update/', this.editId)
