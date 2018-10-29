@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let list of feedbackData; index as sln" id="row_id_{{ list.id }}">
-                  <td>{{ sln+1 }}</td>
+                  <td>{{ list.date }}</td>
                   <td>{{ list.number_of_trade }}</td>
                   <td>{{ list.Type_of_query }}</td>
                   <td>{{ list.remarks }}</td>

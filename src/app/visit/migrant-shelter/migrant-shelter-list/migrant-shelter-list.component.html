@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let migrant of feedbackData; index as sln" id="row_id_{{ migrant.id }}">
-                  <td>{{ list.date }}</td>
+                  <td>{{ migrant.date }}</td>
                   <td>{{ migrant.name }}</td>
                   <td>{{ migrant.address }}</td>
                   <td>{{ migrant.remark }}</td>

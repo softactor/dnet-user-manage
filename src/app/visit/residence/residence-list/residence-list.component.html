@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let Residence of feedbackData; index as sln" id="row_id_{{ Residence.id }}">
-                  <td>{{ list.date }}</td>
+                  <td>{{ Residence.date }}</td>
                   <td>{{ Residence.name }}</td>
                   <td>{{ Residence.address }}</td>
                   <td>{{ Residence.outcome }}</td>

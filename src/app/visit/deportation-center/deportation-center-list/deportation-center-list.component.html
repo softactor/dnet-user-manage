@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let DeportationCenter of feedbackData; index as sln" id="row_id_{{ DeportationCenter.id }}">
-                  <td>{{ list.date }}</td>
+                  <td>{{ DeportationCenter.date }}</td>
                   <td>{{ DeportationCenter.name }}</td>
                   <td>{{ DeportationCenter.address }}</td>
                   <td>{{ DeportationCenter.outcome }}</td>
