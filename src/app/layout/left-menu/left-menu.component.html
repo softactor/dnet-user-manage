@@ -23,7 +23,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let Visitlist of visitMenu; index as sln;" id="child_row_id_{{ Visitlist.id }}">
-            <a routerLinkActive="active" routerLink="{{ Visitlist.url  }}"><i class="fa fa-circle-o"></i> {{ Visitlist.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ Visitlist.url  }}"><i class="fa fa-circle-o"></i> {{ Visitlist.name | titlecase }}</a>
           </li>
         </ul>
       </li>
@@ -36,7 +36,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let activityList of activityMenu; index as sln;" id="child_row_id_{{ activityList.id }}">
-            <a routerLinkActive="active" routerLink="{{ activityList.url  }}"><i class="fa fa-circle-o"></i> {{ activityList.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ activityList.url  }}"><i class="fa fa-circle-o"></i> {{ activityList.name | titlecase }}</a>
           </li>
         </ul>
       </li>
@@ -49,7 +49,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let assistanceprovideList of assistanceprovideMenu; index as sln;" id="child_row_id_{{ assistanceprovideList.id }}">
-            <a routerLinkActive="active" routerLink="{{ assistanceprovideList.url  }}"><i class="fa fa-circle-o"></i> {{ assistanceprovideList.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ assistanceprovideList.url  }}"><i class="fa fa-circle-o"></i> {{ assistanceprovideList.name | titlecase }}</a>
           </li>
         </ul>
       </li>
@@ -62,7 +62,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let querycomplainList of querycomplainMenu; index as sln;" id="child_row_id_{{ querycomplainList.id }}">
-            <a routerLinkActive="active" routerLink="{{ querycomplainList.url  }}"><i class="fa fa-circle-o"></i> {{ querycomplainList.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ querycomplainList.url  }}"><i class="fa fa-circle-o"></i> {{ querycomplainList.name | titlecase }}</a>
           </li>
         </ul>
       </li>
@@ -75,7 +75,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let issueList of issueMenu; index as sln;" id="child_row_id_{{ issueList.id }}">
-            <a routerLinkActive="active" routerLink="{{ issueList.url  }}"><i class="fa fa-circle-o"></i> {{ issueList.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ issueList.url  }}"><i class="fa fa-circle-o"></i> {{ issueList.name | titlecase }}</a>
           </li>
         </ul>
       </li>
@@ -88,7 +88,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let resolvedList of resolvedMenu; index as sln;" id="child_row_id_{{ resolvedList.id }}">
-            <a routerLinkActive="active" routerLink="{{ resolvedList.url  }}"><i class="fa fa-circle-o"></i> {{ resolvedList.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ resolvedList.url  }}"><i class="fa fa-circle-o"></i> {{ resolvedList.name | titlecase }}</a>
           </li>
         </ul>
       </li>
@@ -101,7 +101,7 @@
         </a>
         <ul class="treeview-menu">
           <li *ngFor="let financeList of financeMenu; index as sln;" id="child_row_id_{{ financeList.id }}">
-            <a routerLinkActive="active" routerLink="{{ financeList.url  }}"><i class="fa fa-circle-o"></i> {{ financeList.name }}</a>
+            <a routerLinkActive="active" routerLink="{{ financeList.url  }}"><i class="fa fa-circle-o"></i> {{ financeList.name | titlecase }}</a>
           </li>
         </ul>
       </li>
